@@ -1600,9 +1600,14 @@ class base_topic_edit extends base_topic {
                 //delete page
                 if (FALSE !== $this->databaseDeleteRecord(
                       $this->tableTopicsTrans, $filter)) {
-                  return FALSE !== $this->databaseDeleteRecord(
-                    $this->tableTopics, $filter
-                  );
+                  if (FALSE !== $this->databaseDeleteRecord(
+                        $this->tableTopics, $filter)) {
+                    // Call the action dispatcher method for other modules who need to do page cleanup stuff
+                    include_once(PAPAYA_INCLUDE_PATH.'system/base_pluginloader.php');
+                    $actionsObj = base_pluginloader::getPluginInstance('79f18e7c40824a0f975363346716ff62', $this);
+                    $num = $actionsObj->call('system', 'onDeletePages', $ids);
+                    return TRUE;
+                  }
                 }
               }
             }
