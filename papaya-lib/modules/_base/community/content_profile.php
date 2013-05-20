@@ -240,6 +240,10 @@ class content_profile extends base_content {
           'Query string for redirect url',
           ''
         ),
+        'Dynamic Data',
+        'dynamic_class' => array(
+          'Categories', 'isNum', FALSE, 'function', 'callbackClasses'
+        )
       ),
     ),
     array(
@@ -576,6 +580,15 @@ class content_profile extends base_content {
         ),
         'caption_handle' => array('Handle', 'isNoHTML', TRUE, 'input', 200, '', 'Handle'),
         'caption_email' => array('Email', 'isNoHTML', TRUE, 'input', 200, '', 'Email'),
+        'caption_section_email' => array(
+          'Section email',
+          'isNoHTML',
+          FALSE,
+          'input',
+          200,
+          'Adds a section caption above "Change email"',
+          ''
+        ),
         'caption_change_email' => array(
           'Change email',
           'isNoHTML',
@@ -617,6 +630,15 @@ class content_profile extends base_content {
         'caption_female' => array('Female', 'isNoHTML', TRUE, 'input', 200, '', 'female'),
         'caption_male' => array('Male', 'isNoHTML', TRUE, 'input', 200, '', 'male'),
         'caption_avatar' => array('Avatar', 'isNoHTML', TRUE, 'input', 200, '', 'Avatar'),
+        'caption_section_password' => array(
+          'Section password',
+          'isNoHTML',
+          FALSE,
+          'input',
+          200,
+          'Adds a section caption above "Old password"',
+          ''
+        ),
         'caption_old_password' => array(
           'Old password',
           'isNoHTML',
@@ -704,6 +726,24 @@ class content_profile extends base_content {
           7,
           '',
           'Enter the new password twice or leave blank to keep the old one.'
+        ),
+        'descr_old_password' => array(
+          'Old password',
+          'isSomeText',
+          FALSE,
+          'simplerichtext',
+          7,
+          '',
+          'Enter the old password if you want to change your email.'
+        ),
+        'descr_need_old_password' => array(
+          'Change password',
+          'isSomeText',
+          FALSE,
+          'simplerichtext',
+          7,
+          '',
+          'Enter the old password to confirm changes.'
         ),
         'descr_delete_account' => array(
           'Delete account',
@@ -828,6 +868,9 @@ class content_profile extends base_content {
     }
 
     if ($this->data['change_email'] == 1) {
+      if (!empty($this->data['caption_section_email'])) {
+        $fields[] = $this->data['caption_section_email'];
+      }
       $fields['surfer_new_email'] = array(
         $this->data['caption_change_email'],
         'isEmail',
@@ -842,6 +885,9 @@ class content_profile extends base_content {
     }
 
     if ($this->data['change_password'] == 1) {
+      if (!empty($this->data['caption_section_password'])) {
+        $fields[] = $this->data['caption_section_password'];
+      }
       $fields['surfer_password1'] = array(
         $this->data['caption_new_password'],
         'isPassword',
@@ -854,21 +900,53 @@ class content_profile extends base_content {
         'isSomeText',
         FALSE,
         'password',
-        200
-      );
-      $fields['surfer_password3'] = array(
-        $this->data['caption_old_password'],
-        'isSomeText',
-        FALSE,
-        'password',
         200,
         $this->data['descr_change_password']
       );
     }
+    if (!empty($this->data['need_oldpassword']) || !empty($this->data['change_password'])) {
+      $fields['surfer_password3'] = array(
+        $this->data['caption_old_password'],
+        'isSomeText',
+        !empty($this->data['need_oldpassword']),
+        'password',
+        200,
+        !empty($this->data['need_oldpassword']) ?
+          $this->data['descr_need_old_password'] : $this->data['descr_old_password']
+      );
+    }
+
+    // Add dynamic data fields
+    if (isset($this->data['dynamic_class']) && is_array($this->data['dynamic_class']) &&
+        !empty($this->data['dynamic_class'])) {
+      $dynFields = $this->baseSurfers->getDynamicEditFields(
+        $this->data['dynamic_class'],
+        'dynamic',
+        $this->parentObj->topic['TRANSLATION']['lng_id'],
+        TRUE
+      );
+      $fields = array_merge($fields, $dynFields);
+    }
+
+    $data = $this->surferData;
+    // Get existing dynamic data
+    if (isset($this->data['dynamic_class']) && is_array($this->data['dynamic_class']) &&
+        !empty($this->data['dynamic_class'])) {
+      $fieldNames = $this->baseSurfers->getDataFieldNames($this->data['dynamic_class']);
+      $dynData = $this->baseSurfers->getDynamicData(
+        !empty($this->surferObj->surferId) ? $this->surferObj->surferId : '',
+        $fieldNames
+      );
+      if ($dynData != NULL) {
+        foreach ($dynData as $fieldName => $fieldValue) {
+          $data['dynamic_'.$fieldName] = $fieldValue;
+        }
+      }
+    }
 
     $hidden = array('save' => 1);
     $this->profileForm = new base_frontend_form(
-      $this, $this->paramName, $fields, $this->surferData, $hidden
+      $this, $this->paramName, $fields, $data, $hidden
     );
     $this->profileForm->msgs = &$this->msgs;
     $this->profileForm->loadParams();
@@ -996,7 +1074,25 @@ class content_profile extends base_content {
     if ($this->data['edit_gender'] == 0) {
       unset($this->surferData['surfer_gender']);
     }
-    return $this->baseSurfers->saveSurfer($this->surferData);
+    $result = $this->baseSurfers->saveSurfer($this->surferData);
+
+    // Now save the dynamic data, if necessary
+    if (isset($this->data['dynamic_class']) && is_array($this->data['dynamic_class']) &&
+        !empty($this->data['dynamic_class'])) {
+      // Get the field names
+      $dynFieldNames = $this->baseSurfers->getDataFieldNames($this->data['dynamic_class']);
+      // Get those fields that are actually set
+      $dynFields = array();
+      foreach ($dynFieldNames as $fieldName) {
+        if (isset($this->profileForm->data['dynamic_'.$fieldName])) {
+          $dynFields[$fieldName] = $this->profileForm->data['dynamic_'.$fieldName];
+        }
+      }
+      if (!empty($dynFields)) {
+        $result = $result & $this->baseSurfers->setDynamicData($this->surferObj->surferId, $dynFields);
+      }
+    }
+    return $result;
   }
 
   /**
@@ -1538,7 +1634,14 @@ class content_profile extends base_content {
           // If an error field exists, the error_input message is displayed
           // Otherwise it is a token error with a different message
           if ($errorField == $field) {
-            $result .= $this->getErrorMessageXml($this->data['error_input'], $errorField);
+            if (in_array(
+                  $errorField, array('surfer_password1', 'surfer_password2', 'surfer_password3'))
+               ) {
+              $message = $this->data['error_password'];
+            } else {
+              $message = $this->data['error_input'];
+            }
+            $result .= $this->getErrorMessageXml($message, $errorField);
           } else {
             $result .= $this->getErrorMessageXml(
               'Invalid Token. Progress is canceled', $errorField
@@ -1624,6 +1727,54 @@ class content_profile extends base_content {
   */
   function getCacheId() {
     return FALSE;
+  }
+
+  /**
+  * Get form xml to select dynamic data categories by callback.
+  *
+  * @param string $name Field name
+  * @param array $element Field element configurations
+  * @param string $data Current field data
+  * @return string $result XML
+  */
+  function callbackClasses($name, $element, $data) {
+    $this->_initBaseSurfers();
+    $result = '';
+    $lng = $this->parentObj->topic['TRANSLATION']['lng_id'];
+    $commonTitle = $this->_gt('Category');
+    $sql = "SELECT c.surferdataclass_id,
+                   ct.surferdataclasstitle_classid,
+                   ct.surferdataclasstitle_name,
+                   ct.surferdataclasstitle_lang
+              FROM %s AS c LEFT OUTER JOIN %s AS ct
+                ON c.surferdataclass_id = ct.surferdataclasstitle_classid
+             WHERE ct.surferdataclasstitle_lang = %d";
+    $sqlParams = array(
+      $this->baseSurfers->tableDataClasses,
+      $this->baseSurfers->tableDataClassTitles,
+      $lng
+    );
+    if ($res = $this->baseSurfers->databaseQueryFmt($sql, $sqlParams)) {
+      while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
+        if (isset($row['surferdataclasstitle_name']) &&
+            trim($row['surferdataclasstitle_name']) != '') {
+          $title = $row['surferdataclasstitle_name'];
+        } else {
+          $title = sprintf('%s %d', $commonTitle, $row['surferdataclass_id']);
+        }
+        $checked = (is_array($data) && in_array($row['surferdataclass_id'], $data)) ?
+          ' checked="checked"' : '';
+        $result .= sprintf(
+          '<input type="checkbox" name="%s[%s][]" value="%d" %s />%s'.LF,
+          $this->paramName,
+          $name,
+          $row['surferdataclass_id'],
+          $checked,
+          $title
+        );
+      }
+    }
+    return $result;
   }
 }
 ?>
