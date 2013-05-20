@@ -325,6 +325,9 @@
       </xsl:when>
     </xsl:choose>
   </div>
+  <xsl:if test="$field/@hint != ''">
+    <div class="hint"><xsl:value-of select="$field/@hint" /></div>
+  </xsl:if>
 </xsl:template>
 
 <xsl:template name="dialog-field-input">
@@ -708,6 +711,7 @@
   <label for="{$elementId}" class="radio">
     <xsl:value-of select="$labelText" />
   </label>
+  <xsl:call-template name="float-fix" />
 </xsl:template>
 
 <xsl:template name="dialog-element-select">

@@ -72,6 +72,9 @@ li {
 
 /* Forms
 ----------------------------------------------- */
+form h2 {
+  margin: 0.7em 0 0.2em 0;
+}
 form p {
   margin-bottom: .8em;
 }
@@ -79,6 +82,9 @@ form fieldset {
   margin-top: 1em;
   padding: 0;
   border: none;
+}
+form div.field {
+  margin-top: 0.2em;
 }
 form label {
   display: block;
@@ -91,6 +97,8 @@ form label.inline {
   padding-left: .5em;
 }
 form input.text,
+form input.password,
+form input.file,
 form textarea,
 form select {
   border: 1px solid #CCC;
@@ -114,12 +122,26 @@ form input[type=checkbox] {
   vertical-align: middle;
   width: auto;
 }
+form .radio {
+  float: left;
+  margin-right: 0.8em;
+}
+form input.radio {
+  margin-right: 0.2em;
+}
+form div.buttons {
+  margin-top: 15px;
+}
 form button {
   border: 1px solid #90A33B;
   cursor: pointer;
   font-weight: bold;
   font-size: 100%;
   padding: 1px;
+  margin-right: 0.5em;
+}
+form div.hint {
+  margin-top: 0.3em;
 }
 
 
@@ -184,7 +206,7 @@ img.papayaImage {
   font-size: 90%;
 }
 
-/* Messages 
+/* Messages
 ----------------------------------------------- */
 div.message, div.error {
   border: 1px solid #90A33B;
@@ -240,22 +262,22 @@ div.message, div.error {
 /* Mobile rules, resize page and move elements
    for small windows
 ----------------------------------------------- */
-@media only screen and (max-width: 480px), 
+@media only screen and (max-width: 480px),
        only screen and (max-device-width: 480px) {
 
   p {
     margin-bottom: 1.5em;
     width: 20em;
   }
-  
+
   h1, h2, h3, h4, h5, h6, caption {
     font-weight: bold;
     margin-bottom: 0.6em;
     width: 20em;
   }
-  
+
   h1 {
     font-size: 120%;
     padding-top: 17em;
   }
-}  
+}
