@@ -49,7 +49,7 @@ class PapayaFilterText implements PapayaFilter {
    * @return string^
    */
   private function getPattern() {
-    $result = '([^\\pL\\pP';
+    $result = '([^\\pL\\pP=';
     if (PapayaUtilBitwise::inBitmask(self::ALLOW_SPACES, $this->_options)) {
       $result .= '\\p{Zs} ';
     }
