@@ -773,16 +773,16 @@ class surfer_admin extends base_db {
           );
         }
       }
-
-      if ($isMultiples) {
-        // case 1: multiples ids
-        return $result;
-      } else if (count($result) > 0) {
-        // case 2: one id lookup
-        return reset($result);
-      }
     }
-    return '';
+    if ($isMultiples) {
+      // case 1: multiples ids
+      return $result;
+    } elseif (count($result) > 0) {
+      // case 2: one id lookup
+      return reset($result);
+    } else {
+      return '';
+    }
   }
 
   /**
@@ -3517,13 +3517,13 @@ class surfer_admin extends base_db {
   * @param integer $lng Language id
   * @return array $dynamicEditFields Fields configuration
   */
-  function getDynamicEditFields($fields, $prefix = '', $lng = 0) {
+  function getDynamicEditFields($fields, $prefix = '', $lng = 0, $getClasses = FALSE) {
     // Create field condition
     $fieldCondition = '';
     if (is_numeric($fields) && $fields > 0) {
-      $fieldCondition = sprintf(" surferdata_class = %d", $fields);
+      $fieldCondition = sprintf(" d.surferdata_class = %d", $fields);
     } elseif (is_string($fields) && $fields != '0') {
-      $fieldCondition = sprintf(" surferdata_name = '%s'", $fields);
+      $fieldCondition = sprintf(" d.surferdata_name = '%s'", $fields);
     } elseif (is_array($fields)) {
       // Check whether we have got an array of categories (numeric) or of names
       $numeric = TRUE;
@@ -3533,23 +3533,43 @@ class surfer_admin extends base_db {
         }
       }
       if ($numeric) {
-        $fieldCondition = $this->databaseGetSQLCondition('surferdata_class', $fields);
+        $fieldCondition = $this->databaseGetSQLCondition('d.surferdata_class', $fields);
       } else {
-        $fieldCondition = $this->databaseGetSQLCondition('surferdata_name', $fields);
+        $fieldCondition = $this->databaseGetSQLCondition('d.surferdata_name', $fields);
       }
     }
     if ($fieldCondition != '') {
       $fieldCondition = " AND ".$fieldCondition;
     }
-    $sql = "SELECT surferdata_id, surferdata_name, surferdata_type,
-                   surferdata_values, surferdata_check, surferdata_class,
-                   surferdata_available, surferdata_mandatory, surferdata_order
-              FROM %s
-             WHERE surferdata_available = 1".
+
+    if ($getClasses = TRUE) {
+      $fieldSurferDataClassTitle = ", ct.surferdataclasstitle_name";
+      $joinSurferDataClassTitles = sprintf(
+        "JOIN %s AS ct ON (ct.surferdataclasstitle_classid = d.surferdata_class ".
+        "AND ct.surferdataclasstitle_lang = %d)",
+        $this->tableDataClassTitles,
+        $lng
+      );
+      $orderBySurferDataClassTitle = "ct.surferdataclasstitle_name, ";
+    } else {
+      $fieldSurferDataClassTitle = '';
+      $joinSurferDataClassTitles = '';
+      $orderBySurferDataClassTitle = '';
+    }
+
+    $sql = "SELECT d.surferdata_id, d.surferdata_name, d.surferdata_type,
+                   d.surferdata_values, d.surferdata_check, d.surferdata_class,
+                   d.surferdata_available, d.surferdata_mandatory, d.surferdata_order%s
+              FROM %s AS d
+              %s
+             WHERE d.surferdata_available = 1".
                    $fieldCondition."
-          ORDER BY surferdata_order, surferdata_name";
-    $sqlParams = array($this->tableData);
+          ORDER BY %sd.surferdata_order, d.surferdata_name";
+    $sqlParams = array(
+      $fieldSurferDataClassTitle, $this->tableData, $joinSurferDataClassTitles, $orderBySurferDataClassTitle
+    );
     $fields = array();
+
     if ($res = $this->databaseQueryFmt($sql, $sqlParams)) {
       while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
         $fields[] = $row;
@@ -3573,9 +3593,15 @@ class surfer_admin extends base_db {
         }
       }
     }
+
     // Create the edit fields
     $dynamicEditFields = array();
+    $lastClassTitle = NULL;
     foreach ($fields as $field) {
+      if ($getClasses == TRUE && $field['surferdataclasstitle_name'] != $lastClassTitle) {
+        $dynamicEditFields[] = $field['surferdataclasstitle_name'];
+        $lastClassTitle = $field['surferdataclasstitle_name'];
+      }
       $fieldName = $field['surferdata_name'];
       if ($prefix != '') {
         $fieldName = $prefix.'_'.$fieldName;
