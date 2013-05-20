@@ -1928,7 +1928,8 @@ class content_register extends base_content {
         $dynFields = $this->baseSurfers->getDynamicEditFields(
           $this->data['dynamic_class'],
           'dynamic',
-          $this->parentObj->topic['TRANSLATION']['lng_id']
+          $this->parentObj->topic['TRANSLATION']['lng_id'],
+          TRUE
         );
         $fields = array_merge($fields, $dynFields);
       }

@@ -49,3 +49,10 @@ img.communityUserAvatar {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+div.deleteAccount,
+div.deleteAccount form div.buttons {
+  margin-top: 1em;
+}
+div.deleteAccount fieldset {
+  margin: 0;
+}

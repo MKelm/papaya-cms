@@ -20,7 +20,7 @@
         <xsl:with-param name="pageContent" select="$pageContent"/>
       </xsl:call-template>
     </xsl:when>
-    <xsl:when test="$pageContent/@module = 'content_profile'">
+    <xsl:when test="$pageContent/@module = 'content_profile' or $pageContent/@module = 'ACommunitySurferEditorPage'">
       <xsl:call-template name="module-content-community-profile">
         <xsl:with-param name="pageContent" select="$pageContent"/>
       </xsl:call-template>
@@ -605,40 +605,31 @@
   <fieldset>
     <xsl:choose>
       <xsl:when test="$dialog/lines">
-        <xsl:for-each select="$dialog/lines//line[@fid != 'terms']">
-          <xsl:if test="$userDataDescriptions != false()">
-            <xsl:choose>
-              <xsl:when test="@fid = 'surfer_password_1'">
-                <p class="description">
-                  <xsl:value-of select="$userDataDescriptions/description-change-password/@content" />
-                </p>
-              </xsl:when>
-              <xsl:when test="@fid = 'surfer_new_email'">
-                <p class="description">
-                  <xsl:value-of select="$userDataDescriptions/description-change-email/@content" />
-                </p>
-              </xsl:when>
-            </xsl:choose>
-          </xsl:if>
-          <xsl:call-template name="dialog-field">
-            <xsl:with-param name="dialog" select="$dialog" />
-            <xsl:with-param name="field" select="." />
-            <xsl:with-param name="showMandatory" select="$showMandatory" />
-          </xsl:call-template>
-          <xsl:if test="$userDataDescriptions != false() and @fid = 'surfer_old_password'">
-            <p class="description">
-              <xsl:value-of select="$userDataDescriptions/description-enter-password/@content" />
-            </p>
-          </xsl:if>
-        </xsl:for-each>
-        <xsl:if test="$dialog/lines//line[@fid = 'terms']">
-          <xsl:call-template name="dialog-field">
-            <xsl:with-param name="dialog" select="$dialog" />
-            <xsl:with-param name="field" select="$dialog/lines//line[@fid = 'terms']" />
-            <xsl:with-param name="showMandatory" select="$showMandatory" />
-          </xsl:call-template>
-          <p><xsl:copy-of select="$terms" /></p>
-        </xsl:if>
+        <xsl:choose>
+          <xsl:when test="$dialog/lines/linegroup">
+            <xsl:for-each select="$dialog/lines/linegroup">
+              <xsl:if test="@caption and @caption != ''">
+                <h2><xsl:value-of select="@caption" /></h2>
+              </xsl:if>
+              <xsl:call-template name="dialog-content-lines">
+                <xsl:with-param name="dialog" select="$dialog" />
+                <xsl:with-param name="lines" select="line"/>
+                <xsl:with-param name="showMandatory" select="$showMandatory" />
+                <xsl:with-param name="userDataDescriptions" select="$userDataDescriptions" />
+                <xsl:with-param name="terms" select="$terms" />
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="dialog-content-lines">
+              <xsl:with-param name="dialog" select="$dialog" />
+              <xsl:with-param name="lines" select="$dialog/lines//line"/>
+              <xsl:with-param name="showMandatory" select="$showMandatory" />
+              <xsl:with-param name="userDataDescriptions" select="$userDataDescriptions" />
+              <xsl:with-param name="terms" select="$terms" />
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:when>
       <xsl:when test="$dialog/element/*">
         <xsl:for-each select="$dialog/element">
@@ -667,6 +658,49 @@
       <xsl:with-param name="submitButton" select="$submitButton" />
     </xsl:call-template>
   </fieldset>
+</xsl:template>
+
+<xsl:template name="dialog-content-lines">
+  <xsl:param name="dialog" />
+  <xsl:param name="lines" />
+  <xsl:param name="showMandatory" select="true()" />
+  <xsl:param name="userDataDescriptions" select="false()" />
+  <xsl:param name="terms" />
+
+  <xsl:for-each select="$lines[@fid != 'terms']">
+    <xsl:if test="$userDataDescriptions != false()">
+      <xsl:choose>
+        <xsl:when test="@fid = 'surfer_password_1'">
+          <p class="description">
+            <xsl:value-of select="$userDataDescriptions/description-change-password/@content" />
+          </p>
+        </xsl:when>
+        <xsl:when test="@fid = 'surfer_new_email'">
+          <p class="description">
+            <xsl:value-of select="$userDataDescriptions/description-change-email/@content" />
+          </p>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:if>
+    <xsl:call-template name="dialog-field">
+      <xsl:with-param name="dialog" select="$dialog" />
+      <xsl:with-param name="field" select="." />
+      <xsl:with-param name="showMandatory" select="$showMandatory" />
+    </xsl:call-template>
+    <xsl:if test="$userDataDescriptions != false() and @fid = 'surfer_old_password'">
+      <p class="description">
+        <xsl:value-of select="$userDataDescriptions/description-enter-password/@content" />
+      </p>
+    </xsl:if>
+  </xsl:for-each>
+  <xsl:if test="$lines[@fid = 'terms']">
+    <xsl:call-template name="dialog-field">
+      <xsl:with-param name="dialog" select="$dialog" />
+      <xsl:with-param name="field" select="$dialog/lines//line[@fid = 'terms']" />
+      <xsl:with-param name="showMandatory" select="$showMandatory" />
+    </xsl:call-template>
+    <p><xsl:copy-of select="$terms" /></p>
+  </xsl:if>
 </xsl:template>
 
 </xsl:stylesheet>

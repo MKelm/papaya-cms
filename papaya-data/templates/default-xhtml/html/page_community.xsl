@@ -6,7 +6,7 @@
   exclude-result-prefixes="#default"
 >
 <!--
-  @papaya:modules content_login, content_profile, content_userdata, content_register, content_register_dynamic, content_profile_change_confirmation
+  @papaya:modules content_login, content_profile, ACommunitySurferEditorPage, content_userdata, content_register, content_register_dynamic, content_profile_change_confirmation
 -->
 
 <!-- import main layout rules, this will import the default rules, too -->
