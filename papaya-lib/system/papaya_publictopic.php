@@ -229,7 +229,7 @@ class papaya_publictopic extends base_topic {
         $definition
       );
     } else {
-      return PapayaCacheIdentifierDefinitionBoolean(FALSE);
+      return new PapayaCacheIdentifierDefinitionBoolean(FALSE);
     }
   }
 
