@@ -1,6 +1,6 @@
 .galleryThumbnail {
   float: left;
-  padding: 20px;
+  padding: 0.4em;
 }
 a.galleryThumbnailFrame {
   display: block;

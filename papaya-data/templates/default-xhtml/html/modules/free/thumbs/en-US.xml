@@ -2,4 +2,7 @@
   <text ident="FILE_NAME">File</text>
   <text ident="FILE_DATE">Date</text>
   <text ident="FILE_SIZE">Size</text>
+  <text ident="NO_IMAGES">No images found.</text>
+  <text ident="ORIGINAL_IMAGE">Original image</text>
+  <text ident="IMAGE_DOWNLOAD">Download</text>
 </texts>

@@ -19,28 +19,30 @@
 </xsl:template>
 
 <xsl:template name="page-scripts-lazy">
-  <xsl:call-template name="link-script">
-    <xsl:with-param name="file">papaya/jquery.xmlns.js</xsl:with-param>
-  </xsl:call-template>
-  <xsl:call-template name="link-script">
-    <xsl:with-param name="file">papaya/jquery.papayaLightbox.js</xsl:with-param>
-  </xsl:call-template>
-  <xsl:call-template name="link-script">
-    <xsl:with-param name="file">papaya/jquery.papayaGallery.js</xsl:with-param>
-  </xsl:call-template>
- <script type="text/javascript"><xsl:comment>
-    jQuery(document).ready(
-      function() {
-        jQuery('#gallery').papayaGallery();
-      }
-    );
-  </xsl:comment></script>
+  <xsl:if test="/page/content/topic/options/mode/@lightbox = '1'">
+    <xsl:call-template name="link-script">
+      <xsl:with-param name="file">papaya/jquery.xmlns.js</xsl:with-param>
+    </xsl:call-template>
+    <xsl:call-template name="link-script">
+      <xsl:with-param name="file">papaya/jquery.papayaLightbox.js</xsl:with-param>
+    </xsl:call-template>
+    <xsl:call-template name="link-script">
+      <xsl:with-param name="file">papaya/jquery.papayaGallery.js</xsl:with-param>
+    </xsl:call-template>
+   <script type="text/javascript"><xsl:comment>
+      jQuery(document).ready(
+        function() {
+          jQuery('#gallery').papayaGallery();
+        }
+      );
+    </xsl:comment></script>
+  </xsl:if>
 </xsl:template>
 
 <xsl:template name="content-area">
   <xsl:param name="pageContent" select="content/topic"/>
   <xsl:choose>
-    <xsl:when test="$pageContent/@module = 'content_thumbs'">
+    <xsl:when test="$pageContent/@module = 'content_thumbs' or $pageContent/@module = 'ACommunitySurferGalleryPage'">
       <xsl:call-template name="module-content-thumbs">
         <xsl:with-param name="pageContent" select="$pageContent"/>
       </xsl:call-template>
@@ -72,14 +74,25 @@
           <xsl:with-param name="image" select="$pageContent/image" />
           <xsl:with-param name="imageTitle" select="$pageContent/imagetitle" />
           <xsl:with-param name="imageComment" select="$pageContent/imagecomment" />
+          <xsl:with-param name="originalImage" select="$pageContent/originalimage" />
+          <xsl:with-param name="imageDownload" select="$pageContent/imagedownload" />
           <xsl:with-param name="navigation" select="$pageContent/navigation" />
         </xsl:call-template>
       </xsl:when>
     </xsl:choose>
     <xsl:call-template name="float-fix"/>
-    <xsl:call-template name="module-content-thumbns-navigation">
-      <xsl:with-param name="navigation" select="$pageContent/navigation" />
-    </xsl:call-template>
+    <xsl:choose>
+      <xsl:when test="count($pageContent/thumbnails/thumb) &gt; 0 or count($pageContent/image) &gt; 0">
+        <xsl:call-template name="module-content-thumbns-navigation">
+          <xsl:with-param name="navigation" select="$pageContent/navigation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <div class="message"><xsl:call-template name="language-text">
+          <xsl:with-param name="text" select="'NO_IMAGES'"/>
+        </xsl:call-template></div>
+      </xsl:otherwise>
+    </xsl:choose>
   </div>
 </xsl:template>
 
@@ -94,30 +107,32 @@
            style="width: {$options/thumbwidth}px; height: {$options/thumbheight}px;"
            href="{a/@href}"
            title="{image/@title}">
-          <img src="{a/img/@src}" style="{a/img/@style}" alt="{a/img/@alt}"/>
+          <img src="{a/img/@src}" alt="{a/img/@alt}"/>
         </a>
       </div>
     </xsl:for-each>
-    <script type="text/javascript"><xsl:comment>
-      jQuery('#gallery').children().hide();
-      var galleryMapping = {
-        images : {
-          <xsl:for-each select="$thumbs">
-            <xsl:if test="position() &gt; 1">, </xsl:if>
-            <xsl:call-template name="javascript-escape-string">
-              <xsl:with-param name="string" select="a/@href" />
-            </xsl:call-template>
-            <xsl:text> : </xsl:text>
-            <xsl:call-template name="javascript-escape-string">
-              <xsl:with-param name="string" select="@for" />
-            </xsl:call-template>
-          </xsl:for-each>
-        },
-        getImageUrl : function(href) {
-          return (this.images[href]) ? this.images[href] : href;
-        }
-      };
-    </xsl:comment></script>
+    <xsl:if test="$options/mode/@lightbox = '1'">
+      <script type="text/javascript"><xsl:comment>
+        jQuery('#gallery').children().hide();
+        var galleryMapping = {
+          images : {
+            <xsl:for-each select="$thumbs">
+              <xsl:if test="position() &gt; 1">, </xsl:if>
+              <xsl:call-template name="javascript-escape-string">
+                <xsl:with-param name="string" select="a/@href" />
+              </xsl:call-template>
+              <xsl:text> : </xsl:text>
+              <xsl:call-template name="javascript-escape-string">
+                <xsl:with-param name="string" select="@for" />
+              </xsl:call-template>
+            </xsl:for-each>
+          },
+          getImageUrl : function(href) {
+            return (this.images[href]) ? this.images[href] : href;
+          }
+        };
+      </xsl:comment></script>
+    </xsl:if>
   </xsl:if>
 </xsl:template>
 
@@ -125,17 +140,19 @@
   <xsl:param name="image" />
   <xsl:param name="imageTitle" />
   <xsl:param name="imageComment" />
+  <xsl:param name="originalImage" />
+  <xsl:param name="imageDownload" />
   <xsl:param name="navigation" />
   <xsl:if test="$image">
     <div class="galleryImage">
       <xsl:choose>
         <xsl:when test="$navigation/navlink[@dir='index']">
           <a href="{$navigation/navlink[@dir='index']/@href}">
-            <img src="{$image/img/@src}" style="{$image/img/@style}" alt="{$image/img/@alt}"/>
+            <img src="{$image/img/@src}" alt="{$image/img/@alt}"/>
           </a>
         </xsl:when>
         <xsl:otherwise>
-          <img src="{$image/img/@src}" style="{$image/img/@style}" alt="{$image/img/@alt}"/>
+          <img src="{$image/img/@src}" alt="{$image/img/@alt}"/>
         </xsl:otherwise>
       </xsl:choose>
       <xsl:if test="$imageTitle">
@@ -145,6 +162,16 @@
         <div class="comment">
           <xsl:apply-templates select="$imageComment/node()"/>
         </div>
+      </xsl:if>
+      <xsl:if test="$originalImage">
+        <div class="originalImage"><a href="{$originalImage/@href}"><xsl:call-template name="language-text">
+          <xsl:with-param name="text" select="'ORIGINAL_IMAGE'"/>
+        </xsl:call-template></a></div>
+      </xsl:if>
+      <xsl:if test="$imageDownload">
+        <div class="imageDownload"><a href="{$imageDownload/@href}"><xsl:call-template name="language-text">
+          <xsl:with-param name="text" select="'IMAGE_DOWNLOAD'"/>
+        </xsl:call-template></a></div>
       </xsl:if>
     </div>
   </xsl:if>

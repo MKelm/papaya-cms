@@ -65,10 +65,18 @@ class content_thumbs extends base_content {
 
     'Images',
     'display_title' => array('Display title?', 'isNoHTML', TRUE, 'translatedcombo',
-       array('false' => 'no', 'true' => 'yes'), 'Display title in lightbox?', 'false'),
-    'show_mode' => array('Large images', 'isNum', TRUE, 'translatedcombo',
+       array('false' => 'no', 'true' => 'yes'), NULL, 'false'),
+    'display_comment' => array('Display comment?', 'isNoHTML', TRUE, 'translatedcombo',
+       array('false' => 'no', 'true' => 'yes'), NULL, 'false'),
+    'show_lightbox' => array('Display in lightbox?', 'isNum', TRUE, 'yesno', NULL, NULL, '1'),
+    'show_mode' => array('Display mode', 'isNum', TRUE, 'translatedcombo',
       array(
-        0 => 'Show resized', 1 => 'Show original', 2 => 'Download', 3 => 'Download + Resized'
+        0 => 'Resized image', 
+        4 => 'Resized image with original image link',
+        5 => 'Resized image with download link',
+        1 => 'Original image',
+        2 => 'Original image download', 
+        3 => 'Resized image download'
       ), '', 0
     ),
     'width' => array('Width', 'isNum', TRUE, 'input', 5, '', 640),
@@ -174,19 +182,29 @@ class content_thumbs extends base_content {
       (int)$this->data['height']
     );
     switch ($this->data['show_mode']) {
-    case 2 : //download images
+    case 5 : // show resized images with download image links
+      $mode = 'resized-with-download-link';
+      break;
+    case 4 : // show resized images with original links
+      $mode = 'resized-with-original-link';
+      break;
+    case 3 : // download resized images
+      $mode = 'download-resized';
+      break;
+    case 2 : // download images
       $mode = 'download';
       break;
-    case 1 : //show originals
+    case 1 : // show original images
       $mode = 'original';
       break;
     case 0 :
-    default :
+    default : // show resized images
       $mode = 'resized';
       break;
     }
     $result .= sprintf(
-      '<mode>%s</mode>'.LF,
+      '<mode lightbox="%d">%s</mode>'.LF,
+      papaya_strings::escapeHTMLChars($this->data['show_lightbox']),
       papaya_strings::escapeHTMLChars($mode)
     );
     $result .= sprintf(
@@ -277,18 +295,46 @@ class content_thumbs extends base_content {
       );
 
       $result .= '</image>';  // end image block
-      if (!empty($filesTrans[$file['file_id']]['file_title'])) {
+      if ($this->data['display_title'] == 'true' &&
+          !empty($filesTrans[$file['file_id']]['file_title'])) {
         $result .= sprintf(
            '<imagetitle>%s</imagetitle>',
            papaya_strings::escapeHTMLChars($filesTrans[$file['file_id']]['file_title'])
         );
       }
       // image comment
-      if (!empty($filesTrans[$file['file_id']]['file_description'])) {
+      if ($this->data['display_comment'] == 'true' &&
+          !empty($filesTrans[$file['file_id']]['file_description'])) {
         $result .= sprintf(
           '<imagecomment>%s</imagecomment>',
           $this->getXHTMLString($filesTrans[$file['file_id']]['file_description'], TRUE)
         );
+      }
+      // original image or image download
+      if ($this->data['show_mode'] == 4 || $this->data['show_mode'] == 5) {
+        if (!empty($filesTrans[$file['file_id']]) && 
+            !empty($filesTrans[$file['file_id']]['file_title'])) {
+          $fileTitle = $filesTrans[$file['file_id']]['file_title'];
+        } else {
+          $fileTitle = '';
+        }
+        $imageHref = $this->getWebMediaLink(
+          $file['file_id'], 
+          $this->data['show_mode'] == 4 ? 'media' : 'download', 
+          $fileTitle, 
+          $file['mimetype_ext']
+        );
+        if ($this->data['show_mode'] == 4) {
+          $result .= sprintf(
+            '<originalimage href="%s" />',
+            papaya_strings::escapeHTMLChars($imageHref)
+          );
+        } else {
+          $result .= sprintf(
+            '<imagedownload href="%s" />',
+            papaya_strings::escapeHTMLChars($imageHref)
+          );
+        }
       }
 
       // navigation control block
@@ -404,7 +450,7 @@ class content_thumbs extends base_content {
         }
         // build a direct link to the image's thumb, will generate it if needed
         switch ($this->data['show_mode']) {
-        case 3 : //download images and resized version
+        case 3 : // download images resized version
           $forHref = $this->getWebMediaLink(
             $thumbnailObj->getThumbnail(
               $file['file_id'],
@@ -421,7 +467,7 @@ class content_thumbs extends base_content {
             $file['file_id'], 'download', $fileTitle, $file['mimetype_ext']
           );
           break;
-        case 2 : //download images no resized versions
+        case 2 : // download image no resized version
           $forHref = $this->getWebMediaLink(
             $file['file_id'], 'media', $fileTitle, $file['mimetype_ext']
           );
@@ -431,7 +477,7 @@ class content_thumbs extends base_content {
             $file['file_id'], 'download', $fileTitle, $file['mimetype_ext']
           );
           break;
-        case 1 : //direct image links
+        case 1 : // show original image
           $forHref = $this->getWebMediaLink(
             $file['file_id'], 'media', $fileTitle, $file['mimetype_ext']
           );
@@ -439,7 +485,9 @@ class content_thumbs extends base_content {
           $imageHeight = $file['height'];
           $href = $forHref;
           break;
-        case 0 : //resized images
+        case 5 : // show resized image page with download link
+        case 4 : // show resized image page with original link
+        case 0 : // show resized image page
         default :
           $forHref = $this->getWebMediaLink(
             $thumbnailObj->getThumbnail(

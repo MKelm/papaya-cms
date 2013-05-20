@@ -2,4 +2,6 @@
   <text ident="FILE_NAME">Fichier</text>
   <text ident="FILE_DATE">Date</text>
   <text ident="FILE_SIZE">Dimension</text>
+  <text ident="ORIGINAL_IMAGE">Original peinture</text>
+  <text ident="IMAGE_DOWNLOAD">Téléchargement</text>
 </texts>
