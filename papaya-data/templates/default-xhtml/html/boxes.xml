@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <boxes>
   <styles>
-    <!-- 
-      css files included in page head 
+    <!--
+      css files included in page head
 
       Syntax: <file module="foo" file="foo.css"/>
     -->
@@ -23,33 +23,47 @@
     <file module="actionbox_catalog_limited_content" file="box_catalog_limited_content.css" />
     <file module="actionbox_catalog_related_categories" file="box_catalog_related_list.css" />
     <file module="actionbox_quiz" file="box_quiz.css" />
-    
+
     <file module="actionbox_forum" file="box_forum.css" />
     <file module="actionbox_comments" file="box_forum.css" />
     <file module="actionbox_lastentries" file="box_forum.css" />
-    
+
     <file module="actionbox_nextdates_tag" file="box_calendar.css" />
     <file module="actionbox_calendar_tag" file="box_calendar.css" />
     <file module="actionbox_calendar" file="box_calendar.css" />
-    
+
     <file module="actbox_linkdb" file="box_linkdb.css" />
-    
+
     <file module="actionbox_searchbox" file="box_mnogo.css" />
-  </styles>  
+
+    <file module="ACommunityPageCommentsBox" file="box_acommunity_comments.css" />
+    <file module="ACommunitySurferCommentsBox" file="box_acommunity_comments.css" />
+    <file module="ACommunityImageCommentsBox" file="box_acommunity_comments.css" />
+    <file module="ACommunityCommentsRankingBox" file="box_acommunity_comments.css" />
+    <file module="ACommunityCommentersRankingBox" file="box_acommunity_commenters.css" />
+    <file module="ACommunitySurferStatusBox" file="box_acommunity_surfer_status.css" />
+    <file module="ACommunitySurferContactsBox" file="box_acommunity_surfers.css" />
+    <file module="ACommunitySurfersLastActionBox" file="box_acommunity_surfers.css" />
+    <file module="ACommunitySurfersRegistrationBox" file="box_acommunity_surfers.css" />
+    <file module="ACommunityMessageConversationsBox" file="box_acommunity_message_conversations.css" />
+    <file module="ACommunitySurferGalleryTeaserBox" file="box_acommunity_surfer_gallery_teaser.css" />
+    <file module="ACommunitySurferGalleryUploadBox" file="box_acommunity_surfer_gallery_upload.css" />
+    <file module="ACommunitySurferGalleryFoldersBox" file="box_acommunity_surfer_gallery_folders.css" />
+  </styles>
   <scripts>
-    <!-- 
+    <!--
       javascript files included in page head
-     
+
       Syntax: <file module="foo" file="foo.js"/>
     -->
 
-  </scripts>  
+  </scripts>
   <scripts-lazy>
-    <!-- 
+    <!--
       javascript files included just before page boday end
-     
+
       Syntax: <file module="bar" file="bar.js"/>
     -->
-  
+
   </scripts-lazy>
 </boxes>
