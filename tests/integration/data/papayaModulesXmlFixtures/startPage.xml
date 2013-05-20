@@ -1,0 +1,208 @@
+<content>
+  <topic no="36" href="home.36.xml.preview" author="Jan Zerebecki" created="__date__" createdRFC822="__date_rfc822__" published="__date__" audited="" module="content_imgtopic" guid="__md5hash__">
+    <title encoded="Papaya%20Demo">
+      Papaya Demo
+    </title>
+    <subtitle>
+      Subtitle
+    </subtitle>
+    <teaser>
+      Teaser
+    </teaser>
+    <text>
+      <ul>
+        <li>
+          all views
+          <ul>
+            <li>
+              all templates that are done
+            </li>
+            <li>
+              free modules
+            </li>
+          </ul>
+        </li>
+        <li>
+          pages for all features of the views/modules
+        </li>
+        <li>
+          all language that are supported by the templates
+        </li>
+      </ul>
+      The following email addresses are used in this installation:
+      <br/>
+      <ul>
+        <li>
+          Papaya Demo Installation demo-install-papaya@example.com
+        </li>
+        <li>
+          Papaya Demo Admin demo-admin@papaya-cms.com
+        </li>
+      </ul>
+      TODO:
+      <br/>
+      <ul>
+        <li>
+          export stuff
+          <ul>
+            <li>
+              views
+            </li>
+            <li>
+              community groups / permissions / dynamic fields
+              <br/>
+            </li>
+            <li>
+              mediadb folders / permissions / files
+            </li>
+            <li>
+              boxes and their groups
+            </li>
+            <li>
+              pages
+            </li>
+            <li>
+              feedback forms
+            </li>
+            <li>
+              LinkDB
+            </li>
+            <li>
+              countries reset by visiting application
+            </li>
+            <li>
+              Forum
+            </li>
+          </ul>
+        </li>
+        <li>
+          templates, pages
+          <ul>
+            <li>
+              Surfer Avatar Upload
+            </li>
+            <li>
+              Contact page
+            </li>
+            <li>
+              User Contacts
+            </li>
+            <li>
+              Login Page
+            </li>
+            <li>
+              User Profile
+            </li>
+            <li>
+              Dynamic User Registration
+            </li>
+            <li>
+              User Registration
+            </li>
+            <li>
+              User Data and List
+            </li>
+            <li>
+              User Data
+            </li>
+            <li>
+              Mixed user data
+            </li>
+            <li>
+              State List XML
+            </li>
+            <li>
+              Comment site per mail
+            </li>
+            <li>
+              Send site per mail
+            </li>
+            <li>
+              Last Entries Page
+            </li>
+          </ul>
+        </li>
+        <li>
+          templates, boxes
+          <ul>
+            <li>
+              Categ Teaser
+            </li>
+            <li>
+              Categ Teaser with thumb
+            </li>
+            <li>
+              Navigation (previous/next)
+            </li>
+            <li>
+              Tag Teaser
+            </li>
+            <li>
+              Tag Teaser with thumb
+            </li>
+            <li>
+              Contact List Box
+            </li>
+            <li>
+              Contact Status Box
+            </li>
+            <li>
+              Login by Handle Box
+            </li>
+            <li>
+              Surfers Online Box
+            </li>
+            <li>
+              Comments Box
+            </li>
+            <li>
+              Forum Box
+            </li>
+            <li>
+              Last Entries Box
+            </li>
+          </ul>
+        </li>
+        <li>
+          categteaser box
+        </li>
+        <li>
+          categteaserimage box
+        </li>
+        <li>
+          prevnext box
+        </li>
+        <li>
+          categimg page
+        </li>
+        <li>
+          other output modules (feeds: all except cooliris, pdf)
+        </li>
+        <li>
+          domain stuff?
+        </li>
+        <li>
+          feedback form: correct validation functions
+        </li>
+        <li>
+          forum entries
+        </li>
+        <li>
+          add further examples of what the richtext editor can output
+        </li>
+        <li>
+          Test Tag URI?
+        </li>
+        <li>
+          modules of type image,time,cronjob,alias
+        </li>
+        <li>
+          options?
+        </li>
+        <li>
+          find better groups for existing boxes
+        </li>
+      </ul>
+    </text>
+  </topic>
+</content>

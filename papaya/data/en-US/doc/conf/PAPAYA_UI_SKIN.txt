@@ -1,0 +1,1 @@
+Theme for the administration backend of papaya CMS.

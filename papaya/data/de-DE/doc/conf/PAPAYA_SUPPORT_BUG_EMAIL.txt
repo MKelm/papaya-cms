@@ -1,0 +1,1 @@
+Die E-Mail-Adresse, an die Bugreports gesendet werden. Bugreports enthalten Fehlermeldungen des Systems, die auch aktuelle Systemeinstellungen beinhalten können.

@@ -1,0 +1,16 @@
+ul.relatedCatalog {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.relatedCatalog li.oneRelatedCategorie {
+  padding-left: 0;
+}
+ul.relatedCatalog li.oneRelatedCategorie ul.relatedPathList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.relatedCatalog li.oneRelatedCategorie ul.relatedPathList li.oneRelatedPath {
+  padding-left: 0;
+}

@@ -1,0 +1,1 @@
+Anzahl der Nachrichten, die im Abschnitt „Nachrichten“ angezeigt werden sollen.

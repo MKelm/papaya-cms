@@ -1,0 +1,1 @@
+Standard-Protokoll für Webseiten. Folgende Optionen sind auswählbar:<ul><li>None: Standardeinstellung ohne spezifische Protokollauswahl.<br /></li><li>http: Ausschließlich HTTP<br /></li><li>https: Ausschließlich HTTPS<br /></li></ul>

@@ -1,0 +1,1 @@
+"On" to output log and debug messages as formatted XHTML on the output pages themselves, otherwise "Off". Please note that the messages are output during page creation so that you might end up with a <em>headers already sent</em> warning.

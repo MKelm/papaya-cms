@@ -1,0 +1,1 @@
+Path to the papaya installation directory, starting from DocumentRoot. When you have installed papaya CMS in a subdirectory, you have to enter the name of this subdirectory into this field.

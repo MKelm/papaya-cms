@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table name="cities" prefix="yes" type="transactions">
+  <fields>
+    <field name="city_id" type="string" size="8" null="no"/>
+    <field name="city_state" type="string" size="8" null="no"/>
+    <field name="city_country" type="string" size="8" null="no"/>
+    <field name="city_name" type="string" size="100" null="no"/>
+    <field name="city_lat_long" type="string" size="100" null="no"/>
+    <field name="city_comment" type="string" size="65535" null="yes"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>city_id</field>
+      <field>city_state</field>
+      <field>city_country</field>
+    </primary-key>
+    <key name="city_name">
+      <field>city_name</field>
+    </key>
+  </keys>
+</table>
+

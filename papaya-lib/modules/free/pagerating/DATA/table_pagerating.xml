@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="pagerating" prefix="yes">
+<fields>
+<field name="result_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="topic_id" type="integer" size="8"  null="no"/>
+<field name="answer_id" type="integer" size="8"  null="no"/>
+<field name="user_id" type="integer" size="8"  null="no"/>
+<field name="surfer_ip" type="string" size="25"  null="no"/>
+<field name="surfer_time" type="integer" size="8"  null="no"/>
+<field name="surfer_cookie" type="string" size="32"  null="no"/>
+<field name="lng_id" type="integer" size="8"  null="no"/>
+<field name="date" type="integer" size="8"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>result_id</field></primary-key>
+</keys>
+</table>

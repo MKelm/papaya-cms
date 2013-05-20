@@ -1,0 +1,30 @@
+<texts>
+  <text ident="PERIOD">Period</text>
+  <text ident="SELECTED DATE">Selected date</text>
+  <text ident="JANUARY">January</text>
+  <text ident="FEBRUARY">February</text>
+  <text ident="MARCH">March</text>
+  <text ident="APRIL">April</text>
+  <text ident="MAY">May</text>
+  <text ident="JUNE">June</text>
+  <text ident="JULY">July</text>
+  <text ident="AUGUST">August</text>
+  <text ident="SEPTEMBER">September</text>
+  <text ident="OCTOBER">October</text>
+  <text ident="NOVEMBER">November</text>
+  <text ident="DECEMBER">December</text>
+  <text ident="MO">Mo</text>
+  <text ident="TU">Tu</text>
+  <text ident="WE">We</text>
+  <text ident="TH">Th</text>
+  <text ident="FR">Fr</text>
+  <text ident="SA">Sa</text>
+  <text ident="SU">Su</text>
+  <text ident="MONDAY">Monday</text>
+  <text ident="TUESDAY">Tuesday</text>
+  <text ident="WEDNESDAY">Wednesday</text>
+  <text ident="THURSDAY">Thursday</text>
+  <text ident="FRIDAY">Friday</text>
+  <text ident="SATURDAY">Saturday</text>
+  <text ident="SUNDAY">Sunday</text>
+</texts>

@@ -1,0 +1,28 @@
+<texts>
+  <text ident="FORUM_CAPTION_TITLE">Sujet</text>
+  <text ident="FORUM_CAPTION_AUTHOR">Auteur</text>
+  <text ident="FORUM_CAPTION_ANSWERS">Réponses</text>
+  <text ident="FORUM_CAPTION_LAST_MODIFIED">Dernière mise à jour</text>
+  <text ident="FORUM_CAPTION_CREATED">Créé</text>
+  <text ident="FORUM_CAPTION_FORUM">Forum</text>
+  <text ident="FORUM_CAPTION_CATEGORY">Catégorie</text>
+  <text ident="FORUM_CAPTION_CONTENT">Content</text>
+  <text ident="FORUM_CAPTION_LAST_ENTRY">Dernière entrée</text>
+  <text ident="FORUM_CAPTION_EDIT_DATE">Dernière édition</text>
+
+  <text ident="FORUM_CAPTION_AUTHOR_GROUP">Groupe</text>
+  <text ident="FORUM_CAPTION_LAST_LOGIN">Dernière connexion</text>
+  <text ident="FORUM_CAPTION_REGISTRATION">Régistration</text>
+
+  <text ident="FORUM_CONTENT">Pas de contenu.</text>
+  <text ident="FORUM_NO_ENTRIES">Pas d'entrées.</text>
+  <text ident="FORUM_THREAD_COUNT">Threads</text>
+  <text ident="FORUM_ENTRY_COUNT">Entrées</text>
+  <text ident="FORUM_CATEGORY_COUNT">Catégories</text>
+  <text ident="FORUM_USER_UNVERIFIED">(non vérifié)</text>
+  <text ident="SUBSCRIBE">S'abonner</text>
+  <text ident="UNSUBSCRIBE">Se désabonner</text>
+  <text ident="CITE">сiter</text>
+  <text ident="REPLY">réponse</text>
+  <text ident="FORUM_DATE_NEVER">jamais</text>
+</texts>

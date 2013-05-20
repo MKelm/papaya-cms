@@ -1,0 +1,1 @@
+„On“, wenn PHP-Fehlermeldungen durch papaya CMS abgefangen werden sollen. „Off“, wenn PHP die Meldungen ausgeben soll.

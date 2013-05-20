@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="actions" prefix="yes">
+  <fields>
+    <field name="action_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="action_group" type="integer" size="4" null="no"/>
+    <field name="action_name" type="string" size="100" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>action_id</field>
+    </primary-key>
+    <key name="action_group">
+      <field>action_group</field>
+    </key>
+    <key name="action_name">
+      <field>action_name</field>
+    </key>
+  </keys>
+</table>

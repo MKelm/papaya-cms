@@ -1,0 +1,11 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Email (deprecated)</name>
+  <description>Email contains old modules for several types of web forms</description>
+  <modules>
+    <module type="page" guid="9d43efebe0b94ebbbc68d9cb38546305" name="XML feedback form" class="content_form" file="content_form.php">A feedback form whose fields are defined in an xml file.</module>
+    <module type="box" guid="71951f99adb3b37c1e6e9281c2c8837d" name="XML feedback box" class="actionbox_form" file="actionbox_form.php">A feedback form whose fields are defined in an xml file.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

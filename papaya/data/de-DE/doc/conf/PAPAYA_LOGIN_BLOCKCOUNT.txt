@@ -1,0 +1,1 @@
+Anzahl der erlaubten Anmeldeversuche innerhalb des Zeitraumes. Jeder weitere Anmeldeversuch führt zu einer Sperre des Kontos.

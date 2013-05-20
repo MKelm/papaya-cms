@@ -1,0 +1,1 @@
+„On“, wenn beim Veröffentlichen von Seiten ein Änderungsgrad ausgewählt werden muss, andernfalls „Off“.

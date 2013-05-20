@@ -1,0 +1,1 @@
+Kommaseparierte Liste der Elemente, die im Style-Auswahldialog im Rich-Text-Editor ausgewählt werden können, um markierten Text zu formatieren. Diese Liste wird für die reduzierte Darstellung des Rich-Text-Editors benutzt.

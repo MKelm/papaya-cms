@@ -1,0 +1,1 @@
+"On", um Protokoll- und Debug-Meldungen als formatiertes XHTML auf den Ausgabeseiten selbst auszugeben, andernfalls "Off". Bitte beachten Sie, dass die meldungen während der Seitenerzeugung ausgegeben werden, so dass Sie möglicherweise eine <em>Header bereits gesendet</em>-Warnung erhalten.

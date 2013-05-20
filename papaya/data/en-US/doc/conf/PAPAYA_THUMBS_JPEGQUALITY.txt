@@ -1,0 +1,1 @@
+JPEG quality used when images are scaled or image thumbnails created.

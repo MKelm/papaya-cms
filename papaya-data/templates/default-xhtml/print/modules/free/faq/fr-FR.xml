@@ -1,0 +1,7 @@
+<texts>
+  <text ident="FAQ_NO_GROUPS">La FAQ sélectionnée ne contient pas de groupes.</text>
+  <text ident="FAQ_NO_ENTRIES">La FAQ sélectionnée ne contient pas d'entrées.</text>
+  <text ident="FAQ_NO_SEARCHRESULT">La recherche ne correspond à aucun résultat.</text>
+  <text ident="FAQ_INVALID_SEARCH">La demande de recherche est invalide.</text>
+  <text ident="FAQ_COMMENT_ADD">Ajouter commentaire</text>
+</texts>

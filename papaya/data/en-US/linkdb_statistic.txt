@@ -1,0 +1,4 @@
+<p>
+Statistics unavailable.
+</p>
+<p>Statistics are only created after at least one link has been clicked.</p>

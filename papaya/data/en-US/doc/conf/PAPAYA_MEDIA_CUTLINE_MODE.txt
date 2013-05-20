@@ -1,0 +1,1 @@
+The cutline mode determines the style of the image subtitle:<ul><li><em>explicit only</em>. The <code>title</code> attribute is output only when the image title has been given explicitly.<br /></li><li><em>title (source)</em>: The title of the image as well as the image source (in parentheses) is used per default for the title attribute.<br /></li></ul>

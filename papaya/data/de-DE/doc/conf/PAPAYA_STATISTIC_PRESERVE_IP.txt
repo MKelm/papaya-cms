@@ -1,0 +1,1 @@
+„on“, wenn für die Nutzungsstatistik der Website die IP-Adressen der Nutzer im Klartext gespeichert werden sollen, andernfalls „off“ (Standardeinstellung). In der Standardeinstellung wird lediglich der Hashwert der IP-Adresse in der Datenbank gespeichert, um Klickpfade zu identifizieren.

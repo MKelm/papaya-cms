@@ -1,0 +1,1 @@
+„On“, wenn das Verschieben von Seiten in der Sitemap oder der Seitenansicht protokolliert werden soll, andernfalls „Off“.

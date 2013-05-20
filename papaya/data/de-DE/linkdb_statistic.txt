@@ -1,0 +1,7 @@
+<p>
+Keine Statistik vorhanden.
+</p>
+<p>
+Eine Statistik wird dann erstellt, wenn mindestens ein Link auf der Seite angeklickt wird.
+Erst dann wird dieser Bereich verfügbar sein.
+</p>

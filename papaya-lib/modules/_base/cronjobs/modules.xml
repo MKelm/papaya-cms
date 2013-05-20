@@ -1,0 +1,11 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+<modulegroup>
+  <name>Cronjobs</name>
+  <description>Cronjob provides modules that run scheduled commands automatically, at a user-defined interval.</description>
+  <modules>
+    <module type="cronjob" guid="31959be6846042eadfafbb0afc986730" name="Reminders for Todos" class="cronjob_todos_reminder" file="cronjob_todos_reminder.php">Send emails to remind papaya users of their tasks.</module>
+  </modules>
+  <tables>
+  <table name="cronjobs"/>
+  </tables>
+</modulegroup>

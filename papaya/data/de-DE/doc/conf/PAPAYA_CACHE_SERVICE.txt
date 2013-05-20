@@ -1,0 +1,1 @@
+Auswahl des Cache-Dienstes:<ul><li><em>APC</em>: Alternative PHP Cache, der neben dem Bytecode-Cache auch einen User-Cache enthält.<br /></li><li><em>File system</em>: Dateisystem<br /></li><li><em>Memcache</em>: Memcache-Daemon<br /></li></ul>

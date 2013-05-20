@@ -1,0 +1,75 @@
+body{
+	font: 10pt/1.5 Verdana, Arial, Helvetica, sans-serif;
+	background: #fff;
+	margin: 0 5%;
+	color:#000;
+}
+
+@media print {
+  * {
+  background-color: white !important;
+  background-image: none !important;
+  }
+}
+
+/* =Links
+----------------------------------------------- */
+* {outline:none; color: #000;}
+a {text-decoration:none; }
+#page a[href]:after {
+   content: " (" attr(href) ") ";
+   font-size: 90%;
+}
+ 
+#page a {text-decoration:underline;}
+a:link, a:visited{ color: #890000; background-color:inherit;}
+a:hover, a:active{color: #004C00; background-color:inherit; }
+img {border:none;}
+
+
+
+/* =Seitenstruktur
+----------------------------------------------- */
+#container, #page, #wrapper, #main-boxes .box, #main, #pageAdditional{
+	background: none;
+	border: none;
+	float: none;
+	width: 100%;
+}
+#pageAdditional {
+	page-break-inside: avoid;
+	page-break-before: auto;
+
+}
+#subnav, #nav, #left {display:none;}
+#header {
+	background: none;
+	border: none;
+	height: auto;
+}
+
+/* =Elements
+----------------------------------------------- */
+h1,h2,h3,h4,h5,h6, #logo h2, #logo h4{
+	color:#000;
+	margin:0;
+	padding:0;
+	background-color:inherit;
+}
+h2 {font-size:1.4em;font-weight:normal; line-height:1.4em;}
+h3,h4,h5{font-size:1.2em;line-height:1.2em;}
+p{margin:0; padding: 0 0 1em 0}
+
+h1 .subTitle {
+	font-size: 80%;
+}
+
+
+/* =Footer
+----------------------------------------------- */
+#footer{
+	color: #999;
+	font-size: 95%;
+	background: none;
+}
+#footer p{ padding: 60px 15px 30px;}

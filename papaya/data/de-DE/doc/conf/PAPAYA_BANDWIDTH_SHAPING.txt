@@ -1,0 +1,1 @@
+„on“, um den Datenfluss beim Senden von Dateien zu kontrollieren (traffic oder bandwidth shaping), andernfalls „off“.

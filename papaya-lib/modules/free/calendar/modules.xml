@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modulegroup>
+  <name>Calendar</name>
+  <description>The Calendar package enables you to manage dates. You can publish dates on your website. Dates can be tagged.</description>
+  <modules>
+    <module type="box" guid="b7b76093f4365482c94bd3c4ad1262f0" name="Next dates box with tag filter" class="actionbox_nextdates_tag" file="actbox_nextdates_tag.php">Shows the upcoming dates. Dates can optionally be filtered by tags.</module>
+    <module type="box" guid="cc8dd67ba3293f8c03703eb8832ce222" name="Month calendar box with tag filter" class="actionbox_calendar_tag" file="actbox_calendar_tag.php">A monthly calendar highlighting the dates of the current month. Dates can optionally be filtered by tags.</module>
+    <module type="page" guid="bf6c569224a1324e4e558a7d23fc9d10" name="Calendar page with tag filter" class="content_calendar_tag" file="content_calendar_tag.php">Shows the content of a selected date - or an overview of upcoming events. Dates can be filtered by tags.</module>
+    <module type="page" guid="9aac8b2846426ea45b2cb743d2af1c85" name="Calendar editor for surfers" class="content_calendar_editor" file="content_calendar_editor.php">A frontend editing component for surfers. Surfers can create and edit their own dates.</module>
+    <module type="admin" guid="da08a8713c0b4d425c715bd9ea974543" name="Calendar" class="edmodule_calendar" file="edmodule_calendar.php" glyph="calendar.png">Create and manage dates for the calender modules.</module>
+    <module type="date" guid="25295ec246600e6f91a819e345acc3f4" name="HTML date box" class="datebox_html" file="datebox_html.php">Simple HTML content module for calendar dates.</module>
+    <module type="date" guid="71fcba48b37783e7d298f0bf9d4762f3" name="HTML date box with link" class="datebox_html_link" file="datebox_html_link.php">Simple HTML content module for calendar dates with a link.</module>
+    <module type="connector" guid="726dd37a95d03017d08781fd1052359a" name="Connector to the Calendar Object" class="connector_calendar" file="connector_calendar.php">Connector module to the Calendar-Object.</module>
+  </modules>
+  <tables>
+    <table name="calendar"/>
+    <table name="calendar_trans"/>
+    <table name="calendar_reg"/>
+    <table name="calendar_reg_ignore"/>
+    <table name="calendar_reg_trans"/>
+  </tables>
+</modulegroup>

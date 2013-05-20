@@ -1,0 +1,1 @@
+Maximum number of versions to keep in the database for each page. When this number is reached, each new version that is going to be published will cause to overwrite the oldest version without any further notice.

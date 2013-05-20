@@ -1,0 +1,1 @@
+Number of allowed login attempts within the given period of time. Any additional login attempt will block the account used.

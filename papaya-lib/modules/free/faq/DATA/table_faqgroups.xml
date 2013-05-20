@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="faqgroups" prefix="yes">
+<fields>
+<field name="faqgroup_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="faqgroup_title" type="string" size="150"  null="no"/>
+<field name="faqgroup_descr" type="string" size="65535"  null="no"/>
+<field name="faqgroup_position" type="integer" size="8"  null="no"/>
+<field name="faq_id" type="integer" size="4"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>faqgroup_id</field></primary-key>
+<key name="faqnr">
+<field>faq_id</field><field>faqgroup_position</field><field>faqgroup_title</field></key>
+</keys>
+</table>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>  
+<modulegroup>
+  <name>Youtube</name>
+  <description></description>
+  <prefix>PapayaModuleYoutube</prefix>
+  <modules>
+    <module 
+      type="page"
+      guid="1faaf9a445cf224cd1db442fb308f79a"
+      name="Youtube video page"
+      class="PapayaModuleYoutubeVideoPage"
+      file="Video/Page.php">Youtube video Page</module>
+    <module type="box"
+      guid="2183f3f34e7267708701acba5c578fbf"
+      name="Youtube video box"
+      class="PapayaModuleYoutubeVideoBox"
+      file="Video/Box.php">Youtube video box</module>
+  </modules>
+</modulegroup>

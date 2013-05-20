@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<papaya-theme>
+  <name>Default Papaya Theme</name>
+  <version number="1.0" date="2007-04-16" />
+  <author>Papaya Software GmbH</author>
+  <description>This is the default theme.</description>
+  <thumbs>
+    <thumb size="medium" src="default48.jpg" />
+    <thumb size="large" src="default100.jpg" />
+  </thumbs>
+  <templates directory="default-xhtml" />
+  <dynamic-values>
+  </dynamic-values>
+</papaya-theme>

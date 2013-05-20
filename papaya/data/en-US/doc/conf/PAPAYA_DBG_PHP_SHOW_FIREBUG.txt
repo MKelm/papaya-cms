@@ -1,0 +1,1 @@
+"On" to let the firefox add on "Firebug" display the debug messages from papaya CMS, otherwise "Off".

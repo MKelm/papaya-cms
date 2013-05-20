@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="quiz_group_trans" prefix="yes">
+<fields>
+<field name="groupdetail_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="group_id" type="integer" size="4"  null="no"/>
+<field name="lng_id" type="integer" size="4"  null="no"/>
+<field name="groupdetail_title" type="string" size="255"  null="yes"/>
+<field name="groupdetail_text" type="string" size="255"  null="yes"/>
+</fields>
+<keys>
+<primary-key>
+<field>groupdetail_id</field></primary-key>
+<key name="quiz_group_id">
+<field>group_id</field></key>
+</keys>
+</table>

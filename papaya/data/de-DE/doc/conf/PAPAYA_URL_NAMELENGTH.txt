@@ -1,0 +1,1 @@
+Maximale Länge des Seitentitels. Der normalisierte Seitentitel ist Bestandteil der URL. Beispiel: <tt>http://www.domain.tld/seiten-titel.123.de.html</tt>

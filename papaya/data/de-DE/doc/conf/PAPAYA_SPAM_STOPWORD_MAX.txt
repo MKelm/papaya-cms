@@ -1,0 +1,1 @@
+Maximale Anzahl der Stoppwörter, die in einer E-Mail oder einem Foreneintrag toleriert wird. Forenbeiträge oder Kontaktanfragen, die mehr als die maximale Anzahl an Stoppwörtern enthalten, werden als Spam eingestuft.

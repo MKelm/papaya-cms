@@ -1,0 +1,66 @@
+--- papaya-themes/default/basic.css	(Arbeitskopie)
++++ papaya-themes/default/basic.css	(Revision 38500)
+@@ -114,27 +106,13 @@
+   vertical-align: middle;
+   width: auto;
+ }
+-form .radio {
+-  float: left;
+-  margin-right: 0.8em;
+-}
+-form input.radio {
+-  margin-right: 0.2em;
+-}
+-form div.buttons {
+-  margin-top: 15px;
+-}
+ form button {
+   border: 1px solid #90A33B;
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 100%;
+   padding: 1px;
+-  margin-right: 0.5em;
+ }
+-form div.hint {
+-  margin-top: 0.3em;
+-}
+ 
+ 
+ /* Accessibility
+@@ -198,7 +176,7 @@
+   font-size: 90%;
+ }
+ 
+-/* Messages
++/* Messages 
+ ----------------------------------------------- */
+ div.message, div.error {
+   border: 1px solid #90A33B;
+@@ -254,22 +232,22 @@
+ /* Mobile rules, resize page and move elements
+    for small windows
+ ----------------------------------------------- */
+-@media only screen and (max-width: 480px),
++@media only screen and (max-width: 480px), 
+        only screen and (max-device-width: 480px) {
+ 
+   p {
+     margin-bottom: 1.5em;
+     width: 20em;
+   }
+-
++  
+   h1, h2, h3, h4, h5, h6, caption {
+     font-weight: bold;
+     margin-bottom: 0.6em;
+     width: 20em;
+   }
+-
++  
+   h1 {
+     font-size: 120%;
+     padding-top: 17em;
+   }
+-}
++}  

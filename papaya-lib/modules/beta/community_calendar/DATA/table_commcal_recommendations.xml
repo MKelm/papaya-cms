@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="commcal_recommendations" prefix="yes">
+  <fields>
+    <field name="event_id" type="integer" size="4"  null="no"/>
+    <field name="surfer_id" type="string" size="32"  null="no"/>
+    <field name="calendar_id" type="integer" size="4"  null="no"/>
+    <field name="recommendation_time" type="integer" size="4"  null="no"/>
+  </fields>
+  <keys></keys>
+</table>

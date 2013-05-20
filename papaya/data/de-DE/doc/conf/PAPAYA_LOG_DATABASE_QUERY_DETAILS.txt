@@ -1,0 +1,1 @@
+"On", um Details (Anzahl der Datensätze, Limit und Offset) zu jedem Datenbank-Protokolleintrag hinzuzufügen, andernfalls "Off". Diese Option hat nur eine Bedeutung, wenn <tt>PAPAYA_LOG_DATABASE_QUERY</tt> einen anderen Wert als <em>none</em> hat.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="countrynames" prefix="yes">
+<fields>
+<field name="countryname_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="countryname_countryid" type="string" size="8"  null="no"/>
+<field name="countryname_lang" type="integer" size="4"  null="no"/>
+<field name="countryname_text" type="string" size="50"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>countryname_id</field></primary-key>
+<key name="countryname_text">
+<field>countryname_text</field></key>
+</keys>
+</table>

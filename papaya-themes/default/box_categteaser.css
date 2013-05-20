@@ -1,0 +1,31 @@
+#content .box .subtopics ul,
+.box .subtopics ul {
+  list-style-position: outside;
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+}
+
+#content .box .subtopics li, 
+.box .subtopics li {
+  padding: 0;
+  background: none;
+}
+
+#content .box .subtopics h2 a, 
+.box .subtopics h2 a {
+  text-decoration: none;
+  color: #484848;
+}
+
+#content .box .subtopics .image, 
+.box .subtopics .image {
+  float: left;
+  margin-right: 10px;
+  padding-top: 4px;
+}
+
+#content .box .subtopics .image a, 
+.box .subtopics .image a {
+  display: block;
+}

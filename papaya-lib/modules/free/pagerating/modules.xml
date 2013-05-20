@@ -1,0 +1,15 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Page rating</name>
+  <description>Provides modules that enable users to rate articles. Ratings can be analyzed statistically.</description>
+  <modules>
+    <module type="box" guid="560d89dc40635fe19fdadbe1e49f5128" name="Page Rating Box" class="actionbox_pagerating" file="actbox_pagerating.php">A box module that allows users to rate a page (this article is: useful to me / a waste of time).</module>
+    <module type="admin" guid="ab26eb6563d1243abb9460ce5adb944b" name="Page Rating" class="edmodule_pagerating" file="edmodule_pagerating.php" glyph="pagerating.png">The management module for the page rating package.</module>
+    <module type="cronjob" guid="badaf83f14968e8314e10c1a466f2c81" name="Cronjob updating pagerating statistic" class="cronjob_pagerating" file="cronjob_pagerating.php">A cronjob that regularly updates the page rating statistics.</module>
+    <module type="image" guid="1cd1553170d17cdcf730f64c670dadfb" name="Page Rating Bar" class="image_pagerating" file="image_pagerating.php">Visualize page rating (positive/negative) percentage. Used in combination with &quot;Page Rating Bar&quot;.</module>
+  </modules>
+  <tables>
+    <table name="pagerating"/>
+    <table name="pagerating_abstract"/>
+  </tables>
+</modulegroup>

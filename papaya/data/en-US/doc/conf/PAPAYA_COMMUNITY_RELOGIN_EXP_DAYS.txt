@@ -1,0 +1,1 @@
+Duration in days in which a surfer may login automatically. When the surfer did not login automatically within the given time frame, she or he has to login manually again. The default value is "7".

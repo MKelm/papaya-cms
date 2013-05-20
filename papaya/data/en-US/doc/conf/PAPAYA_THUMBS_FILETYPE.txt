@@ -1,0 +1,1 @@
+Thumbnail image format. Choose from drop down list:<ul><li>GIF<br /></li><li>JPEG<br /></li><li>PNG<br /></li></ul>

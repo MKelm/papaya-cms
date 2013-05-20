@@ -1,0 +1,13 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Media database</name>
+  <description>Create download pages, image galleries, or upload forms using functions of the media database.</description>
+  <modules>
+    <module type="page" guid="ad2d3a0d522fa9f7c991b0a485c1138c" name="Downloads" class="content_download" file="content_download.php">Page module that displays a download list using the contents of a MediaDB folder.</module>
+    <module type="page" guid="61a6d514dc0e8edb79a370d22d5a6449" name="Uploads" class="content_upload" file="content_upload.php">Upload form that stores any image in a given MediaDB folder.</module>
+    <module type="page" guid="c6d7a3e53376ec764ae9450019c28270" name="Thumbnails" class="content_thumbs" file="content_thumbs.php">Page module that creates an image gallery using the images of a MediaDB folder.</module>
+    <module type="box" guid="cfc171342d0c34c412127b11f5baa008" name="Random Image" class="actionbox_thumbnail" file="actbox_thumbnail.php" outputfilter="no">A box module that displays a random image from the MediaDB.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

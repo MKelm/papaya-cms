@@ -1,0 +1,1 @@
+"On" to activate caching of the XML page output, otherwise "Off". When this option is activated, the cache settings of each individual page is used.

@@ -1,0 +1,1 @@
+„On“, um die Ausgabe von Fehlermeldungen der Datenbank zu aktivieren, andernfalls „Off“.

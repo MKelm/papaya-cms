@@ -1,0 +1,1 @@
+"On" to activate the output of information on SQL queries, including the names of the calling classes, otherwise "Off".

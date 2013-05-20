@@ -1,0 +1,1 @@
+"On" to write debug messages into the papaya log tables, "Off" otherwise.

@@ -1,0 +1,1 @@
+"utf-8" for UTF-8 encoded inputs (e.g. URL parameters that don't have any MIME type declarations), otherwise "iso-8859-1" when the input is encoded in latin1.

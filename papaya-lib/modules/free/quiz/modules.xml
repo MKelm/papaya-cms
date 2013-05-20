@@ -1,0 +1,16 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Quiz</name>
+  <description>Create and edit an arbitrary number of quizzes.</description>
+  <modules>
+    <module type="admin" guid="cf2cddabdb77adcb2ed62632ee25a6f1" name="Quiz" class="edmodule_quiz" file="edmodule_quiz.php" glyph="quiz.png">Create and edit quizzes.</module>
+    <module type="box" guid="32d5fd57a40d3d593bcec03df7c340c8" name="Box" class="actionbox_quiz" file="actbox_quiz.php">Box that displays a quiz</module>
+    <module type="page" guid="62ef421571d22cf30d6abf79403204b9" name="Quiz Content Page" class="content_quiz" file="content_quiz.php">Content page that displays a quiz.</module>
+  </modules>
+  <tables>
+    <table name="quiz_answer"/>
+    <table name="quiz_group"/>
+    <table name="quiz_group_trans"/>
+    <table name="quiz_question"/>
+  </tables>
+</modulegroup>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+  <phrase ident="Information">Information</phrase>
+  <phrase ident="Question">Frage</phrase>
+  <phrase ident="Warning">Warnung</phrase>
+  <phrase ident="Error">Fehler</phrase>
+  <phrase ident="Messages">Meldungen</phrase>
+  <phrase ident="Logout">Abmelden</phrase>
+  <phrase ident="Help">Hilfe</phrase>
+  <phrase ident="Website">Webseite</phrase>
+  <phrase ident="Actions">Aktionen</phrase>
+  <phrase ident="Content Toolbar">Inhalts-Toolbar</phrase>
+  <phrase ident="Content changed">Änderungen wurden nicht gespeichert und gehen beim Verlassen der Seite verloren.</phrase>
+</phrases>

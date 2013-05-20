@@ -1,0 +1,24 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Ldap</name>
+  <description>Utility modules for LDAP server access</description>
+  <prefix>PapayaModuleLdap</prefix>
+  <modules>
+    <module type="connector"
+      guid="9843d65f75878c01a52da339e64c9293"
+      name="Ldap Connector"
+      class="PapayaModuleLdapConnector"
+      file="Connector.php">
+      Allows for other modules to use LDAP functionality in an object-oriented way.
+    </module>
+    <module type="admin"
+      guid="aebd1459c750727731222c46b9d4ac75"
+      name="Ldap Browser"
+      class="edmodule_ldap"
+      file="edmodule_ldap.php">
+      Provides a backend interface for simple LDAP lookups.
+    </module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

@@ -1,0 +1,7 @@
+Diese Option bestimmt, welche SELECT-Datenbankabfragen durch das allgemeine Papaya-Protokollsystem protokolliert werden:
+<ul>
+<li><em>none</em>: Keine Abfragen werden protokolliert.</li>
+<li><em>slow</em>: Nur langsame Abfragen werden protokolliert (der Schwellenwert wird durch die Option <tt>PAPAYA_LOG_DATABASE_QUERY_SLOW</tt> festgelegt).</li>
+<li><em>all</em>: Alle Abfragen werden protokolliert.</li>
+</ul>
+Um Datenbankabfragen auf einem Entwicklungsrechner systematisch zu analysieren, verwenden Sie stattdessen die <tt>PAPAYA_QUERYLOG</tt>-Optionen.

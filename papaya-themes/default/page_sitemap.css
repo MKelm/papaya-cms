@@ -1,0 +1,47 @@
+/*
+ CSS rules for content module content_sitemap in ~/modules/_base/content_sitemap.php
+*/
+#page div.contentSitemap ul {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+#page div.contentSitemap li {
+  list-style: none;
+  background: none;
+  padding: 10px 0 0 40px;
+  margin: 0;
+}
+#page div.contentSitemap ul ul {
+  padding: 0 0 0 10px;
+}
+#page div.contentSitemap li li {
+  border-left: 1px dotted #90A23B;
+  background: transparent url(pics/sitemap_corner.gif) no-repeat -1px -79px;
+  padding: 10px 0 0 40px;
+  margin: 0;
+}
+#page div.contentSitemap li li.last {
+  border-left : none;
+  background: transparent url(pics/sitemap_corner.gif) no-repeat 0 -79px;
+  padding: 10px 0 0 41px;
+  margin: 0;
+}
+#page div.contentSitemap a {
+  display: block;
+  width: 160px;
+  border: 1px dotted #90A23B;
+  background: #fff;
+  padding: 2px;
+  text-decoration: none;
+  color: #333;
+}
+#page div.contentSitemap span.noLinkItem {
+  display: block;
+  width: 160px;
+  border: 1px dotted #90A23B;
+  background: #fff;
+  padding: 2px;
+  text-decoration: none;
+  color: #333;
+}

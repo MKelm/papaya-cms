@@ -1,0 +1,1 @@
+Angabe der Datengröße in Byte, bis zu der die Daten einer Datei ohne Bandwidth Shaping versendet werden. Erst nachdem die angegebene Anzahl an Kilobytes der Datei versendet worden ist, setzt die Begrenzung durch Bandwidth Shaping ein.

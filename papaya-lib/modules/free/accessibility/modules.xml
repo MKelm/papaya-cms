@@ -1,0 +1,11 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Accessibility</name>
+  <description>Modules that help to improve web site accessibility.</description>
+  <modules>
+    <module type="box" guid="3c7eca236e324f9d5f17f7080e3cbfc3" name="Page Zoom CSS Output" class="actionbox_pagezoom_style" file="actbox_pagezoom_style.php">This box module prints out CSS code that changes the font size of the page, depending on which link the user has clicked. Used in combination with &quot;Page Zoom Links&quot;.</module>
+    <module type="box" guid="771c1b98eab36a5b840c0645b4fc19b9" name="Page Zoom Links" class="actionbox_pagezoom_links" file="actbox_pagezoom_links.php">Prints out links that allows users to change the font size of the page. Used in combination with &quot;Page Zoom CSS Output&quot;.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="poll" prefix="yes">
+<fields>
+<field name="poll_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="categ_id" type="integer" size="8"  null="no"/>
+<field name="question" type="string" size="255"  null="no"/>
+<field name="start_time" type="integer" size="8"  null="no"/>
+<field name="end_time" type="integer" size="8"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>poll_id</field></primary-key>
+</keys>
+</table>

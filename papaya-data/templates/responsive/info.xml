@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<info>
+  <author>papaya Software GmbH</author>  
+  <boxes>
+    <groups>
+      <group name="service-links" />
+      <group name="head" />
+      <group name="main-navigation" />
+      <group name="detail-navigation" />
+      <group name="breadcrumb" />
+      <group name="before-content" />
+      <group name="after-content" />
+      <group name="additional" />
+      <group name="foot" />
+      <group name="copyright" />
+      <group name="html-head" />
+      <group name="logo" />
+    </groups>
+    <styles/>
+    <scripts/>
+    <scripts-lazy/>
+  </boxes>
+</info>

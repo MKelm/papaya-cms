@@ -1,0 +1,1 @@
+The default content language for the administration backend of papaya CMS.

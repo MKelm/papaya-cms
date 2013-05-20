@@ -1,0 +1,1 @@
+Die Flash-Versionsnummer, die standardmäßig vorausgesetzt wird. Diese Versionsnummer wird benutzt, wenn Sie mit papaya CMS Flash-Dateien in Ihre Seiten einbetten.

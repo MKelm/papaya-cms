@@ -1,0 +1,1 @@
+Schlüssel eingeben, den Sie bei der Registrierung für die Google Maps API (siehe <tt>code.google.com/apis/maps/ (http://code.google.com/apis/maps/signup.html)</tt>) erhalten haben. Nur mit dem Schlüssel ist es möglich, die API zu benutzen.

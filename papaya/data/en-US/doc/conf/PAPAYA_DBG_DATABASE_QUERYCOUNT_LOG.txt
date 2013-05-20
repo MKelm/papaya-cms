@@ -1,0 +1,1 @@
+"On" to log the number of sql queries per page request, otherwise "Off".

@@ -1,0 +1,1 @@
+Pfad, in dem das Session-Cookie gesetzt wird. Standardwert von <tt>session.cookie_path</tt> ist „/“.

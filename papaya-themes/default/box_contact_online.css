@@ -1,0 +1,8 @@
+ul.communityUserOnlineList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul.communityUserOnlineList li {
+  padding-left: 0;
+}

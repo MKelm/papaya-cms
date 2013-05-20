@@ -1,0 +1,1 @@
+ID der Seite, die bei einer Weiterleitung auf eine externe Ressource angezeigt werden soll. Die Weiterleitung enthält ferner den HTTP-Statuscode 301. Diese Seite wird nur dann angezeigt, wenn der Redirect-Schutzmechanismus (<tt>PAPAYA_REDIRECT_PROTECTION</tt>) aktiviert worden ist.

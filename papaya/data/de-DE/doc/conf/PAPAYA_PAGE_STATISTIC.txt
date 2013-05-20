@@ -1,0 +1,1 @@
+„On“, wenn Sie die Besucherstatistik aktivieren möchten (nur Protokollierung, keine statistische Auswertung der Seitenbenutzung), andernfalls „Off“.

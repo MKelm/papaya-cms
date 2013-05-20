@@ -1,0 +1,1 @@
+„On“, wenn der aktuelle Speicherverbrauch des Scriptes angezeigt werden soll, andernfalls „Off“. Unter PHP 5 wird zudem der Spitzenverbrauch an Speicher angezeigt. Die Angaben zum Speicher erfolgen in Bytes.

@@ -1,0 +1,1 @@
+Number of messages that will be displayed in the list "Messages".

@@ -1,0 +1,1 @@
+Select the string sort order and character encoding used for sorting in the SQL database.

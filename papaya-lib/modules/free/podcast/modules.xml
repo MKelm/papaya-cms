@@ -1,0 +1,9 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Podcast</name>
+  <description>Podcast modules enable you to create your own podcasts.</description>
+  <modules>
+    <module type="page" guid="f2e321fb10ddaaaba8b1e3eb678f1c81" name="Podcast Item Page" class="content_podcast_item" file="content_podcast_item.php" outputfilter="no">Podcast item page that defines the properties of a podcast entry.</module>
+    <module type="page" guid="683ea7589b19106858dd6d277eee179f" name="Podcast Channel Page" class="content_podcast_channel" file="content_podcast_channel.php">Podcast channel page that creates a podcast feed using the entries defined in the podcast item pages as podcast entries.</module>
+  </modules>
+</modulegroup>

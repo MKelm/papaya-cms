@@ -1,0 +1,1 @@
+Absoluter Pfad zum Basisverzeichnis der Grafikbibliothek (nur für ImageMagick und Netpbm). Die Pfadangabe muss mit einem Schrägstrich abgeschlossen werden.

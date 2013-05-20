@@ -1,0 +1,1 @@
+„utf-8“, wenn der Input (beispielsweise URL-Parameter, die standardmäßig keine MIME-Type-Angaben enthalten) UTF8-kodiert ist, andernfalls „iso-8859-1“, wenn der Input Latin1-kodiert ist.

@@ -1,0 +1,1 @@
+„on“, wenn auf der Ausgabeseite für jeden neuen Besucher eine neue Session gestartet werden soll, andernfalls „off“.

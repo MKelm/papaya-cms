@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_links" prefix="yes">
+  <fields>
+    <field name="article_id" type="integer" size="4" null="no"/>
+    <field name="link_node" type="string" size="255" null="no"/>
+    <field name="link_lng" type="integer" size="4" null="no"/>
+  </fields>
+  <keys>
+    <key name="article_id">
+      <field>article_id</field>
+    </key>
+    <key name="link_node">
+      <field>link_node</field>
+      <field>link_lng</field>
+    </key>
+  </keys>
+</table>

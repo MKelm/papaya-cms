@@ -1,0 +1,1 @@
+Enter the key you received when you registered for the Google Maps API (see <tt>code.google.com/apis/maps/ (http://code.google.com/apis/maps/signup.html)</tt>). You can use the API only after you have provided a key.

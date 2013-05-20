@@ -1,0 +1,4 @@
+<p>
+No entries available in this category.<br/>
+Please choose another category.
+</p>

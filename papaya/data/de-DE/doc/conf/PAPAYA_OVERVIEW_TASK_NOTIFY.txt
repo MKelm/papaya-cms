@@ -1,0 +1,1 @@
+„on“, wenn eine E-Mail bei einem neuen Task versendet werden soll, andernfalls „off“.

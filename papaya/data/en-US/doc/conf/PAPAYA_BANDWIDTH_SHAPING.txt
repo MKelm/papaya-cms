@@ -1,0 +1,1 @@
+"On" to activate bandwidth shaping when sending files, otherwise "Off".

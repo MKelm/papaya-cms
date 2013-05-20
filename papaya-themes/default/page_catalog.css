@@ -1,0 +1,130 @@
+div.azlistLetterContainer {
+  border: 1px solid #9FBD18;
+  background-color: #EEF5CE;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#content ul.catalogAZListLetterList {
+  margin-left: 0;
+  padding-left: 0;
+  margin-top: 5px;
+}
+#content ul.catalogAZListLetterList li {
+  float: left;
+  background: none;
+  padding-left: 7px;
+}
+div.azlistContainer {
+}
+div.azlistContainer h2 {
+  font-size: 150%;
+}
+div.azlistContainer div.catalogList {
+  margin-bottom: 10px;
+  background:transparent url(pics/nav_bg.gif) repeat-x scroll 1px 100%;
+  padding-bottom: 5px;
+}
+a.ctalogLinkToTop {
+  display: block;
+  text-align: right;
+}
+
+/********************************/
+/* Categories                   */
+/********************************/
+div.catalogCategories {
+  margin-top: 20px;
+}
+div.catalogCategories div.catalogOneCategory {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background:transparent url(pics/nav_bg.gif) repeat-x scroll 1px 100%;
+}
+
+div.catalogCategories div.catalogOneCategory a {
+  font-weight: bold;
+}
+div.catalogCategories div.catalogOneCategory img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+#content div.catalogCategories div.catalogOneCategory ul {
+  margin-bottom: 0px;
+}
+
+div.catalogCategories div.catalogOneCategory div.categoryTeaser {
+  margin-top: 10px;
+}
+
+div.catalogCategories {
+  background:transparent url(pics/nav_bg.gif) repeat-x scroll 1px 100%;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+div.catalogShowOneCategory {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background:transparent url(pics/nav_bg.gif) repeat-x scroll 1px 100%;
+  padding-bottom: 10px;
+}
+
+div.catalogShowOneCategory img {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+div.catalogLinks {
+  margin-top: 10px;
+  background:transparent url(pics/nav_bg.gif) repeat-x scroll 1px 100%;
+  padding-bottom: 10px;
+}
+/***************************/
+/* Subscribe form          */
+/***************************/
+form.catalogSubscribeForm,
+form.catalogUnsubscribeForm {
+  margin-top: 20px;
+}
+#content form.catalogSubscribeForm ul,
+#content form.catalogUnsubscribeForm ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#content form.catalogSubscribeForm ul li,
+#content form.catalogUnsubscribeForm ul li {
+  background: none;
+}
+form.catalogSubscribeForm ul li input,
+form.catalogUnsubscribeForm ul li input {
+  float: left;
+  margin-right: 10px;
+}
+form.catalogSubscribeForm ul li label,
+form.catalogUnsubscribeForm ul li label {
+}
+
+form.catalogSubscribeForm div.email,
+form.catalogUnsubscribeForm div.email {
+  margin-bottom: 10px;
+}
+/***************************************/
+/* Subscribe/unsubscribe messages form */
+/***************************************/
+div.subscribeMessagesContainer  {
+  background-color: #EEF5CE;
+  padding: 10px;
+  border: 1px solid #9FBD18;
+  margin-top: 20px;
+}
+#content div.subscribeMessagesContainer ul.subscribeMessages {
+  margin: 0;
+  padding: 0;
+}
+div.subscribeMessagesContainer ul.subscribeMessages li.msgError {
+  color: #FF0000;
+}
+div.subscribeMessagesContainer ul.subscribeMessages li.msgSuccess {
+  color: #9FBD18;
+}

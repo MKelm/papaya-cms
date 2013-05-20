@@ -1,0 +1,1 @@
+If the <tt>PAPAYA_QUERYLOG</tt> option is set to <em>slow</em>, this option defines the threshold: Any query that takes the specified number of milliseconds or longer will be logged in the query log table.

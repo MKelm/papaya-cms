@@ -1,0 +1,1 @@
+„On“, wenn Sie die Debugausgabe aktivieren möchten, die bei fehlerhafter Eingabe von XHTML Meldungen ausgibt. „Off“, um diese Debugausgabe zu deaktivieren.

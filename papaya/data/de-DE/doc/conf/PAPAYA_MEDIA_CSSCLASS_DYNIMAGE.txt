@@ -1,0 +1,1 @@
+Der Standardname der CSS-Klasse, die für dynamische Bilder benutzt wird.

@@ -1,0 +1,1 @@
+Email address to which the notification email is sent.

@@ -1,0 +1,1 @@
+"On" to include details (number of records, limit, and offset) for each database log entry, otherwise "Off". This option will have an effect only if <tt>PAPAYA_LOG_DATABASE_QUERY</tt> is set to another value than <em>none</em>.

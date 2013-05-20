@@ -1,0 +1,13 @@
+table.fileList {
+  width: 100%;
+  margin-top : 1em;
+}
+table.fileList th.date, table.fileList th.size, table.fileList th.link {
+  text-align: center;
+}
+table.fileList td.date, table.fileList td.link {
+  text-align: center;
+}
+table.fileList td.size {
+  text-align: right;
+}

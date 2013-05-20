@@ -1,0 +1,17 @@
+<p>
+No entry in this category.
+</p>
+<b>Adding a new category</b>
+<p style="padding-left: 20px;">Click on <i>New category</i>.</p>
+<b>Adding a link entry</b>
+<ol >
+<li>Select a category.</li>
+<li>Click on <i>New link</i>.</li>
+</ol>
+<b>Moving a category / Link</b>
+<ol >
+<li>Select the category (Section 'Categories') / the link (Section 'Links') to move.</li>
+<li>Click on <i>Cut category</i> or <i>Cut link</i>, respectively.</li>
+<li>Select the target category where you want to place the cut-out category/link.</li>
+<li>Click on the icon <i>Paste</i> associated with the category/link on the Clipboard.</li>
+</ol>

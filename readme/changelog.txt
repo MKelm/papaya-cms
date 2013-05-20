@@ -1,0 +1,1472 @@
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.5
+------------------------------------------------------------------------------------------------
+
+- Fixed MANTIS-1937: Forum is not displayed after moved to clipboard
+- Fixed MANTIS-2643: forum paging (-limit) for bbs entries does not work correctly
+- Added MANTIS-2404: Templates: Default template for content_statelist
+- Implemented MANTIS-2760: Add a mechanism to disable the clear cache buttons
+- Implemented MANTIS-2572: integrate content_register_dynamic.php into content_register.php
+- Implemented MANTIS-2800: check for javascript in installer
+- Implemented MANTIS-2498: Templates: insert JS through boxes.xml
+- Implemented MANTIS-2769: add check to installer if memory_limit can be increased
+- Implemented MANTIS-2550: link output mode (view) should default to the linked output filter.
+- Implemented: Improved Javascript controls for adminstration interface using jQuery
+- Added: MANTIS-2784, MANTIS-1564: [base] Dynamic Themes
+    http://en.wiki.papaya-cms.com/wiki/Dynamic_Themes
+- Implemented MANTIS-1410: extend file based cache with events (notify cli script or url)
+- Implemented MANTIS-2652: add a warning when installer is viewed without https
+- Implemented MANTIS-2418: visuell separation of inactive modules
+- Fixed MANTIS-2654: missing PAPAYA_DB_URI results in an "ugly error" in the installer
+- Implemented MANTIS-2656: installer should test preg unicode functionality
+- Implemented MANTIS-2657: test in the installer that EXSLT is enabled
+- Fixed MANTIS-2737: papaya options -> default host input field is to short
+- Implemented MANTIS-2785: Refactoring: page id selector in Javascript
+- Implemented MANTIS-2553: Refactoring: Dialogs - PapayaUiDialog*
+- Added MANTIS-2726: Templates: function templates that output secure json and java-script
+- Implemented MANTIS-2610: Implementing cache control no-transform to be able to prevent umts 
+  provider from transforming our code.
+- Implemented: popups in richtext output are now defined using a data-popup attribute
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.4.6
+------------------------------------------------------------------------------------------------
+
+- Fixed MANTIS-2825: pdf footer is not always rendered  
+- Fixed MANTIS-2826: Media database folder is created in the wrong parent folder 
+- Added: new mode "url" to alias handling, gets a complete url not a page id and parameters 
+- Implemented: PapayaUiDialog::action() now resets to default with an empty value, exception removed 
+- Implemented: new option PAPAYA_COMPRESS_CACHE_THEMES to disable the theme wrapper gzip compression 
+- Implemented: moving padding offset handling to accept page break (so it is always used) - Implemented: fixed last word index in table text width calculation 
+- Implemented: use a smaller value to avoid the size calculation problem for pdf table cells. Seems to be a floating point problem so a small amount is enough. 
+- Implemented: store and compare the page the font was set for, if the page changes, we need to set it even if it is the current font. 
+- Implemented: better min-width calculation for table cells, recognize inline formatting 
+- Implemented: send p3p header
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.4.5
+------------------------------------------------------------------------------------------------
+
+- Fixed MANTIS-2766: Wrong group options in administration usermanagment if the authenticated user is not an admin 
+- Fixed MANTIS-2659: No error message in "forgot password" dialog, an error message shows that the user exists 
+- Implemented: check for more cgi SAPI variants before sending response status 
+- Implemented: added support for IDs to PapayaUiDialogFieldHidden
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.4.4
+------------------------------------------------------------------------------------------------
+
+- Implemented: make the redirect recognize any path starting with 'sid' as session id, replacing it with the fullname if needed. 
+- Implemented: fixed weekday vs. date rule in cron time module
+- Implemented: avoid error message for deleted media database folder - Implemented: media database folders on the first level always have 'own' permission, disable editing 
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.4.3
+------------------------------------------------------------------------------------------------
+
+- Implemented: removed unused parameter in pdf generator
+- Implemented: increase size of media db file title field to 255 characters 
+- Fixed MANTIS-2810: missing declaration of _databaseAccessObject in sys_base_db.php 
+- Fixed MANTIS-2809: wrong default template name in theme.xml in default theme 
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.4.2
+------------------------------------------------------------------------------------------------
+
+- Implemented: always recognize "sid..." in path as session id
+- Fixed MANTIS-2804: interference between searchable select fields in papaya 5.4 branch (trunk has a new jQuery plugin)
+- Fixed MANTIS-2808: module data in calendar not regognized as xml serialized array.
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.4.1
+------------------------------------------------------------------------------------------------
+# updated jQuery to 1.7.2 and jQuery UI to 1.8.21
+# removing support for IE 6 and 7
+# administration interface is now HTML 5
+
+- Added: PapayaUtilString:encodeAndQuoteIdList, implodes a list of numeric ids and encloses it in quote characters.
+- Added: papaya_page:getCurrentDomainId(), return the currently active domain
+- Added: base_domains:getCurrentId() return the id of the loaded domain
+- Implemented: large text content in xml response (addon dialog xml) is splitted into several text nodes in Firefox, grab all of them - not just the first
+- Implemented: (JS) use an interval and check for the document state of an popup to set the linked object after the popup has loaded avoiding ie timing problems
+- Implemented: Lightbox javascript modified to show link title as caption by default
+- Implemented: don't show "permission denieded" for add folder dialog on media db root folder - just hide the dialog
+- Implemented: PapayaDatabaseManager::createDatabaseAccess() now optionally takes db uris as arguments
+- Implemented: allow to disable the table prefix usage (in default implementation) by using a object variable
+- Implemented: Removing support for IE 6 and 7, switching to HTML 5 doctype, some cleanup
+- Implemented: Different formatting for standard buttons and popup buttons
+- Implemented: new js datetimepicker
+- Implemented MANTIS-1311: replace the flash page tree  with javascript
+- Implemented: use papaya_page::getCurrentDomain() to get domain id to load domain values in domain value conntector module
+- Implemented: fixed databaseGetSqlCondition returning only the field name when value was set to NULL
+- Implemented: fixed "index.urls", need to store page data before usage
+- Implemented: media-db search now searches in file title and description, too
+- Implemented: removing old maintenance/import source from media-db
+- Implemented: transparent validation and repair for the media-db folder path index
+- Implemented: change js function name back to openPopup() because of compatibility issues
+- Implemented: backported new jQuery popup plugin
+- Implemented: always explicit create utf-8 dom-documents
+- Implemented: theme wrapper reads current theme from url not from option (better caching)
+- Implemented: make sure that the log message listview keeps the filter while navigating
+- Fixed MANTIS-2787: Show preview in selected content language
+- Fixed MANTIS-2788: Removed use of configuration constant PAPAYA_VERSIONS_MAXCOUNT in class declaration
+- Fixed MANTIS-2790: Store description text of a catalog category
+- Fixed MANTIS-2791: corrected qp rewraping errors in email object
+- Fixed MANTIS-2767: always show surfers without group
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.4
+-----------------------------------------------------------------------------------------------
+
+- Added: domain database records object
+- Added: Dynamic field option
+- Added: Filter for comparing a parameter value with a given string value
+- Added: Iterator for parent child trees (using a list of element and a list of parent-child-ids)
+- Added: jenkins-ci build file - initial commit
+- Added: js buttons to mofify checkbox selection in new dialog controls
+- Added: large item-publication icon
+- Added: large version (48 pixel) of the actions-edit-copy image for the page copy confirmation dialog
+- Added: load page publication data for lists/navigations
+- Added: method lastInsertId to database abstraction, allow to fetch the last inserted id
+- Added: Missing include_once to set email return path
+- Added: modified mapping method in PapayaContentModuleOptions to map filter arrays
+- Added: new Content class for authentication user groups
+- Added: new test dialog for page id -> link validation in domains module
+- Added: new transliteration class with unit tests
+- Added: new url transformer to cleanup the path part of urls (removing ../, ./, //)
+- Added: new xsl function template for url transformation
+- Added: PapayaAdministrationCommunityUsersListDialog
+- Added: PapayaAdministrationPagesAnchestors, load and display an anchestors menu 
+- Added: PapayaAdministrationPagesDependencyCounter, load dependency/reference coutings for a page
+- Added: PapayaAdministrationPagesDependencySynchronizationView, separating view synchronization from content synchronization
+- Added: PapayaConfigurationCms to replace the base_options object
+- Added: PapayaConfigurationDomain configuration storage that loads from domain record
+- Added: PapayaContentCommunityGroups, data encapsulation for the  surfer group records
+- Added: PapayaContentCommunityPermissions
+- Added: PapayaContentCommunityUsers
+- Added: PapayaContentDomain - domain record contant class
+- Added: PapayaContentLinkTypes load page link types records as list
+- Added: PapayaContentTables::COMMUNITY_PERMISSIONS
+- Added: PapayaContentTables::COMMUNITY_USER
+- Added: PapayaContentViews, view records list
+- Added: PapayaControlCollection::clear(), to remove all items in a collection
+- Added: PapayaCsvWriter
+- Added: PapayaDatabaseRecordKeySequence() a record key using a PapayaDatabaseSequence object to create new ids
+- Added: PapayaDatabaseRecordsLazy - a record list object that lets you specifiy how data should be loaded if needed.
+- Added: PapayaDatabaseRecords::orderBy()
+- Added: PapayaDatabaseRecordsTree, a records class that returns an recursive iterator for a parent-child-tree
+- Added: PapayaDatabaseRecordsUnbuffered, splitting database loading logic from buffering and array access
+- Added: PapayaDatabaseResultIterator - iterator on a database result
+- Added: PapayaDatabaseResult::seek()
+- Added: PapayaDatabaseSequenceHumanCumulative sequence provides ids with increasing length
+- Added: PapayaDomains, access domain data of current request
+- Added: PapayaFilterListKeys to check the value against the keys of an array or traversable
+- Added: PapayaFilterNot, negate another filter
+- Added: PapayaIteratorCaching, a caching iterator that fills itself using a callback before the first iteration starts
+- Added: PapayaIteratorCallback, apply a callback function to the element value before returning it
+- Added: PapayaIteratorFileStream
+- Added: PapayaIteratorFilterCallback
+- Added: PapayaIteratorGlob, encapsulate glob() into an iterator
+- Added: PapayaIteratorMultiple
+- Added: PapayaIteratorRegexFilter, and iterator filtering elements from an innter iterator using a pcre
+- Added: PapayaIteratorRepeatCallback
+- Added: PapayaIteratorRepeatIncrement
+- Added: PapayaIteratorTraversable - like IteratorIterator but with a lazy fetch/create for the iterator
+- Added: PapayaUiControlPart, an abstract superclass for PapayaUiControl declaring the PapayaXmlAppendable interface and implementing property handling
+- Added: PapayaUiDialogElementDescription, if the hint text is not enough
+- Added: PapayaUiDialogElementDescriptionLink, link to an description page
+- Added: PapayaUiDialogElementDescriptionProperty, generic description property for dialog elements
+- Added: PapayaUiDialogFieldButtons
+- Added: PapayaUiDialogField::getDescription()
+- Added: PapayaUiDialogFieldGroupButtons
+- Added: PapayaUiDialogFieldInputReadonly, simple readonly input field.
+- Added: PapayaUiDialogFieldListview
+- Added: PapayaUiDialogFieldSelect::callbacks() allows to define a callback function for the option captions, so the array/traversable can contain complex types
+- Added: PapayaUiDialogFieldSelectRadio, a radio selection dialog field
+- Added: PapayaUiDialogField::setDescription()
+- Added: PapayaUiDialogSession, a dialog that stores its data in the session
+- Added: PapayaUiHierarchyItem
+- Added: PapayaUiHierarchyItems
+- Added: PapayaUiHierarchyMenu, display the hierarchy of the current data element
+- Added: PapayaUiLinkAttributes a control part providing attribute handling for class, target and popup data
+- Added: PapayaUiListviewItemsBuilder - a builder system to generate listview items on demand
+- Added: PapayaUiMessages, PapayaUiMessage* - generic objects to output messages into content xml
+- Added: PapayaUiNavigationItemNamed for named navigation links with individual template handling
+- Added: PapayaUiNavigationItem::selected(), selected status for navigation links
+- Added: PapayaUiNavigationItems, PapayaUiNavigationItem, PapayaUiNavigationBuilder - build a link navigation from an array or traversable
+- Added: PapayaUiPagingSteps (paging step size links)
+- Added: PapayaUiTeaserImages a ui control to append teaser thumbnail tags
+- Added: PapayaUiToolbarComposed, a toolbar composed from several sets
+- Added: PapayaUiToolbarSet - a set of toolbar elements
+- Added: PapayaUtilArray::get(), gets an element from the array if it exists or returns a default value
+- Added: PapayaUtilArrayMapper and utility class to map arrays into other arrays
+- Added: PapayaUtilBitwise::inBitmask(), validate if a bit is set in the given bitmask (like in_array())
+- Added: PapayaUtilConstraints::assertArrayOrTraversable(), allow to validate if a variable can be used with foreach
+- Added: PapayaUtilConstraints::assertCallable()
+- Added: PapayaUtilFile::normalizeName(), normlize a utf8 string to be used in a file name/url
+- Added: PapayaUtilFilePath::ensureIsAbsolute()
+- Added: PapayaUtilFilePath::ensureTrailingSlash()
+- Added: PapayaUtilServerAgent::get() return current server agent from environment variables
+- Added: PapayaUtilServerName::get() encapsulation to fetch the server name from environment
+- Added: PapayaUtilString::escapeForPrintf() 
+- Added: PapayaUtilStringGuid, guid validation and normalization
+- Added: PapayaUtilStringUtf8::getCodepoint
+- Added: PapayaXmlElement::saveFragment(), saves the xml of all child nodes (including text nodes). The result is not nessesary a valid xml document but only a fragment.
+- Added: Schema definition for the table structure xml files
+- Added: Support for plugin/module options to PapayaPluginLoader and PapayaPluginFactory
+- Added: Template and Theme data for PapayaUiHierarchyMenu
+- Added: Utility functions for bytes (string format/decode)
+- Added: xsl template to encode a simple value list as json
+- Documented: add and create new changelog style
+- Documented: corrected parameter type (int -> string) for parameter $message in constructor
+- Documented: PapayaCacheConfiguration
+- Documented: public is not a valid value for session cache mode
+- Documented: relation between various caching functions and settings
+- Documented: specified return type of PapayaUiReferencePage::create()
+- Fixed MANTIS-10965: add event.preventDefault()
+- Fixed MANTIS-2509: Make PostgreSQL parser not take 'name' as its reserved keyword.
+- Fixed MANTIS-2509: NULL was used to force a default value instead of the PostreSQL  syntax 'DEFAULT' for default values. The column 'surfer_valid' has a NOT NULL constraint, the default value of 0 is used now.
+- Fixed MANTIS-2509: PostgreSQL incompatible syntax was reintroduced colliding with the notation of objects of the ORDBMS PostgreSQL.
+- Fixed MANTIS-2509: PostgreSQL syntax was not correct on several other occasions, i.e. setting and retrieving the auto increment fields and values thereof.
+- Fixed MANTIS-2666: duplicate call of XSL template "page-styles"
+- Fixed MANTIS-2689: default texts/selection text for file links
+- Fixed MANTIS-2729: Use of table name and prefix factored out of SQL.
+- Fixed MANTIS-2736: thumb size wrong. 'width' value is also used for 'height'
+- Fixed MANTIS-2737: default host, option field maximum lenght to short - increased to 100
+- Fixed MANTIS-2777: MediaDB -> Upload file from a url -> Input field too short, increased maximum input length
+- Fixed MANTIS-2779: refactored preview embedding, use ReferencePage object
+- Fixed MANTIS-2780: fixed options reading, syntax error
+- Fixed MANTIS-8275: fix the calling of the database in the loop of reading of result from an another databases calling
+- Fixed MANTIS-8774: Configurable error message title
+- Implemented: action dispatcher call for data modifications
+- Implemented: actually return the attributes
+- Implemented: added a default definition for a variable
+- Implemented: added a mixed mode that allows a get-dialog read request body parameters 
+- Implemented: added a useConfirmation option to the dialog options, this makes it possible to disable the hidden field used to validate if a dialog was submited.
+- Implemented: added a version attribute to serialize xml for arrays
+- Implemented: added context argument to callback
+- Implemented: added current page to anchestors menu bar, added limit to anchestors bar
+- Implemented: added default value for the sticker_image field
+- Implemented: added "get" method to configuration mocks
+- Implemented: added instance check to avoid this from outside
+- Implemented: added IteratorAggregate using the new PapayaDatabaseResultIterator to the papaya database result object, allowing to use foreach on them
+- Implemented: Added missing sync for page properties
+- Implemented: added missing tests and fixed errors in exceptions
+- Implemented: added missing tests and refactored PapayaUiControlCommand::validateCondition() to avoid dead code
+- Implemented: added new Method loadCatalogLinkListWithDetails to get the topic linktypes
+- Implemented: added phpmd rules to svn, output phpunit coverage
+- Implemented: added some missing entities to the old entitiy regex
+- Implemented: added timestamp input field
+- Implemented: adding and activating the new tinymce visualblocks plugin
+- Implemented: adding direction specific callbacks, to remove the need for a direction condition in the callback
+- Implemented: adding domain support to page references factory
+- Implemented: adding some dynamic properties as a peak preview for the refactored api 
+- Implemented: add missing thumbnail size of the just created thumbnail
+- Implemented: add phpunit.xml
+- Implemented: add workaround for property_exists() on a protected property not working on some PHP 5.2.0 version
+- Implemented: administration editfields - a click on the thumbnail opens the image in the media database
+- Implemented: allow box names up to 100 characters
+- Implemented: allow buttons and listview in dialog fields (administration interface)
+- Implemented: allow empty values for non required datetime fields
+- Implemented: allow faq submit buttons to be individually changed in page settings
+- Implemented: allow media plugin usage in simplerichtext
+- Implemented: allow NULL for option values
+- Implemented: allow PapayaUiReferencePage::setPageId to trigger an automatic validatation and configuration using a PapayaUiReferencePageFactory stored in the application registry
+- Implemented: allow select boxes in listview toolbars
+- Implemented: allow separators in listview toolbars
+- Implemented: allow the calling script to define how many directories need to be trimmend from current script filename to get to the document root.
+- Implemented: allow to attach a mapping object to the database result iterator
+- Implemented: allow to call module option function non-static
+- Implemented: allow to fetch a single identifer using PapayaDatabaseSequenceHumanCumulative, this return now one identifer with maximum length
+- Implemented: allow to ignore parameter group while generating parameter name
+- Implemented: allow to mark an reference as invalid
+- Implemented: allow to reset the stored cache services
+- Implemented: allow to set a error handler on a PapayaDatabaseAccess object, replacing the default eror handling (dispatching log messages)
+- Implemented: allow to set parameters using a parameters object and a group string
+- Implemented: allow to set the page reference factory in a page reference object directly
+- Implemented: allow to specifiy the tag name used in arraysaerializer xml
+- Implemented: allow to synchronize multiple parts of a page at once.
+- Implemented: allow to use map Traversable objects in PapayaUtilArrayMapper
+- Implemented: allow to use method syntax to read and store application registry objects
+- Implemented: allow Traversable as list data for PapayaFilterList
+- Implemented: always try to find a domain for the page, even if the current domain is empty
+- Implemented: always use base_surfer::$errors as array
+- Implemented: always use 'index' for box preview
+- Implemented: assign domain options for domain without a root page
+- Implemented: attaching a item to and itemcollection sets the application registry of the item
+- Implemented: attaching a owner to and collection sets the application registry of the owner if available
+- Implemented: avoid notices if called using the cli sapi
+- Implemented: base_option calls $options instance in global application registry
+- Implemented: base_options::getInstance is a static function
+- Implemented: better default value checks for mysql
+- Implemented: better exception messages for peroperty handling
+- Implemented: better validate if array index exists before using it
+- Implemented: block notice if no county code for ip is found
+- Implemented: Block view change if it is incompatible with dependency sync
+- Implemented: BUGFIX - show empty listviews if they have an maximize attribute
+- Implemented: call action dispatcher before even deleting the surfer so that data is still available
+- Implemented: call action dispatcher method on validity change
+- Implemented: cast $message variable to string, trigger compilation for PapayaUiString objects
+- Implemented: changed column caption to "version time"
+- Implemented: changed order of setting link data, so the automatic title  do not override the manual title
+- Implemented: changing base_options::$optFields  into a stativ member vairalbe, allow direct access without instanciating the object
+- Implemented: check file existance again to avoid race conditions and block linking error output
+- Implemented: check modification on unset parameters for field type callback
+- Implemented: cleanup, check for empty document root string
+- Implemented: cleanup execution path
+- Implemented: cleanup, remove direct call of global configuration constants
+- Implemented: cleanup templates, add excluding default namespace prefix
+- Implemented: cli parameter job is read into $_GET['job']
+- Implemented: clone parameters subobject when cloning reference
+- Implemented: confirmation checksum changed because of normalization
+- Implemented: constants for protocol modes
+- Implemented: content_sitemap - select default output mode in drop down
+- Implemented: Content text in dynamic registration form
+- Implemented: convert href on loading/setting to absolute urls
+- Implemented: copy and create dependencies for copied pages
+- Implemented: copy objekt before usage
+- Implemented: Correct activation dialog to get default time by time module or previous setting
+- Implemented: correct @covers test annotation
+- Implemented: corrected field names
+- Implemented: Correct error message handling
+- Implemented: Correct message handling
+- Implemented: Correct permission list e.g. for permlist in edit fields
+- Implemented: Correct value for cronjob activation
+- Implemented: css workarounds for ie, checkobxes group dialog field
+- Implemented: data- attributes support for select options in PapayaUiDialogFieldSelect using a callback
+- Implemented: database errors in configuration loading are now ignored or output as http header dependeing on the dev mode option
+- Implemented: dbresult_base now implements PapayaDatabaseResult
+- Implemented: declare function as static
+- Implemented: declare namespace for papaya tags in teasers
+- Implemented: define domain types as class constants
+- Implemented: define options before error output
+- Implemented: define popup links using a data-popup attribute
+- Implemented: depedency/reference listivew now hast links to go to the connected pages
+- Implemented: depended pages (clones) get a different icon on dependencies tab button in administration interface
+- Implemented: direct use of exception hook without throwing an exception again
+- Implemented: display faq search result text as html where necessary
+- Implemented: display-table workaround in hierarchy menu for ie6
+- Implemented: display-table workaround in hierarchy menu for ie7
+- Implemented: do not access the option as constant
+- Implemented: do not add an empty image attribute
+- Implemented: do not add an empty image attribute - fixed failed test
+- Implemented: do not allow to edit files in folder "clipboard"
+- Implemented: do not allow to uplod/paste files to folder "desktop"
+- Implemented: do not define domain options as global constants, but just assign them to the configuraiton object
+- Implemented: do not delete editor-linked surfers on frontend request
+- Implemented: do not include publication into initial sync (it's not data but an action)
+- Implemented: do not use configuration constants directly but the configuration object from the application registry
+- Implemented: do not use domain data for page links in preview mode
+- Implemented: do not use Exception
+- Implemented: do not use papaya_options to define the configuration status
+- Implemented: don't add empty caption span for comboboxes in toolbars
+- Implemented: Dynamic fields in info summary
+- Implemented: dynamic images need the possibility to write session values
+- Implemented: dynamic images should not create a session, only use an existing
+- Implemented: Editfield to add a query string to the redirection url after  account deletion added.
+- Implemented: end/exit the current request response
+- Implemented: escape sql parts before using them in queryFmt
+- Implemented: escape </ to <\/ instead of \/</
+- Implemented: exclude papaya-fn namespace in results
+- Implemented: extract phpunit configuration
+- Implemented: fallback for a strange match
+- Implemented: fetch option from options object, do not use the constant
+- Implemented: filter dialog needs to use request body parameters, too.
+- Implemented: Fix call on a none Object erro if pageReferences isn't set (affects unittest)
+- Implemented: fix collect for named submit buttons in groups
+- Implemented: fixed a bug in same handle/same surfer check
+- Implemented: fixed a typo
+- Implemented: fixed @backupGlobals annotations
+- Implemented: Fixed bug undefind Variable advanced
+- Implemented: Fixed bug undefind Variable SelectedEntry
+- Implemented: fixed cache handling and tests for Twitter module
+- Implemented: fixed escaping bug in image subtitle source if no source url was provided
+- Implemented: fixed link type for page tags (it's topic because of bc)
+- Implemented: fixed map value callbacks
+- Implemented: fixed notice in PapayaCache::getService() and removed some unused source
+- Implemented: fixed PapayaContentPagePublicationStatus::cache() get existing cache object
+- Implemented: fixed problem in session storage of opened page trees (administration sitemap)
+- Implemented: fixed rewind problem if first iterator in list was empty
+- Implemented: fixed simple_xmltree::unserializeArrayFromXML
+- Implemented: fixed some tests - that broke because of the new version attribute in serialized xml
+- Implemented: fixed sql field name in PapayaContentCommunityGroups::loadByPermission()
+- Implemented: fixed sql to compare views modules of a dependency
+- Implemented: fixed two variable definition bugs
+- Implemented: fixed typo in variable name
+- Implemented: fixed url configuration for public media files
+- Implemented: fixed variable name conflict
+- Implemented: Fixed Xml output for short entries
+- Implemented: Fixed xml unscaping
+- Implemented: fix index set call while replacing an item in a ui collection
+- Implemented: fix path to phpmd rules
+- Implemented: fix theme browser control links
+- Implemented: formatting and documenting url regex pattern
+- Implemented: get-dialog in administration interface
+- Implemented: get the first char as a substring to avoid a notice
+- Implemented: hide PapayaUiIcon by displaying an transparent image in its place
+- Implemented: if a media file is requested as preview but no administration is here, treat it like a non preview request
+- Implemented: improved handling for appending xml to document root (use only first element)
+- Implemented: increasing max-width for menu bar select boxes
+- Implemented: Index added to field surfer_registration
+- Implemented: initial synchronization on dependency change
+- Implemented: inject default link types into database result
+- Implemented: it is no use to sort topics loaded by tags using the weight (position in their parent), they have different parents
+- Implemented: js syntax fix for IE
+- Implemented: keep preview time if preview is just activated again without a new time parameter
+- Implemented: let a key say that is generated, to avoid problems with already set values of the record
+- Implemented: let parser modules generate absolute links depending on the parser object property $linkModeAbsolute
+- Implemented: let the papaya tag parser generate absolute urls if a property is set
+- Implemented: limit ci code metrics to new classes
+- Implemented: limit community administration by backend group membership
+- Implemented:  Load and display the anchestors of the current page
+- Implemented: load content pages by given parent id
+- Implemented: load page link type
+- Implemented: log phpunit data for jenkins
+- Implemented: look for the data-popup attribute not class
+- Implemented: make first an last quote character optional
+- Implemented: make owner argument optional
+- Implemented: make the PapayaUiCommand class an interactive control
+- Implemented MANTIS-11697: fixed output of FAQ containing HTML-encoded XML
+- Implemented MANTIS-2778: make form methods lowercase
+- Implemented: map old global constants to new class constants
+- Implemented: map the old constants to the new class constants for bc
+- Implemented: Method to change the surfer handle enabled and success message added.
+- Implemented: more useful error message for memory limit
+- Implemented: moved action dispatcher call up for modules that still need detail data
+- Implemented: moving cms table definition from base_options to PapayaContentTables
+- Implemented: new debug mode for layout phrases, define the boolean option PAPAYA_DEBUG_LANGUAGE_PHRASES in conf.inc.php
+- Implemented: new xml testsuite for papaya CMS
+- Implemented: normalize the parameters data array before creating a checksum, to make the checksum more stable
+- Implemented: only add an url to an absolute page id weblink, if creation of the relative url did not add it already (pages on other domains)
+- Implemented: only load domain options if host is a virtual domain
+- Implemented: only use session cache option if session is active
+- Implemented: Optimized notification email settings
+- Implemented: optionally set language ID for addons
+- Implemented: option PAPAYA_DBG_XML_OUTPUT was removed, so usage has to be removed, too.
+- Implemented: output countings on dependencies tab button in administration interface
+- Implemented: output dialog groups as subtitles
+- Implemented: output id as attribute to dailgo field group xml element if not empty
+- Implemented: output listview only if they have items (administration interface)
+- Implemented: output memory limit information in system test
+- Implemented: overload PapayaUiListviewItem::collection() to provide better code completion
+- Implemented: PapayaAdministrationPagesDependencySynchronizationPublication::getVersionData(),  refactored to one condition level
+- Implemented: PapayaApplication::getInstance is a static function
+- Implemented: PapayaCache::get() is a static method, declare it that way
+- Implemented: PapayaConfiguration::has() should not check for constants, only PapayaConfigurationGlobal::has() should do this
+- Implemented: PapayaContentCommunityUsers load with filter text, add caption value after mapping
+- Implemented: PapayaContentPagePublicationStatus:.load() return success/failure
+- Implemented: PapayaDatabaseAccess - store the connector object in a member variable
+- Implemented: PapayaDatabaseInterfaceKey::getFilter() now has an argument, providing the usage of the return (filter or create)
+- Implemented: PapayaDatabaseManager::createDatabaseAccess() - create and return a database access object
+- Implemented: PapayaDatabaseManager extends PapayaObject
+- Implemented: PapayaDatabaseRecord::__clone
+- Implemented: PapayaDatabaseRecordUnbuffered: use PapayaDatabaseManager::createDatabaseAccess()
+- Implemented: PapayaFilterEqualsParameter tests
+- Implemented: PapayaHttpClientFileResource, cleanup tests, use exceptions (not trigger_error)
+- Implemented: PapayaIteratorMultiple is an OuterIterator
+- Implemented: PapayaMessageDispatcherXhtml:getHeaderOptionsFromType support unknown types
+- Implemented: papaya_parser needs a string - cast the return value
+- Implemented: PapayaPluginLoader::createObject always returns TRUE if no Exception has happened, removing dead code
+- Implemented: PapayaRequestParameters::clear()
+- Implemented: PapayaUiControl now extends PapayaUiControlPart, implements only getXml()
+- Implemented: PapayaUiDialog::description() adding description data (fom templates) to a dialog object
+- Implemented: PapayaUiDialogFieldInputNumber::__construct() with a default maximum value in declaration we do not need to check for an empty value
+- Implemented: PapayaUiLinkAttributes extends from PapayaUiControlPart not PapayaUiControl (it is not a fully control itself)
+- Implemented: PapayaUiNavigationItem now takes to arguments in the constructor and stores them.
+- Implemented: PapayaUiReferencePageFactory::getLinkAttributes() get link attributes for a page id
+- Implemented: PapayaUiReference::setParameters() should not overwrite already set parameters
+- Implemented: PapayaUiToolbarGroup now extends PapayaUiToolbarSet
+- Implemented: PapayaUtilDate, refactored logic into own method, optimize crap
+- Implemented: PapayaUtilStringUtf8::getCodepoint length checks
+- Implemented: parameter bugfix for lastInsertId()
+- Implemented: parser needs checkit class - require it
+- Implemented: prevent using array functions on non-arrays
+- Implemented: Problem with changing the user handle and using the  login method by handle fixed.
+- Implemented: property definiiton for field group class
+- Implemented: provide $items argument to before/after callbacks
+- Implemented: read purifier cache path from configuraiton object
+- Implemented: refactored condition creation into an own method, added escaping, optionally allow to load pages with translations needed
+- Implemented: refactored PapayaDatabaseResult into an interface
+- Implemented: refactored PapayaDatabaseSequenceHuman to extract ranom char string generation into own method
+- Implemented: refactored PapayaHttpClientSocket to make reading timeout handling testable
+- Implemented: refactored preview check into a method papaya_page::isPreview(), but store the status in papaya_page::$public for bc, too.
+- Implemented: refactored the compilation of condition and order by sql into protected methods, to allow usage in child classes if load ist overloaded.
+- Implemented: refactored to remove duplicate source
+- Implemented: refactor PapayaUiDialogElementDescription into an list of description items
+- Implemented: remove auth cookie only on logout
+- Implemented: remove call-time pass by reference (it is not needed and fails on PHP 5.4)
+- Implemented: remove codesniffer jobs
+- Implemented: removed dead code - the name is always an array in this case
+- Implemented: removed deprecated argument, added autoloader
+- Implemented: removed double unescape for new array serializations
+- Implemented: removed explizit decoding already done by dom
+- Implemented: removed load() implementation of PapayaContentDomains, possible to do just by declaration
+- Implemented: removed needless semicolon
+- Implemented: removed reference assignment
+- Implemented: removed some error-suppression operators.
+- Implemented: removed special handling for first level of pages in page tree, they can be closed now.
+- Implemented: removed unused method PapayaDatabaseObjectRecord::_prepareOffset()
+- Implemented: removed unused options from base_options
+- Implemented: removing class "base_log", was replaced by PapayaMessage* classes
+- Implemented: removing lint (syntax check), fixing directories for phpdepend and phpmd
+- Implemented: removing PHP 4 constructors and explicit object references
+- Implemented: removing references to base_options
+- Implemented: Renamed (and moved) PapayaUiTeaserImages to PapayaUiContentTeaserImages - this class is for content output only
+- Implemented: rename property hostname to host
+- Implemented: renaming PapayaIteratorGlob::reset() to rewind()
+- Implemented: renaming PapayaIteratorRegexFilter to PapayaIteratorFilterRegex - group filter iterators
+- Implemented: replaced calls to old base_options class with $option object from applicaiton registry
+- Implemented: replace direct usage of global table name constants
+- Implemented: replaced PapayaObject::getApplication()/setApplication() with papaya()
+- Implemented: replaced unset on properties with set to empty array
+- Implemented: replace exception for empty db result with EmptyIterator return value
+- Implemented: reset file offset on search
+- Implemented: return EmptyIterator for empty database result 
+- Implemented: return option value, better api compatibility
+- Implemented: return original href if no href was provided
+- Implemented: return xml of configuration data input dialog again
+- Implemented: run phpmd
+- Implemented: same method declaration like parent
+- Implemented: Session handling modified if a surfer is deleted
+- Implemented: session redirects for robots (removing sid from url)
+- Implemented: set background color for panels and menu bars, avoiding missing background if workarea ist not scaled to full width
+- Implemented: set default (empty string) for 'notification_recipient'
+- Implemented: set default value only if none was provided in xml.
+- Implemented: set default values for scheme/hsot of an absolute url if no request url is available
+- Implemented: Set dynamic module to deprecated, use content_register instead
+- Implemented: set empty filter if here are no values
+- Implemented: set items limit for create paging
+- Implemented: set preview to false in getWebLink()
+- Implemented: set the reference url scheme if it is missing
+- Implemented: setting build basedir
+- Implemented: set ui language as administration template object parameter if it equals the user defined ui language
+- Implemented: setup path confirguration before alias/wrapper handling
+- Implemented: Show confirmation dialog before copy pages to specifiy data for depencencies.
+- Implemented: show message in publish dialog for dependent/referenced pages
+- Implemented: Show month suffix in short date if available.
+- Implemented: show version message in box versions list view
+- Implemented: skip test if DOMNodeList does not implement Traversable (old php bug, fixed in newer versions)
+- Implemented: small fix for paging calculation
+- Implemented: special handling for old entity escaping - bc fix
+- Implemented: splitting loading options and defining option constants, preparation for domain specific previews
+- Implemented: store the libxml error in exception and allow to return it.
+- Implemented: support host url with a scheme, not only a host name
+- Implemented: support iterators as source for PapayaUiDialogFieldSelectCheckboxes
+- Implemented: Support multiple add on modules per page
+- Implemented: switching options implementation in application registry
+- Implemented: switch preview domain with a select box above preview frame
+- Implemented: sync content after saving
+- Implemented: synchronize box usage and linking
+- Implemented: synchronize copy/create/delete page translations
+- Implemented: synchronize page content changes
+- Implemented: sync page access and view changes
+- Implemented: sync page publication
+- Implemented: sync page tags
+- Implemented: throw an InvalidArgumentException in PapayaUiDialogFieldInputTime if the step is invalid
+- Implemented: transfer PAPAYA_RICHTEXT_LINK_TARGET as an option to the papayaParser js object, allow it to set a default target attribute on links without an target
+- Implemented: try setting memory limit to original value before script shutdown
+- Implemented: try to always scale page according to content
+- Implemented: update changes for Tagging
+- Implemented: update to TinyMCE 3.4.9
+- Implemented: use a different callable variant to make it work on some PHP 5.2.0 version
+- Implemented: use a parameter for the items not the callback context
+- Implemented: use application to get surfer instance, attributes
+- Implemented: use array access to avoid accidental __set() attempt
+- Implemented: use " as quote char by default - looks like ie does not like single quotes in json
+- Implemented: use autoload instead of explicit requires to fix tests that had missing requires
+- Implemented: use data cache for database query result
+- Implemented: use dynamic session for unknown output modes, some cleanup
+- Implemented: use geoip extension if installed
+- Implemented: use lastInsertId to fetch id of new version record
+- Implemented: use native types for options, do not allow to change the initial type
+- Implemented: use new cleanup url transformer to make absolute url nicer
+- Implemented: use new configuration object
+- Implemented: use new option object, replaced global constants
+- Implemented: use new PapayaUiDialog class for publish page dialog
+- Implemented: use new PapayaUiTeaserImages class to generate teaser thumbnail tags
+- Implemented: use new PapayaUtilConstraints::assertCallable
+- Implemented: use object variable for guid, fixed unknown local variable $guid error
+- Implemented: use PapayaDomDocument to create a teaser xml
+- Implemented: users without user admin permission must not edit backend-linked surfers.
+- Implemented: use string cast to avoid inserting NULL instead of the empty string into a DB table
+- Implemented: use Traversable instance as values for PapayaUiDialogFieldSelect
+- Implemented: use typehint to make sure that always the feed is assigned
+- Implemented: use utility function to cleanup path, not individuell source
+- Implemented: validate if the error message class exists/can be loaded
+- Implemented: validate modules of the views in matching translations if necessary
+- Implemented: validate using folder upload permission before pasting a file from "clipboard" - not file permissions
+- Implemented: validation for result from queryFmt has to be a little more specific
+- Implemented: wrap Traversable into IreratorIterator if necessary
+- Refs MANTIS-10098: fixed dynamic images in PDF output
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.19
+-----------------------------------------------------------------------------------------------
+
+- Implemented: Index added to field surfer_registration
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.18
+-----------------------------------------------------------------------------------------------
+
+- Implemented: added a default definition for a variable
+- Implemented: Index added to field surfer_registration
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.17
+-----------------------------------------------------------------------------------------------
+
+- Implemented: call action dispatcher method on validity change
+- Implemented: moved action dispatcher call up for modules that still need detail data
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.16
+-----------------------------------------------------------------------------------------------
+
+- Implemented: do not delete editor-linked surfers on frontend request
+- Implemented: fixed a bug in same handle/same surfer check
+- Implemented: store the libxml error in exception and allow to return it.
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.15
+-----------------------------------------------------------------------------------------------
+
+- Added: Dynamic field options and output, registration page
+
+- Implemented: add workaround for property_exists() on a protected property notworking on some PHP 5.2.0 version
+- Implemented: BUGFIX - show empty listviews if they have an maximize attribute
+- Implemented: Content text in dynamic registration form
+- Implemented: Correct message handling, registration page
+- Implemented: deprecated tag, dynamic registration page
+- Implemented: Optimized notifcation email settings, registration page
+- Implemented: small fix for paging calculation
+- Implemented: use a different callable variant to make it work on some PHP 5.2.0 version
+- Implemented: remove call-time pass by reference (it is not needed and fails on PHP 5.4)
+                                                                                               
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.14
+-----------------------------------------------------------------------------------------------
+
+- Added: PapayaAdministrationCommunityUsersListDialog
+- Added: PapayaContentCommunityUsers
+- Added: PapayaUiDialogFieldButtons
+- Added: PapayaUiDialogFieldListview
+- Added: PapayaUiListviewItemsBuilder - a builder system to generate listview items on demand
+- Added: PapayaUiToolbarComposed, a toolbar composed from several sets
+- Added: PapayaUiToolbarSet - a set of toolbar elements
+- Added: PapayaUtilString::escapeForPrintf() 
+
+- Implemented: added a mixed mode that allows a get-dialog read request body parameters 
+- Implemented: adding direction specific callbacks, to remove the need for a direction condition in the callback
+- Implemented: allow buttons and listview in dialog fields (administration interface)
+- Implemented: allow to set parameters using a parameters object and a group string
+- Implemented: escape sql parts before using them in queryFmt
+- Implemented: filter dialog needs to use request body parameters, too.
+- Implemented: fixed rewind problem if first iterator in list was empty
+- Implemented: fixed two variable definition bugs
+- Implemented: Fixed Xml output for short entries
+- Implemented: Fixed xml unscaping
+- Implemented: fix index set call while replacing an item in a ui collection
+- Implemented: get-dialog in administration interface
+- Implemented: interface PapayaDatabaseResult extends IteratorAggregate (missed in some merge)
+- Implemented: make the PapayaUiCommand class an interactive control
+- Implemented: normalize the parameters data array before creating a checksum, to make the checksum more stable
+- Implemented: output listview only if they have items (administration interface)
+- Implemented: overload PapayaUiListviewItem::collection() to provide better code completion
+- Implemented: PapayaContentCommunityUsers load with filter text, add caption value after mapping
+- Implemented: PapayaUiReference::setParameters() should not overwrite already set parameters
+- Implemented: PapayaUiToolbarGroup now extends PapayaUiToolbarSet
+- Implemented: removed some error-suppression operators.
+- Implemented: use a parameter for the items not the callback context
+- Implemented: users without user admin permission must not editbackend-linked surfers.
+
+- Tested: PapayaUiReference::setParameters() should not overwrite already set parameters
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.13
+-----------------------------------------------------------------------------------------------
+
+- Added: Iterator for parent child trees (using a list of element and a list of parent-child-ids)
+- Added: modified mapping method in PapayaContentModuleOptions to map filter arrays
+- Added: PapayaDatabaseRecordsTree, a records class that returns an recursive iterator for a parent-child-tree
+- Added: PapayaIteratorFileStream
+- Added: PapayaIteratorFilterCallback
+- Added: PapayaIteratorRepeatCallback
+- Added: PapayaIteratorRepeatIncrement
+- Added: PapayaUiDialogElementDescription, if the hint text is not enough
+- Added: PapayaUiDialogElementDescriptionLink, link to an description page
+- Added: PapayaUiDialogElementDescriptionProperty, generic description property for dialog elements
+- Added: PapayaUiDialogField::getDescription()
+- Added: PapayaUiDialogFieldGroupButtons
+- Added: PapayaUiDialogField::setDescription()
+- Added: PapayaUiMessages, PapayaUiMessage* - generic objects to output messages into content xml
+- Added: PapayaUiPagingSteps (paging step size links)
+- Added: PapayaUtilStringGuid, guid validation and normalization
+- Added: Support for plugin/module options to PapayaPluginLoader and PapayaPluginFactory
+
+- Implemented: actually return the attributes
+- Implemented: added new Method loadCatalogLinkListWithDetails to get the topic linktypes
+- Implemented: allow to ignore parameter group while generating parameter name
+- Implemented: better default value checks for mysql
+- Implemented: fix collect for named submit buttons in groups
+- Implemented: PapayaDatabaseRecord::__clone
+- Implemented: PapayaRequestParameters::clear()
+- Implemented: PapayaUiDialog::description() adding description data (fom templates) to a dialog object
+- Implemented: refactor PapayaUiDialogElementDescription into an list of description items
+- Implemented: replace exception for empty db result with EmptyIterator return value
+- Implemented: use application to get surfer instance, attributes
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.12
+-----------------------------------------------------------------------------------------------
+
+- Implemented: always use base_surfer::$errors as array
+- Implemented: Correct activation dialog to get default time by time module or previous setting
+- Implemented: Correct value for cronjob activation
+- Implemented: return EmptyIterator for empty database result
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.11
+-----------------------------------------------------------------------------------------------
+
+- Added: Missing include_once to set email return path
+- Added: PapayaDatabaseRecordsUnbuffered, splitting database loading logic from buffering and array access
+- Added: PapayaDatabaseResultIterator - iterator on a database result
+- Added: PapayaDatabaseResult::seek()
+
+- Implemented: added IteratorAggregate using the new PapayaDatabaseResultIterator to the papaya database result object, allowing to use foreach on them
+- Implemented: allow to attach a mapping object to the database result iterator
+- Implemented: declare namespace for papaya tags in teasers
+- Implemented: end/exit the current request response
+- Implemented: PapayaIteratorMultiple is an OuterIterator
+- Implemented: Problem with changing the user handle and using the login method by handle fixed.
+- Implemented: renaming PapayaIteratorGlob::reset() to rewind()
+- Implemented: validation for result from queryFmt has to be a little more specific
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.10
+-----------------------------------------------------------------------------------------------
+
+- Added: PapayaContentCommunityGroups, data encapsulation for the  surfer group records
+- Added: PapayaContentCommunityPermissions
+- Added: PapayaContentTables::COMMUNITY_PERMISSIONS
+- Added: PapayaContentTables::COMMUNITY_USER
+- Added: PapayaCsvWriter
+- Added: PapayaDatabaseRecordKeySequence() a record key using a PapayaDatabaseSequence object to create new ids
+- Added: PapayaDatabaseRecords::orderBy()
+- Added: PapayaFilterListKeys to check the value against the keys of an array or traversable
+- Added: PapayaIteratorGlob, encapsulate glob() into an iterator
+- Added: PapayaIteratorMultiple
+- Added: PapayaIteratorRegexFilter, and iterator filtering elements from an innter iterator using a pcre
+- Added: PapayaUiDialogFieldSelect::callbacks() allows to define a callback function for the option captions, so the array/traversable can contain complex types
+- Added: PapayaUiDialogSession, a dialog that stores its data in the session
+- Added: PapayaUiNavigationItemNamed for named navigation links with individual template handling
+- Added: PapayaUiNavigationItem::selected(), selected status for navigation links
+- Added: PapayaUiNavigationItems, PapayaUiNavigationItem, PapayaUiNavigationBuilder - build a link navigation from an array or traversable
+- Added: PapayaUtilArray::get(), gets an element from the array if it exists or returns a default value
+- Added: PapayaUtilConstraints::assertArrayOrTraversable(), allow to validate if a variable can be used with foreach
+
+- Documented: relation between various caching functions and settings
+
+- Fixed MANTIS-8774: Configurable error message title
+
+- Implemented: added a useConfirmation option to the dialog options, this makes it possible to disable the hidden field used to validate if a dialog was submited.
+- Implemented: added a version attribute to serialize xml for arrays
+- Implemented: adding some dynamic properties as a peak preview for the refactored api 
+- Implemented: allow box names up to 100 characters
+- Implemented: allow to fetch a single identifer using PapayaDatabaseSequenceHumanCumulative, this return now one identifer with maximum length
+- Implemented: allow to specifiy the tag name used in arraysaerializer xml
+- Implemented: allow to use map Traversable objects in PapayaUtilArrayMapper
+- Implemented: allow Traversable as list data for PapayaFilterList
+- Implemented: data- attributes support for select options in PapayaUiDialogFieldSelect using a callback
+- Implemented: fixed simple_xmltree::unserializeArrayFromXML
+- Implemented: fixed some tests - that broke because of the new version attribute in serialized xml
+- Implemented: fixed sql field name in PapayaContentCommunityGroups::loadByPermission()
+- Implemented: let a key say that is generated, to avoid problems with already set values of the record
+- Implemented: limit community administration by backend group membership
+- Implemented: output id as attribute to dailgo field group xml element if not empty
+- Implemented: PapayaConfiguration::has() should not check for constants, only PapayaConfigurationGlobal::has() should do this
+- Implemented: PapayaDatabaseInterfaceKey::getFilter() now has an argument, providing the usage of the return (filter or create)
+- Implemented: PapayaUiNavigationItem now takes to arguments in the constructor and stores them.
+- Implemented: refactored the compilation of condition and order by sql into protected methods, to allow usage in child classes if load ist overloaded.
+- Implemented: removed double unescape for new array serializations
+- Implemented: removed explizit decoding already done by dom
+- Implemented: renaming PapayaIteratorRegexFilter to PapayaIteratorFilterRegex - group filter iterators
+- Implemented: replaced unset on properties with set to empty array
+- Implemented: Session handling modified if a surfer is deleted
+- Implemented: set empty filter if here are no values
+- Implemented: support iterators as source for PapayaUiDialogFieldSelectCheckboxes
+- Implemented: Support multiple add on modules per page
+- Implemented: use Traversable instance as values for PapayaUiDialogFieldSelect
+- Implemented: wrap Traversable into IreratorIterator if necessary
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.9
+-----------------------------------------------------------------------------------------------
+
+- Added: Filter for comparing a parameter value with a given string value
+- Implemented: PapayaFilterEqualsParameter tests
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.8
+-----------------------------------------------------------------------------------------------
+
+- Added: PapayaDatabaseSequenceHumanCumulative sequence provides ids with increasing length
+- Implemented: refactored PapayaDatabaseSequenceHuman to extract ranom char string generation into own method
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.7
+-----------------------------------------------------------------------------------------------
+
+- Added: domain database records object
+- Added: js buttons to mofify checkbox selection in new dialog controls
+- Added: large item-publication icon
+- Added: large version (48 pixel) of the actions-edit-copy image for the page copy confirmation dialog
+- Added: method lastInsertId to database abstraction, allow to fetch the last inserted id
+- Added: PapayaAdministrationPagesAnchestors, load and display an anchestors menu 
+- Added: PapayaAdministrationPagesDependencyCounter, load dependency/reference coutings for a page
+- Added: PapayaAdministrationPagesDependencySynchronizationView, separating view synchronization from content synchronization
+- Added: PapayaConfigurationCms to replace the base_options object
+- Added: PapayaConfigurationDomain configuration storage that loads from domain record
+- Added: PapayaContentDomain - domain record contant class
+- Added: PapayaContentViews, view records list
+- Added: PapayaControlCollection::clear(), to remove all items in a collection
+- Added: PapayaFilterNot, negate another filter
+- Added: PapayaUiDialogFieldSelectRadio, a radio selection dialog field
+- Added: PapayaUiHierarchyItem
+- Added: PapayaUiHierarchyItems
+- Added: PapayaUiHierarchyMenu, display the hierarchy of the current data element
+- Added: PapayaUtilArrayMapper and utility class to map arrays into other arrays
+- Added: PapayaUtilFilePath::ensureIsAbsolute()
+- Added: PapayaUtilFilePath::ensureTrailingSlash()
+- Added: PapayaUtilServerName::get() encapsulation to fetch the server name from environment
+- Added: Template and Theme data for PapayaUiHierarchyMenu
+
+- Documented: add and create new changelog style
+- Documented: PapayaCacheConfiguration
+- Documented: public is not a valid value for session cache mode
+- Documented: specified return type of PapayaUiReferencePage::create()
+
+- Fixed MANTIS-2509: Make PostgreSQL parser not take 'name' as its reserved keyword.
+- Fixed MANTIS-2509: NULL was used to force a default value instead of the PostreSQL 
+- Fixed MANTIS-2509: PostgreSQL incompatible syntax was reintroduced colliding withthe notation of objects of the ORDBMS PostgreSQL.
+- Fixed MANTIS-2509: PostgreSQL syntax was not correct on several other occasions, i.e.
+- Fixed MANTIS-2729: Use of table name and prefix factored out of SQL.
+- Fixed MANTIS-8275: fix the calling of the databasein the loop of reading of result from an another databasescalling
+
+- Implemented: added context argument to callback
+- Implemented: added current page to anchestors menu bar, added limit to anchestors bar
+- Implemented: added "get" method to configuration mocks
+- Implemented: Added missing sync for page properties
+- Implemented: added missing tests and fixed errors in exceptions
+- Implemented: added missing tests and refactored PapayaUiControlCommand::validateCondition() to avoid dead code
+- Implemented: added timestamp input field
+- Implemented: add phpunit.xml
+- Implemented: allow empty values for non required datetime fields
+- Implemented: allow faq submit buttons to be individually changed in page settings
+- Implemented: allow media plugin usage in simplerichtext
+- Implemented: allow NULL for option values
+- Implemented: allow select boxes in listview toolbars
+- Implemented: allow separators in listview toolbars
+- Implemented: allow to reset the stored cache services
+- Implemented: allow to set a error handler on a PapayaDatabaseAccess object, replacing the default eror handling (dispatching log messages)
+- Implemented: allow to use method syntax to read and store application registry objects
+- Implemented: assign domain options for domain without a root page
+- Implemented: attaching a item to and itemcollection sets the application registry of the item
+- Implemented: attaching a owner to and collection sets the application registry of the owner if available
+- Implemented: base_option calls $options instance in global application registry
+- Implemented: Block view change if it is incompatible with dependency sync
+- Implemented: changing base_options::$optFields  into a stativ member vairalbe, allow direct access without instanciating the object
+- Implemented: cleanup execution path
+- Implemented: constants for protocol modes
+- Implemented: content_sitemap - select default output mode in drop down
+- Implemented: copy and create dependencies for copied pages
+- Implemented: copy objekt before usage
+- Implemented: corrected field names
+- Implemented: database errors in configuration loading are now ignored or output as http header dependeing on the dev mode option
+- Implemented: dbresult_base now implements PapayaDatabaseResult
+- Implemented: define domain types as class constants
+- Implemented: define options before error output
+- Implemented: depedency/reference listivew now hast links to go to the connected pages
+- Implemented: depended pages (clones) get a different icon on dependencies tab button in administration interface
+- Implemented: display faq search result text as html where necessary
+- Implemented: do not define domain options as global constants, but just assign them to the configuraiton object
+- Implemented: do not include publication into initial sync (it's not data but an action)
+- Implemented: do not use configuration constants directly but the configuration object from the application registry
+- Implemented: do not use Exception
+- Implemented: do not use papaya_options to define the configuration status
+- Implemented: don't add empty caption span for comboboxes in toolbars
+- Implemented: Editfield to add a query string to the redirection url after account deletion added.
+- Implemented: escape </ to <\/ instead of \/</
+- Implemented: fetch option from options object, do not use the constant
+- Implemented: fixed @backupGlobals annotations
+- Implemented: fixed cache handling and tests for Twitter module
+- Implemented: fixed notice in PapayaCache::getService() and removed some unused source
+- Implemented: fixed PapayaContentPagePublicationStatus::cache() get existing cache object
+- Implemented: fixed sql to compare views modules of a dependency
+- Implemented: hide PapayaUiIcon by displaying an transparent image in its place
+- Implemented: increasing max-width for menu bar select boxes
+- Implemented: initial synchronization on dependency change
+ - Implemented: it is now possible, to save an uploaded file of a formular in the Medai-DB and use the Media-ID for storage or in an email.
+- Implemented:  Load and display the anchestors of the current page
+- Implemented: map old global constants to new class constants
+- Implemented: map the old constants to the new class constants for bc
+- Implemented: Method to change the surfer handle enabledand success message added.
+- Implemented: moving cms table definition from base_options to PapayaContentTables
+- Implemented: new xml testsuite for papaya CMS
+- Implemented: only load domain options if host is a virtual domain
+- Implemented: optionally set language ID for addons
+- Implemented: option PAPAYA_DBG_XML_OUTPUT was removed, so usage has to be removed, too.
+- Implemented: output countings on dependencies tab button in administration interface
+- Implemented: output dialog groups as subtitles
+- Implemented: PapayaAdministrationPagesDependencySynchronizationPublication::getVersionData(),  refactored to one condition level
+- Implemented: PapayaCache::get() is a static method, declare it that way
+- Implemented: PapayaContentPagePublicationStatus:.load() return success/failure
+- Implemented: PapayaHttpClientFileResource, cleanup tests, use exceptions (not trigger_error)
+- Implemented: papaya_parser needs a string - cast the return value
+- Implemented: PapayaPluginLoader::createObject always returns TRUE if no Exception has happened, removing dead code
+- Implemented: PapayaUiDialogFieldInputNumber::__construct() with a default maximum value in declaration we do not need to check for an empty value
+- Implemented: PapayaUtilDate, refactored logic into own method, optimize crap
+- Implemented: parameter bugfix for lastInsertId()
+- Implemented: property definiiton for field group class
+- Implemented: read purifier cache path from configuraiton object
+- Implemented: refactored PapayaDatabaseResult into an interface
+- Implemented: refactored PapayaHttpClientSocket to make reading timeout handling testable
+- Implemented: refactored preview check into a method papaya_page::isPreview(), but store the status in papaya_page::$public for bc, too.
+- Implemented: refactored to remove duplicate source
+- Implemented: removed dead code - the name is always an array in this case
+- Implemented: removed special handling for first level of pages in page tree, they can be closed now.
+- Implemented: removed unused method PapayaDatabaseObjectRecord::_prepareOffset()
+- Implemented: removed unused options from base_options
+- Implemented: removing class "base_log", was replaced by PapayaMessage* classes
+- Implemented: removing references to base_options
+- Implemented: rename property hostname to host
+- Implemented: replaced calls to old base_options class with $option object from applicaiton registry
+- Implemented: replace direct usage of global table name constants
+- Implemented: replaced PapayaObject::getApplication()/setApplication() with papaya()
+- Implemented: return xml of configuration data input dialog again
+- Implemented: Show confirmation dialog before copy pages to specifiy data for depencencies.
+- Implemented: show message in publish dialog for dependent/referenced pages
+- Implemented: Show month suffix in short date if available.
+- Implemented: splitting loading options and defining option constants, preparation for domain specific previews
+- Implemented: support host url with a scheme, not only a host name
+- Implemented: switching options implementation in application registry
+- Implemented: switch preview domain with a select box above preview frame
+- Implemented: sync content after saving
+- Implemented: throw an InvalidArgumentException in PapayaUiDialogFieldInputTime if the step is invalid
+- Implemented: use lastInsertId to fetch id of new version record
+- Implemented: use native types for options, do not allow to change the initial type
+- Implemented: use new option object, replaced global constants
+- Implemented: use new PapayaUiDialog class for publish page dialog
+- Implemented: use PapayaDomDocument to create a teaser xml
+- Implemented: use string cast to avoid inserting NULL instead of the emptystring into a DB table
+- Implemented: use utility function to cleanup path, not individuell source
+- Implemented: validate modules of the views in matching translations if necessary
+  setting and retrieving the auto increment fields and values thereof.
+  syntax 'DEFAULT' for default values. The column 'surfer_valid' has a NOT NULLconstraint, the default value of 0 is used now.
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.6
+-----------------------------------------------------------------------------------------------
+- Added: Interface PapayaXmlAppendable
+- Added: Mobile rules to resize page and move elements for windows smaller than 480px
+- Added: new interface based record class (incomplete)
+- Added: new option PAPAYA_SESSION_MODE, standard mode session initialization on pages
+- Added: new PapayaDatabaseRecords, representation for a database list result
+- Added: PapayaADministrationPageReferenceCommandChange, edit reference dialog command
+- Added: PapayaAdministrationPagesReferenceCommandDelete, delete reference dialog and action
+- Added: PapayaCacheConfiguration for cache configuration objects
+- Added: PapayaConfigurationGlobal with constants for the main configuration
+- Added: PapayaContentPageReference, encapsulation for the page reference record
+- Added: PapayaContentPageReferences, list of references for a given page
+- Added: PapayaContentPages bases on PapayaDatabaseRecords, a class to load page lists
+- Added: PapayaCotnentPageTags, represents a list of tags attached to the page
+- Added: PapayaDatabaseRecordKeyLink, a key class for link records
+- Added: PapayaFilterColor, validate/filter color strings like #FFFFFF
+- Added: PapayaFilterEquals, validate if a value equals a given comparsion value
+- Added: PapayaFilterExceptionNoEqual
+- Added: PapayaFilterPhone, validate/filter Phone strings
+- Added: PapayaFilterUrl, validate/filter url strings
+- Added: PapayaListviewItemPagingDown - listview item with links to previous pages
+- Added: PapayaListviewItemPaging - superclass for a listivew item with paging links
+- Added: PapayaListviewItemPagingUp - listview item with links to following pages
+- Added: PapayaObjectInterface - interface for PapayaObject (access to PapayaApplication)
+- Added: PapayaRequestParametersInterface - interface for Parameters access
+- Added: PapayaUiDialogFieldInputColor, dialog field fur color input
+- Added: PapayaUiDialogFieldInputPhone, dialog field fur phone input
+- Added: PapayaUiDialogFieldInputUrl, dialog field fur url input
+- Added: PapayaUiDialogFieldXhtml
+- Added: PapayaUiDialogFieldXhtmlLink
+- Added: PapayaUiFieldInputCheckbox
+- Added: PapayaUiTeaserImages a ui control to append teaser thumbnail tags
+- Added: PapayaXmlElement::append(), append implementation of PapayaXmlAppendable to the element
+- Added: PapayaXmlElement::saveFragment(), saves the xml of all child nodes (including text nodes). The result is not nessesary a valid xml document but only a fragment.
+- Added: support for profiler (xhprof)
+- Added: table for page references
+
+- Documented: add missing phpdoc param
+- Documented: correct phpdoc
+- Documented: declared dynamic properties
+- Documented: dynmic properties for publication period
+- Documented: PapayaAdministrationPagesDependencyListview::pages()
+- Documented: replace copy and pasted function phpdoc with actual description
+
+- Fixed MANTIS-2639: Fatal error: Call to undefined method checkit::isHTTPPath()
+- Fixed MANTIS-2668: Change content language impossible
+- Fixed MANTIS-2676: papayas 404 response has incorrect content length
+- Fixed MANTIS-2677: No logging and consideration of user id in statistic
+
+- Implemented: actually set up autoloader in ->getFileName() as the phpdoc says
+- Implemented: add ability to only wire up the lightbox to already present images instead of replacing the gallery
+- Implemented: add ability to pass images as argument instead over global variable
+- Implemented: added buttons for references and back to dependency
+- Implemented: added field for page session mode (session initialization)
+- Implemented: added field to log cookies of request
+- Implemented: added instance check to avoid this from outside
+- Implemented: added references output to dependency listview
+- Implemented: added some casting to int, to make sure the comparsion is numeric
+- Implemented: added xhprof to system tests
+- Implemented: adding conditions to commands, allow to specifiy execution conditions
+- Implemented: add missing array elements to fix errors in a test
+- Implemented: add missing thumbnail size of the just created thumbnail
+- Implemented: add/remove authentication status cookie
+- Implemented: allow any chars in title
+- Implemented: allow a single id to be used in the load method
+- Implemented: allow dynamic session starts if sid is provided, allow to disable the session for specific pages
+- Implemented: allow file context for non existing files
+- Implemented: allow to call module option function non-static
+- Implemented: allow to cast the key to string
+- Implemented: allow to load record with empty filter (limiting result)
+- Implemented: allow to synchronize multiple parts of a page at once.
+- Implemented: allow to use an element caption and not an attribute title for listview items
+- Implemented: always remove sid from url
+- Implemented: ArrayAccess interface in PapayaDatabaseRecords
+- Implemented: assign the application object to a created reference object 
+- Implemented: avoid sql query execution if condition is empty
+- Implemented: cast $message variable to string, trigger compilation for PapayaUiString objects
+- Implemented: change topic id with new dialog; bug fixes
+- Implemented: check for xhprof extension
+- Implemented: check if session object exists
+- Implemented: cleanup and utf-8 support
+- Implemented: clear path before registering and comparing registered paths to avoid a spurious test failure
+- Implemented: column span for listview item
+- Implemented: correct @covers test annotation
+- Implemented: correct require path
+- Implemented: create the instance in a getter instead of in the constructor
+- Implemented: extend base_object from PapayaObject
+- Implemented: extracting session options into a separate group
+- Implemented: fix check pattern for alias string
+- Implemented: fix class name according to file name
+- Implemented: fixed callback name
+- Implemented: fixed link type for page tags (it's topic because of bc)
+- Implemented: fixed typcasting error
+- Implemented: fixed variable name conflict
+- Implemented: fix theme browser control links
+- Implemented: get cache service by profile name from global configuration
+- Implemented: getCurrent() is now public
+- Implemented: get relative url considering defined page id
+- Implemented: hiddenfield values get priority over data values
+- Implemented: hide the zero timestamp
+- Implemented: if a PapayaUiReference is cloned the attached PapayaUrl object needs to be cloned, too
+- Implemented: if the dialog was submitted bute the parameter is missing return 0.
+- Implemented: Ignore empty default values for disabled inputs
+- Implemented: Input type for text fields in password request form corrected.
+- Implemented: integrating reference dialog into dependency managment
+- Implemented: let PapayaDatabaseRecord::save() return the key object for successful inserts
+- Implemented: load content pages by given parent id
+- Implemented: load page publication data for public output
+- Implemented: load references even if the target pages does not exists
+- Implemented: make sure that the merged record data is an array by casting it
+- Implemented: merge dialog results with existing data
+- Implemented: merge link type informations with already loaded informations
+- Implemented: only publish target if origin can be loaded
+- Implemented: only use session cache option if session is active
+- Implemented: optionally allow topic titles instead of catalog titles
+- Implemented: optionally use topic titles for links
+- Implemented: options for data cache
+- Implemented: output content length for custom error pages
+- Implemented: PapayaConfiguration::assign() to assign multiple values to a configuration at once
+- Implemented: PapayaConfiguration::getHash() returung a hash compiled from the option values
+- Implemented: PapayaConfiguration without constants usage for local configuration objects
+- Implemented: PapayaDatabaseRecords identifer properties
+- Implemented: PapayaListviewItemPaging* now have an link on the image
+- Implemented: PapayaMessageDispatcherXhtml:getHeaderOptionsFromType support unknown types
+- Implemented: PapayaUiListviewItem::reference()
+- Implemented: PapayaUiPagingCount, a object for paging links based on an item count
+- Implemented: PapayaUtilConstraints::InstanceOf()
+- Implemented: parser needs checkit class - require it
+- Implemented: read page modification date
+- Implemented: recognize separators
+- Implemented: refactored session redirects into a separate method
+- Implemented: remove auth cookie only on logout
+- Implemented: remove comment as it was found to be unnecessary
+- Implemented: Removed statistic module for user logins
+- Implemented: removed unused parameters from reference links
+- Implemented: remove include of phpunit Framework.php it is not available in newer phpunit versions and not needed in current phpunit versions
+- Implemented: remove nesting of a db request, as that won't work in papaya
+- Implemented: remove profiling directory validation from constructor
+- Implemented: remove superfluous require
+- Implemented: Renamed (and moved) PapayaUiTeaserImages to PapayaUiContentTeaserImages - this class is for content output only
+- Implemented: renamed option PAPAYA_SESSION_MODE to PAPAYA_SESSION_ACTIVATION
+- Implemented: renamed PapayaDatabaseRecordKeyLink to PapayaDatabaseRecordKeyFields
+- Implemented: return a list of properties defined in the mapping
+- Implemented: reverted unserialize 
+- Implemented: save cookie header for php error messeages in log
+- Implemented: set superclass to inhertid application object
+- Implemented: several dialog behavior improvements
+- Implemented: show cookie header in log message older then 6 hours (not for active sessions)
+- Implemented: show pagetitle of origin page in blocker message
+- Implemented: show pagetitle of origin page in listview title
+- Implemented: show references in dependency listview
+- Implemented: switched PapayaContentPageDependency to PapayaDatabaseRecord
+- Implemented: synchronize box usage and linking
+- Implemented: synchronize copy/create/delete page translations
+- Implemented: synchronize page content changes
+- Implemented: synchronize page publication action
+- Implemented: sync page access and view changes
+- Implemented: sync page publication
+- Implemented: sync page tags
+- Implemented: test assign with invalid data
+- Implemented: the @count attribute of the list element has to contain the page count - not the item count
+- Implemented: the target_id in the dialog can be different from the target id in the loaded reference, set the value depending on the current page id (which is always the source id in the dialog)
+- Implemented: update changes for Tagging
+- Implemented: use addIncludePath instead of plain set_include_path to not clobber the include path
+- Implemented: use a new instance of the gallery each time it is called
+- Implemented: use autoloader in tests
+- Implemented: use autoload instead of explicit requires to fix tests that had missing requires
+- Implemented: use condition to hide dependency dialog if page has a dependency to an origin
+- Implemented: use data cache for database query result
+- Implemented: use new PapayaUiTeaserImages class to generate teaser thumbnail tags
+- Implemented: use new xml serialize functions
+- Implemented: use papaya array merge, not the php builtin
+- Implemented: use PapayaCacheConfiguration class in cache services. Create an instance using the values from the global configuration if it is provided
+- Implemented: validate local file before output/sending headers
+- Implemented: validate reference if ids are changed
+
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.5
+-----------------------------------------------------------------------------------------------
+- Added: basic structure and source of new configuration class (incomplete, untested)
+- Added: black administration theme
+- Added: dialog field for email addresses (html5)
+- Added: dialog field for range input
+- Added: float filter
+- Added: hint to declared properties
+- Added: offset mode to PapayaUiToolbarPaging
+- Added: PapayaAdministrationPagesDependencyBlocker
+- Added: PapayaAdministrationPagesDependencySynchronizationAccess
+- Added: PapayaConfigurationStorageDatabase, database storage handler
+- Added: PapayaContentConfiguration, options record list
+- Added: PapayaContentPageBoxes, lists boxes assigned to a page
+- Added: PapayaContentTables - class for table name handling
+- Added: PapayaDatabaseAccess::getTimestamp(), a wrapper for time(),  so it is mockable
+- Added: PapayaObjectItem, a superclass for objects with a defined set of properties, accessible as properties and as array keys.
+- Added: PapayaSessionParameters, persistance for parameters using the session
+- Added: PapayaUiControlCommandCallbacks
+- Added: PapayaUiControlCommandDialog, a command that can execute a dialog
+- Added: PapayaUiControlCommand/PapayaUiControlCommandController generic handling for a command structure including permissions
+- Added: PapayaUiListviewItem::text, displays a text below the caption
+- Added: PapayaUiPanel
+- Added: PapayaUiPanelFrame, a panel with an iframe inside
+- Added: PapayaUiStringDate, a string defined by a timestamp
+- Added: synchronization action classes (without logik so far)
+- Added: synchronizeAction(), sync one part of all dependencies of one page
+- Added: synchronizeDependency(), sync all parts of one dependency
+- Added: tests for float filter
+
+- Documented: Extended the hints for the htaccess file (link to the generator...)
+- Documented: fixed documentation errors, added missing headers
+- Documented: Hint for the htaccess.tpl file
+- Documented: Hint to open /papaya/install.php  after setting up the config.inc.php
+- Documented: New abstraction in PapayaUtilStringUtf8 for string operations
+- Documented: PapayaAdministrationPagesDependencyChanger
+- Documented: PapayaConfigurationIterator
+- Documented: PapayaDatabaseException
+- Documented: PapayaDatabaseExceptionConnect
+- Documented: PapayaDatabaseExceptionQuery
+- Documented: PapayaDatabaseResult
+- Documented: PapayaEmailHeaders
+- Documented: PapayaFilterBitmask
+- Documented: PapayaFilterExceptionCharacterInvalid
+- Documented: PapayaUiControlCommandDialog
+- Documented: Reordered the entries in the sample config
+- Documented: Sample for most common database URI (MySQL)
+
+- Implemented: add a <glyphs> element around the group of <glyph> elements
+- Implemented: added default data to avoid notices
+- Implemented: added missing tests to AllTests
+- Implemented: added "note" field to page dependencies
+- Implemented: added "note" field to page dependency dialog
+- Implemented: added optional suffix parameter to truncate function
+- Implemented: added some space between glyphs in a group
+- Implemented: administrationUser is in global registry
+- Implemented: a filter for numbers, optionally within a length range
+- Implemented: allow @ in urls
+- Implemented: allow the header X-PAPAYA-HTTPS to threat the current request as http, even if it is not. The header must equal the constant PAPAYA_HEADER_HTTP_TOKEN.
+- Implemented: allow to assign record data to list object
+- Implemented: allow to register module prefix for autoloader
+- Implemented: avoid problem if box module was used as page module
+- Implemented: avoid problems with tests in separate processes
+- Implemented: block default link action - patch from forum
+- Implemented: block page editing depending on synchronizations
+- Implemented: bugfix for empty <a> tags
+- Implemented: changed to an extension list and a loop, so the  source can be tested
+- Implemented: change objects in typehints to interfaces - this allows more flexibility in the implementaitons
+- Implemented: check if box has content before applying the template
+- Implemented: cleanup of PapayaAdministrationPagesDependencyChanger
+- Implemented: contants for some base system tables
+- Implemented: correct glyph file name for language de
+- Implemented: default port depends only on the real protocol,  not on the new custom header
+- Implemented: delete empty <a> tags
+- Implemented: dependencies() getter/setter method
+- Implemented: execute() should return false after handleValidationFailure() was called, even when execute() was already called once before (previously the old cached result was returned)
+- Implemented: explizit cache headers for downloads
+- Implemented: filter for ISO date with optional time
+- Implemented: fixed doc block
+- Implemented: fixed http header name
+- Implemented: fixed interval detection
+- Implemented: fixed offsetSet() declaration
+- Implemented: fixed onExecutionError() was called on dialog show
+- Implemented: fixed phpdoc
+- Implemented: fixed some phpdoc
+- Implemented: fixed topic id change
+- Implemented: fixed typo and checking logic
+- Implemented: fixed typos and checking logic
+- Implemented: fixed typo (setDefaultData instead of setDefaulData)
+- Implemented: input field for numbers with optional length range
+- Implemented: make sure only utf-8 is appended to dom and papaya namespace is recognized.
+- Implemented: make sure that the truncated string is utf-8
+- Implemented MANTIS-2520: log media requests in statistic
+- Implemented: moved iframe layout stuff from php (xml) to the xslt
+- Implemented: opened png images should be saved including alpha channel by default
+- Implemented: options to define class and link target of media source links
+- Implemented: page content and property sync (untested)
+- Implemented: PapayaAdministrationPagesDependencySynchronizationAccess
+- Implemented: PapayaUiCommandList, combine several commands into one
+- Implemented: PapayaUtilStringUtf8::copy()
+- Implemented: PapayaUtilStringUtf8::length()
+- Implemented: PapayaUtilStringUtf8::position()
+- Implemented: prevented erroneous extra executions
+- Implemented: refactored class name/structure
+- Implemented: removed explizit execute() call (it is include in appendTo()/getXml())
+- Implemented: remove empty <p>tags while converting tinymce html to papaya tags
+- Implemented: remove trailing whitespaces using a unicode pcre
+- Implemented: renamed $group, allowing strings and objects
+- Implemented: Renamed  PapayaUiListviewToolbars to PapayaUiToolbars
+- Implemented: replaced specialized dialog objects with new command classes, the command classes are needed anyway the dialogs not.
+- Implemented: set box inheritance status, moved code to correct class
+- Implemented: set dialog application object on fields and buttons
+- Implemented: show dependency note as text in listview
+- Implemented: show target of imported link in link dialog
+- Implemented: show ui checbkoxes in one line
+- Implemented: special input fields for date and time
+- Implemented: support for target attributes in imported links
+- Implemented: support numeric parts in identifiers
+- Implemented: sync box links
+- Implemented: throw/catch LogicException not Exception
+- Implemented: time filter
+- Implemented: use commands to change/delete the dependency
+- Implemented: use default command if command is unknown
+- Implemented: use new PapayaContentTables::* constants
+- Implemented: use new PapayaUiPanelFrame
+- Implemented: use new PapayaUiStringDate
+- Implemented: use new utf8 string functions
+- Implemented: use option, not external prefix, to define old table name constants
+- Implemented: use PapayaContentTables object (not the Options) to prefix the table name
+- Implemented: use PapayaUiListview for large versions list
+- Implemented: use utility class to normalize names/offsets
+- Implemented: validate ranges using a loop
+
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.4
+-----------------------------------------------------------------------------------------------
+- Added: brown administration theme
+- Added: Content classes for box versions
+- Added: method fir validated file extension
+- Added: PapayaUiDialogDatabaseDelete
+- Added: pink administration theme
+- Added: purple administration theme
+- Added: set image format and cache time for individual dynamic images
+
+- Documented: marked PapayaUiDialogConfirmation as deprecated
+- Documented: marked PapayaUiDialogInput as deprecated
+
+- Implemented: added field for media file source url
+- Implemented: Block delete dialog output after successful execute
+- Implemented: block page dependencies tab if permission is not available
+- Implemented: correct return value phpdoc: this function may not return values that are not of type string
+- Implemented: delete dependency using new database delete dialog
+- Implemented: document changes for 5.3.4
+- Implemented: file extension for dynamic images in papaya rte tags
+- Implemented: file extension in preview frame
+- Implemented: fixed dynamic image preview in rte
+- Implemented: fixed lightbox dialog height.
+- Implemented: fixed purple progress animation
+- Implemented: Form labels for search fields in task manager renamed
+- Implemented: link source url
+- Implemented: log messages for page and translation create
+- Implemented: merged PapayaUiDialogInput into PapayaUiDialog
+- Implemented: read source and source-url from papaya tag parameters if available
+- Implemented: refactored PapayaUiDialogDatabaseCallbacks from PapayaUiDialogDatabaseSave
+- Implemented: refactored PapayaUiDialogDatabase from PapayaUiDialogDatabaseSave
+- Implemented: rename PapayaUiDialogDatabaseObject to PapayaUiDialogDatabaseSave
+- Implemented: replacing calls on PapayaUiDialogInput
+- Implemented: return NULL if no database manager exists
+- Implemented: support all kind of nodes in PapayaUiControl::getXml()
+- Implemented: translate dialog title
+- Implemented: use getTableName() to add the table prefix
+
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.3
+-----------------------------------------------------------------------------------------------
+- Added: PapayaFilterBitmask, check a bitmask against a list of possible values
+- Added: PapayaFilterBitmask, check value against a bit list
+- Added: PapayaFilterListMultiple, check value array against list
+- Added: PapayaUiCallbacks and PapayaUiCallback, allow a definable  list of callbacks for another object
+- Added: PapayaUiDialogDatabaseObject, a dialog that can directly use a PapayaDatabaseObjectRecord instance
+- Added: PapayaUiDialogFieldInformation, field displaying text and image
+- Added: PapayaUiDialogFieldInputPage, single line input for page id
+- Added: PapayaUiDialogFieldMessage, field displaying message text and an image depending on the severity of the message
+- Added: PapayaUiDialogFieldSelectBitmask, group of checkboxes that  edits a bitmask
+- Added: PapayaUiDialogFieldSelectMultiple, group of checkboxes that  edits a list of values
+- Added: PapayaUiDialog::getParameterName() return a PapayaRequestParametersName with the group separator depending on the dialog request method
+- Added: PapayaUtilArray::ensure(), this static function can be used to convert variables into arrays. If it is an array or an instance of Traversable the elements will be returned, otherwise an array contain the input value will be returned
+- Added: PapayaUtilArray::merge() now works for object implementing Traversable
+- Added: PapayaXmlElement::saveXml()
+- Added: user option PAPAYA_CONTENT_LANGUAGE, default content language is now independent from interface language
+
+- Documented: return value for PapayaObject::papaya()
+
+- Implemented: added PapayaObject::papaya(), getter/setter for the application object
+- Implemented: added template for dialog message fields
+- Implemented: allow DependencyChanger to add buttons to menu
+- Implemented: allow empty value (0) for input
+- Implemented: allow list syntax using "[]" if the group separator is different
+- Implemented: allow to specify the used parameter level separator for  request mock
+- Implemented: allow to store aliases without a hostname, default for new aliases is still the current hostname
+- Implemented: allow Traversable in PapayaRequestParameters::merge()
+- Implemented: assign application object to subobjects
+- Implemented: change field in goto dialog to 'page'
+- Implemented: check for collection before accessing it.
+- Implemented: consolidated/fixed 'synchronization' wording
+- Implemented: declare and document dynamic properties
+- Implemented: delete button and dialog
+- Implemented: explicit return (NULL) in getCurrentValue() if no value is available
+- Implemented: extracting PapayaAdministrationPagesDependencyListview into an separate class
+- Implemented: extracting synchronisation definitions dependency dialog
+- Implemented: favicons in administration interface matching the selected theme
+- Implemented: fixed magic method name
+- Implemented: fixed parameter group duplication
+- Implemented: formatting dialog message fields like large messages
+- Implemented: group recursion protection checks for list syntax
+- Implemented: include dialog-old.xsl from dialogs.xsl
+- Implemented: increase new hint text size
+- Implemented: make prepare() independent from execute()
+- Implemented: More filter and fields for the search in tasks added.
+- Implemented: new favicon for defautl theme
+- Implemented: PAPAYA_CONTENT_LANGUAGE is a language id not code
+- Implemented: PapayaDatabaseObjectRecord now implements IteratorAggregate
+- Implemented: PapayaDatabaseRecord::delete() a generic delete method for the record. 
+- Implemented: refactored selection check into a separate method, so child classes can overload it.
+- Implemented: renamed PapayaUiDialogInput::title() to PapayaUiDialogInput::caption, added declared properties
+- Implemented: renamed title to caption 
+- Implemented: support page input field type in template
+- Implemented: templates for new dialog select input fields: dropdown, list, radio, checkboxes
+- Implemented: use new method PapayaUiDialog::getParameterName()
+- Implemented: use new PapayaXmlElement::saveXml()
+- Implemented: use PapayaRequestParametersName in PapayaRequestParameters to parse the names
+- Implemented: use typecast for ArrayObject
+
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.2
+-----------------------------------------------------------------------------------------------
+- Added: PapayaAdministrationLanguagesSwitch, content language switch  for administration interface, replacement for base_language_select
+- Added: PapayaApplicationProfileAdministrationLanguage, profile for content language switch
+- Added: PapayaContentLanguages, PapayaContentLanguage,  data encapsulation for language records
+- Added: PapayaContentPageDependencies::changeOrigin, switch the origin from one page id to another.
+- Added: PapayaContentPageDependency::isOrigin()
+- Added: PapayaUiIcon, icon with texts and optional link for the ui
+- Added: PapayaUiIconList, a list of ui icon objects
+- Added: PapayaUiListviewSubitemImageSelect, shows multiple icons from an icon list
+- Added: PapayaUiListviewSubitemImageSelect, shows one icon from an icon list
+- Added: PapayaUiListviewSubitem::setActionParameters()
+- Added: PapayaUtilFile::formatBytes()
+
+- Documented: PapayaUiListviewSubitemImage::reference()
+
+- Fixed MANTIS-2667: Use write connection for deletes.
+
+- Implemented: access content language for page titles in dependency listview
+- Implemented: added hints for icons and modified column to pages listview
+- Implemented: base_language_select is now a bc layer for PapayaAdministrationLanguagesSwitch
+- Implemented: Checks for password from fields for old password and  password repetition removed.
+- Implemented: clarify the phpdoc for the return value of some db functions
+- Implemented: fixed sql query in PapayaContentPAgeDependencies::load()
+- Implemented: fixed sql query in PapayaContentPageDependencies::load(),  load by origin id
+- Implemented: fix sql (replaced . with ,)
+- Implemented: fix typo in a call that dispatches a warning message
+- Implemented: Input field for search in task manager can now  contain more than 10 characters
+- Implemented: link dependent pages
+- Implemented: new tab in page administration for depedencies, list dependencies of current page or its origin
+- Implemented: PapayaContentLanguages::* methods that return a language object now return NULL if it the language can not be found
+- Implemented: PapayaDatabaseObjectList::itemAt(), get an item array by its position in the list, allows negative positions
+- Implemented: PapayaRequestParameters::has()  now supports parameter group syntax
+- Implemented: PapayaUiListviewSubitem::getAlign() works without a collection
+- Implemented: show first 100 chars of version message in version listview
+- Implemented: show status icons for syncronisation in dependent pages list
+- Implemented: table structure for topic dependencies table
+- Implemented: use setter for actionParameters()
+- Implemented: version trasnlations use a different table
+
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.1
+-----------------------------------------------------------------------------------------------
+- Added: PapayaContentPageDependencies
+- Added: PapayaContentPageDependencies::delete()
+- Added: PapayaContentPageDependency
+- Added: PapayaContentPageVersion
+- Added: PapayaContentPageVersions
+- Added: PapayaUiDialogFieldHidden, input field without visible output
+- Added: table stucture file for topic dependencies
+
+- Implemented: accept integer as PapayaRequestParametersName
+- Implemented: added hint attribute handling for options in select (old dialog)
+- Implemented: allow to provide an url in the constructor
+- Implemented: break out parse functions from setArray and setString
+- Implemented: correct @cover annotation
+- Implemented: correct missing new from throwing the exception
+- Implemented: explizit call of flush() after uncached page output
+- Implemented: extracted getFieldClass() logic into own method
+- Implemented: fix for not initialized variable
+- Implemented: fix notice is foxus page does not exists
+- Implemented: fix problem if no link type exists.
+- Implemented: make sure that a url is loaded into the object before executing a setter
+- Implemented: PapayaContentPageVersion, create versions
+- Implemented: PapayaContentPageVersionTranslations
+- Implemented: PapayaRequestParametersName::append() and prepend()
+- Implemented: prepare offset before checking if value is set.
+- Implemented: respect setting for the parameter group separator in dialog hidden fields and use PapayaRequestParametersName in PapayaUiDialog::appendHidden()
+- Implemented: respect setting for the parameter group separator in dialogs and replace duplicate implementation in PapayaUiDialogElement::_getParameterName() with one based on PapayaRequestParametersName
+- Implemented: set svn property svn:eol-style to LF
+- Implemented: set the separator from setString() like from set()
+- Implemented: show task count in listview title
+- Implemented: split out PapayaRequestParametersName::parse() from set()
+- Implemented: support objects of PapayaRequestParametersName in parse and set
+- Implemented: use default value with filter object
+
+
+-----------------------------------------------------------------------------------------------
+papayaCMS 5.3.0
+-----------------------------------------------------------------------------------------------
+- Implemented: Check page data array type to avoid an non-comprehensible error message
+- Implemented: Chunked reading would not accept uppercase size hex code
+- Implemented: Correct return value
+- Implemented: correct switched documentation
+- Implemented: paging offset got lost on any other action; now kept in session
+
+

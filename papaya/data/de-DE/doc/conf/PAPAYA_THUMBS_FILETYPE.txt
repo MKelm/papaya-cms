@@ -1,0 +1,1 @@
+Bildformat für Miniaturbilder (Thumbnails). Auswahl Drop-Down-Liste:<ul><li>GIF<br /></li><li>JPEG<br /></li><li>PNG<br /></li></ul>

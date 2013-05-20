@@ -1,0 +1,1 @@
+„on“, wenn der Rich-Text-Editor standardmäßig aktiviert sein soll, andernfalls „off“.

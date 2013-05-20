@@ -1,0 +1,1 @@
+ID of the page that will be displayed when a redirection to an external ressource is requested. When the page is redirected, an additional 302 HTTP status code will be issued. This page will be displayed only if the redirect protection mechanism (<tt>PAPAYA_REDIRECT_PROTECTION</tt>) has been activated.

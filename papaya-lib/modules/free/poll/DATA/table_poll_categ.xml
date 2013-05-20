@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="poll_categ" prefix="yes">
+<fields>
+<field name="categ_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="categ_title" type="string" size="50"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>categ_id</field></primary-key>
+</keys>
+</table>

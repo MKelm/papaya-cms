@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulegroup>
+  <name>Jabber logger</name>
+  <description>Special module to redirect log output to Jabber/XMPP if
+    available. Uses the xmpphp code available from google code under
+    GPL. Will silently fail if that is not available.</description>
+  <modules>
+    <module type="logger" guid="1cd250ba99b06adc5243260adb972472"
+      name="Jabber logger base Module" class="jabber_logger" file="jabber_logger.php">
+      Logger plugin to redirect output to.</module>
+  </modules>
+</modulegroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_categories" prefix="yes">
+  <fields>
+    <field name="category_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="category_name" type="string" size="255" null="no"/>
+    <field name="category_lng" type="integer" size="4" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>category_id</field>
+    </primary-key>
+    <key name="category_name">
+      <field>category_name</field>
+      <field>category_lng</field>
+    </key>
+  </keys>
+</table>

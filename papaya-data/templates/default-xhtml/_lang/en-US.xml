@@ -1,0 +1,83 @@
+<texts>
+  <text ident="MORE">more</text>
+  <text ident="SAVE">save</text>
+  <text ident="CANCEL">cancel</text>
+  <text ident="BACK">back</text>
+  <text ident="NEXT">next</text>
+  <text ident="PREV">previous</text>
+  <text ident="OVERVIEW">overview</text>
+  <text ident="DOWNLOAD">download</text>
+  <text ident="ADD">add</text>
+  <text ident="EDIT">edit</text>
+  <text ident="VIEW">view</text>
+
+  <text ident="PAGE_FIRST">first</text>
+  <text ident="PAGE_PREVIOUS">previous</text>
+  <text ident="PAGE_NEXT">next</text>
+  <text ident="PAGE_LAST">last</text>
+
+  <text ident="SEARCH_CAPTION">Search</text>
+  <text ident="SEARCH_BUTTON">search</text>
+
+  <text ident="PATH_CAPTION">You are here</text>
+  <text ident="JUMP_TO_TOP">page top</text>
+  <text ident="JUMP_TO">Jump directly</text>
+  <text ident="JUMP_TARGET_NAVIGTION">to the main navigation</text>
+  <text ident="JUMP_TARGET_CONTENT">to the content</text>
+  <text ident="JUMP_TARGET_HOME">to the homepage</text>
+
+  <text ident="VIEW_CAPTION_PDF">pdf export</text>
+  <text ident="VIEW_CAPTION_PRINT">print view</text>
+
+  <text ident="UNKNOWN_ERROR">Unknown error.</text>
+  <text ident="INVALID_PASSWORD">Invalid password.</text>
+  <text ident="INVALID_USERNAME">Invalid username.</text>
+  <text ident="INVALID_PERMISSIONS">Invalid permissions.</text>
+  <text ident="ACCOUNT_BLOCKED">Account blocked.</text>
+  <text ident="PASSWORD_FORGOTTEN">Forgot password?</text>
+  <text ident="FIELD_MANDATORY">required field</text>
+
+  <text ident="MSG_NO_IFRAME">Your browser does not support embedded pages. Please click the link to open the page.</text>
+
+  <text ident="MONTH_NAME_JANUARY">January</text>
+  <text ident="MONTH_NAME_FEBRUARY">February</text>
+  <text ident="MONTH_NAME_MARCH">March</text>
+  <text ident="MONTH_NAME_APRIL">April</text>
+  <text ident="MONTH_NAME_MAY">May</text>
+  <text ident="MONTH_NAME_JUNE">June</text>
+  <text ident="MONTH_NAME_JULY">July</text>
+  <text ident="MONTH_NAME_AUGUST">August</text>
+  <text ident="MONTH_NAME_SEPTEMBER">September</text>
+  <text ident="MONTH_NAME_OCTOBER">October</text>
+  <text ident="MONTH_NAME_NOVEMBER">November</text>
+  <text ident="MONTH_NAME_DECEMBER">December</text>
+
+  <text ident="MONTH_ABBR_JANUARY">Jan</text>
+  <text ident="MONTH_ABBR_FEBRUARY">Feb</text>
+  <text ident="MONTH_ABBR_MARCH">Mar</text>
+  <text ident="MONTH_ABBR_APRIL">Apr</text>
+  <text ident="MONTH_ABBR_MAY">May</text>
+  <text ident="MONTH_ABBR_JUNE">June</text>
+  <text ident="MONTH_ABBR_JULY">July</text>
+  <text ident="MONTH_ABBR_AUGUST">Aug</text>
+  <text ident="MONTH_ABBR_SEPTEMBER">Sep</text>
+  <text ident="MONTH_ABBR_OCTOBER">Oct</text>
+  <text ident="MONTH_ABBR_NOVEMBER">Nov</text>
+  <text ident="MONTH_ABBR_DECEMBER">Dec</text>
+
+  <text ident="DAY_NAME_MONDAY">Monday</text>
+  <text ident="DAY_NAME_TUESDAY">Tuesday</text>
+  <text ident="DAY_NAME_WEDNESDAY">Wednesday</text>
+  <text ident="DAY_NAME_THURSDAY">Thursday</text>
+  <text ident="DAY_NAME_FRIDAY">Friday</text>
+  <text ident="DAY_NAME_SATURDAY">Saturday</text>
+  <text ident="DAY_NAME_SUNDAY">Sunday</text>
+
+  <text ident="DAY_ABBR_MONDAY">Mon</text>
+  <text ident="DAY_ABBR_TUESDAY">Tue</text>
+  <text ident="DAY_ABBR_WEDNESDAY">Wen</text>
+  <text ident="DAY_ABBR_THURSDAY">Thu</text>
+  <text ident="DAY_ABBR_FRIDAY">Fri</text>
+  <text ident="DAY_ABBR_SATURDAY">Sat</text>
+  <text ident="DAY_ABBR_SUNDAY">Sun</text>
+</texts>

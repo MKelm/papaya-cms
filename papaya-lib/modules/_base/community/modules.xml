@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modulegroup>
+  <name>Community</name>
+  <description>Manage the registered users of your web community. Registered users can have access to web pages that are password protected.
+You can define access privileges and associate them with community groups. These privileges can also be linked with pages so as to make them
+password protected.</description>
+  <modules>
+    <module type="box" guid="5c303cb511c7a2f99d3509eb1445ab54" name="Login Box" class="actionbox_login" file="actbox_login.php">Login box for registered community users.</module>
+    <module type="box" guid="ef1033444c6df5af8a0b1adf167933b9" name="Login by Handle Box" class="actionbox_login_handle" file="actbox_login_handle.php">Legacy login box for registered community users to log in by username.</module>
+    <module type="box" guid="fb8fb10c631b369827e483f4816c4797"  name="Contact List Box"  class="actionbox_contact_list" file="actbox_contact_list.php">Box displaying a surfer's contacts</module>
+    <module type="box" guid="ee19ed8636921c917a7cde5b72630771"  name="Contact Status Box"  class="actionbox_contact_status"  file="actbox_contact_status.php">Box displaying contact status and contact paths between the currently logged in surfer and another surfer</module>
+    <module type="box" guid="551c76719365e8287e52277a79fbb7c1"  name="Surfers Online Box"  class="actionbox_surfers_online"  file="actbox_surfers_online.php">Box displaying online surfers</module>
+    <module type="box" guid="64a8981f42ef975407a6a95049f26a61"  name="Login-dependent Richtext Box"  class="actionbox_richtext_surfer"  file="actbox_richtext_surfer.php"  outputfilter="no">Just like the default richtext box, except you can enter different content for logged-in and non-logged-in surfers</module>
+    <module type="page" guid="44613089b45717753cc8e304ebe8b324" name="Login Page" class="content_login" file="content_login.php">Login page for registered community users.</module>
+    <module type="page" guid="cf66e97f5b79b734602731bc5b840309" name="User Profile" class="content_profile" file="content_profile.php">This page module enables community users to edit their profiles.</module>
+    <module type="page" guid="988a22194e4204e3d430688aeee6864f" name="User Profile Change Confirmations" class="content_profile_change_confirmation" file="content_profile_change_confirmation.php">This page module handles mail confirmation links for profile edits.</module>
+    <module type="page" guid="83c51c124ff1eb3c06b03323fed6e065" name="User Contacts" class="content_contact" file="content_contact.php">Community user contact page</module>
+    <module type="page" guid="46bfa1471d639422ea67ba42e8a902a0" name="Mixed user data" class="content_userdata" file="content_userdata.php">Community mixed form for static and dynamic user data</module>
+    <module type="page" guid="fdda18a2f23c5e24f2691f75b8ca1d88" name="User Registration" class="content_register" file="content_register.php">Community user registration page</module>
+    <module type="page" guid="eb9089d2351f2b1f122698a471111077" name="Dynamic User Registration" class="content_register_dynamic" file="content_register_dynamic.php">Community user registration page with dynamic data fields</module>
+    <module type="page" guid="2790ee11afb8e667ddd8750fdb92e64d" name="User Data" class="content_showuser" file="content_showuser.php">Community public user data page</module>
+    <module type="page" guid="9d8a43441a93cf78af3bc9d5107b4ba3" name="User Data and List" class="content_showuser_list" file="content_showuser_list.php">Display user or list of users and send them emails</module>
+    <module type="page" guid="6a9e5526f02924beec1d9fd2c7b74665" name="Contact page" class="content_contact_list" file="content_contact_list.php">List of a user's contacts</module>
+    <module type="page" guid="68c6e379207c702eedaabd9d0b6e8369" name="Surfer Avatar Upload" class="content_avatarupload" file="content_avatarupload.php">Community avatar upload page</module>
+    <module type="admin" guid="88236ef1454768e23787103f46d711c2" name="Community" class="edmodule_community" file="edmodule_community.php" glyph="community.png">The administration module provides the facility to manage community users and to create and manage access privileges.</module>
+    <module type="admin" guid="70b689cb52d28375e3c230533c918a81" name="Community converter" class="edmodule_community_convert" file="edmodule_community_convert.php" glyph="community.png">Convert papaya-4- or early-papaya-5-alpha-based community data to the current state.</module>
+    <module type="alias" guid="aeb4b27251c5b162738d35c4f1af8773" name="Redirect by surfer handle" class="alias_surferhandle" file="alias_surferhandle.php">Redirect by surfer handle</module>
+    <module type="cronjob" guid="c3392d88fd29feaabcc620c82eec0fca" name="Clear contact path cache" class="cronjob_clear_contactcache" file="cronjob_clear_contactcache.php">Delete expired records from the contact path cache</module>
+    <module type="cronjob" guid="dcb76f9aa14ff590e0492bd567391d45" name="Clear expired surfer registrations and change requests" class="cronjob_clear_oldrequests" file="cronjob_clear_oldrequests.php">Delete records from the surfer table that have never become valid until a given number of days ago, as well as expired change requests</module>
+    <module type="connector" guid="06648c9c955e1a0e06a7bd381748c4e4" name="Surfer Connector" class="connector_surfers" file="connector_surfers.php">Surfer Connector</module>
+  </modules>
+  <tables>
+    <table name="surfer">The basic surfer table with email addresses, handles, password hashes and the like</table>
+    <table name="surferperm">Permissions that can be granted to groups</table>
+    <table name="surferdata">Definitions of dynamic profile data fields</table>
+    <table name="surferlists">Bookmark and ignore list for surfers</table>
+    <table name="surferlinks">Table to link surfers and their permissions</table>
+    <table name="surfergroups">Groups that surfers can be part of for permissions</table>
+    <table name="surferactivity">Record surfer activities</table>
+    <table name="surfercontacts">Contacts between surfers</table>
+    <table name="surferblacklist">Administrative black list for illegal surfer handles</table>
+    <table name="surferfavorites">Administrative favorite list that allows other modules to edit surfer-dependent settings without loading the whole surfer list</table>
+    <table name="surferdatatitles">Language-dependent titles for dynamic profile data fields</table>
+    <table name="surferdataclasses">Categories of dynamic profile data fields</table>
+    <table name="surfercontactdata">The surfers' dynamic profile data</table>
+    <table name="surfercontactcache">Surfer contacts cache</table>
+    <table name="surfercontactpublic">Per-contact publication settings for surfers' dynamic profile data</table>
+    <table name="surferchangerequests">Change requests (email and password changes etc.)</table>
+    <table name="surferdataclasstitles">Language-dependent titles for dynamic profile data categories</table>
+  </tables>
+</modulegroup>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_article_version" prefix="yes">
+  <fields>
+    <field name="article_node_id" type="integer" size="4" null="no"/>
+    <field name="version_timestamp" type="integer" size="4" null="no"/>
+    <field name="version_author_type" type="string" size="32" null="no"/>
+    <field name="version_author" type="string" size="255" null="no"/>
+    <field name="version_source" type="string" size="16777215" null="no"/>
+    <field name="version_comment" type="string" size="255" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>article_node_id</field>
+      <field>version_timestamp</field>
+    </primary-key>
+    <key name="version_author">
+      <field>version_author_type</field>
+      <field>version_author</field>
+    </key>
+  </keys>
+</table>

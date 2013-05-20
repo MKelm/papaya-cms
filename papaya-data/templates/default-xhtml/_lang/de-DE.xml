@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<texts>
+  <text ident="MORE">mehr</text>
+  <text ident="SAVE">Speichern</text>
+  <text ident="CANCEL">Abbrechen</text>
+  <text ident="BACK">Zurück</text>
+  <text ident="NEXT">Nächste</text>
+  <text ident="PREV">Vorherige</text>
+  <text ident="OVERVIEW">Übersicht</text>
+  <text ident="DOWNLOAD">Download</text>
+  <text ident="ADD">Hinzufügen</text>
+  <text ident="EDIT">Bearbeiten</text>
+  <text ident="VIEW">Anzeigen</text>
+
+  <text ident="PAGE_FIRST">Erste</text>
+  <text ident="PAGE_PREVIOUS">Vorherige</text>
+  <text ident="PAGE_NEXT">Nächste</text>
+  <text ident="PAGE_LAST">Letzte</text>
+
+  <text ident="SEARCH_CAPTION">Suche</text>
+  <text ident="SEARCH_BUTTON">Suchen</text>
+
+  <text ident="PATH_CAPTION">Sie befinden sich hier</text>
+  <text ident="JUMP_TO_TOP">Seitenanfang</text>
+  <text ident="JUMP_TO">Springen Sie direkt</text>
+  <text ident="JUMP_TARGET_NAVIGTION">zum Hauptmenü</text>
+  <text ident="JUMP_TARGET_CONTENT">zum Inhalt</text>
+  <text ident="JUMP_TARGET_HOME">zur Startseite</text>
+
+  <text ident="VIEW_CAPTION_PDF">PDF-Export</text>
+  <text ident="VIEW_CAPTION_PRINT">Druckansicht</text>
+
+  <text ident="UNKOWN_ERROR">Unbekannter Fehler.</text>
+  <text ident="INVALID_PASSWORD">Falsches Passwort.</text>
+  <text ident="INVALID_USERNAME">Ungültiger Benutzername.</text>
+  <text ident="INVALID_PERMISSIONS">Ungültige Benutzerrechte.</text>
+  <text ident="ACCOUNT_BLOCKED">Ihr Account ist gesperrt.</text>
+  <text ident="PASSWORD_FORGOTTEN">Passwort vergessen?</text>
+  <text ident="FIELD_MANDATORY">Pflichtfeld</text>
+
+  <text ident="MSG_NO_IFRAME">Ihr Browser unterstützt keine eingebetten Seiten. Klicken Sie auf den folgenden Link um die Seite zu öffnen.</text>
+
+  <text ident="MONTH_NAME_JANUARY">Januar</text>
+  <text ident="MONTH_NAME_FEBRUARY">Februar</text>
+  <text ident="MONTH_NAME_MARCH">März</text>
+  <text ident="MONTH_NAME_APRIL">April</text>
+  <text ident="MONTH_NAME_MAY">Mai</text>
+  <text ident="MONTH_NAME_JUNE">Juni</text>
+  <text ident="MONTH_NAME_JULY">Juli</text>
+  <text ident="MONTH_NAME_AUGUST">August</text>
+  <text ident="MONTH_NAME_SEPTEMBER">September</text>
+  <text ident="MONTH_NAME_OCTOBER">Oktober</text>
+  <text ident="MONTH_NAME_NOVEMBER">November</text>
+  <text ident="MONTH_NAME_DECEMBER">Dezember</text>
+
+  <text ident="MONTH_ABBR_JANUARY">Jan</text>
+  <text ident="MONTH_ABBR_FEBRUARY">Feb</text>
+  <text ident="MONTH_ABBR_MARCH">Mär</text>
+  <text ident="MONTH_ABBR_APRIL">Apr</text>
+  <text ident="MONTH_ABBR_MAY">Mai</text>
+  <text ident="MONTH_ABBR_JUNE">Jun</text>
+  <text ident="MONTH_ABBR_JULY">Jul</text>
+  <text ident="MONTH_ABBR_AUGUST">Aug</text>
+  <text ident="MONTH_ABBR_SEPTEMBER">Sep</text>
+  <text ident="MONTH_ABBR_OCTOBER">Okt</text>
+  <text ident="MONTH_ABBR_NOVEMBER">Nov</text>
+  <text ident="MONTH_ABBR_DECEMBER">Dez</text>
+
+  <text ident="DAY_NAME_MONDAY">Montag</text>
+  <text ident="DAY_NAME_TUESDAY">Dienstag</text>
+  <text ident="DAY_NAME_WEDNESDAY">Mittwoch</text>
+  <text ident="DAY_NAME_THURSDAY">Donnerstag</text>
+  <text ident="DAY_NAME_FRIDAY">Freitag</text>
+  <text ident="DAY_NAME_SATURDAY">Samstag</text>
+  <text ident="DAY_NAME_SUNDAY">Sonntag</text>
+
+  <text ident="DAY_ABBR_MONDAY">Mo</text>
+  <text ident="DAY_ABBR_TUESDAY">Di</text>
+  <text ident="DAY_ABBR_WEDNESDAY">Mi</text>
+  <text ident="DAY_ABBR_THURSDAY">Do</text>
+  <text ident="DAY_ABBR_FRIDAY">Fr</text>
+  <text ident="DAY_ABBR_SATURDAY">Sa</text>
+  <text ident="DAY_ABBR_SUNDAY">So</text>
+</texts>

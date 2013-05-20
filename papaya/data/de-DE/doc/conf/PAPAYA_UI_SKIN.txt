@@ -1,0 +1,1 @@
+Theme für das Backend von papaya CMS.

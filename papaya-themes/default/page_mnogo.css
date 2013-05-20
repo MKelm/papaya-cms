@@ -1,0 +1,43 @@
+/*
+ CSS rules for content module content_mnogo in ~/modules/_base/content_mnogo.php
+*/
+#content ul.searchResultNavigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 1.4em;
+  margin-bottom: 1em;
+  float: left;
+}
+#content ul.searchResultNavigation li {
+  float: left;
+  list-style-type: none;
+  background: none;
+  padding: 0.2em;
+}
+
+#content .resultsHeader {
+  float: right;
+  height: 1.4em;
+  margin-bottom: 1em;
+}
+
+#mnogoSearch {
+  margin: 1em 0;
+  padding: 0;
+}
+#mnogoSearch fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+#mnogoSearch input {
+  width: 69%;
+  float: left;
+  height: 1.4em;
+  font-size: 1em;
+}
+#mnogoSearch button {
+  width: 29%;
+  margin: 0 0 0 1px;
+}

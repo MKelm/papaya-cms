@@ -1,0 +1,1 @@
+Number of seconds that determine the time to keep generated boxes in the cache before they are regenerated. When the given value is "0", the boxes are not stored in the cache and are generated at each new page request.

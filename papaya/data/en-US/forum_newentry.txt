@@ -1,0 +1,8 @@
+Hello %NAME%,
+
+the thread %THREADTITLE% has a new entry.
+
+%ENTRYURL%
+
+-- 
+Please click here to disable automatic notification :

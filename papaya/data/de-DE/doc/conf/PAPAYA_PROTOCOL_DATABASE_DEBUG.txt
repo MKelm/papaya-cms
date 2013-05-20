@@ -1,0 +1,1 @@
+"On", um Debug-Meldungen in die papaya-Protokolltabellen zu schreiben, andernfalls "Off".

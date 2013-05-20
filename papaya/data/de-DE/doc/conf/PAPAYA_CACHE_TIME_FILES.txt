@@ -1,0 +1,1 @@
+Angabe in Sekunden, wie lange skalierte Bilder aus der MediaDB im Cache vorgehalten werden sollen, bevor sie neu skaliert werden. Bei einem Wert von „0“ werden Dateien nicht im Cache vorgehalten und bei jeder Anfrage ggf. neu bearbeitet.

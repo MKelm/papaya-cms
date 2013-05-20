@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>{#papaya.file_title}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script language="javascript" type="text/javascript" src="../../tiny_mce_popup.js"></script>
+    <script language="javascript" type="text/javascript" src="../../utils/mctabs.js"></script>
+    <script language="javascript" type="text/javascript" src="../../utils/form_utils.js"></script>
+    <script language="javascript" type="text/javascript" src="../../utils/validate.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/papaya.css">
+    <script language="javascript" type="text/javascript" src="js/jsonclass.js"></script>
+    <script language="javascript" type="text/javascript" src="js/papayatag.js"></script>
+    <script language="javascript" type="text/javascript" src="js/papayaparser.js"></script>
+    <script language="javascript" type="text/javascript" src="js/papayautils.js"></script>
+    <script language="javascript" type="text/javascript" src="js/papayaform.js"></script>
+    <script language="javascript" type="text/javascript" src="js/file_dlg.js"></script>
+  </head>
+  <body id="papayaFile" style="display: none">
+    <form action="javascript:function(){}();" onsubmit="PapayaFileDialog.apply();" name="fileForm">
+      <div id="file_panel" class="panel current">
+        <table class="properties" summary="">
+          <tr>
+            <td class="columnLabel"><label id="filetextlabel" for="filetext">{#papaya.file_text_title}</label></td>
+            <td class="columnElement"><input type="text" name="filetext" id="filetext" value="" class="dialogScale"/></td>
+          </tr>
+          <tr>
+            <td class="columnLabel"><label id="fileinfolabel" for="fileinfo">{#papaya.file_text_quickinfo}</label></td>
+            <td class="columnElement"><input type="text" name="fileinfo" id="fileinfo" value="" class="dialogScale"/></td>
+          </tr>
+          <tr>
+            <td class="columnLabel"><label id="filetargetlabel" for="filetarget">{#papaya.file_target}</label></td>
+            <td class="columnElement">
+              <select name="filetarget" id="filetarget" class="dialogScale">
+                <option value="_self" selected="selected">{#papaya.file_target_self}</option>
+                <option value="_blank">{#papaya.file_target_blank}</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <fieldset>
+          <legend>{#papaya.file_data}</legend>
+          <table class="properties" summary="">
+            <tr>
+              <td class="columnLabel"><label id="filedataidlabel" for="filedataid">{#papaya.file_data_id}</label></td>
+              <td class="columnElement"><input type="text" name="filedataid" id="filedataid" value="" class="dialogScale" disabled="disabled"/></td>
+            </tr>
+            <tr>
+              <td class="columnLabel"><label id="filedatatitlelabel" for="filedatatitle">{#papaya.file_data_title}</label></td>
+              <td class="columnElement"><input type="text" name="filedatatitle" id="filedatatitle" value="" class="dialogScale" disabled="disabled"/></td>
+            </tr>
+            <tr>
+              <td class="columnLabel"><label id="filedatanamelabel" for="filedataname">{#papaya.file_data_name}</label></td>
+              <td class="columnElement"><input type="text" name="filedataname" id="filedataname" value="" class="dialogScale" disabled="disabled"/></td>
+            </tr>
+            <tr>
+              <td class="columnLabel"><label id="filedatasizelabel" for="filedatasize">{#papaya.file_data_size}</label></td>
+              <td class="columnElement"><input type="text" name="filedatasize" id="filedatasize" value="" class="dialogScale" disabled="disabled"/></td>
+            </tr>
+          </table>
+        </fieldset>
+      </div>
+      <div class="mceActionPanel">
+        <div style="float: left; clear: both;">
+          <input type="submit" id="insert" name="insert" value="{#insert}" style="float: left;"/>
+          <input type="button" id="browseButton" name="browseButton" class="browseButton" value="{#papaya.file_select}" onclick="PapayaFileDialog.browseFiles();" style="float: left; margin-left: 20px;"/>
+        </div>
+        <div style="float: right">
+          <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+        </div>
+      </div>
+      <div id="papayaErrorBox" style="display: none;">
+        <div class="errorPanel">
+          <img src="img/dialog-error.png" alt="" class="dialogIcon" />
+          <p id="papayaErrorMsg"></p>
+          <p id="papayaErrorInfo"></p>
+          <button type="button" id="papayaErrorButton">{#close}</button>
+          <div class="fixFloat"></div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

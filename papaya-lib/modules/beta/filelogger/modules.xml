@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulegroup>
+  <name>File logger</name>
+  <description>Special module to redirect log output to a file.
+  </description>
+  <modules>
+    <module type="logger" guid="5c716b0a4a1f041b9fb9b9585f3c9909"
+      name="File logger base Module" class="file_logger" file="file_logger.php">
+      Logger
+      plugin to redirect output to.</module>
+  </modules>
+</modulegroup>

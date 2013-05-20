@@ -1,0 +1,1 @@
+"On" to send compressed web pages to the web browser, otherwise "Off". Web pages are delivered in compressed form to the browser only if this is supported by the requesting browser.

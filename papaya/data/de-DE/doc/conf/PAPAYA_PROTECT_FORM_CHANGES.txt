@@ -1,0 +1,1 @@
+„On“, um den Formularschutz zu aktivieren, andernfalls „Off“. Bei aktiviertem Formularschutz wird der Nutzer vor dem Verlassen der Seite gewarnt, wenn Daten im Formular geändert, aber nicht gespeichert worden sind. Der Formularschutz besteht aus einem Popup-Fenster mit einem Fragedialog. Der Nutzer kann die Seite verlassen oder abbrechen.

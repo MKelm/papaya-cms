@@ -1,0 +1,10 @@
+/*
+ CSS rules for content modules in ~/modules/free/include
+*/
+iframe.embedPage {
+  width: 100%;
+  border: 1px solid #CCC;
+}
+iframe.embedPage div {
+  text-align: center;
+}

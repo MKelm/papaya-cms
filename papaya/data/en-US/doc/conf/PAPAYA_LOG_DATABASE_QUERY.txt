@@ -1,0 +1,7 @@
+This option controls which database SELECT queries are logged by the general papaya logging system:
+<ul>
+<li><em>none</em>: No queries are logged.</li>
+<li><em>slow</em>: Only slow queries are logged (the threshold is defined by the <tt>PAPAYA_LOG_DATABASE_QUERY_SLOW</tt> option).</li>
+<li><em>all</em>: All queries are logged.</li>
+</ul>
+To systematically analyze database queries on a development machine, use the <tt>PAPAYA_QUERYLOG</tt> options instead.

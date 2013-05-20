@@ -1,0 +1,1 @@
+"on" to send an email for each new task, otherwise "off".

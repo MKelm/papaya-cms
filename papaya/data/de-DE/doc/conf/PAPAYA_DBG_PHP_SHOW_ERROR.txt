@@ -1,0 +1,1 @@
+„On“, wenn PHP-Fehler angezeigt werden sollen, andernfalls „Off“. Diese Option hat nur dann einen Effekt, wenn die Option <tt>PAPAYA_DBG_PHP_CAPTURE_ERROR</tt> aktiviert worden ist.

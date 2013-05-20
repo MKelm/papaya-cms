@@ -1,0 +1,11 @@
+ul.limitedCatalogLinkList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul.limitedCatalogLinkList li {
+  padding-left: 0;
+}
+ul.limitedCatalogLinkList li a {
+
+}

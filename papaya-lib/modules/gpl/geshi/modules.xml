@@ -1,0 +1,10 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>GeSHi syntax highlighting</name>
+  <description></description>
+  <modules>
+    <module type="connector" guid="7d3a2fa61b1746b10662b849e82011c5" name="Syntax highlighter (GeSHi)" class="base_syntax_highlighting_geshi" file="base_syntax_highlighting_geshi.php">Syntax highlighter</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

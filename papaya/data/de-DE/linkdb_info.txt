@@ -1,0 +1,12 @@
+<p>
+In dieser Kategorie sind noch keine Einträge vorhanden.
+</p>
+<b>Kategorie anlegen</b><p style="padding-left: 20px;">Klicken Sie auf <i>Neue Kategorie</i>.</p>
+<b>Linkeintrag anlegen</b><ol ><li>Wählen Sie eine Kategorie aus.</li><li>Klicken Sie auf <i>Link hinzufügen</i>.</li></ol>
+<b>Kategorie / Link verschieben</b>
+<ol ><li>Klicken Sie auf die Kategorie (Abschnitt 'Kategorien') bzw. den Link (Abschnitt 'Links').</li>
+<li>Klicken Sie auf den Menüpunkt <i>Kategorie ausschneiden</i> bzw.
+  <i>Link ausschneiden</i>.</li>
+<li>Wählen Sie die Kategorie aus, unter der Sie das ausgeschnittene Objekt einfügen möchten.</li>
+<li>Klicken Sie auf das Icon 'Einfügen' des einzufügenden Objektes in der Zwischenablage.</li>
+</ol>

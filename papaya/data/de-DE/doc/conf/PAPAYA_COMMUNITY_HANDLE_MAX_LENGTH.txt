@@ -1,0 +1,1 @@
+Die Maximallänge des papaya-Surfer-Handles in Zeichen. Der Standardwert ist 20, aber Sie können jeden Wert zwischen 4 (der fest verdrahteten Minimallänge) und 255 wählen.

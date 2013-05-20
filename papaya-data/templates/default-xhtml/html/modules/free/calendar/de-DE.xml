@@ -1,0 +1,30 @@
+<texts>
+  <text ident="PERIOD">Zeitraum</text>
+  <text ident="SELECTED DATE">Ausgewähltes Datum</text>
+  <text ident="JANUARY">Januar</text>
+  <text ident="FEBRUARY">Februar</text>
+  <text ident="MARCH">März</text>
+  <text ident="APRIL">April</text>
+  <text ident="MAY">Mai</text>
+  <text ident="JUNE">Juni</text>
+  <text ident="JULY">Juli</text>
+  <text ident="AUGUST">August</text>
+  <text ident="SEPTEMBER">September</text>
+  <text ident="OCTOBER">Oktober</text>
+  <text ident="NOVEMBER">November</text>
+  <text ident="DECEMBER">Dezember</text>
+  <text ident="MO">Mo</text>
+  <text ident="TU">Di</text>
+  <text ident="WE">Mi</text>
+  <text ident="TH">Do</text>
+  <text ident="FR">Fr</text>
+  <text ident="SA">Sa</text>
+  <text ident="SU">So</text>
+  <text ident="MONDAY">Montag</text>
+  <text ident="TUESDAY">Dienstag</text>
+  <text ident="WEDNESDAY">Mittwoch</text>
+  <text ident="THURSDAY">Donnerstag</text>
+  <text ident="FRIDAY">Freitag</text>
+  <text ident="SATURDAY">Samstag</text>
+  <text ident="SUNDAY">Sonntag</text>
+</texts>

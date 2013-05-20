@@ -1,0 +1,17 @@
+/* Stickers box
+-----------------------------------------------------------------------------*/
+
+div.stickerBox {
+  margin: 7px;
+}
+
+div.stickerBox div.stickerAuthor {
+  text-align: right;
+  font-style: oblique;
+}
+
+div.stickerBox div.stickerText {
+}
+
+div.stickerBox div.stickerImage {
+}

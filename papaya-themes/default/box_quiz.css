@@ -1,0 +1,21 @@
+form.boxQuizQuestion {
+  
+}
+form.boxQuizQuestion input {
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+form.boxQuizQuestion label {
+
+}
+form.boxQuizQuestion div.questionExplanation {
+  margin-bottom: 20px;
+}
+form.boxQuizQuestion div.answerExplanation {
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+form.boxQuizQuestion div.givenAnswerResponse {
+  margin-bottom: 10px;
+}

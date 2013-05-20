@@ -1,0 +1,1 @@
+"On" to log page movement events in the sitemap or the page detail page, otherwise "Off".

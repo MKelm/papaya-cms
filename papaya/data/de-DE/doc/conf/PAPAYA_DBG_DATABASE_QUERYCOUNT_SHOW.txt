@@ -1,0 +1,1 @@
+„On“, um die Anzahl der SQL-Abfragen als Debug-Meldung auszugeben, andernfalls „Off“. Die Debug-Ausgaben werden entweder durch Firebug oder direkt als HTML-Ausgabe dargestellt.

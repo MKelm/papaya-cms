@@ -1,0 +1,1 @@
+Absolute path to the base directory of the graphics library (ImageMagick and Netpbm only). The path has to be enclosed by a trailing slash.

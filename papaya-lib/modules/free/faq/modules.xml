@@ -1,0 +1,15 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Faq</name>
+  <description>Manage an arbitrary number of FAQs. An FAQ is a collection of Frequently Asked Questions that provides a helpful answer for each question.</description>
+  <modules>
+    <module type="page" guid="15b594d4b13e004448495088a4cc0ac9" name="FAQ Page" class="content_faq" file="content_faq.php">Page module used to display FAQs and/or FAQ categories.</module>
+    <module type="admin" guid="f5b6f1eaec27535f3639e6143f52e538" name="FAQs" class="edmodule_faq" file="edmodule_faq.php" glyph="faq.png">Create and edit FAQs and FAQ categories.</module>
+  </modules>
+  <tables>
+    <table name="faq"/>
+    <table name="faqgroups"/>
+    <table name="faqentries"/>
+    <table name="faqnotes"/>
+  </tables>
+</modulegroup>

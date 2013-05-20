@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>{#papaya.media_title}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script language="javascript" type="text/javascript" src="../../tiny_mce_popup.js"></script>
+    <script language="javascript" type="text/javascript" src="../../utils/mctabs.js"></script>
+    <script language="javascript" type="text/javascript" src="../../utils/form_utils.js"></script>
+    <script language="javascript" type="text/javascript" src="../../utils/validate.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../xmlrpc.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/papaya.css">
+    <script language="javascript" type="text/javascript" src="js/jsonclass.js"></script>
+    <script language="javascript" type="text/javascript" src="js/papayatag.js"></script>
+    <script language="javascript" type="text/javascript" src="js/papayautils.js"></script>
+    <script language="javascript" type="text/javascript" src="js/papayaform.js"></script>
+    <script language="javascript" type="text/javascript" src="js/media_dlg.js"></script>
+  </head>
+  <body id="papayaMedia" style="display: none">
+    <form action="javascript:function(){}();" onsubmit="PapayaMediaDialog.apply();">
+      <input type="hidden" id="mediaid"/>
+      <div class="tabs">
+        <ul>
+          <li id="file_tab" class="current"><span><a href="#" onclick="PapayaMediaDialog.displayTab('file_tab','file_panel');return false;">{#papaya.media_tab_file}</a></span></li>
+          <li id="link_tab"><span><a href="#" onclick="PapayaMediaDialog.displayTab('link_tab','link_panel');return false;">{#papaya.media_tab_link}</a></span></li>
+        </ul>
+      </div>
+      <div class="panel_wrapper">
+        <div id="file_panel" class="panel current">
+          <div id="file_preview_panel">
+            <iframe src="about:blank" id="file_preview"></iframe>
+          </div>
+          <div id="file_properties_panel">
+            <fieldset>
+              <legend>{#papaya.media_align}</legend>
+              <table style="width: 240px;" summary="">
+                <tr>
+                  <th><a href="#" id="imageAlignInline" title="{#papaya.media_align_inline}" onclick="PapayaMediaDialog.selectAlign('inline');"> </a></th>
+                  <th><a href="#" id="imageAlignLeft" title="{#papaya.media_align_left}" onclick="PapayaMediaDialog.selectAlign('left');"> </a></th>
+                  <th><a href="#" id="imageAlignCenter" title="{#papaya.media_align_center}" onclick="PapayaMediaDialog.selectAlign('center');"> </a></th>
+                  <th><a href="#" id="imageAlignRight" title="{#papaya.media_align_right}" onclick="PapayaMediaDialog.selectAlign('right');"> </a></th>
+                </tr>
+              </table>
+            </fieldset>
+            <fieldset>
+              <legend>{#papaya.media_margins}</legend>
+              <table summary="">
+                 <tr>
+                   <td>
+                     <label>{#papaya.media_margin_left}</label>
+                     <input type="text" class="textSmall" id="editMarginLeft" />
+                   </td>
+                   <td>
+                     <label>{#papaya.media_margin_right}</label>
+                     <input type="text" class="textSmall" id="editMarginRight" />
+                   </td>
+                   <td>
+                     <label>{#papaya.media_margin_top}</label>
+                     <input type="text" class="textSmall" id="editMarginTop" />
+                   </td>
+                   <td>
+                     <label>{#papaya.media_margin_bottom}</label>
+                     <input type="text" class="textSmall" id="editMarginBottom" />
+                   </td>
+                 </tr>
+               </table>
+            </fieldset>
+            <fieldset>
+              <legend>{#papaya.media_size}</legend>
+              <table border="0" summary="">
+                 <tr>
+                   <td rowspan="2">
+                     <label>{#papaya.media_size_width}</label>
+                     <input type="text" class="textSmall" id="editSizeWidth" onchange="PapayaMediaDialog.changeSize(this);" />
+                   </td>
+                   <td>&nbsp;</td>
+                   <td rowspan="2">
+                     <label>{#papaya.media_size_height}</label>
+                     <input type="text" class="textSmall" id="editSizeHeight" onchange="PapayaMediaDialog.changeSize(this);" />
+                   </td>
+                   <td rowspan="2" style="text-align: center; width: 26px;">
+                     <a href="#"><img src="img/orgsize.gif" style="border: none; width: 22px; height: 22px; padding-right: 2px; padding-left: 2px;" alt="{#papaya.media_get_original_size}" title="{#papaya.media_get_original_size}" onclick="PapayaMediaDialog.getOriginalSize();" /></a>
+                   </td>
+                   <td class="symbolSize">
+                     <a href="#" id="imageSizeAbs" title="{#papaya.media_resize_abs}" onclick="PapayaMediaDialog.selectResize('abs');"> </a>
+                   </td>
+                   <td class="symbolSize">
+                     <a href="#" id="imageSizeMax" title="{#papaya.media_resize_max}" onclick="PapayaMediaDialog.selectResize('max');"> </a>
+                   </td>
+                 </tr>
+                 <tr>
+                   <td style="padding: 0px 2px 10px; width: 24px; text-align: center;">
+                     <a href="#" id="imageProtectProportions" onclick="PapayaMediaDialog.switchLockProportions();"> </a>
+                   </td>
+                   <td class="symbolSize">
+                     <a href="#" id="imageSizeMin" title="{#papaya.media_resize_min}" onclick="PapayaMediaDialog.selectResize('min');"> </a>
+                   </td>
+                   <td class="symbolSize">
+                     <a href="#" id="imageSizeMinCrop" title="{#papaya.media_resize_mincrop}" onclick="PapayaMediaDialog.selectResize('mincrop');"> </a>
+                   </td>
+                 </tr>
+               </table>
+            </fieldset>
+            <fieldset>
+              <legend>{#papaya.media_texts}</legend>
+              <table class="properties" summary="">
+                <tr>
+                  <td class="columnLabel"><label id="subtitlelabel" for="subtitle">{#papaya.media_text_subtitle}</label></td>
+                  <td class="columnElement"><input type="text" id="subtitle" value="" class="dialogScale"/></td>
+                </tr>
+                <tr>
+                  <td class="columnLabel"><label id="alttextlabel" for="alttext">{#papaya.media_text_alttext}</label></td>
+                  <td class="columnElement"><input type="text" id="alttext" value="" class="dialogScale"/></td>
+                </tr>
+                <tr>
+                  <td class="columnLabel"><label id="cssclasslabel" for="cssclass">{#papaya.link_css_class}</label></td>
+                  <td class="columnElement"><input type="text" id="cssclass" value="" class="dialogScale"/></td>
+                </tr>
+              </table>
+            </fieldset>
+          </div>
+        </div>
+        <div id="link_panel" class="panel">
+          <div style="height: 180px; padding-top: 10px;">
+            <fieldset style="float: left; width: 250px; margin-right: 10px; padding-right: 10px;">
+              <legend>{#papaya.media_link_type}</legend>
+              <input type="hidden" id="selLinkType" value="none"/>
+              <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li>
+                  <input type="radio" name="linktype" id="linktype_none" value="none" onchange="PapayaMediaDialog.selectLinkMode('none', this.checked);" onclick="PapayaMediaDialog.selectLinkMode('none', this.checked);"/>
+                  <label for="linktype_none">{#papaya.media_link_type_none}</label>
+                </li>
+                <li>
+                  <input type="radio" name="linktype" id="linktype_popup" value="popup" onchange="PapayaMediaDialog.selectLinkMode('popup', this.checked);" onclick="PapayaMediaDialog.selectLinkMode('popup', this.checked);"/>
+                  <label for="linktype_popup">{#papaya.media_link_type_popup}</label>
+                </li>
+                <li>
+                  <input type="radio" name="linktype" id="linktype_pageid" value="pageid" onchange="PapayaMediaDialog.selectLinkMode('pageid', this.checked);" onclick="PapayaMediaDialog.selectLinkMode('pageid', this.checked);"/>
+                  <label for="linktype_pageid">{#papaya.media_link_type_pageid}</label>
+                </li>
+                <li>
+                  <input type="radio" name="linktype" id="linktype_url" value="url" onchange="PapayaMediaDialog.selectLinkMode('url', this.checked);" onclick="PapayaMediaDialog.selectLinkMode('url', this.checked);"/>
+                  <label for="linktype_url">{#papaya.media_link_type_url}</label>
+                </li>
+                <li>
+                  <input type="radio" name="linktype" id="linktype_email" value="email" onchange="PapayaMediaDialog.selectLinkMode('email', this.checked);" onclick="PapayaMediaDialog.selectLinkMode('email', this.checked);"/>
+                  <label for="linktype_email">{#papaya.media_link_type_email}</label>
+                </li>
+                <li>
+                  <input type="radio" name="linktype" id="linktype_file" value="file" onchange="PapayaMediaDialog.selectLinkMode('file', this.checked);" onclick="PapayaMediaDialog.selectLinkMode('file', this.checked);"/>
+                  <label for="linktype_file">{#papaya.media_link_type_file}</label>
+                </li>
+                <li>
+                  <input type="radio" name="linktype" id="linktype_image" value="image" onchange="PapayaMediaDialog.selectLinkMode('image', this.checked);" onclick="PapayaMediaDialog.selectLinkMode('image', this.checked);"/>
+                  <label for="linktype_image">{#papaya.media_link_type_image}</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset id="panel_linkParam">
+              <legend>{#papaya.media_link_params}</legend>
+              <div id="panel_linkParamNone" style="display: none;">
+                None
+              </div>
+              <div id="panel_linkParamPopup" style="display: none;">
+                Popup
+              </div>
+              <div id="panel_linkParamPageId" style="display: none;">
+                <table class="properties" summary="">
+                  <tr>
+                    <td class="columnLabel"><label id="pageidlabel" for="pageid">{#papaya.link_pageid_title}</label></td>
+                    <td class="columnElement"><input type="text" id="pageid" value="" class="dialogScale"/></td>
+                    <td>
+                      <button class="mceButtonNormal" type="button" onclick="PapayaMediaDialog.browsePages('pageid');" onmouseover="this.className='mceButtonOver'" onmouseout="this.className='mceButtonNormal'">
+                        <img style="width: 16px; height: 16px;" src="/papaya/pics/icons/16x16/items/page.png" alt="">
+                       </button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div id="panel_linkParamURL" style="display: none;">
+                <table class="properties" summary="">
+                  <tr>
+                    <td class="columnLabel"><label id="urllabel" for="url">{#papaya.link_url_title}</label></td>
+                    <td class="columnElement"><input type="text" id="url" value="" class="dialogScale"/></td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="urltargetlabel" for="urltarget">{#papaya.link_target_title}</label></td>
+                    <td class="columnElement">
+                      <select id="urltarget" class="dialogScale">
+                        <option value="_self" selected>{#papaya.link_target_self}</option>
+                        <option value="_blank">{#papaya.link_target_blank}</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div id="panel_linkParamEmail" style="display: none;">
+                <table class="properties" summary="">
+                  <tr>
+                    <td class="columnLabel"><label id="emaillabel" for="email">{#papaya.link_email_title}</label></td>
+                    <td class="columnElement"><input type="text" id="email" value="" class="dialogScale"/></td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="emailsubjectlabel" for="emailsubject">{#papaya.link_emailsubject_title}</label></td>
+                    <td class="columnElement"><input type="text" id="emailsubject" value="" class="dialogScale"/></td>
+                  </tr>
+                </table>
+              </div>
+              <div id="panel_linkParamFile" style="display: none;">
+                <table class="properties" summary="">
+                  <tr>
+                    <td class="columnLabel"><label id="filetargetlabel" for="filetarget">{#papaya.file_target}</label></td>
+                    <td class="columnElement">
+                      <select name="filetarget" id="filetarget" class="dialogScale">
+                        <option value="_self" selected="selected">{#papaya.file_target_self}</option>
+                        <option value="_blank">{#papaya.file_target_blank}</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="filedataidlabel" for="filedataid">{#papaya.file_data_id}</label></td>
+                    <td class="columnElement"><input type="text" name="filedataid" id="filedataid" value="" class="dialogScale" disabled="disabled"/></td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="filedatatitlelabel" for="filedatatitle">{#papaya.file_data_title}</label></td>
+                    <td class="columnElement"><input type="text" name="filedatatitle" id="filedatatitle" value="" class="dialogScale" disabled="disabled"/></td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="filedatanamelabel" for="filedataname">{#papaya.file_data_name}</label></td>
+                    <td class="columnElement"><input type="text" name="filedataname" id="filedataname" value="" class="dialogScale" disabled="disabled"/></td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="filedatasizelabel" for="filedatasize">{#papaya.file_data_size}</label></td>
+                    <td class="columnElement"><input type="text" name="filedatasize" id="filedatasize" value="" class="dialogScale" disabled="disabled"/></td>
+                  </tr>
+                </table>
+                <input type="button" id="browseButton" name="browseButton" class="browseButton" value="{#papaya.file_select}" onclick="PapayaMediaDialog.browseMediaFiles('mediafile');"/>
+              </div>
+              <div id="panel_linkParamImage" style="display: none;">
+                <table class="properties" summary="">
+                  <tr>
+                    <td class="columnLabel"><label id="imageidlabel" for="imageid">{#papaya.file_data_id}</label></td>
+                    <td class="columnElement"><input type="text" name="imageid" id="imageid" value="" class="dialogScale" disabled="disabled"/></td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="imagetitlelabel" for="imagetitle">{#papaya.file_data_title}</label></td>
+                    <td class="columnElement"><input type="text" name="imagetitle" id="imagetitle" value="" class="dialogScale" disabled="disabled"/></td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="imagenamelabel" for="imagename">{#papaya.file_data_name}</label></td>
+                    <td class="columnElement"><input type="text" name="imagename" id="imagename" value="" class="dialogScale" disabled="disabled"/></td>
+                  </tr>
+                  <tr>
+                    <td class="columnLabel"><label id="imagesizelabel" for="imagesize">{#papaya.file_data_size}</label></td>
+                    <td class="columnElement"><input type="text" name="imagesize" id="imagesize" value="" class="dialogScale" disabled="disabled"/></td>
+                  </tr>
+                </table>
+                <input type="button" id="browseButton" name="browseButton" class="browseButton" value="{#papaya.image_select}" onclick="PapayaMediaDialog.browseMediaFiles('img');"/>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="mceActionPanel">
+        <div style="float: left; clear: both;">
+          <input type="submit" id="insert" value="{#insert}" style="float: left;"/>
+          <input type="button" id="browseButton" class="browseButton" value="{#papaya.image_select}" onclick="PapayaMediaDialog.browseImages();" style="float: left; margin-left: 20px;"/>
+        </div>
+        <div style="float: right">
+          <input type="button" id="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+        </div>
+      </div>
+      <div id="papayaErrorBox" style="display: none;">
+        <div class="errorPanel">
+          <img src="img/dialog-error.png" alt="" class="dialogIcon" />
+          <p id="papayaErrorMsg"></p>
+          <p id="papayaErrorInfo"></p>
+          <button type="button" id="papayaErrorButton">{#close}</button>
+          <div class="fixFloat"></div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

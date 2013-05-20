@@ -1,0 +1,1 @@
+Select a transliteration function. This function normalizes the URLs in papaya CMS and converts them to ASCII. You can choose one of the following options:<ul><li><em>papaya</em>: The transliteration function integrated in papaya CMS.<br /></li><li><em>ext/translit</em>: PHP extension that takes over the transliteration.<br /></li></ul>

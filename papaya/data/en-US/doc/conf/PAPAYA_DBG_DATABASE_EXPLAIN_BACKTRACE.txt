@@ -1,0 +1,1 @@
+"On" to activate the output of the complete backtrace of the EXPLAIN message, otherwise "Off". The backtrace includes the list of all functions called. The list is sorted in reverse chronological order. The first function in this list has called the SQL query.

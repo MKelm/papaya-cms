@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="feedback_forms" prefix="yes">
+<fields>
+<field name="feedback_form_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="feedback_form_title" type="string" size="100"  null="no"/>
+<field name="feedback_form_structure" type="string" size="65535"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>feedback_form_id</field></primary-key>
+</keys>
+</table>

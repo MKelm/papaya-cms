@@ -1,0 +1,36 @@
+div.boxUserContactListContainer {
+}
+div.boxUserContactListContainer ul.boxUserContactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+div.boxUserContactListContainer ul.boxUserContactList li {
+  padding-left: 0;
+}
+div.boxUserContactListContainer div.boxUserContactListNavigation {
+  margin-top: 5px;
+}
+div.boxUserContactListContainer div.boxUserContactListNavigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+div.boxUserContactListContainer div.boxUserContactListNavigation ul li {
+  padding-left: 0;
+
+}
+div.boxUserContactListContainer div.boxUserContactListNavigation ul li.navigationBack,
+div.boxUserContactListContainer div.boxUserContactListNavigation ul li.showPartialSurfer {
+  background-image: url(pics/nav_arrow_back.gif);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 10px;
+}
+div.boxUserContactListContainer div.boxUserContactListNavigation ul li.navigationNext,
+div.boxUserContactListContainer div.boxUserContactListNavigation ul li.showAllSurfer {
+  background-image: url(pics/nav_arrow_sub.gif);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 10px;
+}

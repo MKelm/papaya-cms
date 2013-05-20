@@ -1,0 +1,1 @@
+Die URL zur Newsseite der papaya Software GmbH (Voreinstellung). Die Newsseite enhält aktuelle Informationen zu papaya CMS.

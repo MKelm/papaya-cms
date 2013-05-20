@@ -1,0 +1,75 @@
+/***********************************/
+/* Poll dialog                     */
+/***********************************/
+form.communityOnePoll, div.communityOnePoll {
+  padding-top: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #EEF5CE;
+  border: 1px solid #9FBD18;
+}
+form.communityOnePoll form h2 {
+  margin-bottom: 10px;
+}
+#content form.communityOnePoll ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+#content form.communityOnePoll ul li {
+  background: none;
+  padding-left: 0;
+}
+form.communityOnePoll ul li input.radio {
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+form.communityOnePoll ul li label {
+  
+}
+form.communityOnePoll button {
+  margin-top: 10px;
+}
+/***********************************/
+/* Poll results                     */
+/***********************************/
+#content div.communityOnePoll ul.communityOnePollAnswersList {
+  margin-left: 0;
+  padding: 0;
+}
+#content div.communityOnePoll ul.communityOnePollAnswersList li {
+  background: none;
+  padding-left: 0;
+}
+div.communityOnePoll ul.communityOnePollAnswersList li span {
+  float: right;
+  display: block;
+  width: 30px;
+  text-align: right;
+}
+div.communityOnePoll ul.communityOnePollAnswersList li div.bar {
+  height: 5px;
+  line-height: 5px;
+  font-size: 0;
+  border: 1px solid #9FBD18;
+}
+div.communityOnePoll ul.communityOnePollAnswersList li div.bar div.barResult {
+  background-color: #9FBD18;
+  height: 5px;
+  line-height: 5px;
+  font-size: 0;
+}
+div.communityOnePoll p.resultCount {
+  margin-bottom: 0;
+}
+div.communityOnePoll p.resultCount span {
+  font-weight: bold;
+}
+/***********************************/
+/* Poll catagories                 */
+/***********************************/
+h2.pollCategory {
+  margin-top: 20px;
+}

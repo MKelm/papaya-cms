@@ -1,0 +1,1 @@
+"On" to display PHP errors, otherwise "Off". This option will only have an effect when you activate the option <tt>PAPAYA_DBG_PHP_CAPTURE_ERROR</tt>.

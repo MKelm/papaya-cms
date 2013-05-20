@@ -1,0 +1,1 @@
+„On“ (Voreinstellung), wenn Sie das Standard-Surfer-Login-Verhalten von papaya verwenden möchten, oder „Off“, wenn Sie Ihren eigenen Login-Prozess implementieren möchten.

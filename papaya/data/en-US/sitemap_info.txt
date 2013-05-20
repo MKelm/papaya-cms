@@ -1,0 +1,19 @@
+<p>
+  You can use the sitemap to navigate through the whole Page structure.
+</p>
+<p>
+ <img src="pics/icons/16x16/actions/edit.png" border="0" width="16" height="16" alt="" align="absmiddle"/>
+ You can jump directly to the page editing area by clicking on the Pen symbol.
+ Click on the pen in order to jump directly to the editing view of the page.
+</p>
+<p>
+ <img src="pics/icons/16x16/items/publication.png" border="0" width="16" height="16" alt="" align="absmiddle"/> 
+  You can publish the page immediately by clicking on the globe.
+</p>
+<p>
+  Also, pages can be moved or copied to the Sitemap.<br/>
+  To copy/move a page, hold the left mouse button down while dragging the page to the target position. 
+  If you want to move a page, hold down the shift key whilst dragging.
+  The mouse pointer will show you the current drag &amp; drop status by changing the pointer symbol. 
+  When you release the mouse button, you will be asked to confirm the page moving/copying.
+</p>

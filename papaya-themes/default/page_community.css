@@ -1,0 +1,51 @@
+/**************************************/
+/* Content User Contact List          */
+/**************************************/
+#content ul.contentUserContactList {
+  list-style: none;
+}
+#content ul.contentUserContactList li {
+  background: none;
+  padding-left: 0;
+}
+#content div.contentUserContactListNavigation {
+
+}
+#content div.contentUserContactListNavigation ul {
+  list-style: none;
+}
+#content div.contentUserContactListNavigation ul li {
+  background: none;
+  float: left;
+  padding-right: 10px;
+}
+#content div.contentUserContactListNavigation ul li.navigationBack,
+#content div.contentUserContactListNavigation ul li.showPartialSurfer {
+  background-image: url(pics/nav_arrow_back.gif);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 10px;
+}
+#content div.contentUserContactListNavigation ul li.navigationNext,
+#content div.contentUserContactListNavigation ul li.showAllSurfer {
+  background-image: url(pics/nav_arrow_sub.gif);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 10px;
+}
+#content ul li a {
+  padding-right: 10px;
+}
+/**************************************/
+/* Avatar Upload                      */
+/**************************************/
+img.communityAvatarImage {
+  margin-top: 20px;
+}
+/**************************************/
+/* User Profile                       */
+/**************************************/
+img.communityUserAvatar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

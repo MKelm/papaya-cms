@@ -1,0 +1,1 @@
+Optional: The flash version number that is minimally required by embedded flash files.

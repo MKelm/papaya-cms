@@ -1,0 +1,1 @@
+Wenn die Option <tt>PAPAYA_QUERYLOG</tt> auf den Wert <em>slow</em> gestellt ist, definiert diese Option den Schwellenwert: Jede Abfrage, die die angegebene Anzahl von Millisekunden oder länger braucht, wird in die Query-Log-Tabelle protokolliert.

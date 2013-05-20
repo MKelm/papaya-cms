@@ -1,0 +1,53 @@
+#page .threeColumnLayout, #page .twoColumnLayoutLeft {
+  zoom: 1;
+  background-position: 21.059% 0;
+}
+#page .threeColumnLayout .pageBackground, #page .twoColumnLayoutRight .pageBackground {
+	display: inline-block;
+  background-position: 79% 0;
+}
+#footer {
+  zoom: 1;
+}
+#footer .footerContent {
+  height: 2em;
+  z-index: 20;
+}
+
+/* =Boxes
+* @see http://www.456bereastreet.com/archive/200505/transparent_custom_corners_and_borders/
+----------------------------------------------- */
+/* Rules for the top corners and border */
+.topCorners {
+	margin: 0 0 0 8px;
+	height: 8px;
+  background: transparent url(pics/box.gif) no-repeat 100% 0;
+}
+.topCorners div {
+	height: 8px;
+  background: transparent url(pics/box.gif) no-repeat 0 0;
+}
+
+/* Rules for the bottom corners and border */
+.bottomBorder {
+	height: 8px;
+	margin: 0 0 0 8px;
+	z-index: 1;
+  background: transparent url(pics/box.gif) no-repeat 100% 100%;
+  height: 1px;
+}
+.bottomBorder div {
+	height: 8px;
+	z-index: 2;
+  background: transparent url(pics/box.gif) no-repeat 0 100%;
+}
+
+/* Insert the left border */
+.leftBorder {
+	margin: 0;
+  height: 1px;
+}
+.rightBorder {
+	margin: 0;
+  height: 1px;
+}

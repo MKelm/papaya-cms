@@ -1,0 +1,1 @@
+Absolute path to the "papaya-data" directory of the papaya installation, which is the storage location e.g. for uploaded files and filebased caches. The directory should be writable to enable the papaya CMS to create the required subfolders.

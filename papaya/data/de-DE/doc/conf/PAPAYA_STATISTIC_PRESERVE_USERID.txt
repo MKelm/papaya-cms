@@ -1,0 +1,1 @@
+„on“, wenn die Nutzungsstatistik der Website nach registrierten Nutzern gespeichert werden soll, andernfalls „off“ (Standardeinstellung).

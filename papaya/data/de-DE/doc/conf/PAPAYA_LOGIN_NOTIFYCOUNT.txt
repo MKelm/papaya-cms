@@ -1,0 +1,1 @@
+Anzahl der innerhalb des Zeitlimits gescheiterten Login-Versuche, bei der eine Benachrichtigungsmail versendet wird.

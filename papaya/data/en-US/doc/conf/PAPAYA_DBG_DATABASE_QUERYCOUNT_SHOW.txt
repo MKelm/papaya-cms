@@ -1,0 +1,1 @@
+"On" to output the number of SQL queries as debug message, otherwise "Off". The debug messages will be displayed by Firebug or rendered by the web browser in HTML.

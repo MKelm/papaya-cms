@@ -1,0 +1,85 @@
+/* Main Navigation
+-----------------------------------------------------------------------------*/
+#pageNavigation ul, #pageNavigation li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#pageNavigation li span {
+  background: transparent url(pics/nav_arrow.gif) no-repeat left center;
+  display: block;
+  padding-left: 20px;
+}
+#pageNavigation li li span {
+  padding-left: 0;
+}
+#pageNavigation li li a.active, #pageNavigation li li a.selected {
+  font-weight: bold;
+  background-color: transparent;
+}
+#pageNavigation li li span {
+  background: none;
+}
+#pageNavigation li a {
+  background: transparent url(pics/nav_bg.gif) repeat-x 1px 100%;
+  display: block;
+  text-transform: uppercase;
+  padding: 3px 0 3px 0;
+  text-decoration: none;
+}
+#pageNavigation li {
+  background: transparent url(pics/nav_bg.gif) repeat-x 1px 100%;
+}
+#pageNavigation li li, #pageNavigation li li span {
+  background: none;
+}
+#pageNavigation li li span {
+  background: transparent url(pics/nav_arrow_sub.gif) no-repeat left center;
+  padding-left: 8px;
+}
+#pageNavigation li li a {
+  background: none;
+  font-weight: normal;
+  margin-left: 20px;
+  text-transform: none;
+}
+#pageNavigation li li li a {
+  margin-left: 26px;
+}
+
+/* Ariadne - Breadcrumb Navigation
+-----------------------------------------------------------------------------*/
+#ariadne {
+  width: 100%;
+  font-size: 90%;
+  text-align: right;
+  margin-bottom: 2em;
+}
+#ariadne ul {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+#ariadne li {
+  background: transparent url(pics/nav_arrow_sub.gif) no-repeat 5px center;
+  display: inline;
+  padding: 0 5px 0 10px;
+}
+#ariadne li a {
+  font-weight: normal;
+}
+
+/* Siblings navigation
+-----------------------------------------------------------------------------*/
+
+ul.navigationSiblings {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+ul.navigationSiblings li {
+  display: inline;
+  margin: 0;
+  padding: 0.3em;
+}

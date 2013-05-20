@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="action_groups" prefix="yes">
+  <fields>
+    <field name="actiongroup_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="actiongroup_name" type="string" size="100" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>actiongroup_id</field>
+    </primary-key>
+    <key name="actiongroup_name">
+      <field>actiongroup_name</field>
+    </key>
+  </keys>
+</table>

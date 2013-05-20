@@ -1,0 +1,215 @@
+body, div, ul, li {
+  -moz-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 8px;
+  -moz-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+div.fixFloat {
+  clear: both;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: none;
+}
+
+input.browseButton, input.previewButton {
+  float: right;
+  background: transparent url(../img/buttons.png) repeat scroll -94px -26px;
+  border: 0 none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 10px;
+  height: 26px;
+  margin: 0;
+  padding: 0 0 2px;
+  width: 134px;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+td.dialogScale {
+  width: 100%;
+}
+
+.dialogPopupButton {
+	width: 20;
+  height:19px;
+  border:none;
+  background-color:transparent;
+}
+
+input.dialogScale, select.dialogScale {
+  width: 100%;
+}
+
+.properties td.columnLabel {
+  white-space: nowrap;
+}
+.properties td.columnElement {
+  width: 100%;
+}
+
+fieldset {
+  margin-bottom: 5px;
+}
+
+/* error box */
+#papayaErrorBox {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  padding: 0;
+  margin : 0;
+  border: none;
+  background-color: #E9E9E7;
+}
+#papayaErrorBox div.errorPanel {
+  padding: 20px 10px 10px 20px;
+  margin: 0 1px 1px 0;
+  background-color: #FFF;
+  border: 1px solid #919B9C;
+  border-top: none;
+}
+#papayaErrorBox img.dialogIcon {
+  float: left;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: none;
+  margin: 0 30px 30px 0;
+}
+#papayaErrorMsg {
+	display: block;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0;
+  padding-bottom: 1em;
+  margin: 0;
+  height: 60px;
+}
+#papayaErrorInfo {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0;
+  padding-bottom: 1em;
+  margin: 0;
+}
+#papayaErrorButton {
+  float: right;
+  background: transparent url(../img/buttons.png) repeat scroll 0pt -26px;
+  border: 0 none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 10px;
+  height: 26px;
+  margin: 0;
+  padding: 0 0 2px;
+  width: 94px;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+input.papayaError, textarea.papayaError {
+  background-color: #FDE3E3;
+  border: 1px solid #F77474;
+}
+
+#papayaLink .panel_wrapper div.current {
+  height: 220px;
+}
+
+#papayaMedia .panel_wrapper div.current {
+  height: 290px;
+}
+#papayaMedia a#imageAlignCenter, #papayaMedia a#imageAlignInline, #papayaMedia a#imageAlignLeft, #papayaMedia a#imageAlignRight {
+  background: transparent url(../img/imgalign.png) repeat scroll 0 0;
+  display: block;
+  text-decoration: none;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+}
+#papayaMedia a#imageAlignInline {
+  background: transparent url(../img/imgalign.png) repeat scroll 0 -35px;
+}
+#papayaMedia a#imageAlignLeft {
+  background: transparent url(../img/imgalign.png) repeat scroll 0 -70px;
+}
+#papayaMedia a#imageAlignRight {
+  background: transparent url(../img/imgalign.png) repeat scroll 0 -105px;
+}
+#papayaMedia a#imageSizeMinCrop, #papayaMedia a#imageSizeAbs, #papayaMedia a#imageSizeMax, #papayaMedia a#imageSizeMin {
+  background: transparent url(../img/resize.png) repeat scroll 0 0;
+  background-position: 0 0;
+  display: block;
+  text-decoration: none;
+  width: 34px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+#papayaMedia a#imageSizeAbs {
+  background-position: 0 -22px;
+}
+#papayaMedia a#imageSizeMax {
+  background-position: 0 -43px;
+}
+#papayaMedia a#imageSizeMin {
+  background-position: 0 -63px;
+}
+#papayaMedia #imageProtectProportions {
+  background: transparent url(../img/linked.png) repeat scroll 0 0;
+  display: block;
+  text-decoration: none;
+  width: 20px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+#papayaMedia  #file_preview {
+  frameborder: 0;
+  scrolling: no;
+}
+#papayaMedia #file_preview_panel {
+  float: left;
+  width: 280px;
+  height: 280px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+#papayaMedia #file_preview_panel iframe {
+  width: 280px;
+  height: 280px;
+  border: 1px solid #919B9C;
+}
+#papayaMedia #file_properties_panel {
+  float: right;
+  width: 270px;
+  height: 280px;
+}
+
+#papayaMedia input.textSmall {
+  width: 50px;
+}
+
+
+
+#papayaImage div.panel_wrapper {
+  border: 1px solid #919B9C;
+}

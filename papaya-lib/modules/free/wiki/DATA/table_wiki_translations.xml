@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_translations" prefix="yes">
+  <fields>
+    <field name="article_id" type="integer" size="4" null="no"/>
+    <field name="translation_node" type="string" size="255" null="no"/>
+    <field name="translation_lng" type="string" size="3" null="no"/>
+  </fields>
+  <keys>
+    <key name="article_id">
+      <field>article_id</field>
+    </key>
+  </keys>
+</table>

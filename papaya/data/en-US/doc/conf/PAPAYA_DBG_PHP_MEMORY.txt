@@ -1,0 +1,1 @@
+"On" to display the current memory usage of the script, otherwise "Off". In PHP 5, the memory peak usage of the script is additionally displayed. Memory usage is displayed in bytes.

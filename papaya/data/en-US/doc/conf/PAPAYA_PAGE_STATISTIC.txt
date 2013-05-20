@@ -1,0 +1,1 @@
+"On" to activate the visitor statistics (only loggin, no statistical evaluation of page usage), otherwise "Off".

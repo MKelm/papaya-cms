@@ -1,0 +1,1 @@
+"On" to let papaya CMS check whether external links contain illegal redirects, otherwise "Off". External links are links from other websites to your papaya website. When these links contain the exit parameter, the redirect protection mechanism will be effective. The protection mechanism will issue a page with a warning message that contains the redirect target as a link.

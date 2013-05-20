@@ -1,0 +1,19 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Email</name>
+  <description>Email provides modules for several types of web forms, e.g. contact forms, comment forms, and many more.</description>
+  <modules>
+    <module type="page" guid="957f25b309a7cd85c969137d898d1d75" name="Feedback form" class="content_feedback_form" file="content_feedback_form.php">This page module can either display a standard contact form or any form you can create with the form editor. Feedback can be stored in a database or sent to an email address.</module>
+    <module type="page" guid="aff7c46fbe6598c4a64af7d2444c42c2" name="Simple feedback" class="content_feedback" file="content_feedback.php">Simple feedback form is the standard contact form.</module>
+    <module type="box" guid="9be58c52a5ca30dfb0741a20f053827c" name="Send page (mailto-link)" class="actionbox_sendpage_mailto" file="actbox_sendpage_mailto.php">Generates a mailto link that allows users to recommend a page to friends or family members.</module>
+    <module type="box" guid="5937f64bb332f313d12a82b04fc5fc67" name="Send comment (mailto-link)" class="actionbox_sendcomment_mailto" file="actbox_sendcomment_mailto.php">Generates a mailto link that allows users to email you a page comment.</module>
+    <module type="page" guid="038065cea4c822d3584142cb1b7e124c" name="Send site per mail" class="content_pagesend" file="content_pagesend.php">This form allows users to recommend pages to friends or family members. Used in combination with the &quot;Page Link&quot; module (package &quot;Default/Base&quot;).</module>
+    <module type="page" guid="cd866b10c6c435077e518bbd58d4a61c" name="Comment site per mail" class="content_pagecomment" file="content_pagecomment.php">This form allows users to give you a comment on a page. Used in combination with the &quot;Page Link&quot; module (package &quot;Default/Base&quot;).</module>
+    <module type="admin" guid="3a18e8faff7bf54e62fbe64135c3ed35" glyph="messages.png" name="Feedback" class="edmodule_feedback_store" file="edmodule_feedback_store.php">Feedback form storage display</module>
+    <module type="page" guid="ed4bb5992062358023d397f519688695" name="Simple feedback (storage)" class="content_feedback_store" file="content_feedback_store.php">Just like &quot;Simple feedback form&quot;. This page module additionally stores submitted values in the database.</module>
+  </modules>
+  <tables>
+    <table name="feedback" />
+    <table name="feedback_forms" />
+  </tables>
+</modulegroup>

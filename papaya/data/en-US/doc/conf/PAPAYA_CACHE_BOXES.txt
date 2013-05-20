@@ -1,0 +1,1 @@
+"On" to activate caching of box output, otherwise "Off". When this option is active, the caching settings of each individual box is used.

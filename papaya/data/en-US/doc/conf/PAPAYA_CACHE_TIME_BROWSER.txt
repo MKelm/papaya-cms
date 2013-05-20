@@ -1,0 +1,1 @@
+Number of seconds that determine the time a browser can keep a page in the cache. When the page is delivered, the HTTP header will get an additional <code>Expires</code> line.

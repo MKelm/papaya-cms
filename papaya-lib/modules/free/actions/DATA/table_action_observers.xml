@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="action_observers" prefix="yes">
+  <fields>
+    <field name="action_id" type="integer" size="4" null="no"/>
+    <field name="observer_guid" type="string" size="32" null="no"/>
+  </fields>
+  <keys>
+    <key name="observer_guid">
+      <field>observer_guid</field>
+    </key>
+    <key name="action_id">
+      <field>action_id</field>
+    </key>
+  </keys>
+</table>

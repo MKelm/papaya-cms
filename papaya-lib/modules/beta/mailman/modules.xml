@@ -1,0 +1,9 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Mailing lists</name>
+  <description>Provides a management frontend for the popular mailing list manager Mailman.</description>
+  <modules>
+    <module type="page" guid="8ff25ee518a38463489c0f3fd3f0ce4e" name="Mailman" class="content_mailman" file="content_mailman.php">Page module that displays a registration form for mailing lists. It also provides the Mailman management frontent (in the papaya backend).</module>
+    <module type="box" guid="a661081b3e368a5934b11851a636a8a2" name="Mailman" class="actbox_mailman" file="actbox_mailman.php">Box module that displays a registration form for mailing lists. It also provides the Mailman management frontent (in the papaya backend).</module>
+  </modules>
+</modulegroup>

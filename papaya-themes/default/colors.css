@@ -1,0 +1,122 @@
+body {
+	background-color: #D1D1D1;
+	color: #484848;
+}
+
+a {
+	background: transparent;
+	color: #90A33B;
+  border-color: #90A33B;
+}
+
+#pageAdditional {
+	background-color: #EEF5CE;
+}
+
+#header .headerBackground {
+	background-color: #FFFFFF;
+}
+
+#page #pageContent {
+	background-color: #FFFFFF;
+}
+
+
+/* =Navigation
+----------------------------------------------- */
+#pageNavigation li a.active, #pageNavigation a.selected {
+	background-color: #EEF5CE;
+}
+
+#pageNavigation li li a.active, #pageNavigation li li a.selected {
+	background-color: transparent;
+}
+
+#pageNavigation li a {
+	background-color: transparent;
+	color: #57371C;
+}
+
+#pageNavigation li {
+	background-color: transparent;
+}
+
+#pageNavigation li li span {
+	background-color: transparent;
+}
+
+/* Page Additional Content Column
+----------------------------------------------- */
+#pageAdditional .box .boxTitle {
+	background-color: #9FBD18;
+	color: #FFF;
+}
+#pageAdditional .first .boxTitle {
+	background-color: #9FBD18;
+}
+
+/* =Elements
+----------------------------------------------- */
+h1 .subTitle {
+	color: #90A33B;
+}
+
+thead {
+	background-color: #EEF5CE;
+	border-color: #90A33B;
+}
+
+tr.low {
+	background-color: #EEE;
+}
+
+col {
+	border-color: #90A33B;
+}
+
+/* =Footer
+----------------------------------------------- */
+#footer {
+	color: #646362;
+}
+
+#footer #footnav a {
+	border-color: #90A33B;
+}
+
+/* Forms (basics)
+----------------------------------------------- */
+textarea.text, input.text {
+  border-color: #CCC;
+}
+
+button {
+	background: #FFF;
+	border-color: #90A33B;
+	color: #90A33B;
+}
+
+input:focus, textarea:focus {
+	background: #EEF5CE;
+}
+
+
+/* Messages (basics)
+----------------------------------------------- */
+div.message {
+  border-color: #90A33B;
+	background-color: #FFFAE8;
+	color: #333;
+}
+div.error {
+  border-color: #F00;
+	background-color: #FFFAE8;
+	color: #F00;
+}
+
+/* Boxes
+* @see http://www.456bereastreet.com/archive/200505/transparent_custom_corners_and_borders/
+----------------------------------------------- */
+.leftBorder {
+	background: #FFF;
+}

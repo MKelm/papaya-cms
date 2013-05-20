@@ -1,0 +1,1 @@
+"On" to let the spam filter log forum entries, otherwise "Off". Logged entries are analysed and split into word lists. You can use the log to train the bayesian filter.

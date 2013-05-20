@@ -1,0 +1,1 @@
+Absolute path to the directory in the server file system from which you can import files into the media database.

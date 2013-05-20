@@ -1,0 +1,1 @@
+Dauer in Tagen, in denen ein automatischer Login möglich ist. Wenn sich der Surfer innerhalb der angegebenen Zeit nicht über den automatischen Login einloggt, muss der Login wieder manuell erfolgen. Standardmäßig ist der Wert „7“ eingestellt.

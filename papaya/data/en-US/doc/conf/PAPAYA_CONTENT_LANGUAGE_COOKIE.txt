@@ -1,0 +1,1 @@
+"On" to save the language preference of the website visitor in a cookie, otherwise "Off". Visitors of your website who select a different content language than the default content language will always get their preferred language when visiting your website again.

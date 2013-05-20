@@ -1,0 +1,1 @@
+„On“, wenn die Sprachpräferenz des Seitenbesuchers in einem Cookie gespeichert werden soll, andernfalls „Off“. Besucher Ihres Webangebots, die eine andere Content-Sprache als die Standardsprache auswählen, erhalten bei jedem neuen Besuch die Seite direkt in der gewünschten Content-Sprache angezeigt.

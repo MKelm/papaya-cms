@@ -1,0 +1,1 @@
+<p>Fehlt ein Modul? Prüfen Sie bitte nach, ob eine <a href="views.php">Ansicht</a> für das Modul definiert ist. Wenn das Modul auch dort nicht aufgeführt wird, sollten Sie die <a href="modules.php">Module</a> aktualisieren.</p>

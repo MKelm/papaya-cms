@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="sticker_collections" prefix="yes">
+<fields>
+<field name="collection_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="collection_title" type="string" size="200"  null="no"/>
+<field name="collection_description" type="string" size="65535"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>collection_id</field></primary-key>
+</keys>
+</table>

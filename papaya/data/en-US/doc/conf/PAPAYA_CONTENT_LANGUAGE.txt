@@ -1,0 +1,1 @@
+Default language for the contents of the web project.

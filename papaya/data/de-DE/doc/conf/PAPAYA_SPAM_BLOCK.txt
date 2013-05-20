@@ -1,0 +1,1 @@
+„on“, wenn der Spamfilter aktiviert werden soll, andernfalls „off“.

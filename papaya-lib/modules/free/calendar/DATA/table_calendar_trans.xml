@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="calendar_trans" prefix="yes">
+<fields>
+<field name="lng_id" type="integer" size="4" null="no"/>
+<field name="date_title" type="string" size="200"  null="no"/>
+<field name="date_data" type="string" size="65535"  null="no"/>
+<field name="date_text" type="string" size="200"  null="no"/>
+<field name="date_id" type="integer" size="8"  null="no" />
+<field name="date_content_guid" type="string" size="32"  null="no"/>
+<field name="regdate_id" type="integer" size="8" null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>date_id</field>
+<field>lng_id</field>
+</primary-key>
+</keys>
+
+</table>

@@ -1,0 +1,1 @@
+URL des Themes-Verzeichnisses auf einem anderen Server unter Verwendung einer sicheren Verbindung, z.B. <tt>https://www.andere-domain.tld/papaya-themes/</tt>.

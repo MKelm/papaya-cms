@@ -1,0 +1,1 @@
+Der Schlüssel für das S3-Bucket, in das das Objekt gespeichert worden ist.

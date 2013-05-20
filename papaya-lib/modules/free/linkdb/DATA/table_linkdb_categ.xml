@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="linkdb_categ" prefix="yes">
+<fields>
+<field name="linkcateg_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="linkcateg_parent_id" type="integer" size="8"  null="no"/>
+<field name="linkcateg_title" type="string" size="255"  null="no"/>
+<field name="linkcateg_description" type="string" size="65535"  null="no"/>
+<field name="linkcateg_path" type="string" size="150"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>linkcateg_id</field></primary-key>
+</keys>
+</table>

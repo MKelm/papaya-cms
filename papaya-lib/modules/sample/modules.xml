@@ -1,0 +1,14 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Samples</name>
+  <description>A special package containing sample modules.</description>
+  <modules>
+    <module type="page" guid="6c08a1d6c89c65fbef70105a5c573bf6" name="Sample Page" class="content_sample" file="content_sample.php">Sample for a simple content module</module>
+    <module type="parser" guid="f74df8c5a40bcdef9a91c3e5bc3c0548" name="Sample Parser Module" class="parser_sample" file="parser_sample.php">Sample for a simple parser module (richtext addon dialog)</module>
+    
+    <module type="page" guid="c4ebc518baa7044c0291fb95ae82c6b1" name="Sample Fields" class="content_fields_sample" file="content_fields_sample.php" outputfilter="no">Sample showing different edit fields</module>
+    <module type="admin" guid="dbdcc59abde8a7bb581efcc58c991044" name="Sample Ajax in Backend Dialogs" class="edmodule_ajax" file="edmodule_ajax.php">Demonstrates using Ajax to reload sub selector data</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

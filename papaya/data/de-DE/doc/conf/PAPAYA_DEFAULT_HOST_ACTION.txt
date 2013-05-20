@@ -1,0 +1,1 @@
+<ul><li><em>None</em>: Keine Umleitung.<br /></li><li><em>Redirect</em>: Umleitung auf die Standard-Domain.<br /></li></ul>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Tasks Manager</name>
+  <description></description>
+  <prefix>PapayaModuleTasks</prefix>
+  <modules>
+    <module type="connector"
+            guid="23f5d620fe7795bb595fce3d2ed92fc5"
+            name="Tasks Manager Connector"
+            class="PapayaModuleTasksManager"
+            file="Manager.php">TaskManager Connector</module>
+    <module type="admin"
+            guid="348f6e4d35e6b618619e5b1d7bb802c5"
+            name="Tasks Manager"
+            class="edmodule_tasks"
+            file="edmodule_tasks.php"
+            glyph="task.png">TaskManager Administration</module>
+  </modules>
+  <tables>
+    <table name="tasks_items" />
+  </tables>
+</modulegroup>

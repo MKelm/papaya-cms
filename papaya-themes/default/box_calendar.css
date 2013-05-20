@@ -1,0 +1,58 @@
+.calendar th, .calendar td {
+	padding: 2px;
+}
+
+.calendar td {
+	text-align: right;
+}
+
+.calendar th.monthname {
+	text-align: center;
+}
+/**************************************/
+/* Calender Box Navigation            */
+/**************************************/
+table.calenderBoxNavigation {
+  margin-bottom: 0;
+}
+table.calenderBoxNavigation th, table.calenderBoxNavigation td {
+  padding: 0.3em;
+}
+table.calenderBoxNavigation thead tr th {
+
+}
+table.calenderBoxNavigation thead tr.calendarBoxMonthNaviagation {
+
+}
+table.calenderBoxNavigation thead tr.calendarBoxMonthNaviagation th {
+
+}
+table.calenderBoxNavigation thead tr.calendarBoxMonthNaviagation th.middleCell {
+  text-align: center;
+}
+table.calenderBoxNavigation thead tr.calendarBoxMonthNaviagation th.rightCell {
+  text-align: right;
+}
+table.calenderBoxNavigation thead tr.calendarBoxWeekDayNavigation {
+
+}
+table.calenderBoxNavigation thead tr.calendarBoxWeekDayNavigation th {
+
+}
+table.calenderBoxNavigation tbody.calendarBoxDayNavigation {
+
+}
+table.calenderBoxNavigation tbody.calendarBoxDayNavigation tr.calendarBoxNavigationOneWeek {
+
+}
+table.calenderBoxNavigation tbody.calendarBoxDayNavigation tr.calendarBoxNavigationOneWeek td {
+
+}
+/*************************************/
+/* Next Dates Box                    */
+/*************************************/
+div.oneBoxDate {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  background: transparent url(pics/nav_bg.gif) repeat-x scroll 1px 100%;
+}

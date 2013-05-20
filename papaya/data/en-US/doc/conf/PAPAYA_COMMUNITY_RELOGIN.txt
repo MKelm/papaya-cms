@@ -1,0 +1,1 @@
+"On" to allow surfers to automatically login again after the first login , otherwise "Off". The first time the surfer logs in he or she will have the choice to select the option "automatic login". The surfer authentication is performed by a cookie that confirms the identity of the surfer using a hash key.

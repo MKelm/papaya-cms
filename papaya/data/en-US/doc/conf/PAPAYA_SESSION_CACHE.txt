@@ -1,0 +1,1 @@
+This option determines whether web pages should be cached by the browser when the user is assigned a session id. Possible values are:<ul><li><em>private</em>: The browser is allowed to cache pages.<br /></li><li><em>no cache</em>: The pages will not be cached.<br /></li></ul>

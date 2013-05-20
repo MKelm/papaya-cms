@@ -1,0 +1,1 @@
+Angabe der Hintergrundfarbe im Hexadezimalformat. Die Hintergrundfarbe wird benutzt, wenn Thumbnails erzeugt werden.

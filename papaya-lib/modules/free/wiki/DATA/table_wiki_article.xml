@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_article" prefix="yes">
+  <fields>
+    <field name="article_node_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="article_title" type="string" size="255" null="no"/>
+    <field name="article_lng" type="integer" size="4" null="no"/>
+    <field name="article_status" type="integer" size="4" null="no"/>
+    <field name="article_current_timestamp" type="integer" size="4" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>article_node_id</field>
+    </primary-key>
+    <key name="article_title">
+      <field>article_title</field>
+      <field>article_lng</field>
+    </key>
+  </keys>
+</table>

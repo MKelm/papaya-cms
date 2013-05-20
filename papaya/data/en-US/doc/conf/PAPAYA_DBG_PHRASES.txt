@@ -1,0 +1,1 @@
+"On" to log missing (i.e. untranslated) phrases, otherwise "Off". Missing phrases will be listed in the message log section on the translations page.

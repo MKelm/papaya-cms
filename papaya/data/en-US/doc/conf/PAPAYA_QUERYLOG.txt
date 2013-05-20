@@ -1,0 +1,7 @@
+This option controls which database SELECT queries are logged in the query log table with their corresponding EXPLAINs:
+<ul>
+<li><em>none</em>: No queries are logged.</li>
+<li><em>slow</em>: Only slow queries are logged (the threshold is defined by the <tt>PAPAYA_QUERYLOG_SLOW</tt> option).</li>
+<li><em>all</em>: All queries are logged.</li>
+</ul>
+Make sure to always choose <em>none</em> in a production environment, as the system will be slowed sown notably by the database analysis procedures.

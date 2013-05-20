@@ -1,0 +1,1 @@
+"On", um die Verwendung normalisierter Seitentitel als Dateinamen zu erzwingen, wann immer dies möglich ist, oder "Off", wenn 'index' als Namensteil akzeptabel ist.

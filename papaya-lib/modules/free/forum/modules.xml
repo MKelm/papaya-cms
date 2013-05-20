@@ -1,0 +1,51 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Forum</name>
+  <description>Create and manage an arbitrary number of forums.</description>
+  <modules>
+    <module type="connector" guid="d7af5f9eee4babcc8271aa2bf606bdcf" name="Connector" class="connector_forum" file="connector_forum.php">Connevtor of the Forum module</module>
+    <module type="box" guid="25295fc246600f6f910819e345acc3a7" name="Comments Box" class="actionbox_comments" file="actbox_comments.php">Box that connects to a forum for comments. Used in combination with &quot;Forum Page&quot;</module>
+    <module type="box" guid="72452b00cf9e3be09b3e40b82a16299e" name="Last Entries Box" class="actionbox_lastentries" file="actbox_lastentries.php">Box that displays the last entries made in a forum or forum category.</module>
+    <module type="box" guid="10dddd13fd77797172fdba277982050f" name="Forum Box" class="actionbox_forum" file="actbox_forum.php">Box displaying a forum. Works just like the forum page, just in a box. Forum boxes can be switched into page comment mode to use them as comment boxes. In this mode for the page, this box is contained in, a forum is created within the category tree when the first comment is written by a user. All other comments for this page become topics of this forum while answers to them are possible as well.</module>
+    <module type="page" guid="5d5a8e892c77436f5ffd005175c323b8" name="Forum Page" class="content_forum" file="content_forum.php">Displays a forum or allows users to navigate through forum categories.</module>
+    <module type="admin" guid="62ddb02f4d397f55f90bd113f7f2d4cb" name="Forums" class="edmodule_forum" file="edmodule_forum.php" glyph="module-forum.png">Create and edit categories and forums. The administration module enables you to monitor forums and edit forum entries.</module>
+    <module type="page" guid="228aa005790e1780bce663d842ad1924" name="Last Entries Page" class="content_forum_lastentries" file="content_forum_lastentries.php">Page that displays the last entries in a forum or forum category.</module>
+  </modules>
+  <tables>
+    <table name="forum">
+      This table stores the forums. Each forum does have an integer
+      id, a free text description, a title and a reference to a forum category.
+      Every forum is contained within one category. Categories may be contained
+      in other categories as well. This makes a tree structure. Additionally
+      a page_id attribute is stored for each forum, to enable association of
+      forums with specific pages.
+    </table>
+    <table name="forumcategs">
+      This table stores the category tree. Each category is identified using
+      an integer value, has a reference to the parent category where the
+      current category belongs to and a human readable title and description.
+      forumcat_path is a list of semicolon separated category ids to allow fast
+      search queries.
+    </table>
+    <table name="forumentries">
+      This table stores all entries in all forums. Each entry is identified using
+      an integer value and refers to a forum where the specific entry is part of.
+      Entries can have a parent or their entry_pid attribute is set to 0. Thus
+      entries within a forum that have no parent are called topics, those having
+      a parent are called answers. The tree like structure formed this way is called
+      a thread. To speed up searching processes each entry does have a redundant
+      attribute called entry_path which is a colon seperated list of entry-ids,
+      forming the path to the current entry. Each entry has a subject and text
+      where text may contain html tags. To enable full-text search another redundant
+      attribute called entry_strip exists, where forum entry-texts are stored to,
+      after they have been stripped of all html tags. For each entry the author
+      is stored as. For security reasons all posts are logged storing the authors
+      current IP address.
+      If entry_sendanswers equals 1, notification for administrators is enabled.
+    </table>
+    <table name="forumsubscriptions">
+      Stores the thread subscriptions of registered users.
+      Only topics can be subscribed currently. (Entries having entry_pid=0)
+    </table>
+  </tables>
+</modulegroup>

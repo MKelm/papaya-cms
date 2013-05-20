@@ -1,0 +1,10 @@
+<action-observers>
+  <action-group>
+    <name>community</name>
+    <action name="onDeleteSurfer">
+      <listeners>
+        <listener guid=""/>
+      </listeners>
+    </action>
+  </action-group>
+</action-observers>

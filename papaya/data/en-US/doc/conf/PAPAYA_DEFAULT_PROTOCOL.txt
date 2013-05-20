@@ -1,0 +1,1 @@
+Default protocol for websites. You can choose from one of the following options:<ul><li>None: Default setting without any specific protocol selection.<br /></li><li>http: HTTP only.<br /></li><li>https: HTTPS only.<br /></li></ul>

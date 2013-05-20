@@ -1,0 +1,1 @@
+Path for the papaya theme files containing CSS, images, and JavaScript.

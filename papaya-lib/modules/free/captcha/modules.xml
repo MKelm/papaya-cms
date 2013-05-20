@@ -1,0 +1,14 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Captcha Generator</name>
+  <description>The Captcha Generator is used to create an image containing a random line of text. These images are called captchas. Captchas are used in combination with
+input forms. The user has to type in the random captcha text in order to be able to submit the form.
+  </description>
+  <modules>
+    <module type="image" guid="103fecb7cc96c1a66633c7f464b15956" name="Captcha Generator" class="image_captcha" file="image_captcha.php">Generates a captcha image.</module>
+    <module type="image" guid="fe3dd6359939c142781f70ae4b29c70c" name="Speaking Captcha Generator" class="image_speaking_captcha" file="image_speaking_captcha.php">A captcha image with speak function.</module>
+    <module type="image" guid="534f66e3a136179d62719bf8a3e6817a" name="Sinus Distortion Captcha Generator" class="image_sinus_distortion_captcha" file="image_sinus_distortion_captcha.php">A captcha image with a sinus distortion alghorithm.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

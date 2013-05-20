@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="boxgroups" prefix="yes">
+<fields>
+<field name="boxgroup_id" type="integer" size="2"  null="no" autoinc="yes"/>
+<field name="boxgroup_title" type="string" size="100"  null="no"/>
+<field name="boxgroup_name" type="string" size="40"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>boxgroup_id</field></primary-key>
+<key name="boxgroup_title">
+<field>boxgroup_title</field></key>
+</keys>
+</table>

@@ -1,0 +1,1 @@
+"On", um Protokoll- und Debug-Meldungen mit jeder Antwort über das Wildfire-Protokoll auszugeben, andernfalls "Off". Wildfire-Meldungen können mit Hilfe der Firefox-Browser-Plugins FirePHP gelesen werden.

@@ -1,0 +1,261 @@
+/* Reset paddings and margins
+----------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* basic html elements
+----------------------------------------------- */
+img {
+  border: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #888;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+/* headers
+----------------------------------------------- */
+h1, h2, h3, h4, h5, h6, caption {
+  font-weight: bold;
+  margin-bottom: .6em;
+}
+h1 {
+  font-size: 120%;
+}
+h2, caption {
+  font-size: 110%;
+}
+h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+/* tables
+----------------------------------------------- */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-width: 0;
+  margin-bottom: 2em;
+}
+thead {
+  background: #EEF5CE;
+  border-bottom: 1px solid #90A33B;
+}
+caption {
+  padding-bottom: .4em;
+}
+caption, th {
+  text-align: left;
+  white-space: nowrap;
+}
+td, th {
+  padding: .4em .1em;
+  vertical-align: top;
+}
+
+/* lists
+----------------------------------------------- */
+ol, ul {
+  margin: 1em 0 2em 5px;
+}
+li {
+  padding: 0 0 3px 8px;
+}
+
+/* Forms
+----------------------------------------------- */
+form p {
+  margin-bottom: .8em;
+}
+form fieldset {
+  margin-top: 1em;
+  padding: 0;
+  border: none;
+}
+form label {
+  display: block;
+  font-weight: bold;
+  padding-bottom: .2em;
+}
+form label.inline {
+  display: inline;
+  font-weight: normal;
+  padding-left: .5em;
+}
+form input.text,
+form textarea,
+form select {
+  border: 1px solid #CCC;
+  font: 1em Verdana, Arial, Helvetica, sans-serif;
+  padding: 1px;
+  width: 99%;
+}
+form textarea {
+  height: 11em;
+}
+form select {
+  width: auto;
+}
+form input[type=radio],
+form input.radio,
+form input.checkbox,
+form input[type=checkbox] {
+  border: none;
+  display: inline;
+  margin-bottom: 4px;
+  vertical-align: middle;
+  width: auto;
+}
+form button {
+  border: 1px solid #90A33B;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 100%;
+  padding: 1px;
+}
+
+
+/* Accessibility
+----------------------------------------------- */
+
+.accessibilityElement {
+  left: -999px;
+  top: -999px;
+  position: absolute;
+  overflow: hidden;
+  display: inline;
+}
+
+
+/* floating fix element
+----------------------------------------------- */
+.floatFix, br[clear="all"], br.clear {
+  clear: both;
+  height: 1px;
+}
+
+/* papaya Images
+----------------------------------------------- */
+.topicImageLeftBreakNone img,
+.topicImageRightBreakNone img,
+.topicImageLeftBreakSide img,
+.topicImageRightBreakSide img,
+.topicImageCenter img,
+img.papayaImage {
+  border: 1px solid #ccc;
+}
+
+.topicImageLeftBreakNone {
+  text-align: left;
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+.topicImageRightBreakNone {
+  text-align: right;
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+.topicImageLeftBreakSide {
+  float: left;
+  padding: 0 15px 15px 0;
+}
+
+.topicImageRightBreakSide {
+  float: right;
+  padding: 0 0 15px 15px;
+}
+
+.topicImageCenter {
+  width: 100%;
+  text-align: center;
+}
+
+.papayaImageSubtitle {
+  font-size: 90%;
+}
+
+/* Messages 
+----------------------------------------------- */
+div.message, div.error {
+  border: 1px solid #90A33B;
+  margin: 3em 0;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Boxes
+* @see http://www.456bereastreet.com/archive/200505/transparent_custom_corners_and_borders/
+----------------------------------------------- */
+.outerCorners {
+  margin-bottom: 10px;
+}
+/* Rules for the top corners and border */
+.topCorners {
+  background: transparent url(pics/box-trans.png) no-repeat 100% 0;
+}
+.topCorners div {
+  height: 8px;
+  width: 8px;
+  position: relative;
+  left: -8px;
+  background: transparent url(pics/box-trans.png) no-repeat 0 0;
+}
+
+/* Rules for the bottom corners and border */
+.bottomBorder {
+  background: transparent url(pics/box-trans.png) no-repeat 100% 100%;
+  height: 16px;
+  margin-top: -8px;
+}
+.bottomBorder div {
+  height: 16px;
+  width: 8px;
+  position: relative;
+  left: -8px;
+  background: transparent url(pics/box-trans.png) no-repeat 0 100%;
+}
+
+/* Insert the left border */
+.leftBorder {
+  margin-left: -8px;
+  background: #fff;
+  padding: 0;
+}
+/* Insert the right border */
+.rightBorder {
+  padding: 0;
+}
+
+
+/* Mobile rules, resize page and move elements
+   for small windows
+----------------------------------------------- */
+@media only screen and (max-width: 480px), 
+       only screen and (max-device-width: 480px) {
+
+  p {
+    margin-bottom: 1.5em;
+    width: 20em;
+  }
+  
+  h1, h2, h3, h4, h5, h6, caption {
+    font-weight: bold;
+    margin-bottom: 0.6em;
+    width: 20em;
+  }
+  
+  h1 {
+    font-size: 120%;
+    padding-top: 17em;
+  }
+}  

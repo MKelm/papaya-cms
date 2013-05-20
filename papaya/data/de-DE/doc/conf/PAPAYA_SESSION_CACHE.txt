@@ -1,0 +1,1 @@
+Diese Option bestimmt, ob Seiten vom Browser gecachet werden soll, wenn dem Nutzer eine Session-ID zugewiesen worden ist. Mögliche Werte sind:<ul><li><em>private</em>: Der Browser darf Seiten cachen.<br /></li><li><em>no cache</em>: Die Seite wird nicht gecachet.<br /></li></ul>

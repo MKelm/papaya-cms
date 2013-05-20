@@ -1,0 +1,15 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>papaya Planet</name>
+  <description>Feed aggregator</description>
+  <modules>
+    <module type="admin" guid="4fc2c3d059ffb9d609cac4eec5296f99" name="Planet" class="edmodule_planet" file="edmodule_planet.php" glyph="planet.png">Manage Feeds (RSS 2.0 and Atom)</module>
+    <module type="page" guid="e91f9a3ccee80c4815022f2f04a455c0" name="Planet Page" class="content_planet" file="content_planet.php">Output aggregated feed entries</module>
+  </modules>
+  <tables>
+    <table name="planet_feeds"/> 
+    <table name="planet_feedrel"/> 
+    <table name="planet_feedentries"/>
+    <table name="planet_feedlog"/>
+  </tables>
+</modulegroup>

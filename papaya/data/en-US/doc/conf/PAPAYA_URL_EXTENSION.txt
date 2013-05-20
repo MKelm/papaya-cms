@@ -1,0 +1,1 @@
+Default file extension used for pages managed by papaya CMS.

@@ -1,0 +1,16 @@
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         syntaxCheck="false">
+  <testsuites>
+    <testsuite name="papayaCMS">
+      <directory suffix="Test.php">papaya-lib</directory>
+      <exclude>papaya-lib/modules/commercial</exclude>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist addUncoveredFilesFromWhitelist="true">
+      <directory>../../papaya-lib/system/Papaya</directory>
+      <directory>../../papaya-lib/modules/_standard</directory>
+    </whitelist>
+  </filter>
+</phpunit>

@@ -1,0 +1,272 @@
+/* Page basics
+----------------------------------------------- */
+html {
+  text-align: center;
+  font: .625em/1.5 Verdana, Arial, Helvetica, sans-serif;
+}
+body {
+  background: url(pics/hg.png) repeat top left;
+  margin: 17px auto;
+  max-width: 99%;
+  min-width: 50em;
+  padding: 0;
+  text-align: left;
+  width: 79.3em;
+}
+
+/* Header
+----------------------------------------------- */
+#header .headerBackground {
+  background: #FFF url(pics/header_bg.gif) repeat-y top right;
+  margin: 0 8px;
+  padding: 10px 10px 0px 10px;
+}
+#header .headerContent {
+  height: 100px;
+}
+#header ul.pageTranslations {
+  padding: 2px 7px;
+  margin: 0;
+}
+#header ul.pageTranslations li {
+  display: inline;
+  padding-right: 4px;
+}
+#header ul.pageTranslations li a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Footer
+----------------------------------------------- */
+#footer {
+  clear: both;
+  font-size: 90%;
+  position: relative;
+}
+#footer .footerContent {
+  margin: -3px 8px;
+}
+#footer #copyright {
+  border: none;
+  padding-right: 0;
+}
+
+/* Footer Navigation
+------------------------------------------------ */
+#footerNavigation {
+  float: right;
+}
+#footerNavigation ul {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#footerNavigation li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+#footerNavigation a {
+  border-right-width: 1px;
+  border-right-style: solid;
+  padding-right: 4px;
+  padding-left: 4px;
+  text-decoration: none;
+}
+#footerNavigation li.last a {
+  border-right: none;
+}
+#footerNavigation li li.last a {
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+
+/* Page
+----------------------------------------------- */
+#page .threeColumnLayout, #page .twoColumnLayoutLeft {
+  background: url(pics/bg_content.gif) repeat-y 20.95% 0;
+  padding-right: 10px;
+}
+#page .twoColumnLayoutRight {
+  padding-right: 10px;
+}
+#page .threeColumnLayout .pageBackground, #page .twoColumnLayoutRight .pageBackground {
+  background: url(pics/bg_content_gr.gif) repeat-y 78.815% 0;
+  display: block; /* be nice to Safari */
+  padding-bottom: 2em;
+}
+#page .contentBackground:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#page #pageContent {
+  float: left;
+  padding-left: 20px;
+  margin-left: 1px;
+  font-size: 110%;
+}
+#page .threeColumnLayout #pageContent {
+  width: 52.866%;
+}
+#page .twoColumnLayoutLeft #pageContent {
+  width: 74.322%;
+}
+#page .twoColumnLayoutRight #pageContent {
+  width: 74.322%;
+}
+#page .singleColumnLayout #pageContent {
+  width: 95.796%;
+}
+
+/* Page Navigation Column
+----------------------------------------------- */
+#page #pageNavigation {
+  float: left;
+  width: 21.456%;
+}
+#page #pageNavigation div.box {
+  margin-right: 1px;
+}
+#page #pageNavigation div.box div.boxTitle {
+  padding: 0.2em 0 0.2em 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Page Additional Content Column
+----------------------------------------------- */
+#page #pageAdditional {
+  float: right;
+  width: 21.456%;
+}
+#pageAdditional .box .boxTitle {
+  font-size: 100%;
+  padding-left: 10px;
+}
+#pageAdditional .first .boxTitle {
+  background: url(pics/right_corner.gif) no-repeat top right;
+}
+#pageAdditional .boxData {
+  padding: 10px;
+}
+
+/* Page Content
+----------------------------------------------- */
+#content {
+  margin-bottom: 1em;
+}
+#content .subTitle {
+  font-size: 0.8em;
+  display: block;
+}
+
+#content ul {
+  margin: 1em 0 2em 5px;
+}
+#content ul li {
+  list-style-type: none;
+  background: transparent url(pics/listitem.gif) no-repeat 0 .4em;
+  padding: 0 0 3px 8px;
+}
+
+#content ol {
+  margin: 1em 0 2em 2.5em;
+  padding: 0;
+}
+#content ol li {
+  list-style-position: outside;
+  padding: 0 0 3px 0;
+}
+
+/* Multiple columns - floating divs
+----------------------------------------------- */
+#content div.multipleColumns {
+  margin: 2em 0;
+}
+#content div.multipleColumns .line {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2em;
+}
+#content div.multipleColumns .frame {
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+#content div.multipleColumns .frame .item {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#content div.multipleColumns .frame .lineLast {
+  padding-right: 0;
+}
+#content div.multipleColumns .frame .lineFirst {
+  padding-left: 0;
+}
+#content div.multipleColumns .frame .item a.more {
+  float: right;
+}
+
+/* Multiple columns - table
+----------------------------------------------- */
+#content table.multipleColumns {
+  margin: 2em 0;
+  width: 100%;
+}
+#content table.multipleColumns td {
+  padding: 5px;
+}
+#content table.multipleColumns td.lineLast {
+  padding-right: 0;
+}
+#content table.multipleColumns td.lineFirst {
+  padding-left: 0;
+}
+
+/* Mobile rules, resize page and move elements
+   for small windows
+----------------------------------------------- */
+@media only screen and (max-width: 480px), 
+       only screen and (max-device-width: 480px) {
+  body {
+    background: none;
+    margin-left: 1.4em;
+    max-width: 99%;
+    min-width: 20em;
+    padding: 0;
+    text-align: left;
+    width: 20em;
+  } 
+
+  #header .headerBackground {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header .headerContent {
+    height: 5em;
+  }
+
+  #page #pageNavigation {
+    float: left;  
+    width: 20em;
+  }
+
+  #page #pageContent {
+    float: none;
+    font-size: 100%;
+    padding-left: 2px;
+  }
+
+  #footer #copyright {
+    border: medium none;
+    padding-right: 0;
+    width: 20em;
+  }
+}

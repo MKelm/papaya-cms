@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="forum" prefix="yes">
+  <fields>
+    <field name="forum_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="forum_desc" type="string" size="65535" null="no"/>
+    <field name="forumcat_id" type="integer" size="4" null="no"/>
+    <field name="forum_title" type="string" size="200" null="no"/>
+    <field name="page_id" type="integer" size="4" null="no"/>
+    <field name="page_prefix" type="string" size="100" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>forum_id</field>
+    </primary-key>
+    <key name="page_id">
+      <field>page_id</field>
+      <field>page_prefix</field>
+      <field>forumcat_id</field>
+    </key>
+  </keys>
+</table>

@@ -1,0 +1,7 @@
+<texts>
+  <text ident="TEXTSIZE_DEFAULT">Taille de police: normal</text>
+  <text ident="TEXTSIZE_MINUS">Taille de police: plus petit</text>
+  <text ident="TEXTSIZE_PLUS">Taille de police: plus grand</text>
+  <text ident="TEXTSIZE_MIN">Taille de police: petit</text>
+  <text ident="TEXTSIZE_MAX">Taille de police: grand</text>
+</texts>

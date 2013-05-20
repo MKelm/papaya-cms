@@ -1,0 +1,1 @@
+"On" to activate the output cache, otherwise "Off".

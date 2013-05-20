@@ -1,0 +1,1 @@
+"On" when the usage statistics of the website is saved for each registered user, otherwise "Off" (default setting).

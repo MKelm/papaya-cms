@@ -1,0 +1,1 @@
+Select a separator for URL aliases. A complex URL alias can contain slashes as separator that can be converted in one of the following characters on each page request:<ul><li><code>,</code> (comma, default character)<br /></li><li><code>:</code> (colon)<br /></li><li><code>*</code> (asterisk)<br /></li><li><code>!</code> (exclamation mark)<br /></li></ul>

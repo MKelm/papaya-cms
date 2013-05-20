@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="quiz_question" prefix="yes">
+<fields>
+<field name="question_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="group_id" type="integer" size="4"  null="no"/>
+<field name="lng_id" type="integer" size="4"  null="no"/>
+<field name="question_title" type="string" size="255"  null="yes"/>
+<field name="question_text" type="string" size="255"  null="yes"/>
+<field name="question_link" type="string" size="65535" null="yes"/>
+<field name="question_number" type="integer" size="4"  null="yes"/>
+</fields>
+<keys>
+<primary-key>
+<field>question_id</field></primary-key>
+<key name="quiz_group_id">
+<field>group_id</field></key>
+</keys>
+</table>

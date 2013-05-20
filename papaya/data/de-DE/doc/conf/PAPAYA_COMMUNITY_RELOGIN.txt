@@ -1,0 +1,1 @@
+„On“, wenn sich Surfer nach dem ersten Login automatisch wieder einloggen können sollen, andernfalls „Off“. Beim ersten Login erhält der Surfer also die Möglichkeit, die Option „automatischer Login“ auszuwählen. Die Authentifizierung des Surfers erfolgt über ein Cookie, das die Identität des Surfers über einen Hashschlüssel feststellt.

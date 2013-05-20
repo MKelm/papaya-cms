@@ -1,0 +1,1 @@
+"On" to allow downloading files using the HTTP header entry x-sendfile, otherwise "Off". This works only if you have installed and activated the apache module mod_xsendfile or when you use lighttpd. Files for which bandwidth shaping is used cannot be downloaded with this method.

@@ -1,0 +1,307 @@
+-----------------------------------------------------------------------
+5.4 to 5.5
+-----------------------------------------------------------------------
+
+* see changelog.txt
+
+--> Users:
+
+- Ariadne navigation for pages
+- Replaced javascript extended controls with new jQuery plugins
+- Removed support for IE 6 and 7 in administration interface
+
+--> Administrators:
+
+- Update table structure using installer and module manager.
+- File cache can not trigger a notifier script or url
+
+--> Developers:
+
+- Refactored dialog system: PapayaUiDialog*
+- Refactored input validation: PapayaFilter*
+- Refactored administration permissions: 
+    PapayaAdministrationPermissons::*  
+- Dynamic themes: 
+    http://en.wiki.papaya-cms.com/wiki/Dynamic_Themes
+- PapayaXmlDocument got support for namespaces and xpath
+- Added new iterators: PapayaIterator*
+
+-----------------------------------------------------------------------
+5.3.19 to 5.4:
+-----------------------------------------------------------------------
+
+--> Users and Administrators:
+
+* see changelog.txt
+
+-----------------------------------------------------------------------
+5.3.18 to 5.3.19:
+-----------------------------------------------------------------------
+
+nothing important
+
+-----------------------------------------------------------------------
+5.3.17 to 5.3.18:
+-----------------------------------------------------------------------
+
+nothing important
+
+-----------------------------------------------------------------------
+5.3.16 to 5.3.17:
+-----------------------------------------------------------------------
+
+nothing important
+
+-----------------------------------------------------------------------
+5.3.15 to 5.3.16:
+-----------------------------------------------------------------------
+
+--> Developers:
+
+- filter dialog needs to use request body parameters.
+- interface PapayaDatabaseResult extends IteratorAggregate 
+- PapayaUiReference::setParameters() does not override a parameter, 
+    if it is already set
+
+-----------------------------------------------------------------------
+5.3.14 to 5.3.15:
+-----------------------------------------------------------------------
+
+--> Developers:
+
+- PapayaDatabaseRecordsTree return an recursive iterator for a 
+  parent-child-tree
+- PapayaDatabaseRecord has a new method clone
+- PapayaRequestParameters has a new method clear
+
+-----------------------------------------------------------------------
+5.3.13 to 5.3.14:
+-----------------------------------------------------------------------
+
+nothing important
+
+-----------------------------------------------------------------------
+5.3.12 to 5.3.13:
+-----------------------------------------------------------------------
+
+nothing important
+
+-----------------------------------------------------------------------
+5.3.11 to 5.3.12:
+-----------------------------------------------------------------------
+
+--> Developers:
+
+- renaming PapayaIteratorGlob::reset() to rewind()
+
+-----------------------------------------------------------------------
+5.3.10 to 5.3.11:
+-----------------------------------------------------------------------
+
+--> Developers:
+
+- PapayaDatabaseRecords as a new method orderBy()
+- fixed sql field name in 
+  PapayaContentCommunityGroups::loadByPermission()
+- PapayaDatabaseInterfaceKey::getFilter() now has an argument, 
+  providing the usage of the return (filter or create)
+- renaming PapayaIteratorRegexFilter to PapayaIteratorFilterRegex - 
+  group filter iterators
+
+-----------------------------------------------------------------------
+5.3.9 to 5.3.10:
+-----------------------------------------------------------------------
+
+nothing important
+
+-----------------------------------------------------------------------
+5.3.8 to 5.3.9:
+-----------------------------------------------------------------------
+
+nothing important
+
+-----------------------------------------------------------------------
+5.3.7 to 5.3.8:
+-----------------------------------------------------------------------
+
+--> Users And Administrators:
+
+- please update the PapayaCMS Database tables
+
+--> Developers:
+
+- PapayaDatabaseResult is now an interface, instanciations should be 
+  replaced 
+- dbresult_base now implements PapayaDatabaseResult
+- removed unused method PapayaDatabaseObjectRecord::_prepareOffset() 
+  you should remove the method call
+- removing class "base_log", was replaced by PapayaMessage* classes
+- method lastInsertId to database abstraction, allow to fetch the last 
+  inserted id
+- PapayaConfigurationCms to replace the base_options object
+- add phpunit.xml for the papayaCMS Unittest
+- database errors in configuration loading are now ignored or output 
+  as http header dependeing on the dev mode option
+- the option PAPAYA_DBG_XML_OUTPUT has removed
+- papayaCache::get() is a static method, declare it that way
+- PapayaHttpClientFileResource use now exceptions instead fo 
+  trigger_error
+- replaced PapayaObject::getApplication()/setApplication() with 
+  papaya()
+- validate modules of the views in matching translations if necessary
+  setting and retrieving the auto increment fields and values thereof.
+- syntax 'DEFAULT' for default values. The column 'surfer_valid' has a
+  NOT NULL constraint, the default value of 0 is used now.
+
+-----------------------------------------------------------------------
+5.3.6 to 5.3.7:
+-----------------------------------------------------------------------D
+
+--> Developers:
+
+- xhprof support for Papaya
+- PapayaDatabaseRecords implements ArrayAccess so you can use the 
+  object as an array
+- base_object will be in future deprcated, first step to eliminate, #
+  is a soft switch to PapayaObject
+- PapayaDatabaseRecord::save() return the key object for successful 
+  inserts or updates
+- remove include of phpunit Framework.php it is not available in 
+  newer phpunit versions and not needed in current phpunit versions
+- renamed option PAPAYA_SESSION_MODE to PAPAYA_SESSION_ACTIVATION
+- renamed PapayaDatabaseRecordKeyLink to PapayaDatabaseRecordKeyFields
+
+-----------------------------------------------------------------------
+5.3.5 to 5.3.6:
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+--> Administrators:
+-----------------------------------------------------------------------
+
+- Because of changes to the base tables those need to be synchronized 
+  in the odule manager (or installer).
+- Renamed some settings
+- some minor bug fixes
+
+
+-----------------------------------------------------------------------
+5.3.4 to 5.3.5:
+-----------------------------------------------------------------------
+
+--> Developers:
+
+- New abstraction in PapayaUtilStringUtf8 for string operations length, 
+  position and copy
+  
+-----------------------------------------------------------------------
+5.3.3 to 5.3.4:
+-----------------------------------------------------------------------
+
+--> Administrators:
+
+- Because of changes to the base tables those need to be synchronized 
+  in the module manager (or installer).
+
+--> Developers:
+
+- Some APIs were deprecated: PapayaUiDialogInput ( functionality is now 
+  in PapayaUiDialog ) and PapayaObject::getApplication() ( use
+  PapayaObject::papaya() instead ). For now backward compatiblity is in 
+  place.
+
+-----------------------------------------------------------------------
+5.2.1 to 5.3:
+-----------------------------------------------------------------------
+
+--> Administrators:
+
+- Because of changes to the table papaya_modulegroups the installer 
+  needs to be rerun (using the module manager is not sufficient).
+
+--> Users
+
+- Popup links now have the additional options scrollbar, toolbar and 
+  resize.
+- The rich text editor in the back end now leaves anchors alone.
+
+--> Developers:
+
+- It is now possible to specify a class prefix in modules.xml files to 
+  use the papaya autoloader for classes in custom modules. An example 
+  for this can be found in papaya-lib/modules/free/Tasks/modules.xml 
+  with the prefix PapayaModuleTasks.
+- The TinyMCE used in the back end was updated to version 3.4.2.
+- A selectable content css file for the richt ext editor in the back 
+  end is now supported. TinyMCE will extract the defined classes and 
+  use them for a dropdown.
+
+--> Backward Comptiblity Breaks:
+
+- The classes starting with PapayaInterface were renamed to start with 
+  PapayaUi instead.
+- Images that are inserted with the rich text editor (papaya:media tag) 
+  that have a subtitle now use span elements as containers to avoid 
+  invalid HTML, thus custom xsl templates and css themes may need to 
+  be adapted.
+- PapayaObject is now an abstract class and thus can't be instanciated 
+  on its own.
+
+-----------------------------------------------------------------------
+5.2 to 5.2.1:
+-----------------------------------------------------------------------
+
+--> Developers:
+
+- The theme wrappers now support the parameter group in addition to 
+  files. A group is a set of files to keep the URL short. See the class
+  phpdoc of PapayaThemeWrapperGroup for how to define those groups.
+- New edit field type individualrichtext that is not automatically 
+  transformed with the rich text editor, so a module specific 
+  javascript can load a rich text editor with its own settings and 
+  customizations.
+
+--> Backward Comptiblity Breaks:
+
+- PapayaInterfaceControl::appendTo(PapayaXmlNodeInterface $parent) was 
+  changed to appendTo(PapayaXmlElement $parent)
+- papaya-lib/system/Papaya/HTTP was renamed to 
+  papaya-lib/system/Papaya/Http
+- getApplication()->plugins now returns PapayaPluginLoader instead of
+  base_pluginloader
+
+-----------------------------------------------------------------------
+5.1 to 5.2:
+-----------------------------------------------------------------------
+
+--> Users And Administrators:
+
+- New module "Twitter" to display status messages of a Twitter user.
+- Updated the "code cleanup" functions of the rich text editor, thus it 
+  does not filter out embedded iframes any more.
+
+--> Developers:
+
+- Some noteworthy new classes: PapayaMessage, PapayaInterfaceDialog,
+  PapayaUtilConstraints, PapayaContent*, PapayaFilter
+- Support for FirePHP with the option PAPAYA_PROTOCOL_WILDFIRE.
+- There is now an handler for uncaught exceptions so that they get 
+  logged like PHP errors are.
+
+
+--> Backward Comptiblity Breaks:
+
+- Some debugging options (starting with PAPAYA_DBG_*) were replaced 
+  with new ones (starting with PAPAYA_LOG_ and PAPAYA_PROTOCOL_* and 
+  PAPAYA_QUERYLOG_*).
+- base_object::logMsg() may not be called as a static function anymore
+  (it was not declared static before, but calling it as a static 
+  function worked and was used in code).
+- In two dialogs in the XML from
+  papaya-lib/modules/_base/community/content_profile.php (module name 
+  for templates content_profile) a duplicate submit button was removed.
+  This will likely mean previous templates for this module may now 
+  display no button at all and need to be fixed.
+- The constants PAPAYA_REQUEST_DATA_SOURCE_* from
+  papaya-lib/system/Papaya/Request.php were replaced by 
+  PapayaRequest::SOURCE_* variants.

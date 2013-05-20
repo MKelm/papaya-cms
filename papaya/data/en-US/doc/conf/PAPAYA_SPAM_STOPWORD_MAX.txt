@@ -1,0 +1,1 @@
+Maximum number of stopwords an email or forum entry is allowed to contain. Forum entries or contact form requests that contain more stop words than allowed will be rated as spam.

@@ -1,0 +1,6 @@
+The administration interface login dialog shows a warning if https is not used. 
+You can disable the warning using this option.
+<ul>
+  <li>on: enable warning</li>
+  <li>off: disable warning</li>
+</ul>

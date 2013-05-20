@@ -1,0 +1,1 @@
+„On“, wenn die Ausgabe von XML-Fehlern aktiviert werden soll, andernfalls „Off“.

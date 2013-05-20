@@ -1,0 +1,1 @@
+Dauer des Zeitintervalls, in dem die Login-Versuche berechnet werden.

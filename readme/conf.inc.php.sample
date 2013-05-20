@@ -1,0 +1,188 @@
+<?php
+/**
+* Sample configuration file, edit it and save it as conf.inc.php in the installation directory.
+*
+* Don't forget to create the .htaccess file as well. You can either use the sample file that's
+* included in the papaya distribution ("htaccess.tpl") or have your htaccess file created by
+* our papaya-specific htaccess-generator:
+* 
+* http://www.papaya-cms.com/htaccess-generator-EN
+*
+* After that, point your browser to the file papaya/install.php on your webserver
+* (e.g. http://www.example.com/papaya/install.php)
+*
+*
+* @package Papaya
+* @subpackage Core
+*/
+
+/*------------------------------------------------------------------------------
+                               Database access
+------------------------------------------------------------------------------*/
+
+/**
+* Database URI
+*
+* Example for the most common case (MySQL):
+*
+* mysqli://username:password@localhost/name_of_database
+* 
+* If you are using a non-standard port for the database, this may be simply
+* added after the hostname, e.g.:
+*
+* mysqli://username:password@hostname:1234/name_of_database
+*
+* When entering your database-credentials (username/password), please also
+* define the protocol as well (which should be "mysqli" instead of "protocol"
+* for the majority of installations).
+*
+*/
+define('PAPAYA_DB_URI', 'protocol://user:password@hostname/database');
+
+/*------------------------------------------------------------------------------
+             Framework (in most of the cases, no changes needed!)
+------------------------------------------------------------------------------*/
+
+/**
+* Path to the papaya CMS class framework (~/papaya-lib/)
+*/
+define('PAPAYA_INCLUDE_PATH', dirname(__FILE__).'/papaya-lib/');
+
+/*------------------------------------------------------------------------------
+    Special database parameters (in most of the cases, no changes needed!)
+------------------------------------------------------------------------------*/
+
+/**
+* Database URI for Insert/Update/ - if different from 'PAPAYA_DB_URI'
+* 
+* papaya is able to use different databases depending on the database action.
+* When enabled, papaya will use the database defined in 'PAPAYA_DB_URI' for any
+* read-only-requests (like select, count etc.) and the database defined here in
+* 'PAPAYA_DB_URI_WRITE' for any write-access (like insert, update etc.).
+*
+* Using this functionality is highly recommended for any kind of master-slave
+* database setups. 
+* 
+* If you are using only one database, you won't have to change anything here.
+*/
+define('PAPAYA_DB_URI_WRITE', NULL);
+
+/**
+* options table name (including prefix)
+*/
+define('PAPAYA_DB_TBL_OPTIONS', 'papaya_options');
+
+/**
+* papaya tables prefix
+*/
+define('PAPAYA_DB_TABLEPREFIX', 'papaya');
+
+/*------------------------------------------------------------------------------
+  Maintenance / Technical problems  (in most of the cases, no changes needed!)
+------------------------------------------------------------------------------*/
+
+/**
+* maintenance mode - show maintenance page
+*/
+define('PAPAYA_MAINTENANCE_MODE', FALSE);
+
+/**
+* maintenance page - (error/maintenance.html)
+*/
+define('PAPAYA_ERRORDOCUMENT_MAINTENANCE', '');
+
+/**
+* technical problems page - (error/503.html) - no framework / no database
+*/
+define('PAPAYA_ERRORDOCUMENT_503', '');
+
+/*------------------------------------------------------------------------------
+              Security  (in most of the cases, no changes needed!)
+------------------------------------------------------------------------------*/
+
+/**
+* password hashing method (md5|sha1)
+*/
+define('PAPAYA_PASSWORD_METHOD', 'md5');
+
+/**
+* added to passwords before hashing
+*/
+define('PAPAYA_PASSWORD_PREFIX', '');
+
+/**
+* added to passwords before hashing
+*/
+define('PAPAYA_PASSWORD_SUFFFIX', '');
+
+/**
+* disable custom http-headers like X-Generator and X-Papaya-Status
+*/
+
+define('PAPAYA_DISABLE_XHEADERS', FALSE);
+
+/*------------------------------------------------------------------------------
+         Session Handling  (in most of the cases, no changes needed!)
+------------------------------------------------------------------------------*/
+
+/**
+* suffix added to the default session name "sid" to handle conflicts
+* changes here will require a change in the rewrite rules
+*/
+define('PAPAYA_SESSION_NAME', '');
+
+/*------------------------------------------------------------------------------
+            Development  (in most of the cases, no changes needed!)
+------------------------------------------------------------------------------*/
+
+/**
+* development mode - show parse errors for basic includes and some other stuff
+*/
+define('PAPAYA_DBG_DEVMODE', FALSE);
+
+
+/*------------------------------------------------------------------------------
+                                Profiling
+------------------------------------------------------------------------------*/
+
+/**
+* Activate profiler - only possible if xhprof is installed
+*/
+define('PAPAYA_PROFILER_ACTIVE', FALSE);
+
+/**
+* A divisor to define the probability the profiling is done for the current request.
+*
+*   0 = deactivates profiler (same a PAPAYA_PROFILER_ACTIVE = FALSE)
+*   1 = always
+*   2 - 99999 = 1/n probability
+*/
+define('PAPAYA_PROFILER_DIVISOR', 99999);
+
+/**
+* Storage engine used to save the profiling data
+*
+*   file = files a a defined directory
+*   xhgui = mysql database table for XH Gui
+*/
+define('PAPAYA_PROFILER_STORAGE', 'file');
+
+/**
+* Directory for profiling file storage - default value is the xhprof.output_dir ini option.
+*/
+define('PAPAYA_PROFILER_STORAGE_DIRECTORY', '/tmp/');
+
+/**
+* Database uri for storage (used by xhgui)
+*/
+define('PAPAYA_PROFILER_STORAGE_DATABASE', NULL);
+
+/**
+* Database table name for storage (used by xhgui)
+*/
+define('PAPAYA_PROFILER_STORAGE_DATABASE_TABLE', 'details');
+
+/**
+* A server identifier (used by xhgui)
+*/
+define('PAPAYA_PROFILER_SERVER_ID', 'dv1');

@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<texts>
+  <text ident="MORE">Pour en savoir davantage</text>
+  <text ident="SAVE">Enregistrer</text>
+  <text ident="CANCEL">Annuler</text>
+  <text ident="BACK">Retour</text>
+  <text ident="NEXT">Suivant</text>
+  <text ident="PREV">Précédant</text>
+  <text ident="OVERVIEW">Index</text>
+  <text ident="DOWNLOAD">télécharger</text>
+  <text ident="ADD">ajouter</text>
+  <text ident="EDIT">modifier</text>
+  <text ident="VIEW">voir</text>
+ 
+  <text ident="PAGE_FIRST">premier</text>
+  <text ident="PAGE_PREVIOUS">précédent</text>
+  <text ident="PAGE_NEXT">suivant</text>
+  <text ident="PAGE_LAST">dernier</text>
+  
+  <text ident="SEARCH_CAPTION">Recherche</text>
+  <text ident="SEARCH_BUTTON">Rechercher</text>
+  
+  <text ident="PATH_CAPTION">Vous êtes ici</text>
+  <text ident="JUMP_TO_TOP">Haut de page</text>
+  <text ident="JUMP_TO">Passer directement à</text>
+  <text ident="JUMP_TARGET_MAIN_NAVIGATION">Retour au menu principal</text>
+  <text ident="JUMP_TARGET_DETAIL_NAVIGTION">Retour au menu détaillée</text>
+  <text ident="JUMP_TARGET_CONTENT">Aller directement au contenu</text>
+  <text ident="JUMP_TARGET_HOME">Aller sur la page d´accueil</text>
+  
+  <text ident="VIEW_CAPTION_PDF">Export PDF</text>
+  <text ident="VIEW_CAPTION_PRINT">Page d´impression</text>
+  
+  <text ident="PASSWORD_FORGOTTEN">Mot de passe oublié?</text>
+  <text ident="FIELD_MANDATORY">Champ obligatoire</text>
+
+  <text ident="MSG_NO_IFRAME">Votre Navigateur ne permet pas l´affichage des cadres. Cliquez sur le lien pour ouvrir la page</text>
+
+  <text ident="MONTH_NAME_JANUARY">Janvier</text>
+  <text ident="MONTH_NAME_FEBRUARY">Février</text>
+  <text ident="MONTH_NAME_MARCH">Mars</text>
+  <text ident="MONTH_NAME_APRIL">Avril</text>
+  <text ident="MONTH_NAME_MAY">Mai</text>
+  <text ident="MONTH_NAME_JUNE">Juin</text>
+  <text ident="MONTH_NAME_JULY">Juillet</text>
+  <text ident="MONTH_NAME_AUGUST">Août</text>
+  <text ident="MONTH_NAME_SEPTEMBER">Septembre</text>
+  <text ident="MONTH_NAME_OCTOBER">Octobre</text>
+  <text ident="MONTH_NAME_NOVEMBER">Novembre</text>
+  <text ident="MONTH_NAME_DECEMBER">Décembre</text>
+
+  <text ident="MONTH_ABBR_JANUARY">Janv</text>
+  <text ident="MONTH_ABBR_FEBRUARY">Févr</text>
+  <text ident="MONTH_ABBR_MARCH">Mars</text>
+  <text ident="MONTH_ABBR_APRIL">Avr</text>
+  <text ident="MONTH_ABBR_MAY">Mai</text>
+  <text ident="MONTH_ABBR_JUNE">Juin</text>
+  <text ident="MONTH_ABBR_JULY">Juill</text>
+  <text ident="MONTH_ABBR_AUGUST">Août</text>
+  <text ident="MONTH_ABBR_SEPTEMBER">Sept</text>
+  <text ident="MONTH_ABBR_OCTOBER">Oct</text>
+  <text ident="MONTH_ABBR_NOVEMBER">Nov</text>
+  <text ident="MONTH_ABBR_DECEMBER">Déc</text>
+
+  <text ident="DAY_NAME_MONDAY">Lundi</text>
+  <text ident="DAY_NAME_TUESDAY">Mardi</text>
+  <text ident="DAY_NAME_WEDNESDAY">Mercredi</text>
+  <text ident="DAY_NAME_THURSDAY">Jeudi</text>
+  <text ident="DAY_NAME_FRIDAY">Vendredi</text>
+  <text ident="DAY_NAME_SATURDAY">Samedi</text>
+  <text ident="DAY_NAME_SUNDAY">Dimanche</text>
+
+  <text ident="DAY_ABBR_MONDAY">Lu</text>
+  <text ident="DAY_ABBR_TUESDAY">Ma</text>
+  <text ident="DAY_ABBR_WEDNESDAY">Me</text>
+  <text ident="DAY_ABBR_THURSDAY">Je</text>
+  <text ident="DAY_ABBR_FRIDAY">Ve</text>
+  <text ident="DAY_ABBR_SATURDAY">Sa</text>
+  <text ident="DAY_ABBR_SUNDAY">Di</text>
+</texts>

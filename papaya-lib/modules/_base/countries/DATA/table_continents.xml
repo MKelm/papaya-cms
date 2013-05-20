@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="continents" prefix="yes">
+<fields>
+<field name="continent_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="continent_name" type="string" size="50"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>continent_id</field></primary-key>
+</keys>
+</table>

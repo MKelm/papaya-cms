@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Stickers</name>
+  <description>The stickers module can show random quotes or images similar to fortune</description>
+  <modules>
+    <module type="page"
+            guid="4dadf7347c3b36a4e265475b3dd3bd87"
+            name="Stickers page"
+            class="content_stickers"
+            file="content_stickers.php">Stickers displayed on a page</module>
+    <module type="box"
+            guid="b714f1e8cf39463aceeaf872de3b7405"
+            name="Stickers box"
+            class="actionbox_stickers"
+            file="actbox_stickers.php">Stickers displayed in a box</module>
+    <module type="admin"
+            guid="fadd3cc21cdfd5dba2492f6d7cd059b1"
+            glyph="stickers.png"
+            name="Stickers"
+            class="edmodule_stickers"
+            file="edmodule_stickers.php">Stickers administration</module>
+  </modules>
+  <tables>
+    <table name="sticker_collections" />
+    <table name="sticker" />
+  </tables>
+</modulegroup>

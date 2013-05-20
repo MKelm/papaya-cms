@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="commcal_events" prefix="yes">
+  <fields>
+    <field name="event_id" type="integer" size="4"  null="no" autoinc="yes"/>
+    <field name="calendar_id" type="integer" size="4"  null="no"/>
+    <field name="title" type="string" size="255"  null="no"/>
+    <field name="location" type="string" size="255"  null="no"/>
+    <field name="description" type="string" size="65535"  null="no"/>
+    <field name="start_stamp" type="integer" size="4"  null="no"/>
+    <field name="end_stamp" type="integer" size="4"  null="no"/>
+    <field name="end_year" type="integer" size="2"  null="no"/>
+    <field name="end_month" type="integer" size="2"  null="no"/>
+    <field name="recurrence" type="string" size="7"  null="no"/>
+    <field name="recur_yearly_interval" type="integer" size="2"  null="no"/>
+    <field name="recur_monthly_interval" type="integer" size="2"  null="no"/>
+    <field name="recur_monthly_count" type="integer" size="2"  null="no"/>
+    <field name="recur_monthly_byweekday" type="integer" size="2"  null="no"/>
+    <field name="recur_weekly_interval" type="integer" size="2"  null="no"/>
+    <field name="recur_daily_interval" type="integer" size="2"  null="no"/>
+    <field name="recur_end" type="integer" size="4"  null="yes"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>event_id</field>
+    </primary-key>
+  </keys>
+</table>

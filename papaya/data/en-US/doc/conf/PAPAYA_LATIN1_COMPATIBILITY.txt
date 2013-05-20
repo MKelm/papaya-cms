@@ -1,0 +1,1 @@
+"on" to activate the compatibility mode, otherwise "off". When this feature is active, papaya CMS will check the encoding of each string. In case that an ISO-8859-1 encoded string is found, this string is converted into UTF-8. This setting is active per default.

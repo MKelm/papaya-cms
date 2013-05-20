@@ -1,0 +1,1 @@
+Wert für Höhe und Breite der Miniaturbilder (Thumbnails), die im Bildbrowser angezeigt werden. Die Angabe erfolgt in Pixel.

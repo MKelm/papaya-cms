@@ -1,0 +1,1 @@
+Der geheime S3-Schlüssel, der zur Authentifizierung eingesetzt wird. Mit diesem Schlüssel kann papaya CMS auf das S3-Bucket zugreifen.

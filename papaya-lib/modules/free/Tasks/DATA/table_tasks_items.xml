@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="tasks_items" prefix="yes">
+  <fields>
+    <field name="tasks_item_id" type="string" size="10" null="no"/>
+    <field name="tasks_item_status" type="integer" size="4" null="no"/>
+    <field name="tasks_item_created" type="integer" size="8" null="no"/>
+    <field name="tasks_item_modified" type="integer" size="8" null="no"/>
+    <field name="tasks_item_modified_by" type="string" size="32" null="no"/>
+    <field name="tasks_item_title" type="string" size="65535" null="no"/>
+    <field name="tasks_item_description" type="string" size="65535" null="no"/>
+    <field name="tasks_item_guid" type="string" size="32" null="no"/>
+    <field name="tasks_item_data" type="string" size="65535" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>tasks_item_id</field>
+    </primary-key>
+    <key name="tasks_item_description">
+      <field size="200">tasks_item_description</field>
+    </key>
+  </keys>
+</table>

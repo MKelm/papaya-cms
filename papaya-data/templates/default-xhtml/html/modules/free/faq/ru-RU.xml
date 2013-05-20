@@ -1,0 +1,7 @@
+<texts>
+  <text ident="FAQ_NO_GROUPS">Выбранные "вопросы и ответы" не содержат каких-либо групп.</text>
+  <text ident="FAQ_NO_ENTRIES">"Вопросы и ответы" выбранной тематической группы не содержат никаких записей.</text>
+  <text ident="FAQ_NO_SEARCHRESULT">Поиск не дал никаких результатов.</text>
+  <text ident="FAQ_INVALID_SEARCH">Поисковый запрос является недействительным.</text>
+  <text ident="FAQ_COMMENT_ADD">Добавить комментар</text>
+</texts>

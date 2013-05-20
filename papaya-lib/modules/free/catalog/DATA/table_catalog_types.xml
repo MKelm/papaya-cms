@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="catalog_types" prefix="yes">
+<fields>
+<field name="catalogtype_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="catalogtype_name" type="string" size="50"  null="no"/>
+<field name="catalogtype_title" type="string" size="200"  null="no"/>
+<field name="catalogtype_loadlinks" type="integer" size="2"  null="no"/>
+<field name="catalogtype_loadteaser" type="integer" size="2"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>catalogtype_id</field></primary-key>
+<key name="catalogtype_name" unique="yes">
+<field>catalogtype_name</field></key>
+</keys>
+</table>

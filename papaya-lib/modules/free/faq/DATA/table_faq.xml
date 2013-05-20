@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="faq" prefix="yes">
+<fields>
+<field name="faq_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="faq_title" type="string" size="200"  null="no"/>
+<field name="faq_descr" type="string" size="65535"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>faq_id</field></primary-key>
+<key name="faq_title">
+<field>faq_title</field></key>
+</keys>
+</table>

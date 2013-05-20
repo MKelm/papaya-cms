@@ -1,0 +1,36 @@
+/*
+ CSS rules for content module content_faq in ~/modules/_base/content_faq.php
+*/
+#content ul.faqNavigationLinks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 1.4em;
+  margin-bottom: 1em;
+}
+#content ul.faqNavigationLinks li {
+  float: left;
+  list-style-type: none;
+  background: none;
+  padding: 0.2em;
+}
+
+#faqSearchDialog {
+  margin: 1em 0;
+  padding: 0;
+}
+#faqSearchDialog fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+#faqSearchDialog input {
+  width: 69%;
+  float: left;
+  height: 1.4em;
+  font-size: 1em;
+}
+#faqSearchDialog button {
+  width: 29%;
+  margin: 0 0 0 1px;
+}

@@ -1,0 +1,1 @@
+Zeit in Sekunden, ab dem ein Eintrag im Loginprotokoll als veraltet gilt. Standardeinstellung sind 86400 Sekunden (entspricht 24 Stunden).

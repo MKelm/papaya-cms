@@ -1,0 +1,1 @@
+ID of the page that will be displayed when a redirection to an external ressource is requested. The page redirection will also receive the HTTP status code 301. This page will be displayed only if the redirect protection (<tt>PAPAYA_REDIRECT_PROTECTION</tt>) has been activated.

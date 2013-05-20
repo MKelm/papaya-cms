@@ -1,0 +1,408 @@
+-----------------------------------------------------------------------
+|  papaya CMS                                                         |
+|  Version: 5.2                                                       |
+|  Copyright: 2002-2010 papaya Software GmbH                          |
+|  Website: http://www.papaya-cms.com                                 |
+-----------------------------------------------------------------------
+
+Die komplette Dokumentation ist verfuegbar unter:
+
+http://www.papaya-cms.com/dokumentation.989.de.html
+
+-----------------------------------------------------------------------
+
+  Allgemeines
+
+  Lizenz
+
+  Systemvorraussetzungen
+
+  Installation
+    1. Dateien kopieren
+    2. An den Server anpassen
+    3. Rechte setzen
+
+  Initialisierung und Konfiguration
+    1. Datenbank initialisieren
+    2. Konfiguration
+    3. Benutzer und Passwoerter
+
+  Fehlersuche
+
+  Anhang
+    A papaya CMS in einem Unterverzeichnis
+    B Rewrite Rules in der httpd.conf
+    C Apache mod_vhost_alias
+    D MySQL >= 4.1 und Zeichensaetze
+
+
+----------------
+| Allgemeines  |
+----------------
+
+Danke, dass Sie sich papaya CMS heruntergeladen haben und testen/nutzen
+wollen. Die Nutzung ist fuer Sie kostenfrei unter den Bedingungen der
+GNU General Public Licence in Version 2 (GPL V2) moeglich.
+
+papaya CMS ist ein Open Source CMS mit dem Fokus auf groessere Websites und
+komplexe Webanwendungen. Es verwendet keinerlei proprietaere Template- oder
+Scriptsprachen sondern baut komplett auf offene Standards auf (z.B. PHP, 
+MySQL/PostgreSQL, XSL/XSLT etc.).
+
+Eine Featureliste steht unter http://www.papaya-cms.com/index.1017.de.html zur
+Verfuegung.
+
+Aktuelle Informationen zu papaya CMS finden Sie unter
+[http://www.papaya-cms.com].
+
+
+-----------
+| Lizenz  |
+-----------
+
+papaya CMS unterliegt der GNU General Public Licence in Version 2
+(GPL V2). Die Lizenz liegt in der Datei gpl.txt bei.
+
+Die Datei credits.txt enthaelt eine Liste der Open-Source-Programme, die
+mit diesem Release von papaya CMS mitgeliefert werden.
+
+
+--------------------------
+| Systemvoraussetzungen  |
+--------------------------
+
+Server:
+  Apache httpd 2.x
+    mod_rewrite
+  PHP >= 5.2
+    XML (ext/xml)
+    XSLT (ext/xsl)
+    MySQL oder PostgreSQL(ext/mysql, ext/mysqli oder ext/pgsql)
+    Sessions (ext/session)
+    PCRE (ext/pcre)
+    GD (ext/gd)
+  MySQL >= 4.1.x oder PostgreSQL >= 8.0
+
+Client (fuer Administrationsoberflaeche):
+  Webbrowser (empfohlen Firefox)
+    JavaScript
+    Flash
+
+Client (fuer Ausgabe mit Standardtemplates):
+  Webbrowser
+    JavaScript (optional - fuer Popups und Flasheinbindungen)
+
+
+---------------------------
+|  Installation  |
+---------------------------
+
+1. Dateien kopieren
+
+Im Installationsverzeichnis finden Sie vier Verzeichnisse und drei Dateien.
+
+  papaya-data/    - Datenverzeichnis fuer das CMS
+  papaya-lib/     - papaya Klassenbibliothek
+
+  papaya/         - papaya Admininterface
+  papaya-themes/  - Themes - CSS-Dateien und Layout-Bilder, diverse
+                    Script-Dateien (Flash-Erkennung, Popups, ...)
+
+  .htaccess       - RewriteRules fuer den Apache
+  conf.inc.php    - Basiskonfiguration (Datenbankzugriff, Bibliothekspfad)
+  index.php       - Seitenindex
+
+Die beiden ersten Verzeichnisse ("papaya-data" und "papaya-lib") kopieren
+Sie wenn moeglich ausserhalb des Document-Root Ihres Webservers. Die anderen
+Verzeichnisse sowie die Dateien ".htaccess" und "index.php" kopieren
+Sie bitte in den Document-Root des Webservers.
+
+2. An den Server anpassen
+
+In der Datei conf.inc.php muessen Sie zwei Werte anpassen:
+
+1) Die Zugriffsdaten und den Pfad der Datenbank (PAPAYA_DB_URI) nach dem Schema:
+
+   "protocol://user:password@hostname/database"
+
+   z.B.
+   "mysql://web1:geheim@localhost/usr_web1_1"
+
+   Die notwendigen Einzelwerte erhalten Sie von Ihrem Provider.
+
+2) Der Wert PAPAYA_INCLUDE_PATH ist der Pfad zum papaya Klassenframework.
+
+   Sie koennen hier einen absoluten Pfad oder einen Pfad innerhalb des
+   PHP-Include-Path angeben. Moegliche Werte waeren:
+
+   "/home/www/web1/files/lib/papaya-lib/" oder "lib/papaya-lib/"
+
+Nach der Aenderung kopieren Sie diese Datei bitte ebenfalls in den
+Document-Root Ihres Webservers.
+
+
+3) Rechte setzen
+
+3a) Rechte setzen unter Windows (XP, 2003 Server und hoeher)
+
+    Der Webserver benoetigt Schreibrechte fuer das Verzeichnis "papaya-data".
+    Entsprechende Dateirechte koennen Sie mit dem Windows Explorer setzen, indem
+    Sie mit der rechten Maustaste auf das Verzeichnis klicken und das Kontext-
+    menue mit der Dateirechteanpassung oeffnen. In der Regel muessen Sie unter
+    Windows jedoch die Dateirechte nicht explizit setzen.
+    
+    papaya CMS ist nun installiert. Fahren Sie nun mit dem Punkt *Initialisierung
+    und Konfiguration fort.
+
+3b) Rechte setzen unter Unix (Linux, Unix, BSD und weitere)
+
+    Das Verzeichnis "papaya-data" muss fuer den Webserver schreibbar sein.
+    Ueblicherweise besitzen FTP-Programme eine Moeglichkeit die Rechte zu
+    aendern. Setzen Sie die Rechte fuer das Verzeichnis auf "0777".
+
+                Besitzer Gruppe Alle
+    Lesen          X        X     X
+    Schreiben      X        X     X
+    Ausfuehren     X        X     X
+
+    Falls die Verzeichnisse und Dateien dem Unix-User gehoeren, mit dem
+    der Webserver-Prozess laeuft, koennen Sie die Rechte auch entsprechend
+    restriktiv setzen. Fragen Sie bitte bei Ihrem Serveradministrator nach.
+
+    Das papaya CMS ist nun installiert und Sie koennen mit der *Initialisierung
+    und Konfiguration* fortfahren.
+
+
+---------------------------------------
+|  Initialisierung und Konfiguration  |
+---------------------------------------
+
+1. Installationsscript aufrufen
+
+Rufen Sie die Seite http://www.domain.tld/papaya/install.php in Ihrem
+Webbrowser auf (www.domain.tld ersetzen Sie bitte durch Ihre Domain).
+Die Startseite des Installationsscriptes wird dargestellt. Die Startseite
+enthaelt zahlreiche Links zu wichtigen Ressourcen wie der FAQ, dem 
+Installationsforum, der Supportseite sowie der papaya-Website.
+
+Klicken Sie auf den Link "Next", um zum naechsten Schritt zu gelangen.
+
+
+2. Lizenzbedingungen akzeptieren
+
+Der folgende Schritt im Installationsscript stellt Ihnen eine Version der GPL
+vor. Ueber den Link "German version" in der rechten Seite koennen Sie sich eine
+deutschsprachige Uebersetzung der Lizenz ansehen.
+
+Sie muessen die Lizenzbedingunen akzeptieren, um mit der Installation fortfahren 
+zu koennen. Klicken Sie dazu auf "Accept license".
+
+
+3. Systemcheck durchfuehren.
+
+Im folgenden Schritt fuehren Sie einen Systemcheck durch. Das Script ueberprueft,
+ob der Server fuer den Betrieb von papaya CMS geeignet ist und alle notwendigen
+Erweiterungen installiert sind. Wenn dies der Fall ist, koennen Sie mit dem 
+naechsten Schritt der Installation fortfahren. Klicken Sie dazu auf "Next".
+
+
+4. PAPAYA_PATH_DATA definieren und Admin-Account anlegen
+
+4a. Pfad zu PAPAYA_PATH_DATA setzen
+
+Geben Sie den Pfad zum Verzeichnis papaya-data fuer die Option PAPAYA_PATH_DATA 
+an. Geben Sie hierfuer den absoluten Pfad an.
+
+4b. Benutzerkonto fuer Administrator einrichten
+
+Geben Sie den Vornamen, den Nachnamen, die E-Mail-Adresse sowie Benutzername
+und Passwort fuer den Administrator ein. Klicken Sie auf "Save".
+
+
+5. Konfigurationstabelle anlegen
+
+Ein Dialog wird dargestellt, ueber den Sie die Konfigurationstabelle in
+der Datenbank anlegen koennen. Klicken Sie auf "Create", um die Konfigurations-
+tabelle anzulegen und mit der Intallation fortzufahren.
+
+HINWEIS  - Falls dieser Dialog nicht dargestellt wird, ist die Datenbank-
+           verbindung nicht korrekt konfiguriert worden.
+
+
+6. Datenbank initialisieren
+
+Danach zeigt die Seite eine Liste von Tabellen sowie einen Dialog mit 
+verschiedenen Aktionen an.
+
+ 1) Analyze Database
+
+    Prueft die vorhandenen Tabellen in der Datenbank
+    (wird deaktiviert, wenn keine der benoetigten Tabellen vorhanden ist)
+
+ 2) Update Database
+
+    Erzeugen fehlender Tabellen, Abgleichen bestehender Tabellen
+    (wird deaktiviert, wenn keine aenderungen noetig sind)
+
+ 3) Insert default data
+
+    Einfuegen von Standardwerten in die markierten Tabellen.
+    ACHTUNG :: Der aktuelle Inhalt der Tabelle wird geloescht!
+    (diese Aktion kann mehrfach ausgefuehrt werden)
+
+ 4) Check options and modules
+
+    Prueft die Optionen, legt Standardwerte an und sucht nach
+    installierten Modulen
+    (diese Aktion kann mehrfach ausgefuehrt werden)
+
+ 5) Go to admin interface
+
+    Ruft die Benutzeradministration des Admininterfaces auf.
+
+Klicken Sie sich nacheinander durch die verschiedenen Schritte. Das 
+Tool passt bestehende Tabellen an, ohne die darin enthaltenen Daten 
+zu loeschen. Sie koennen damit spaeter also auch Updates machen.
+
+Tabellen fuer Zusatzmodule (z.b. Foren) werden spaeter ueber die
+Modulverwaltung installiert.
+
+Die Datenbank fuer papaya CMS ist nun initialisiert und papaya CMS kann
+nun konfiguriert werden. Wenn Sie auf den Link im letzten Schritt 
+"5) Go to admin interface" klicken, gelangen Sie automatisch in das papaya
+Backend und koennen mit der Konfiguration beginnen.
+
+
+7. Konfiguration
+
+7a) Login nach der Datenbankinitialisierung
+
+Wenn Sie den Konfigurationsschritt zu einem spaeteren Zeitpunkt fortsetzen
+moechten, koennen Sie sich wie folgt ins Backend von papaya CMS einloggen:
+
+  a) Rufen Sie die Seite http://www.domain.tld/papaya/ in Ihrem Webbrowser auf.
+     Ersetzen Sie dabei www.domain.tld durch die Domain Ihrer papaya-
+     Installation.
+  b) Geben Sie Benutzerkennung und Passwort ein. Sie haben den Benutzernamen
+     und das Passwort fuer das Benutzerkonto des Administrators waehrend der
+     Installation angelegt und sollten diese Angaben haben
+
+Falls Sie direkt nach der Datenbankinitialiserung fortgefahren haben, sind Sie
+bereits automatisch im Backend des papaya CMS eingeloggt.
+
+7b) Die Konfiguration fortfuehren
+
+Klicken Sie in der Menuegruppe "Admninistration" auf den Punkt "Einstellungen".
+Sie gelangen in die Systemkonfiguration von papaya CMS.
+
+Wichtige Optionen:
+
+  Dateien und Verzeichnisse
+    PAPAYA_PATH_DATA   - Pfad zum Datenverzeichnis (papaya-data/)
+    PAPAYA_PATH_WEB    - Pfad im Browser
+
+  Layout
+    PAPAYA_LAYOUT_TEMPLATES - Verzeichnis mit XSLT-Templates
+    PAPAYA_LAYOUT_THEME     - Verzeichnis mit CSS- und Bilddateien
+
+WICHTIG - Die vorstehende Einstellung "PAPAYA_PATH_DATA" kann unter 
+          Umstaenden waehrend des Installationsprozesses nicht automatisch
+          gesetzt werden. Dies ist daran zu erkennen, dass der Optionswert
+          in runden Klammern dargestellt wird. Sie muessen in diesem Falle 
+          die Option explizit bearbeiten und abspeichern. Nach dem Speichern
+          werden die runden Klammern nicht mehr dargestellt.
+
+Rufen Sie im Anschluss die Funktion "Pfade pruefen" bzw. "check
+paths" auf. Wichtige Verzeichnisse fuer die MediaDB werden gesetzt und 
+Dateirechte im Uploadverzeichnis ueberprueft.
+
+
+8. Benutzer und Passwoerter
+
+Klicken Sie in der Menuegruppe "Administration" auf "Benutzer". In der Benutzer-
+verwaltung koennen Sie nun fuer jeden Benutzer ein Benutzerkonto anlegen.
+
+HINWEIS -  Legen Sie fuer jeden Autor einen eigenen Benutzer an. Wenn ein
+           Autor eine Seite anlegt, wird der Name des Autors als Metainformation
+           der Seite gespeichert.
+
+-----------------
+|  Fehlersuche  |
+-----------------
+
+Wenn Sie Probleme mit der Installation und Benutzung des papaya CMS haben,
+gehen Sie bitte die folgenden Schritte in der angegebenen Reihenfolge
+durch. Damit helfen Sie uns weniger Zeit darauf verwenden zu muessen Fragen
+zu beantworten, die schon beantwortet sind und mehr Zeit zu haben fuer die
+Entwicklung des papaya CMS.
+
+1) Lesen Sie die FAQ:         http://www.papaya-cms.com/faq/
+
+2) Lesen Sie die Doku:        http://www.papaya-cms.com/docs/
+
+3) Suchen Sie im Forum:       http://www.papaya-cms.com/forum/
+
+4) Sie haben Schritte 1-3 durchgefuehrt und haben immer noch ein Problem:
+   -> Schreiben Sie eine Nachricht im Forum
+      (http://www.papaya-cms.com/forum/)
+
+
+------------
+|  Anhang  |
+------------
+
+A - papaya CMS in einem Unterverzeichnis installieren
+
+Es ist moeglich, papaya CMS auch in einem Unterverzeichnis des
+Webservers zu installieren. Die .htaccess muss jedoch immer im
+Document-Root liegen und in diesen Faellen angepasst werden. Eine
+Beispieldatei finden sie in diesem Verzeichnis (htaccess.tpl). Der
+Platzhalter {%webpath_pages%} muss durch den entsprechenden Pfad ersetzt
+werden.
+
+Beispiele:
+
+  pages/
+  cms/page/
+
+Beachten Sie bitte, dass kein fuehrender Schraegstrich angegeben werden darf,
+der Pfad jedoch mit einem Schraegstrich abgeschlossen werden muss.
+
+
+B - Rewrite Rules in der httpd.conf
+
+Sie koennen die Angaben aus der .htaccess auch in die Konfigurationsdatei 
+des Webservers kopieren. Nutzen Sie wenn moeglich eine "per-Directory"-
+Konfiguration.
+
+Die .htaccess wird damit ueberfluessung und kann komplett entfernt und
+deaktiviert werden.
+
+
+C - Apache mod_vhost_alias
+
+Wenn Sie mod_vhost_alias einsetzen, enthaelt die Variable
+$_SERVER['DOCUMENT_ROOT'] den falschen Wert. Auch kann der Installer
+die Pfade nicht immer korrekt berechnen. Sie muessen daher den Pfad in
+der conf.inc.php manuell korrigieren sowie die folgende Zeile
+einfuegen:
+
+$_SERVER['DOCUMENT_ROOT'] = '/path/vhosts/hostname/';
+
+Ersetzen Sie bitte '/path/vhosts/hostname/' mit dem eigentlichen Pfad zum
+VirtualDocumentRoot auf dem Webserver, auf dem Sie Ihre papaya-Installation
+installiert haben.
+
+Die Pfade in den Rewrite-Rules der .htaccess muessen ebenfalls angepasst
+werden. Falls Sie papaya CMS direkt im Hauptverzeichnis installieren,
+koennen Sie die .htaccess aus dem Unterverzeichnis "files" des
+Installationspaketes kopieren.
+
+
+D - MySQL >= 4.1 und Zeichensaetze
+
+MySQL bringt mit der Version 4.1 Untersuetzung fuer Unicode und Zeichensaetze.
+Falls Sie MySQL 4.1 einsetzen, achten Sie bitte unbedingt darauf, dass als
+Zeichensatz in den Tabellen UTF-8 genutzt wird. Erkennbar ist dies an der
+Kollation (engl. Collation). Diese muss mit "utf8" beginnen
+(z.B. utf8_general_ci).

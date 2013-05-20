@@ -1,0 +1,1 @@
+„On“, wenn Sie den XML-Ausgabemodus der Seiten aktivieren möchten, andernfalls „Off“. Dieser Ausgabemodus ist insbesondere für die Entwickler von XSLT-Templates wichtig.

@@ -1,0 +1,1 @@
+Select a separator for the names of URL-GET parameters. Parameters have the following form: <code>?name[cmd]=value</code><ul><li><code>[ ]</code> (opening and closing square brackets, PHP default)<br /></li><li><code>,</code> (comma)<br /></li><li><code>:</code> (colon)<br /></li><li><code>*</code> (asterisk)<br /></li><li><code>!</code> (exclamation mark)<br /></li></ul>

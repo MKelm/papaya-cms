@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="catalog_links" prefix="yes">
+<fields>
+<field name="cataloglink_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="catalog_id" type="integer" size="8"  null="no"/>
+<field name="topic_id" type="integer" size="8"  null="no"/>
+<field name="lng_id" type="integer" size="8"  null="no"/>
+<field name="cataloglink_title" type="string" size="255"  null="no"/>
+<field name="cataloglink_sort" type="integer" size="4"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>cataloglink_id</field></primary-key>
+<key name="lng_id">
+<field>lng_id</field><field>catalog_id</field><field>cataloglink_sort</field></key>
+</keys>
+</table>

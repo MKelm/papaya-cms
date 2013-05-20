@@ -1,0 +1,15 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Link DB</name>
+  <description>Manage a list of links to external sites and resources. Links can be categorized.</description>
+  <modules>
+    <module type="admin" guid="6ae74d41a56013a8997db505a4e863fb" name="LinkDB" class="edmodule_linkdb" file="edmodule_linkdb.php" glyph="linkdb.png">Link DB administration module</module>
+    <module type="page" guid="ca87be8f2daa051331e881fa98931aa2" name="LinkDB Page" class="content_linkdb" file="content_linkdb.php">Page module used to navigate through the entries of the link database.</module>
+    <module type="box" guid="a577697fd48556817a061d28efffbb8d" name="LinkDB Box" class="actbox_linkdb" file="actbox_linkdb.php">A box module that displays randomly selected links from the Link DB.</module>
+  </modules>
+  <tables>
+    <table name="linkdb_categ"/>
+    <table name="linkdb"/>
+    <table name="linkdb_clicks"/>
+  </tables>
+</modulegroup>

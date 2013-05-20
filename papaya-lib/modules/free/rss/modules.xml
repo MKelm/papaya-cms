@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <modulegroup>
+  <name>RSS</name>
+  <description>Module that provides showing RSS feeds from given adress.</description>
+  <modules>
+    <module
+      type="page"
+      guid="76fb36e473b041d6efb9cd1f4e8f0313"
+      name="RSS Feed Reader Page"
+      class="RssReaderPage"
+      file="ReaderPage.php">Page module used to display RSS feed from given uri.</module>
+  </modules>
+</modulegroup>

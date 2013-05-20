@@ -1,0 +1,1 @@
+Wenn Importfilter installiert sind, kann man die Importfunktionalität aktivieren (Auf „On“ stellen). Ist standardmäßig deaktiviert („Off“).

@@ -1,0 +1,11 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Query logging</name>
+  <description>A helper module for developers and administrators: Log database queries and analyze them using different filters/search mechanisms.</description>
+  <modules>
+    <module type="admin" guid="3a41f05fff00097196326b6d4c05e088" name="Query log"  glyph="querylog.png" class="edmodule_querylog" file="edmodule_querylog.php">The main query log administration/analysis tool.</module>
+  </modules>
+  <tables>
+    <table name="log_queries"/>
+  </tables>
+</modulegroup>

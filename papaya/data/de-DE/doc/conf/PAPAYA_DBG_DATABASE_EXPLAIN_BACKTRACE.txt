@@ -1,0 +1,1 @@
+„On“, um den gesammten Backtrace der Explain-Meldung auszugeben, andernfalls „Off“. Der Backtrace umfasst die Liste der Funktionen, die aufgerufen worden sind. Die Liste ist dabei umgekehrt chronologisch sortiert, wobei die erste Funktion der Liste die SQL-Query ausgeführt hat.

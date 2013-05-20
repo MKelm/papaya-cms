@@ -1,0 +1,1 @@
+IP-Nummer, von der aus die <code>cronexec.php</code> aufgerufen werden kann. Bei <code>0.0.0.0</code> sind Zugriffe aus allen Netzen erlaubt. Sie können auch mehrere IP-Adressen eingeben und durch Komma separieren, beispielsweise <code>192.168.0.1</code>, <code>192.168.0.2</code>, <code>...</code>

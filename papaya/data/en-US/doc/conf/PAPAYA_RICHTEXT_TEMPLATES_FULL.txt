@@ -1,0 +1,1 @@
+Comma separated list of elements that can be selected in the style drop down list of the rich text editor. This list is used for the full featured rich text editor with all buttons activated.

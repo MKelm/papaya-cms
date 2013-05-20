@@ -1,0 +1,1 @@
+"On" (default) if you want to use papaya's default surfer login behavior, or "Off" if you want to implement your own login process.

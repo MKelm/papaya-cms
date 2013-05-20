@@ -1,0 +1,1 @@
+Die Kennung des S3-Buckets, in dem papaya CMS Daten speichert und aus dem Daten gelesen werden.

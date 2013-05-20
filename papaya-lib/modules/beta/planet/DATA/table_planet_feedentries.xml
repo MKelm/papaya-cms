@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="planet_feedentries" prefix="yes">
+  <fields>
+    <field name="feedentry_id" type="integer" size="4" null="no" autoinc="yes"/>
+	<field name="feedentry_status" type="integer" size="4" null="no"/>
+    <field name="feedentry_ident" type="string" size="65535" null="no"/>
+	<field name="feedentry_url" type="string" size="65535" null="no"/>
+	<field name="feedentry_updated" type="integer" size="4" null="no"/>
+	<field name="feedentry_fetched" type="integer" size="4" null="no"/>
+	<field name="feedentry_published" type="integer" size="4" null="no"/>
+	<field name="feedentry_title" type="string" size="255" null="no"/>
+	<field name="feedentry_summary" type="string" size="65535" null="no"/>
+	<field name="feedentry_summary_type" type="string" size="50" null="no"/>
+	<field name="feedentry_content" type="string" size="65535" null="no"/>
+	<field name="feedentry_content_type" type="string" size="50" null="no"/>
+  </fields>				   
+  <keys>
+    <primary-key>
+	  <field>feedentry_id</field>
+    </primary-key>
+  </keys>
+</table>

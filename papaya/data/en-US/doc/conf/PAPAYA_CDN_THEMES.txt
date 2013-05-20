@@ -1,0 +1,1 @@
+URL of the themes directory on a different server, e.g. <tt>http://www.other-domain.tld/papaya-themes/</tt>.

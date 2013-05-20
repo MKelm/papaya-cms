@@ -1,0 +1,1 @@
+In case you have installed a datafilter, you can activate the data filter support by setting the switch to "On". This option is deactivated by default ("Off").

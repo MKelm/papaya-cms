@@ -1,0 +1,1 @@
+<ul><li><em>None</em>: No redirection.<br /></li><li><em>Redirect</em>: Redirection to the default domain.<br /></li></ul>

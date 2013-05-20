@@ -1,0 +1,9 @@
+Hallo {%NAME%},
+
+Sie erhalten diese E-Mail, da auf {%PROJECT%} eine Passwortänderung f�r Sie angefordert wurde.
+
+Bitte ignorieren Sie diese E-Mail, wenn Sie die Änderung nicht angefordert haben.
+
+Um Ihr Passwort zu ändern, klicken Sie bitte auf den folgenden Link:
+
+<{%LINK%}>

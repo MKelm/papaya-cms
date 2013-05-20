@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="quiz_answer" prefix="yes">
+<fields>
+<field name="answer_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="question_id" type="integer" size="4"  null="no"/>
+<field name="lng_id" type="integer" size="4"  null="no"/>
+<field name="answer_text" type="string" size="255"  null="yes"/>
+<field name="answer_explanation" type="string" size="65535"  null="yes"/>
+<field name="answer_right" type="integer" size="4"  null="yes"/>
+<field name="answer_number" type="integer" size="8"  null="no"/>
+<field name="answer_response" type="string" size="65535"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>answer_id</field></primary-key>
+<key name="quiz_question_id">
+<field>question_id</field></key>
+</keys>
+</table>

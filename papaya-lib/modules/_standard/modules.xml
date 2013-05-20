@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<modulegroup>
+  <name>Standard</name>
+  <description>Standard plugins for CMS pages using the new plugin interfaces</description>
+  <modules>
+    <module 
+      type="page" 
+      guid="7bb5db40cdbeab1f847b14fe275c9e8d" 
+      name="Article Page" 
+      class="PapayaModuleStandardArticle" 
+      file="Article.php"/>
+    <module 
+      type="box" 
+      guid="7bb5db40cdbeab1f847b14fe275c9e8e" 
+      name="XHtml Box" 
+      class="PapayaModuleStandardBoxXhtml" 
+      file="Box/Xhtml.php"
+      outputfilter="no"/>
+  </modules>
+</modulegroup>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_categories_articles" prefix="yes">
+  <fields>
+    <field name="category_id" type="integer" size="4" null="no"/>
+    <field name="article_id" type="integer" size="4" null="no"/>
+  </fields>
+  <keys>
+    <key name="category_id">
+      <field>category_id</field>
+    </key>
+    <key name="article_id">
+      <field>article_id</field>
+    </key>
+  </keys>
+</table>

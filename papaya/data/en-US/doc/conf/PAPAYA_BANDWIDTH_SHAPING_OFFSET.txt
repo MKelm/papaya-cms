@@ -1,0 +1,1 @@
+Give the maximum file size in bytes up to which a file will be sent without controlling the transmission with bandwidth shaping. The bandwidth shaping will be applied to the rest of the transmission after the maximum amount of bytes have been sent.

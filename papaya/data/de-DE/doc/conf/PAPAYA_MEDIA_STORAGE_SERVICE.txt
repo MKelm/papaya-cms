@@ -1,0 +1,1 @@
+Der Speicherdienst, den papaya CMS benutzen soll:<ul><li><em>File system</em>: Das Dateisystem (Standard)<br /></li><li><em>AWS S3</em>: Amazon Simple Storage Service - der Speicherdienst von Amazon.<br /></li></ul>

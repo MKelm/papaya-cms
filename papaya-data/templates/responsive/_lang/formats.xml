@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<formats>
+  <number>
+    <!-- <format language="LANGUAGE" decimal="CHAR" thousands="CHAR" /> -->
+    <format language="de" decimal="," thousands="." />
+    <format language="en" decimal="." thousands="," />
+    <format language="en-AU" decimal="." thousands=" " />
+    <format language="fr" decimal="," thousands="." />
+    <format language="nl" decimal=","  thousands=" " />
+    <format language="ru" decimal=","  thousands="." />
+  </number>
+  <currency>
+    <format language="nl" decimal=","  thousands="." />
+  </currency>
+  <date>
+    <!-- <format language="LANGUAGE" order="ORDER" separator="STRING" day-suffix="STRING|[english]"  abbr-suffix="STRING" /> -->
+    <short>
+      <format language="de" order="dmy" separator="." />
+      <format language="en" order="mdy" separator="/" />
+      <format language="fr" order="dmy" separator="." />
+      <format language="ru" order="dmy" separator="." datetime-separator=", " />
+    </short>
+    <medium>
+      <format language="de" order="dmy" separator=" " day-suffix="." abbr-suffix="." />
+      <format language="en" order="mdy" separator=" " day-suffix="[english]" />
+      <format language="fr" order="dmy" separator=" " abbr-suffix="." />
+      <format language="ru" order="dmy" separator=" " abbr-suffix="." month-suffix="[russian]" year-suffix=" &#1075;." datetime-separator=", " />
+    </medium>
+    <large>
+      <format language="de" order="dmy" separator=" " day-suffix="." />
+      <format language="en" order="mdy" separator=" " day-suffix="[english]" />
+      <format language="fr" order="dmy" separator=" " />
+      <format language="ru" order="dmy" separator=" " month-suffix="[russian]" year-suffix=" &#1075;." datetime-separator=", " />
+    </large>
+  </date>
+  <time>
+    <format language="de" separator=":" suffix="Uhr" hours-convention="24" />
+    <format language="en-AU" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-CO" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-CA" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-EG" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-IN" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-MY" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-NZ" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-PK" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-PH" separator=":" suffix="[english]" hours-convention="12" />
+    <format language="en-US" separator=":" suffix="[english]" hours-convention="12" />
+  </time>
+</formats>

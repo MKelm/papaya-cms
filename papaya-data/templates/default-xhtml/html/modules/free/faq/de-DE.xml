@@ -1,0 +1,8 @@
+<texts>
+  <text ident="FAQ_NO_GROUPS">Die ausgewählte FAQ enthält keine Gruppen.</text>
+  <text ident="FAQ_NO_ENTRIES">Die ausgewählte FAQ-Themengruppe enthält keine Einträge.</text>
+  <text ident="FAQ_NO_SEARCHRESULT">Keine Suchergebnisse gefunden.</text>
+  <text ident="FAQ_INVALID_SEARCH">Die Suchanfrage ist ungültig.</text>
+  <text ident="FAQ_COMMENT_ADD">Kommentar hinzufügen</text>
+  <text ident="COMMENTS">Kommentare</text>
+</texts>

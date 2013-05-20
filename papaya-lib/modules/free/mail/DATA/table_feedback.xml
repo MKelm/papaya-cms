@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="feedback" prefix="yes">
+<fields>
+<field name="feedback_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="feedback_time" type="integer" size="8"  null="no"/>
+<field name="feedback_email" type="string" size="255"  null="no"/>
+<field name="feedback_name" type="string" size="255"  null="no"/>
+<field name="feedback_subject" type="string" size="255"  null="no"/>
+<field name="feedback_message" type="string" size="65535"  null="no"/>
+<field name="feedback_xmlmessage" type="string" size="65535" null="no"/>
+<field name="feedback_form" type="integer" size="8"  null="no"/>
+<field name="feedback_new" type="integer" size="8"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>feedback_id</field></primary-key>
+</keys>
+</table>

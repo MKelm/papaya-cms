@@ -1,0 +1,1 @@
+Maximum length of page title. The normalized page title is part of the URL, e.g.: <tt>http://www.domain.tld/page-title.123.de.html</tt>

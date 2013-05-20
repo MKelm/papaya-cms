@@ -1,0 +1,1 @@
+„On“, wenn die Webseiten im papaya-Cache komprimiert an den Webbrowser gesendet werden sollen, andernfalls „Off“. Webseiten werden nur dann komprimiert an den Browser gesendet, wenn der anfragende Browser dies unterstützt.

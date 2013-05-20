@@ -1,0 +1,1 @@
+Angabe in Sekunden, wie lange der von den Content-Modulen ausgegebene Seiteninhalt (XML) im Cache vorgehalten werden soll. Bei einem Wert von „0“ wird das XML nicht im Cache vorgehalten, sondern bei jedem Seitenaufruf neu von den Content-Modulen ausgegeben.

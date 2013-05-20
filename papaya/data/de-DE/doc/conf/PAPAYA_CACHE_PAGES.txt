@@ -1,0 +1,1 @@
+„On“, wenn das Caching der XML-Seitenausgabe aktiviert werden soll, andernfalls „Off“. Wenn diese Option aktiviert ist, werden die Caching-Einstellungen der einzelnen Seiten ausgewertet.

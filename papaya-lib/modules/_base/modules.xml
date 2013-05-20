@@ -1,0 +1,131 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Default/Base</name>
+  <description>The Default/Base package provies all the standard modules for articles and the sitemap-based navigation.</description>
+  <modules>
+    <module type="box" guid="25295ec246600e6f91a819e345acc3e3" name="HTML" class="actionbox_html" file="actbox_html.php" outputfilter="no">A box module with one input field. Users can write either simple text or use HTML.</module>
+    <module type="box" guid="308b57d4d1f3f5ab7e2c542c365035b7" name="Richtext (without output filter)" class="actionbox_richtext" file="actbox_richtext.php" outputfilter="no">A box module with one input field. Users can write content using the richt text editor.</module>
+    <module type="box" guid="a7690335738b9a5ff005fe1a719beb77" name="Richtext (with template)" class="actionbox_richtextfilter" file="actbox_richtextfilter.php">A box module with one input field. Users can write content using the richt text editor.</module>
+    <module type="box" guid="76802ed996f92425c103f062985e710c" name="Header Image" class="actionbox_background_image" file="actbox_background_image.php">This box module makes it easy to use an image from the MediaDB as a background image.</module>
+    <module type="box" guid="9ff61ffb6e5a6c815599ced02ad21fbe" name="Header Image with headline" class="BackgroundImageHeadlineBox" file="BackgroundImageHeadline/Box.php">Provides an image from the MediaDB with a configurable alt text and a headline.</module>
+    <module type="box" guid="e9c1458d515e8bd5f0669a7727ec2526" name="Navigation (previous/next)" class="actionbox_prevnext" file="actbox_prevnext.php">Navigation box used to navigate through the pages that are contained in one level of the page tree.</module>
+    <module type="box" guid="6c7eca0f6e323f9d8f14f7070eccbfcb" name="Navigation" class="actionbox_sitemap" file="actbox_sitemap.php">Standard navigation box module</module>
+    <module type="page" guid="5395c818cfcaabe3fa94134fa90783d3" name="Sitemap" class="content_sitemap" file="content_sitemap.php">Sitemap page that displays a defined part of the page structure.</module>
+    <module type="page" guid="1f9358a3c1bdecba3359e400b152e4ca" name="Teaser Link" class="content_teaserlink" file="content_teaserlink.php" outputfilter="no">  This module redirects any page requests to the URL defined in a link referring to internal or external resources. In addition, you can write a teaser for this link. The teaser and the link can be displayed using &quot;Category with image&quot; or &quot;Tag Category&quot;.</module>
+    <module type="page" guid="2e93330d596576df76aec3520b2e1750" name="URL / Relocation" class="content_url" file="content_url.php" outputfilter="no">This module just redirects any page requests to another defined page. The URL is changed when the page relocation takes place.</module>
+    <module type="page" guid="a6275040cacde93dfabfd1410af49d71" name="XHTML" class="content_xhtml" file="content_xhtml.php">This page module provides a simple XHTML input field. Users can write either simple text or XHTML.</module>
+    <module type="page" guid="9b209397fdd1113bde1b7205d0b8ed4a" name="Topic with image" class="content_imgtopic" file="content_imgtopic.php">Topic with image is the standard article module with fields for title, subtitle, teaser, and article text, among others.</module>
+    <module type="page" guid="b7562736a6d60ff98e40e891a238fad1" name="Category with image" class="content_categimg" file="content_categimg.php">Category with image is the standard overview page. It contains the same standard fields like &quot;Topic with image&quot;. In addition, it displays teasers of immediate subpages and a link to the corresponding article.</module>
+    <module type="page" guid="72dcf9b709feb5d8579940b2d03e2899" name="Tag Category" class="content_tagcateg" file="content_tagcateg.php">Just like &quot;Category with image&quot;, this module will only display teaser and link of articles having a specific tag.</module>
+    <module type="page" guid="8e7652d1c71b6a207c34985723e56760" name="Casestudy" class="content_casestudy" file="content_casestudy.php">Topic with attached image gallery.</module>
+    <module type="box" guid="41a921a5b6bb4ef582bf0526ec79e07d" name="Categ Teaser" class="actionbox_categteaser" file="actbox_categteaser.php">Category box - displays teasers and corresponding links like a category page.</module>
+    <module type="box" guid="7bf4d05a9d595bc7c870fac367e3f173" name="Tag Teaser" class="actionbox_tagteaser" file="actbox_tagteaser.php">This modules displays teaser and link of pages that have been tagged with a specific tag.</module>
+    <module type="page" guid="d8170d18ceaa2b07979201babfa7bffb" name="Page Softlink" class="content_softlink" file="content_softlink.php" outputfilter="no">This module redirects any page requests internally to another predefined page. The browser isn't redirected explicitly, and the URL does not change.</module>
+    <module type="output" guid="20e80c718e5991d59e938bcdf4e020f2" name="XSLT Output Filter" class="filter_xslt" file="filter_xslt.php">This module is the standard output formatter using XSLT (ext/xslt, ext/xsl or ext/dom_xml).</module>
+    <module type="box" guid="e1b8127035a9799de1ab406898cc3526" name="Page Link" class="actionbox_pagelink" file="actbox_pagelink.php" outputfilter="no">This module creates an HTML link to another papaya page. The page link always includes the current page id which is passed to the target page.</module>
+    <module type="box" guid="686ce6053d6295df73ff5a788108781f" name="Extended Page Link" class="actionbox_pagelink_extended" file="actbox_pagelink_extended.php">This module creates an HTML link to another papaya page. The page link always includes the current page id which is passed to the target page. Users can enter text which is displayed around the link.</module>
+    <module type="box" guid="df7a4b35021123dae21a92523b3e096d" name="Categ Teaser with thumb" class="actionbox_categteaserthumb" file="actbox_categteaserthumb.php">This box module displays page teasers with thumb images.</module>
+    <module type="box" guid="7624c0a2d3773fbf47aaef000d9f7f45" name="Tag Teaser with thumb" class="actionbox_tagteaserthumb" file="actbox_tagteaserthumb.php">This box module displays page teasers with thumb images. Only those pages are selected that are linked with the tag  selected by this module.</module>
+    <module type="page" guid="e62ecd50e97da7070cc388874a8a53ae" name="Boxgrid" class="content_boxgrid" file="content_boxgrid.php">This page module displays boxes of a specified boxgroup as a grid.</module>
+    <module type="page" guid="14961cc4c4387a2ea29b211589573c01" name="Error Page" class="content_errorpage" file="content_errorpage.php">An article page with error informations. This page has no teaser.</module>
+    <module type="connector" guid="69db080d0bb7ce20b52b04e7192a60bf" name="Pages Connector" class="PapayaBasePagesConnector" file="PagesConnector.php">A connector with helper methods to handle data by pages.</module>
+    <module type="datafilter" guid="b66ecdd6ce16df79266d64bdcb04ba92" name="Tag data filter" class="datafilter_tag" file="datafilter_tag.php">Data filter used to list all taged tags from a page </module>
+  </modules>
+  <tables>
+    <table name="auth_groups"/>
+    <table name="auth_link"/>
+    <table name="auth_perm"/>
+    <table name="auth_user"/>
+    <table name="auth_useropt"/>
+    <table name="auth_modperm"/>
+    <table name="auth_modperm_link"/>
+    <table name="auth_try"/>
+    <table name="auth_ip"/>
+    <table name="box"/>
+    <table name="box_public"/>
+    <table name="box_versions"/>
+    <table name="box_trans"/>
+    <table name="box_public_trans"/>
+    <table name="box_versions_trans"/>
+    <table name="boxgroups"/>
+    <table name="boxlinks"/>
+    <table name="cronjobs"/>
+    <table name="datafilter"/>
+    <table name="datafilter_links"/>
+    <table name="domains"/>
+    <table name="images"/>
+    <table name="importfilter"/>
+    <table name="importfilter_links"/>
+    <table name="linktypes" />
+    <table name="lng"/>
+    <table name="log"/>
+    <table name="log_queries"/>
+    <table name="locking"/>
+    <table name="todos"/>
+    <table name="mediadb_mimegroups"/>
+    <table name="mediadb_mimegroups_trans"/>
+    <table name="mediadb_mimetypes"/>
+    <table name="mediadb_mimetypes_extensions"/>
+    <table name="mediadb_files"/>
+    <table name="mediadb_files_derivations"/>
+    <table name="mediadb_files_trans"/>
+    <table name="mediadb_files_versions"/>
+    <table name="mediadb_folders"/>
+    <table name="mediadb_folders_trans"/>
+    <table name="mediadb_folders_permissions"/>
+    <table name="media_links"/>
+    <table name="messages"/>
+    <table name="mimetypes"/>
+    <table name="modules"/>
+    <table name="modulegroups"/>
+    <table name="moduleoptions"/>
+    <table name="urls"/>
+    <table name="phrase"/>
+    <table name="phrase_log"/>
+    <table name="phrase_module"/>
+    <table name="phrase_relmod"/>
+    <table name="phrase_trans"/>
+    <table name="spamcategories"/>
+    <table name="spamignore"/>
+    <table name="spamlog"/>
+    <table name="spamreferences"/>
+    <table name="spamstop"/>
+    <table name="spamwords"/>
+    <table name="surfer"/>
+    <table name="surfer">The basic surfer table with email addresses, handles, password hashes and the like</table>
+    <table name="surfergroups">Groups that surfers can be part of for permissions</table>
+    <table name="surferperm">Permissions that can be granted to groups</table>
+    <table name="surferlinks">Table to link surfers and their permissions</table>
+    <table name="surferchangerequests">Change requests (email and password changes etc.)</table>
+    <table name="surferdata">Definitions of dynamic profile data fields</table>
+    <table name="surferdatatitles">Language-dependent titles for dynamic profile data fields</table>
+    <table name="surferdataclasses">Categories of dynamic profile data fields</table>
+    <table name="surferdataclasstitles">Language-dependent titles for dynamic profile data categories</table>
+    <table name="surfercontacts">Contacts between surfers</table>
+    <table name="surfercontactcache">Surfer contacts cache</table>
+    <table name="surfercontactdata">The surfers' dynamic profile data</table>
+    <table name="surfercontactpublic">Per-contact publication settings for surfers' dynamic profile data</table>
+    <table name="surferlists">Bookmark and ignore list for surfers</table>
+    <table name="surferactivity">Record surfer activities</table>
+    <table name="surferblacklist">Administrative black list for illegal surfer handles</table>
+    <table name="surferfavorites">Administrative favorite list that allows other modules to edit surfer-dependent settings without loading the whole surfer list</table>
+    <table name="tag" />
+    <table name="tag_trans" />
+    <table name="tag_category" />
+    <table name="tag_category_trans" />
+    <table name="tag_links" />
+    <table name="tag_category_permissions" />
+    <table name="theme_sets"/>
+    <table name="topic"/>
+    <table name="topic_dependencies">Dependencies between pages, that allow automatic syncronisation</table>
+    <table name="topic_references">References between pages, only for information</table>
+    <table name="topic_versions"/>
+    <table name="topic_public"/>
+    <table name="topic_trans"/>
+    <table name="topic_versions_trans"/>
+    <table name="topic_public_trans"/>
+    <table name="views"/>
+    <table name="viewmodes"/>
+    <table name="viewlinks"/>
+  </tables>
+</modulegroup>

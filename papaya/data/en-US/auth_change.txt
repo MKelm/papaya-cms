@@ -1,0 +1,9 @@
+Hello {%NAME%},
+
+You get this mail because here was a password change request for you at {%PROJECT%}
+
+Please ignore this mail if you do not like to change you password.
+
+To change your password please click the link:
+
+<{%LINK%}>

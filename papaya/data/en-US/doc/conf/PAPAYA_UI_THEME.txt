@@ -1,0 +1,1 @@
+Choose one of several different color themes for the papaya backend to tell different installations apart at first glance.

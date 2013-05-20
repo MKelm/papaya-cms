@@ -1,0 +1,1 @@
+"On" to let papaya CMS catch the PHP error messages. "Of" to let PHP do the message output.

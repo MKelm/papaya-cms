@@ -1,0 +1,11 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Mnogo</name>
+  <description>Management frontend for the search engine extension &quot;moGoSearch&quot;.</description>
+  <modules>
+    <module type="page" guid="aa8bb9393e0ec05cfb31185ef1d473cc" name="Mnogosearch (ext/mnogo)" class="content_mnogo" file="content_mnogo.php">Page module that displays the search form and the search result, using the mnoGoSearch engine.</module>
+    <module type="box" guid="a66de9ca8d76f5fd311186b35033bc0d" name="Quicksearch" class="actionbox_searchbox" file="actbox_searchbox.php">Quicksearch box. The search result is displayed by the page module, so this module has to used in combination with &quot;Embed (ext/mnogo)&quot;.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

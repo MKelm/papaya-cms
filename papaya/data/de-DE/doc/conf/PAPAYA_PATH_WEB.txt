@@ -1,0 +1,1 @@
+Pfad zum papaya-Installationsverzeichnis, ausgehend vom DocumentRoot. Wenn Sie papaya CMS in ein Unterverzeichnis installiert haben, müssen Sie den Namen dieses Unterverzeichnisses in dieses Feld eingeben.

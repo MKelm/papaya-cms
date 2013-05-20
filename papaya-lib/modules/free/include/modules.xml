@@ -1,0 +1,20 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Embed</name>
+  <description>Embed external data sources like RSS-Feeds, Flash-files, or Flash-movies.</description>
+  <modules>
+    <module type="box" guid="e7875d8f61ae8f211b3e9b843a48599b" name="Parameter-dependent HTML" class="actionbox_param_html" file="actbox_param_html.php" outputfilter="no">The same as HTML box, but the value is only displayed if a specified parameter matches a certain value using one of many possible operators</module>
+    <module type="box" guid="2a686d3b229a49c162c66655513dba91" name="PHP include" class="actionbox_include" file="actbox_include.php" outputfilter="no">This box module displays the output of an external PHP script.</module>
+    <module type="box" guid="120bf063c9f9be961082d8860d9374d9" name="URL include" class="actionbox_url" file="actbox_url.php" outputfilter="no">Displays the contents of an external URL in a box.</module>
+    <module type="page" guid="8df21ca4a7efa8cf45c82d6232c3a078" name="IFrame" class="content_frame" file="content_frame.php">This page module can display the contents of a given URL in an iframe.</module>
+    <module type="box" guid="1742b578294ba23a3b375fd206a61759" name="RDF/RSS" class="actionbox_rdf" file="actbox_rdf.php">A box module that displays external RDF/RSS newsfeeds.</module>
+    <module type="box" guid="25295ec246600e6f91a819e345acc3a7" name="Flash Box" class="actionbox_flash" file="actbox_flash.php" outputfilter="no">A box module that displays flash files.</module>
+    <module type="box" guid="78849d72e7e2a8f1c09f0cf588424e96" name="Flowplayer Box" class="actionbox_flowplayer" file="actbox_flowplayer.php" outputfilter="no">Flowplayer flash movie (flv) player box.</module>
+    <module type="page" guid="7108b8f7bfedcdf7d64c945a6c9251a9" name="Flowplayer Content Module" class="content_flowplayer" file="content_flowplayer.php" outputfilter="yes">Flowplayer flash movie (flv) player content page</module>
+    <module type="box" guid="7bdce023a1a22b54e5a6e35c071cf598" name="Flash Video Player Box" class="actionbox_flvplayer" file="actbox_flvplayer.php" outputfilter="no">Flash movie (flv) player box</module>
+    <module type="page" guid="71d377e689a47e73d60c0e9323aaa9f6" name="Flash Video Player Content Module" class="content_flvplayer" file="content_flvplayer.php" outputfilter="yes">Flash movie (flv) player content page</module>
+    <module type="page" guid="6fe5a05efb88e4c9325af8e7fd6ae4ed" name="PHP Include" class="content_include" file="content_include.php">This page module displays the output of an external PHP script.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="forumcategs" prefix="yes">
+<fields>
+<field name="forumcat_id" type="integer" size="4"  null="no" autoinc="yes"/>
+<field name="forumcat_prev" type="integer" size="4"  null="no"/>
+<field name="forumcat_title" type="string" size="200"  null="no"/>
+<field name="forumcat_desc" type="string" size="65535"  null="no"/>
+<field name="forumcat_path" type="string" size="150"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>forumcat_id</field></primary-key>
+</keys>
+</table>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="faqnotes" prefix="yes">
+<fields>
+<field name="note_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="entry_id" type="integer" size="8"  null="no"/>
+<field name="note_username" type="string" size="100"  null="no"/>
+<field name="note_content" type="string" size="65535"  null="no"/>
+<field name="note_created" type="integer" size="8"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>note_id</field></primary-key>
+<key name="note_content" fulltext="yes">
+<field>note_content</field></key>
+</keys>
+</table>

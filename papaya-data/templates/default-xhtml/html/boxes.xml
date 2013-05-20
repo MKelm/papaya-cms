@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<boxes>
+  <styles>
+    <!-- 
+      css files included in page head 
+
+      Syntax: <file module="foo" file="foo.css"/>
+    -->
+    <file module="actionbox_sitemap" file="box_navigation.css" />
+    <file module="actionbox_prevnnext" file="box_navigation.css" />
+    <file module="actionbox_categteaser" file="box_categteaser.css" />
+    <file module="actionbox_categteaserthumb" file="box_categteaser.css" />
+    <file module="actionbox_tagteaser" file="box_categteaser.css" />
+    <file module="actionbox_tagteaserthumb" file="box_categteaser.css" />
+    <file module="actionbox_stickers" file="box_stickers.css" />
+
+    <file module="actionbox_poll" file="box_poll.css" />
+    <file module="actionbox_contact_list" file="box_contact_list.css" />
+    <file module="actionbox_surfers_online" file="box_contact_online.css" />
+
+    <file module="actionbox_catalog_azlist" file="box_catalog_azlist.css" />
+    <file module="actionbox_catalog_navigation" file="box_catalog_navigation.css" />
+    <file module="actionbox_catalog_limited_content" file="box_catalog_limited_content.css" />
+    <file module="actionbox_catalog_related_categories" file="box_catalog_related_list.css" />
+    <file module="actionbox_quiz" file="box_quiz.css" />
+    
+    <file module="actionbox_forum" file="box_forum.css" />
+    <file module="actionbox_comments" file="box_forum.css" />
+    <file module="actionbox_lastentries" file="box_forum.css" />
+    
+    <file module="actionbox_nextdates_tag" file="box_calendar.css" />
+    <file module="actionbox_calendar_tag" file="box_calendar.css" />
+    <file module="actionbox_calendar" file="box_calendar.css" />
+    
+    <file module="actbox_linkdb" file="box_linkdb.css" />
+    
+    <file module="actionbox_searchbox" file="box_mnogo.css" />
+  </styles>  
+  <scripts>
+    <!-- 
+      javascript files included in page head
+     
+      Syntax: <file module="foo" file="foo.js"/>
+    -->
+
+  </scripts>  
+  <scripts-lazy>
+    <!-- 
+      javascript files included just before page boday end
+     
+      Syntax: <file module="bar" file="bar.js"/>
+    -->
+  
+  </scripts-lazy>
+</boxes>

@@ -1,0 +1,1 @@
+ID der Seite, welche die Daten eines Surfers ausgibt.

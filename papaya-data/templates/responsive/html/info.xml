@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<info>
+  <styles>
+    <file href="global.css"/>
+    <file media="print" href="print.css"/>
+  </styles>  
+  <scripts>
+  </scripts>  
+  <scripts-lazy>
+    <file href="papaya/jquery-1.7.2.min.js"/>
+    <file href="papaya/swfobject/swfobject.js"/>
+    <file href="papaya/jquery.papayaPopUp.js"/>
+    <file href="papaya/jquery.papayaFlash.js"/>
+  </scripts-lazy>
+  
+  <page module="content_thumbs">
+    <styles>
+    </styles>
+    <scripts>
+    </scripts>
+    <scripts-lazy>
+      <file href="papaya/jquery.xmlns.js"/>
+      <file href="papaya/jquery.papayaLightbox.js"/>
+      <file href="papaya/jquery.papayaGallery.js"/>
+    </scripts-lazy>
+  </page>
+  
+  <page module="content_casestudy">
+    <styles>
+    </styles>
+    <scripts>
+    </scripts>
+    <scripts-lazy>
+      <file href="papaya/jquery.papayaGallery.js"/>
+      <file href="papaya/jquery.papayaLightbox.js"/>
+    </scripts-lazy>
+  </page>
+  
+  <box module="actionbox_sitemap">
+    <styles>
+    </styles>
+    <scripts>
+    </scripts>
+    <scripts-lazy>
+    </scripts-lazy>
+  </box>
+</info>

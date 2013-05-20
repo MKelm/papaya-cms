@@ -1,0 +1,1 @@
+"On" to activate the output of XML error messages, otherwise "Off".

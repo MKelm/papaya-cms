@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modulegroup>
+  <name>Papaya Wizard</name>
+  <description>A module to handle wizards in papaya</description>
+  <modules>
+    <module name="Project Wizard Steps"
+            type="box"
+            guid="abf827893f1b9124b32288ec496b63aa"
+            class="actbox_wizard_steps"
+            file="actbox_wizard_steps.php">
+      This box provide the navigation in a wizard. It shows all pages below a
+      specified parent page as steps.
+    </module>
+    <module name="Project Wizard Connector"
+            type="connector"
+            guid="606a3253d4fba59ef3131fcb8c1a5c34"
+            class="connector_wizard"
+            file="connector_wizard.php">
+      This Connector provide all for a wizard necessary methods. It will be called from
+      the content_modules to save data into the wizard session, go to the next step,
+      go to the last resolved step and something other.
+    </module>
+  </modules>
+</modulegroup>

@@ -1,0 +1,1 @@
+This score-value expresses the result of the spam-check for a given entry (e.g. an email or a forum entry) as percentage.<br /><br />The value PAPAYA_SPAM_SCOREMAX_PERCENT is used to define the threshold for the spam recognition.<br /><br />For example: If this option was set to a value of 90, papaya CMS would refuse any entries with a spam-probability of 90% or more.

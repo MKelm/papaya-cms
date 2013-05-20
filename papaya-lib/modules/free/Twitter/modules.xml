@@ -1,0 +1,19 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Twitter</name>
+  <description>Display your Twitter statuses on your Website</description>
+  <prefix>PapayaModuleTwitter</prefix>
+  <modules>
+    <module type="box"
+      guid="c81bb10d650c3f6fb62be32acfb12610"
+      name="Twitter Statuses"
+      class="PapayaModuleTwitterBox"
+      file="Box.php"
+      outputfilter="yes">
+      This box module displays twitter statuses of a specified twitter user. The number of
+      displayed statuses can also be specified in the content section of each box.
+    </module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

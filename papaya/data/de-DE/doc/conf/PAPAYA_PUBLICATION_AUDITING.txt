@@ -1,0 +1,1 @@
+„On“, wenn Seiten nicht direkt veröffentlicht werden sollen, sondern an andere papaya-Benutzer übergeben werden können. „Off“, wenn die Funktion für die Übergabe nicht benutzt werden soll.

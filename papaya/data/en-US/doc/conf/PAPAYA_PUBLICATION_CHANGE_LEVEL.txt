@@ -1,0 +1,1 @@
+"On" when users have to select a change level each time a page or box is published, otherwise "off".

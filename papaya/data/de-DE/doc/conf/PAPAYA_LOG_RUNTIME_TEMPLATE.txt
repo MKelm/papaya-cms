@@ -1,0 +1,1 @@
+„On“, wenn die Laufzeit der XSLT-Templates protokolliert werden soll, andernfalls „Off“. Ist diese Option aktiviert, wird die Dauer protokolliert, die für die Erzeugung einer Seite benötigt wird. Für jede Box, die mit dieser Seite verbunden ist, wird die Laufzeit extra berechnet und angezeigt (Boxen werden unabhängig von Seiten generiert).

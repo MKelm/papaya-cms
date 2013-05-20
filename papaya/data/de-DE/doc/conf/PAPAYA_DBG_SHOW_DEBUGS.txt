@@ -1,0 +1,1 @@
+„On“, wenn Debugausgaben generell angezeigt werden sollen, andernfalls „Off“. Alle anderen Debugausgaben hängen von dieser Option ab.

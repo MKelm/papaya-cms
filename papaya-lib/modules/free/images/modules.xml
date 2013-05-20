@@ -1,0 +1,14 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Dynamic Images</name>
+  <description>Image generators that dynamically create images for buttons, progress bars, and ratio bars.</description>
+  <modules>
+    <module type="image" guid="41c7db79488f006ae8ed760492405141" name="Progress Bar" class="image_progressbar" file="image_progressbar.php">Generate a progressbar using a background and a bar image</module>
+    <module type="image" guid="55adef0e5cc7d5ab3eda20050f222c6e" name="Ratio Bar" class="image_ratio" file="image_ratio.php">Generate a ratio bar that displays a ratio (n of m). The amount of times n is contained in m is visualized by different images.</module>
+    <module type="image" guid="b041b47247c81b817a3f40620e96b457" name="Image Buttons" class="image_buttons" file="image_buttons.php">Generate a button with a text on an image.</module>
+    <module type="image" guid="3b44894b6672335217334aa3db23104a" name="Dynamic Image Buttons" class="dyn_image_buttons" file="dyn_image_buttons.php">Generate a button with a text on images.</module>
+    <module type="image" guid="e821359d50c00a33d67558242687027e" name="Image Colorizer" class="image_colored" file="image_colored.php">Colorize images.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

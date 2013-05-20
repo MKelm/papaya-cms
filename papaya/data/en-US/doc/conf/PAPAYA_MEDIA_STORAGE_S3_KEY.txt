@@ -1,0 +1,1 @@
+The key for the S3 bucket into which the data object is stored.

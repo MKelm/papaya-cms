@@ -1,0 +1,1 @@
+"On" to allow executing <code>cronexec.php</code> via a web browser, otherwise "Off".

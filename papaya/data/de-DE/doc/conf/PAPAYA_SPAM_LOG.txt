@@ -1,0 +1,1 @@
+„on“, wenn der Spamfilter Forenbeiträge protokollieren soll, andernfalls „off“. Protokollierte Beiträge werden analysiert und in Wortlisten aufgespaltet. Sie können mit dem Protokoll den bayesschen Filter trainieren.

@@ -1,0 +1,1 @@
+Angabe in Sekunden, wie lange die gecachten CSS- und JavaScript-Dateien aus dem Themes-Verzeichnis vorgehalten werden sollen. Voreingestellt sind 2.592.000 Sekunden (entspricht 30 Tagen).

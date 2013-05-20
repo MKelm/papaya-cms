@@ -1,0 +1,6 @@
+Im Anmeldeformular wird eine Warnung angezeigt, wenn es nicht über HTTPS aufgerufen wurde. 
+Mit dieser Option können Sie diese Warnung deaktivieren.
+<ul>
+  <li>on: Warnung aktiv</li>
+  <li>off: Warnung abgeschaltet</li>
+</ul>

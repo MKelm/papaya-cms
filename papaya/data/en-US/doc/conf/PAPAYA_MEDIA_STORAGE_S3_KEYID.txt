@@ -1,0 +1,1 @@
+The secret S3 key used for authentication. With this key, papaya CMS can access the object in the S3 bucket.

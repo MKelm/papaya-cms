@@ -1,0 +1,1 @@
+"On" to activate the form protection, otherwise "Off". When the form protection is active, users trying to leave the page without having saved their changes will be warned. The form protection consists of a popup window with a question dialog. The user can leave the page or cancel.

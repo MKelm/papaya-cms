@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="domain_fields" prefix="yes">
+  <fields>
+    <field name="field_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="field_ident" type="string" size="60" null="no"/>
+    <field name="field_description" type="string" size="65535" null="no"/>
+    <field name="field_type" type="string" size="30" null="no"/>
+    <field name="field_params" type="string" size="65535" null="no"/>
+    <field name="field_check" type="string" size="65535" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>field_id</field>
+    </primary-key>
+    <key name="field_ident" unique="yes">
+      <field>field_ident</field>
+    </key>
+  </keys>
+</table>

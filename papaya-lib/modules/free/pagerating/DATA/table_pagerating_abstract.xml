@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="pagerating_abstract" prefix="yes">
+<fields>
+<field name="topic_id" type="integer" size="8"  null="no"/>
+<field name="lng_id" type="integer" size="8"  null="no"/>
+<field name="answer_id" type="integer" size="8"  null="no"/>
+<field name="count" type="integer" size="8"  null="no"/>
+</fields>
+<keys>
+</keys>
+</table>

@@ -1,0 +1,1 @@
+Angabe in Sekunden, wie lange generierte Webseiten im Cache vorgehalten werden sollen, bevor sie neu generiert werden. Bei einem Wert von „0“ werden Seiten nicht im Cache gespeichert, sondern bei jedem Seitenaufruf neu generiert.

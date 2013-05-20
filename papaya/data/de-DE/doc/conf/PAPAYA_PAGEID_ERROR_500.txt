@@ -1,0 +1,1 @@
+ID der Seite, die bei einer HTTP-Fehlermeldung vom Typ 500 angezeigt werden soll. Der Fehler wird nicht durch den Webserver generiert, sondern durch papaya CMS abgefangen.

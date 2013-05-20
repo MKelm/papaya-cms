@@ -1,0 +1,1 @@
+"On" to include details (backtrace, number of records, limit, and offset) for each EXPLAIN in the query log, otherwise "Off". This option will have an effect only if <tt>PAPAYA_QUERYLOG</tt> is set to another value than <em>none</em>.

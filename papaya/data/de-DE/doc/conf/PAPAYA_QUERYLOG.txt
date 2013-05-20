@@ -1,0 +1,7 @@
+Diese Option bestimmt, welche SELECT-Datenbankabfragen mit ihren zugehörigen EXPLAINs in die Query-Log-Tabelle protokolliert werden:
+<ul>
+<li><em>none</em>: Keine Abfragen werden protokolliert.</li>
+<li><em>slow</em>: Nur langsame Abfragen werden protokolliert (der Schwellenwert wird durch die Option <tt>PAPAYA_QUERYLOG_SLOW</tt> festgelegt).</li>
+<li><em>all</em>: Alle Abfragen werden protokolliert.</li>
+</ul>
+Stellen Sie sicher, dass in einer Produktivumgebung stets <em>none</em> ausgewählt ist, da das System durch die Datenbank-Analyseprozedur erheblich verlangsamt wird.

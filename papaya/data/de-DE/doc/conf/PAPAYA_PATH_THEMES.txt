@@ -1,0 +1,1 @@
+Pfad für die papaya-Theme-Dateien, d.h. CSS, Bilder und JavaScript.

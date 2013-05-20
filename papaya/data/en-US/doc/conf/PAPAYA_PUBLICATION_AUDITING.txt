@@ -1,0 +1,1 @@
+"On" when pages are not to be published immediately, but are forwarded to other papaya users instead. "Off" to deactivate the hand-off function.

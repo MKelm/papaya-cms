@@ -1,0 +1,17 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+<modulegroup>
+  <name>Countries</name>
+  <description>The country package provides backend functionality to manage continents and countries as well as a connector with form callback functions.</description>
+  <modules>
+    <module type="page" guid="fd53aef2d8bb7cb4637a64dabaf7b424" name="State List XML" class="content_statelist" file="content_statelist.php">Returns an XML list of states for a specific country, to be used for Ajax</module>
+    <module type="admin" guid="bf6e40b71d3cfb0e80682c64b11d33af" name="Countries" class="edmodule_countries" file="edmodule_countries.php" glyph="countries.png">The administration module provides the facility to manage continents, countries, and their localized names.</module>
+    <module type="connector" guid="99db2c2898403880e1ddeeebf7ee726c" name="Country Connector" class="connector_countries" file="connector_countries.php">Country Connector</module>
+  </modules>
+  <tables>
+    <table name="continents"/>
+    <table name="countries"/>
+    <table name="countrynames"/>
+    <table name="states"/>
+    <table name="cities"/>
+  </tables>
+</modulegroup>

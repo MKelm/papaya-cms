@@ -1,0 +1,1 @@
+IP address from which the file <code>cronexec.php</code> can be called. <code>0.0.0.0</code> allows access from all networks. You can also provide a list of IP addresses using the comma as separator, e.g. <code>192.168.0.1</code>, <code>192.168.0.2</code>, <code>...</code>

@@ -1,0 +1,1 @@
+"On" to activate the XML output mode for pages, otherwise "Off". This output mode is important for developers of XSLT templates.

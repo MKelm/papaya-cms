@@ -1,0 +1,1 @@
+"On", wenn der Versuch, Thumbnails aus nicht existierenden Bildern zu erzeugen, und andere Thumbnail-Probleme protokolliert werden soll, andernfalls "Off".

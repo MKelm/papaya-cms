@@ -1,0 +1,1 @@
+Selection of the cache service:<ul><li><em>APC</em>: Alternative PHP Cache. Besides the bytecode cache for PHP code, This service also provides a cache for user objects.<br /></li><li><em>File system</em>: File system<br /></li><li><em>Memcache</em>: Memcache daemon<br /></li></ul>

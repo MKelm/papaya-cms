@@ -1,0 +1,1 @@
+„On“, um Informationen zu SQL-Querys inklusive der aufrufenden Klassen auszugeben, andernfalls „Off“.

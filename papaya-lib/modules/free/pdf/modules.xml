@@ -1,0 +1,10 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>PDF Output</name>
+  <description>PDF Output module and library files</description>
+  <modules>
+    <module type="output" guid="53883996402d85304d3f09f7d73a5c7b" name="PDF Output Filter" class="filter_pdf" file="filter_pdf.php">PDF Output formatter using PDF templates.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

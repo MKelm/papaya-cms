@@ -1,0 +1,1 @@
+Number of seconds that determine the time scaled images will be kept in the cache of the MediaDB before they will be rescaled. When the defined value is "0", the files will not be saved in the cache und will be rescaled on each request if necessary.

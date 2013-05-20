@@ -1,0 +1,1 @@
+"On" to output log and debug messages using the Wildfire protocol with each response, otherwise "Off". Wildfire messages can be read using the FirePHP Firefox browser plugin.

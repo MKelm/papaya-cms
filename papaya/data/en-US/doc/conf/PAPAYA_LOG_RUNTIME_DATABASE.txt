@@ -1,0 +1,1 @@
+"On" to log the runtime of database queries, otherwise "Off".

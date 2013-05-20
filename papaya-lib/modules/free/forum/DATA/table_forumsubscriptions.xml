@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="forumsubscriptions" prefix="yes">
+  <fields>
+    <field name="entry_tid" type="integer" size="8"  null="no"/>
+    <field name="surfer_handle" type="string" size="250"  null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>entry_tid</field>
+      <field>surfer_handle</field>
+    </primary-key>
+  </keys>
+</table>

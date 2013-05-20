@@ -1,0 +1,1 @@
+Absoluter Pfad zum Verzeichnis „papaya-data“ der papaya-Installation, innerhalb dessen u.a. hochgeladene Dateien und dateibasierte Caches gespeichert werden. Das Verzeichnis sollte schreibbar sein, damit das papaya CMS die benötigten Unterordner anlegen kann.

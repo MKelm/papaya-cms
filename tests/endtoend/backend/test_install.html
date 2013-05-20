@@ -1,0 +1,110 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Install in empty DB</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Install in empty DB</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/papaya/install.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[@class=&quot;nextLink&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[@class=&quot;nextLink&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertXpathCount</td>
+	<td>//table[ @class=&quot;listview&quot; and .//img/@alt=&quot;OK&quot; and not(.//img/@alt!=&quot;OK&quot;) ]</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[@class=&quot;nextLink&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>inst[instdef_admin]</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>inst[instdef_pw]</td>
+	<td>pass</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>inst[instdef_confpw]</td>
+	<td>pass</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>inst[instdef_email]</td>
+	<td>testcase@papaya-cms.com.example.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>inst[instdef_givenname]</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>inst[instdef_surname]</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Changes saved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[@class=&quot;nextLink&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<!--the following 3 currently time out; TODO: find a way around that-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Initialize Database</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Insert default data</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Check options and modules</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Go to admin interface</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

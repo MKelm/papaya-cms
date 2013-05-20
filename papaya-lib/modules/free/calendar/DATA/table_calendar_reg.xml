@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="calendar_reg" prefix="yes">
+<fields>
+<field name="regdate_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="regdate_days" type="integer" size="4"  null="no" default="1"/>
+<field name="regdate_start" type="integer" size="8"  null="no"/>
+<field name="regdate_end" type="integer" size="8"  null="no"/>
+<field name="regdate_max" type="integer" size="4"  null="no" default="10"/>
+<field name="regdate_module_guid" type="string" size="32"  null="no"/>
+<field name="regdate_moduledata" type="string" size="65535"  null="no"/>
+<field name="regdate_state" type="integer" size="2"  null="no"/>
+<field name="surfer_id" type="string" size="32" null="yes"/>
+<field name="surfergroup_id" type="integer" size="4" null="yes"/>
+</fields>
+<keys>
+<primary-key>
+<field>regdate_id</field>
+</primary-key>
+</keys>
+</table>

@@ -1,0 +1,1 @@
+"On" to report attempts to write (INSERT, UPDATE, DELETE, CREATE, ALTER, DROP) into the read database connection, "Off" otherwise.

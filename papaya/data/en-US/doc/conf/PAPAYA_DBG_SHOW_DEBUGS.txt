@@ -1,0 +1,1 @@
+"On" to activate the output of debug messages, otherwise "Off". All debug message options depend on this option.

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modulegroup>
+  <name>Action dispatcher</name>
+  <description>Manage actions within modules that can dispatch method calls in other modules' connectors. Ideal for cleanup jobs et al.</description>
+  <modules>
+    <module type="admin" guid="73d66a9ce59741d38d02bf8080392669" name="Action dispatcher" class="edmodule_actions" file="edmodule_actions.php">In the administration module, you can view and suspend registered actions.</module>
+    <module type="connector" guid="79f18e7c40824a0f975363346716ff62" name="Action connector" class="connector_actions" file="connector_actions.php">Actions dispatcher connector</module>
+  </modules>
+  <tables>
+    <table name="action_groups">Definition of action groups</table>
+    <table name="actions">Definitions of available actions</table>
+    <table name="action_observers">Connector objects to be called when specified actions occur</table>
+  </tables>
+</modulegroup>

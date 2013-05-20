@@ -1,0 +1,1 @@
+"On" to activate the output of error messages of the database, otherwise "Off".

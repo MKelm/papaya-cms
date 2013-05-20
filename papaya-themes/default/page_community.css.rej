@@ -1,0 +1,14 @@
+--- papaya-themes/default/page_community.css	(Arbeitskopie)
++++ papaya-themes/default/page_community.css	(Revision 38500)
+@@ -48,11 +48,4 @@
+ img.communityUserAvatar {
+   margin-top: 20px;
+   margin-bottom: 20px;
+-}
+-div.deleteAccount,
+-div.deleteAccount form div.buttons {
+-  margin-top: 1em;
+-}
+-div.deleteAccount fieldset {
+-  margin: 0;
+ }

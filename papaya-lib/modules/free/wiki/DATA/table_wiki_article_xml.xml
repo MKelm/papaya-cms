@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_article_xml" prefix="yes">
+  <fields>
+    <field name="article_node_id" type="integer" size="4" null="no"/>
+    <field name="article_xml" type="string" size="16777215" null="no"/>
+    <field name="article_text" type="string" size="16777215" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>article_node_id</field>
+    </primary-key>
+  </keys>
+</table>

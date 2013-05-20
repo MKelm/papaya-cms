@@ -1,0 +1,152 @@
+.odd {
+  background-color: #EEF5CE;
+  
+}
+.even {
+}
+div.calendarDateContainer {
+  padding: 10px;
+}
+#content div.calendarDateContainer ul {
+  margin: 0;
+  padding: 0;
+}
+#content div.calendarDateContainer ul li {
+  float: left;
+  background: none;
+  padding-left: 0;
+  padding-right: 10px;
+}
+div.calendarAddNewDate {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+div.calendarOneDataSection {
+  margin-bottom: 20px;
+}
+div.calendarOneDataSection h2 {
+  background: transparent url(pics/nav_bg.gif) repeat-x scroll 1px 100%;
+}
+div.dateDialog {
+  margin-bottom: 20px;
+}
+div.dateDialog form {
+  padding: 0;
+  margin: 0;
+}
+div.dateDialog div.buttons {
+  margin-top: 10px;
+}
+
+div.shortDescription {
+  padding-bottom: 10px;
+}
+div.longDescription {
+  padding-bottom: 10px;
+}
+
+/**/
+div.dateGroup {
+}
+div.dateGroup div.oneDate {
+	margin-bottom: 10px;
+	background: transparent url(pics/nav_bg.gif) repeat-x scroll 1px 100%;
+	padding-bottom: 10px;
+}
+div.dateGroup div.oneDate h2 {
+}
+div.dateGroup div.oneDate div.dateDay {
+}
+div.dateGroup div.oneDate div.dateStr {
+  margin-bottom: 10px;
+}
+div.dateGroup div.oneDate div.dateDetail {
+}
+/****************************************/
+/* Calendar Navigation                  */
+/****************************************/
+#content ul.calendarMonthNaviagation {
+  margin: 0;
+  padding: 0;
+}
+#content ul.calendarMonthNaviagation li {
+  float: left;
+  background: none;
+  padding-left: 0;
+  background: none;
+  width: 46px;
+  text-align: center;
+}
+
+#content ul.calendarWeekDayNavigation {
+  margin: 0;
+  padding: 0;
+}
+#content ul.calendarWeekDayNavigation li {
+  float: left;
+  background: none;
+  padding-left: 0;
+  width: 20px;
+}
+
+#content ul.calendarDayNavigation {
+  margin: 0;
+  padding: 0;
+}
+#content ul.calendarDayNavigation li {
+  background: none;
+  padding-left:0;
+  background: none;
+}
+
+#content ul.calendarDayNavigation ul.calendarNavigationOneWeek {
+  margin: 0;
+  padding: 0;
+}
+#content ul.calendarDayNavigation ul.calendarNavigationOneWeek li {
+  float: left;
+  background: none;
+  padding-left: 0;
+  width: 20px;
+}
+/**************************************/
+table.calenderNavigation {
+  float: right;
+}
+table.calenderNavigation th, table.calenderNavigation td {
+  padding: 0.5em;
+}
+table.calenderNavigation thead tr th {
+
+}
+table.calenderNavigation thead tr.calendarMonthNaviagation {
+
+}
+table.calenderNavigation thead tr.calendarMonthNaviagation th {
+
+}
+table.calenderNavigation thead tr.calendarMonthNaviagation th.middleCell {
+  text-align: center;
+}
+table.calenderNavigation thead tr.calendarMonthNaviagation th.rightCell {
+  text-align: right;
+}
+table.calenderNavigation thead tr.calendarWeekDayNavigation {
+
+}
+table.calenderNavigation thead tr.calendarWeekDayNavigation th {
+
+}
+table.calenderNavigation tbody.calendarDayNavigation {
+
+}
+table.calenderNavigation tbody.calendarDayNavigation tr.calendarNavigationOneWeek {
+
+}
+table.calenderNavigation tbody.calendarDayNavigation tr.calendarNavigationOneWeek td {
+
+}
+
+div.calenderFromToDatePeriode {
+ margin-bottom: 20px;
+}

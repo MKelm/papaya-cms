@@ -1,0 +1,1 @@
+„On“, wenn die Hintergrundtransparenz beim Erzeugen der Thumbnails bewahrt werden soll, andernfalls „Off“.

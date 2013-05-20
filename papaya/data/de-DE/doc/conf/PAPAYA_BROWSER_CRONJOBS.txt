@@ -1,0 +1,1 @@
+„on“, wenn die <code>cronexec.php</code> auch über den Browser aufgerufen werden kann, andernfalls „off“.

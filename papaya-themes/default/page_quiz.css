@@ -1,0 +1,44 @@
+form.contentQuizQuestion {
+  border: 1px solid #9FBD18;
+  margin-top: 20px;
+  padding: 10px;
+}
+form.contentQuizQuestion input {
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+form.contentQuizQuestion label {
+
+}
+form.contentQuizQuestion div.questionExplanation {
+  margin-bottom: 20px;
+}
+form.contentQuizQuestion div.answerExplanation {
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+
+div.oneAnswer {
+  border: 1px solid #9FBD18;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+div.oneAnswer h2 {
+
+}
+div.oneAnswer div.answerLink {
+
+}
+div.oneAnswer div.answerText {
+
+}
+div.oneAnswer div.givenAnswer {
+
+}
+div.oneAnswer div.answerExplanation {
+
+}
+div.oneAnswer div.givenAnswerResponse {
+
+}

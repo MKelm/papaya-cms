@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="poll_answer" prefix="yes">
+<fields>
+<field name="answer_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="poll_id" type="integer" size="8"  null="no"/>
+<field name="answer" type="string" size="255"  null="no"/>
+<field name="answer_sort" type="string" size="10"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>answer_id</field></primary-key>
+</keys>
+</table>

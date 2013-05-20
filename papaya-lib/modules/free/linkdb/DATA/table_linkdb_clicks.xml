@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="linkdb_clicks" prefix="yes">
+<fields>
+<field name="link_id" type="integer" size="8"  null="no"/>
+<field name="clicks_year" type="integer" size="4"  null="no"/>
+<field name="clicks_month" type="integer" size="2"  null="no"/>
+<field name="clicks_count" type="integer" size="8"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>link_id</field><field>clicks_year</field><field>clicks_month</field></primary-key>
+<key name="table_03_fkindex1">
+<field>link_id</field></key>
+<key name="year_month">
+<field>clicks_year</field><field>clicks_month</field></key>
+</keys>
+</table>

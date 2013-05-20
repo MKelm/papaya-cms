@@ -1,0 +1,1 @@
+Standard-Dateierweiterung, die für die Seiten von papaya CMS benutzt werden soll.

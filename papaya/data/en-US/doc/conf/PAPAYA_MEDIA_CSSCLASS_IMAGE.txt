@@ -1,0 +1,1 @@
+The default name of the css class used for images of the MediaDB.

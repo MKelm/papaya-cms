@@ -1,0 +1,28 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Catalog</name>
+  <description>Create a site navigation that is independent from the sitemap structure. You can categorize your articles either alphabetically or thematically, just by linking them to corresponding catalog categories.</description>
+  <modules>
+    <module type="admin" guid="377a6d824e2c15ffc0a14ffdb671bcb6" name="Catalog" class="edmodule_catalog" file="edmodule_catalog.php" glyph="catalog.png">Create and edit catalog structure.</module>
+    <module type="page" guid="cda205803d874ffc2e10a212b82161e5" name="Catalog Navigation Page" class="content_catalog" file="content_catalog.php">Allows to  navigate through the catalog tree.</module>
+    <module type="page" guid="684c2d20b144a4e9218881b6973d53cd" name="A-Z List Page" class="content_catalog_azlist" file="content_catalog_azlist.php">Generates an A-Z list of all catalog entries.</module>
+    <module type="page" guid="406d4e53799ae4725398d84081f63294" name="Subscribe Category" class="content_catalog_subscribe" file="content_catalog_subscribe.php">Allows users to subscribe to categories. Registered users will be notified by email if a category is changed.</module>
+    <module type="page" guid="d14efcb0a3067b55290349202d819b92" name="Unsubscribe Category" class="content_catalog_unsubscribe" file="content_catalog_unsubscribe.php">Allows users to unsubscribe their subscriptions.</module>
+    <module type="box" guid="1399990e27d6427fd26c86ded83b682b" name="Catalog Category List" class="actionbox_catalog_navigation" file="actbox_catalog_navigation.php">Prints out a list of catalog categories. Used in combination with a catalog content page like &quot;Catalog Navigation Page&quot;.</module>
+    <module type="box" guid="d55592d9a385bf1bf1f4aed59a0810c9" name="Catalog Category List Post Request Navigation" class="actionbox_catalog_postrequest_navigation" file="actbox_catalog_postrequest_navigation.php">Prints out a list of catalog categories for post request navigation. Used in combination with a catalog content page like &quot;Catalog Navigation Page&quot;.</module>
+    <module type="box" guid="31a8831749914e8c27328267ef0e37a1" name="Related Catalog List" class="actionbox_catalog_related_categories" file="actbox_catalog_related_categories.php">Prints out a list of categories containing at least one link to a current topic.</module>
+    <module type="box" guid="de5e8fe69c3dafa870a1b25ddd542a1e" name="A-Z Letter Box" class="actionbox_catalog_azlist" file="actbox_catalog_azlist.php">Prints out an A-Z list. Used in combination with &quot;A-Z List Page&quot;.</module>
+    <module type="box" guid="6806339a05329ed66359cf26b9d6019e" name="Limited Catalog Link List" class="actionbox_catalog_limited_content" file="actbox_catalog_limited_content.php">Prints out a limited list of catalog links.</module>
+    <module type="cronjob" guid="819dc56d988547a9021b8ddb4ea0e1ad" name="Email Subscriptions" class="cronjob_catalog_subscriptions" file="cronjob_catalog_subscriptions.php">A cronjob that sends emails to subscribers of catalog categories. Emails are only generated when a category has been changed.</module>
+  </modules>
+  <tables>
+    <table name="catalog"/>
+    <table name="catalog_trans"/>
+    <table name="catalog_types"/>
+    <table name="catalog_links"/>
+    <table name="catalog_synonyms"/>
+    <table name="catalog_subscriptions"/>
+    <table name="catalog_subscriptions_pending"/>
+    <table name="catalog_subscriptions_meta"/>
+  </tables>
+</modulegroup>

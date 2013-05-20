@@ -1,0 +1,1 @@
+„On“, um den Ausgabecache zu aktivieren, andernfalls „Off“.

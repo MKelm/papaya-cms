@@ -1,0 +1,13 @@
+div.catalogNavigationBox {
+  padding: 0;
+}
+div.catalogNavigationBox ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+div.catalogNavigationBox ul li {
+  padding-left: 0;
+}
+div.catalogNavigationBox ul li a {
+}

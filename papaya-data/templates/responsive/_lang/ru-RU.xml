@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<texts>
+  <text ident="MORE">дальше</text>
+  <text ident="SAVE">сохранить</text>
+  <text ident="CANCEL">отменить</text>
+  <text ident="BACK">назад</text>
+  <text ident="NEXT">следующий</text>
+  <text ident="PREV">предыдущий</text>
+  <text ident="OVERVIEW">обзор</text>
+  <text ident="DOWNLOAD">скачать</text>
+  <text ident="ADD">добавить</text>
+  <text ident="EDIT">изменить</text>
+  <text ident="VIEW">просмотр</text>
+  
+  <text ident="PAGE_FIRST">начало</text>
+  <text ident="PAGE_PREVIOUS">предыдущая</text>
+  <text ident="PAGE_NEXT">следующая</text>
+  <text ident="PAGE_LAST">последняя</text>
+  
+  <text ident="SEARCH_CAPTION">поиск</text>
+  <text ident="SEARCH_BUTTON">искать</text>
+  
+  <text ident="PATH_CAPTION">вы находитесь здесь</text>
+  <text ident="JUMP_TO_TOP">наверх</text>
+  <text ident="JUMP_TO">перейти к</text>
+  <text ident="JUMP_TARGET_MAIN_NAVIGATION">основное меню</text>
+  <text ident="JUMP_TARGET_DETAIL_NAVIGATION">Конкретные навигации</text>
+  <text ident="JUMP_TARGET_CONTENT">содержание</text>
+  <text ident="JUMP_TARGET_HOME">к главной странице</text>
+  
+  <text ident="VIEW_CAPTION_PDF">PDF-версия</text>
+  <text ident="VIEW_CAPTION_PRINT">версия для печати</text>
+  
+  <text ident="PASSWORD_FORGOTTEN">Забыли пароль?</text>
+  <text ident="FIELD_MANDATORY">обязательное поле</text>
+  
+  <text ident="MSG_NO_IFRAME">Ваш броузер не поддерживает вложенные страницы "iframe". Нажмите здесь чтобы открыть вложенную страницу.</text>
+  
+  <text ident="MONTH_NAME_JANUARY">Январь</text>
+  <text ident="MONTH_NAME_FEBRUARY">Февраль</text>
+  <text ident="MONTH_NAME_MARCH">Март</text>
+  <text ident="MONTH_NAME_APRIL">Апрель</text>
+  <text ident="MONTH_NAME_MAY">Май</text>
+  <text ident="MONTH_NAME_JUNE">Июнь</text>
+  <text ident="MONTH_NAME_JULY">Июль</text>
+  <text ident="MONTH_NAME_AUGUST">Август</text>
+  <text ident="MONTH_NAME_SEPTEMBER">Сентябрь</text>
+  <text ident="MONTH_NAME_OCTOBER">Октябрь</text>
+  <text ident="MONTH_NAME_NOVEMBER">Ноябрь</text>
+  <text ident="MONTH_NAME_DECEMBER">Декабрь</text>
+  
+  <text ident="MONTH_ABBR_JANUARY">Янв</text>
+  <text ident="MONTH_ABBR_FEBRUARY">Фев</text>
+  <text ident="MONTH_ABBR_MARCH">Март</text>
+  <text ident="MONTH_ABBR_APRIL">Апр</text>
+  <text ident="MONTH_ABBR_MAY">Май</text>
+  <text ident="MONTH_ABBR_JUNE">Июнь</text>
+  <text ident="MONTH_ABBR_JULY">Июль</text>
+  <text ident="MONTH_ABBR_AUGUST">Авг</text>
+  <text ident="MONTH_ABBR_SEPTEMBER">Сен</text>
+  <text ident="MONTH_ABBR_OCTOBER">Окт</text>
+  <text ident="MONTH_ABBR_NOVEMBER">Нояб</text>
+  <text ident="MONTH_ABBR_DECEMBER">Дек</text>
+  
+  <text ident="DAY_NAME_MONDAY">Понедельник</text>
+  <text ident="DAY_NAME_TUESDAY">Вторник</text>
+  <text ident="DAY_NAME_WEDNESDAY">Среда</text>
+  <text ident="DAY_NAME_THURSDAY">Четверг</text>
+  <text ident="DAY_NAME_FRIDAY">Пятница</text>
+  <text ident="DAY_NAME_SATURDAY">Суббота</text>
+  <text ident="DAY_NAME_SUNDAY">Воскресенье</text>
+  
+  <text ident="DAY_ABBR_MONDAY">Пн</text>
+  <text ident="DAY_ABBR_TUESDAY">Вт</text>
+  <text ident="DAY_ABBR_WEDNESDAY">Ср</text>
+  <text ident="DAY_ABBR_THURSDAY">Чт</text>
+  <text ident="DAY_ABBR_FRIDAY">Пт</text>
+  <text ident="DAY_ABBR_SATURDAY">Сб</text>
+  <text ident="DAY_ABBR_SUNDAY">Вс</text>
+</texts>

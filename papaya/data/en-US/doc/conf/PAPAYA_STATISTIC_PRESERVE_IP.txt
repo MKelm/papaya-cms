@@ -1,0 +1,1 @@
+"On" to save the IP address of users used for usage statistics as clear text, otherwise "Off" (default setting). The default settings allows only to save the hash value of the IP addresses in the database in order to identify the click paths.

@@ -1,0 +1,1 @@
+„On“, wenn papaya CMS externe Links auf unerlaubte Redirects überprüfen soll, andernfalls „Off“. Externe Links werden außerhalb von papaya CMS auf die papaya-Site gesetzt. Wenn diese Links den Exit-Parameter enthalten, greift der Redirect-Schutzmechanismus. Der Schutzmechanismus gibt eine Warnseite aus, die das entsprechende Redirect-Ziel als Link enthält.

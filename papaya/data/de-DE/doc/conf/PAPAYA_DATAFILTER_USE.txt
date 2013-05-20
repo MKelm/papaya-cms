@@ -1,0 +1,1 @@
+Wenn Datenfilter installiert sind, kann man die Datenfilterfunktionalität aktivieren (Auf „On“ stellen). Ist standardmäßig deaktiviert („Off“).

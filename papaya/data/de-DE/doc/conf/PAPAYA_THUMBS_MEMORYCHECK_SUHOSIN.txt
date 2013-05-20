@@ -1,0 +1,1 @@
+"On", um beim Erzeugen von Thumbnails eine Suhosin-Speicherprüfung durchzuführen, andernfalls "Off". Das Einschalten dieser Option hat nur eine Wirkung, wenn die PHP-Installation den Suhosin-Patch des Hardened PHP Project verwendet.

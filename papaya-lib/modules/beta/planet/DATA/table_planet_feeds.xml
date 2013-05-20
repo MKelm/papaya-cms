@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="planet_feeds" prefix="yes">
+  <fields>
+    <field name="feed_id" type="integer" size="4" null="no" autoinc="yes"/>
+	<field name="feed_ident" type="string" size="65535" null="no"/>
+	<field name="feed_url" type="string" size="65535" null="no"/>
+    <field name="feed_title" type="string" size="255" null="no"/>
+	<field name="feed_title_fetched" type="string" size="255" null="no"/>
+	<field name="feed_added" type="integer" size="4" null="no"/>
+	<field name="feed_updated" type="integer" size="4" null="no"/>
+	<field name="feed_status" type="integer" size="4" null="no"/>
+	<field name="feed_failures" type="integer" size="4" null="no"/>
+  </fields>  
+  <keys>
+    <primary-key>
+      <field>feed_id</field>
+    </primary-key>
+  </keys>
+</table>

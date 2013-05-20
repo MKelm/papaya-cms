@@ -1,0 +1,143 @@
+.odd {
+
+}
+.even {
+  background-color: #EEF5CE;
+}
+
+#forumSearch {
+  float: right;
+}
+.forumNavigation {
+  float: left;
+}
+.forumTitle {
+  clear: both;
+}
+.forumCategoryTitle {
+  clear: both;
+}
+.forumEntry {
+  clear: both;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+.forumAuthorInfo {
+  float: right;
+  padding: 1em;
+  padding-top: 0;
+}
+.forumAuthorInfo img {
+  margin-bottom: 5px;
+}
+
+table.forumThreads {
+  clear: both;
+  width: 100%;
+}
+table.forumThreads th.title, table.forumThreads td.title {
+  width: 100%;
+}
+.forumThreads .title .indent {
+  height: 1em;
+  width: 12px;
+  float: left;
+}
+table.forumThreads th.author, table.forumThreads td.author {
+  text-align: center;
+  padding: 0.4em 1em;
+}
+table.forumThreads th.answerCount, table.forumThreads td.answerCount {
+  text-align: center;
+  padding: 0.4em 1em;
+}
+table.forumThreads th.date, table.forumThreads td.date {
+  text-align: left;
+  padding: 0.4em 1em;
+  font-size: 0.8em;
+}
+table.forumThreads td.date div {
+  white-space: nowrap;
+}
+#content table.forumThreads td.links ul.forumNavigation {
+  padding: 0;
+  margin: 0;
+}
+table.forumThreads td {
+  border-bottom: 1px solid #90A33B;
+}
+.forumThreads .links .forumNavigation {
+  float: none;
+}
+
+#forumNewEntry {
+  padding-top: 2em;
+}
+
+div.bbsOneEntry {
+  background-image: url(pics/nav_bg.gif);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+div.bbsOneEntry div.bbsInfoOptionsContainer {
+  float: left;
+}
+div.bbsOneEntry div.bbsInfoOptionsContainer div.bbsEntryDateContainer {
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 0.8em;
+  background: transparent url(pics/nav_bg.gif) repeat-x scroll 1px -198px;
+}
+div.bbsOneEntry div.bbsInfoOptionsContainer div.bbsOneEntryLinksContainer {
+  margin-top: 10px;
+  padding-top: 10px;
+  background: transparent url(pics/nav_bg.gif) repeat-x scroll 1px -198px;
+}
+#content div.bbsOneEntry div.bbsInfoOptionsContainer div.bbsOneEntryLinksContainer ul {
+  padding: 0;
+  margin: 0;
+  float: none;
+}
+#content .pager {
+  float: right;
+  padding-top: 10px;
+}
+#content .pager a {
+  padding-right: 5px;
+  text-decoration: none;
+}
+/*****************************************/
+div.contentData {
+  margin-bottom: 20px;
+}
+div.forumCategoryTitle {
+  font-weight: bold;
+  border: 1px solid #9FBD18;
+  margin-bottom: 10px;
+  background-color: #EEF5CE;
+  padding: 5px; 
+}
+div.forumCategoryDescription {
+  
+  margin-bottom: 10px;
+}
+
+#content div.forumOverviewList div.line {
+  background-image: url(pics/nav_bg.gif);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  margin-bottom: 0;
+}
+
+/**/
+div.messageError {
+  border: 1px solid #9FBD18;
+  background-color: #EEF5CE;
+  text-align: center;
+  padding: 5px;
+}

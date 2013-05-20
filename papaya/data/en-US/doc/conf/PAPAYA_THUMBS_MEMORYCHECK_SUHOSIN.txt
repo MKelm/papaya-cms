@@ -1,0 +1,1 @@
+"On" to perform a Suhosin memory check when creating thumbnails, otherwise "Off". Turning this option on only has an effect when the PHP installation is using the Suhosin patch by the Hardened PHP Project.

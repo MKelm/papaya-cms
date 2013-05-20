@@ -1,0 +1,1 @@
+Select a template from the drop down list. The directory with the template has to be in the directory <tt>papaya-data/templates/</tt> in order to be accessible.

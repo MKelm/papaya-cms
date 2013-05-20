@@ -1,0 +1,1 @@
+„On“, um die Debug-Ausgaben von papaya CMS durch das Firefox-Addon „Firebug“ anzeigen zu lassen, andernfalls, „Off“.

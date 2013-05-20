@@ -1,0 +1,1 @@
+Number of seconds that determine the time the XML output of the page modules will be cached. When the value of this option is set to "0", the page XML will not be cached. Instead, the content modules will output the XML at each page request.

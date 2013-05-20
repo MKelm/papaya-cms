@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modulegroup>
+
+  <name>Community-Calendar</name>
+
+  <description>
+    Event Calendar for the Community
+  </description>
+
+  <modules>
+
+    <module type="page" guid="885f70e176a367070dcf5cf6c8531eae" name="Community Calendar" class="content_community_calendar" file="content_community_calendar.php" outputfilter="yes">The Community Calendar Page Module displays the entire calendar on one page. Users who are not logged in will see a calendar-sheet of the current month with all events from public calendars.
+After they log in, they can add Events to their own private calendars. </module>
+
+    <module type="admin" guid="1117ac887fa503f9b746d57256897cf7" name="Community Calendar" class="edmodule_community_calendar" file="edmodule_community_calendar.php" outputfilter="no">The Community Calendar Administration Module integrates the Community Calendar with the Papaya CMS Backend and allows you to manage public calendars and events.</module>
+
+  </modules>
+  
+  <tables>
+    
+    <table name="commcal_events" />
+    <table name="commcal_calendars" />
+    <table name="commcal_recommendations" />
+    <table name="commcal_recur_months" />
+    <table name="commcal_recur_weekdays" />
+    
+  </tables>
+
+</modulegroup>

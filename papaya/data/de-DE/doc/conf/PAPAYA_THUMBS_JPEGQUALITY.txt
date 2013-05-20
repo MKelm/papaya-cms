@@ -1,0 +1,1 @@
+JPEG-Qualität, die bei der Skalierung und der Erzeugung von Thumbnails eingestellt wird.

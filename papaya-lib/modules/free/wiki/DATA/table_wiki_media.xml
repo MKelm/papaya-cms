@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_media" prefix="yes">
+  <fields>
+    <field name="media_id" type="string" size="32" null="no"/>
+    <field name="media_name" type="string" size="255" null="no"/>
+    <field name="media_title" type="string" size="255" null="no"/>
+    <field name="media_description" type="string" size="65535" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>media_id</field>
+    </primary-key>
+    <key name="media_name">
+      <field>media_name</field>
+    </key>
+  </keys>
+</table>

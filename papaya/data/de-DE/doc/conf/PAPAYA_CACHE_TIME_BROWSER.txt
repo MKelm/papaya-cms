@@ -1,0 +1,1 @@
+Angabe in Sekunden, wie lange eine Seite vom Browser im Cache vorgehalten werden soll. Bei der Seitenausgabe wird im HTTP-Header eine entsprechende <code>Expires</code>-Angabe eingefügt.

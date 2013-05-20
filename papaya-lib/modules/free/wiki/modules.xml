@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modulegroup>
+  <name>Wiki</name>
+  <description>Maintain a Wiki within your papaya-based website.</description>
+  <modules>
+    <module type="page"
+            guid="75d3c0cb5026ee38888a923c024daf1e"
+            name="Standard wiki page"
+            class="content_wiki"
+            file="content_wiki.php">
+      The default page to view, create, and edit articles
+    </module>
+    <module type="page"
+            guid="725d9d7a865728991b43f043545ae60e"
+            name="Wiki index page"
+            class="content_wiki_index"
+            file="content_wiki_index.php">
+      Page with an index of all available wiki articles
+    </module>
+    <module type="page"
+            guid="97f0b49291ecdc36bcf2e31154566551"
+            name="Wiki upload page"
+            class="content_wiki_upload"
+            file="content_wiki_upload.php">
+      Page to upload files for the wiki
+    </module>
+    <module type="admin"
+            guid="e714a3a6f962e111fd8cca8866d6eab2"
+            name="wiki"
+            class="edmodule_wiki"
+            file="edmodule_wiki.php">
+      The administration module provides the facility to manage the basic settings of your papaya wiki.
+    </module>
+  </modules>
+  <tables>
+    <table name="wiki_article">Contains the basic data for each article of the wiki</table>
+    <table name="wiki_article_version">The versionized source contents of the wiki articles</table>
+    <table name="wiki_article_xml">Cached parsed XML contents of the current article version</table>
+    <table name="wiki_categories">A list of categories for wiki articles</table>
+    <table name="wiki_categories_articles">Links the categories to the articles</table>
+    <table name="wiki_links">A list of internal links for each article to determine whether the linked pages exist</table>
+    <table name="wiki_translations">Translation links</table>
+    <table name="wiki_media">Media to be used in the wiki</table>
+    <table name="wiki_media_articles">Links the media to the articles</table>
+  </tables>
+</modulegroup>

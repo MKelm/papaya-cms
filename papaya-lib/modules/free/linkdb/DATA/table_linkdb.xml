@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="linkdb" prefix="yes">
+<fields>
+<field name="link_id" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="linkcateg_id" type="integer" size="8"  null="no"/>
+<field name="link_title" type="string" size="255"  null="no"/>
+<field name="link_description" type="string" size="65535"  null="no"/>
+<field name="link_url" type="string" size="255"  null="no"/>
+<field name="link_created" type="integer" size="8"  null="no"/>
+<field name="link_modified" type="integer" size="8"  null="no"/>
+<field name="link_status" type="integer" size="2"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>link_id</field></primary-key>
+<key name="linkcateg_id">
+<field>linkcateg_id</field></key>
+<key name="link_title" fulltext="yes">
+<field>link_title</field><field>link_description</field></key>
+</keys>
+</table>

@@ -1,0 +1,16 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Poll</name>
+  <description>Create and manage polls. Polls provide a simple and quick way to sample the general mood and opinion of your web users on a specific topic.</description>
+  <modules>
+    <module type="admin" guid="5602b2b497326580a691512b924fc131" name="Poll admin" class="edmodule_poll" file="edmodule_poll.php" glyph="poll.png">Create and edit polls.</module>
+    <module type="page" guid="9e8b559b2eefed8a1424945841133938" name="Poll page" class="content_poll" file="content_poll.php">Page module that displays a poll.</module>
+    <module type="box" guid="0435b2e45be751f3bc24073fbd4bca7e" name="Poll box" class="actionbox_poll" file="actbox_poll.php">Box module that displays a poll.</module>
+  </modules>
+  <tables>
+  <table name="poll_result"/>
+  <table name="poll_answer"/>
+  <table name="poll"/>
+  <table name="poll_categ"/>
+  </tables>
+</modulegroup>

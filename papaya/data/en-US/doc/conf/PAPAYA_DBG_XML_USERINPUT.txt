@@ -1,0 +1,1 @@
+"On" to activate the debug message output when invalid XHTML has been entered by users. "Off" to deactivate the debug message output on invalid XHTML user input.

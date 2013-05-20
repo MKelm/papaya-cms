@@ -1,0 +1,15 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Time</name>
+  <description>Provides several modules to calculate date and time or to generate time slices.</description>
+  <modules>
+    <module type="time" guid="7d802391249edd22e9e51f58de79aa97" name="Date and Time" class="time_datetime" file="time_datetime.php">Specify the exact date and time.</module>
+    <module type="time" guid="704b4eb410dc109a908ac85ace3a6b1a" name="Timeframe" class="time_timeframe" file="time_timeframe.php">Create a set of regular time slices by defining days, hours, and minutes of the interval.</module>
+    <module type="time" guid="5c84f741c130b1996ff97e4209bd64d2" name="Weekday (time frame)" class="time_weekdayperdays" file="time_weekdayperdays.php">Create a set of time slices by specifying a day-based interval (every x days).</module>
+    <module type="time" guid="7a4f1fd5e395c7bc9cd1d8a3bf03e9d2" name="Weekday (monthly)" class="time_weekdaypermonth" file="time_weekdaypermonth.php">Create a set of time slices by specifying the weekday in a month.</module>
+    <module type="time" guid="90a94966d42f9fd4f563f3223ad79c76" name="Daily (fixed hour)" class="time_dailyhour" file="time_dailyhour.php">Create a set of time slices by specifying the hour of each day.</module>
+    <module type="time" guid="0bdfa36776cc4d28967f231abd7231fd" name="UNIX crontab style" class="time_crontab" file="time_crontab.php">Specify time slices like in UNIX crontabs.</module>
+  </modules>
+  <tables>
+  </tables>
+</modulegroup>

@@ -1,0 +1,1 @@
+Are you missing a module? Check if there's a <a href="views.php">view</a> defined for it. If not: did you update the <a href="modules.php">modules</a> registry after importing or changing any module?

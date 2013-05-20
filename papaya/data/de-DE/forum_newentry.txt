@@ -1,0 +1,8 @@
+Hallo %NAME%,
+
+in dem Thread %THREADTITLE% ist ein neuer Beitrag gepostet worden.
+
+%ENTRYURL%
+
+--
+Um keine Nachrichten mehr zu Änderungen in diesem Thread zu erhalten, klicke bitte hier:

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="calendar_reg_ignore" prefix="yes">
+<fields>
+<field name="regdate_ignoreid" type="integer" size="8"  null="no" autoinc="yes"/>
+<field name="regdate_id" type="integer" size="8"  null="no"/>
+<field name="regdate_ignoretime" type="integer" size="8"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>regdate_ignoreid</field></primary-key>
+</keys>
+</table>

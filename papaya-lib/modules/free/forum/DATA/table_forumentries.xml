@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="forumentries" prefix="yes">
+  <fields>
+    <field name="entry_id" type="integer" size="8" null="no" autoinc="yes" />
+    <field name="forum_id" type="integer" size="4" null="no" />
+    <field name="entry_pid" type="integer" size="8" null="no" />
+    <field name="entry_path" type="string" size="250" null="no" />
+    <field name="entry_created" type="integer" size="4" null="no" />
+    <field name="entry_modified" type="integer" size="4" null="no" />
+    <field name="entry_thread_modified" type="integer" size="4" null="no" />
+    <field name="entry_thread_count" type="integer" size="4" null="no" />
+    <field name="entry_subject" type="string" size="200" null="no" />
+    <field name="entry_text" type="string" size="65535" null="no" />
+    <field name="entry_userguid" type="string" size="35" null="no"/>
+    <field name="entry_strip" type="string" size="65535" null="no" />
+    <field name="entry_username" type="string" size="50" null="no" />
+    <field name="entry_userhandle" type="string" size="250" null="no" />
+    <field name="entry_useremail" type="string" size="250" null="no" />
+    <field name="entry_userregistered" type="integer" size="2" null="no" />
+    <field name="entry_notify" type="integer" size="2" null="no" />
+    <field name="entry_ip" type="string" size="20" null="no" />
+    <field name="entry_blocked" type="integer" size="4" null="no" />
+  </fields>
+  <keys>
+    <primary-key>
+      <field>entry_id</field>
+    </primary-key>
+    <key name="threads">
+      <field>forum_id</field>
+      <field>entry_pid</field>
+      <field>entry_thread_modified</field>
+      <field>entry_created</field>
+    </key>
+    <key name="entry_fulltext" fulltext="yes">
+      <field>entry_strip</field>
+      <field>entry_subject</field>
+      <field>entry_username</field>
+      <field>entry_userhandle</field>
+    </key>
+  </keys>
+</table>

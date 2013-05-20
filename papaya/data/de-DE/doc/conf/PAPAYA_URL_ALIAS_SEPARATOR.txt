@@ -1,0 +1,1 @@
+Auswahl eines Trenners für URL-Aliase. Ein komplexer URL-Alias enthält Schrägstriche als Trenner, die beim Seitenaufruf in eine der folgenden Zeichen umgewandelt werden:<ul><li><code>,</code> (Komma, standardmäßig aktiv)<br /></li><li><code>:</code> (Doppelpunkt)<br /></li><li><code>*</code> (Sternchen)<br /></li><li><code>!</code> (Ausrufezeichen)<br /></li></ul>

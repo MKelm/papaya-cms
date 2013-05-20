@@ -1,0 +1,1 @@
+Path in which the session cookie is set. Default value for <tt>session.cookie_path</tt> is "/".

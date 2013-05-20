@@ -1,0 +1,1 @@
+Time in seconds by which an entry in the login log is counted as old. The default entry is 86400 seconds (equals 24 hours).

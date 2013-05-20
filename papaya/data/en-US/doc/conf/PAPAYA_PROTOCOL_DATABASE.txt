@@ -1,0 +1,1 @@
+"On" to write log messages to the papaya log tables, otherwise "Off". The contents of the log tables can be analyzed using the <em>Protocol</em> section in the papaya backend.

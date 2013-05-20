@@ -1,0 +1,1 @@
+E-Mail-Adresse, an die die Benachrichtigungsmail gesendet wird.

@@ -1,0 +1,1 @@
+In case you have installed import filters, you can activate the import function by setting this option to "On". This option is deactivated per default ("Off").

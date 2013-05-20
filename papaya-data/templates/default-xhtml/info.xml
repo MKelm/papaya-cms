@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<info>
+  <author>papaya Software GmbH</author>
+  <boxes>
+    <groups>
+      <group name="copyright" />
+      <group name="header" />
+      <group name="navigation" />
+      <group name="additional" />
+      <group name="ariadne" />
+      <group name="before-content" />
+      <group name="after-content" />
+      <group name="footer" />
+      <group name="html-head" />
+    </groups>
+  </boxes>
+</info>

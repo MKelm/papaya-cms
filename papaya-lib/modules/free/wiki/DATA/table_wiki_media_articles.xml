@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="wiki_media_articles" prefix="yes">
+  <fields>
+    <field name="media_id" type="string" size="32" null="yes"/>
+    <field name="article_id" type="integer" size="4" null="yes"/>
+    <field name="media_index" type="integer" size="4" null="no"/>
+    <field name="media_thumb" type="integer" size="4" null="no"/>
+    <field name="media_width" type="integer" size="4" null="no"/>
+    <field name="media_height" type="integer" size="4" null="no"/>
+    <field name="media_border" type="integer" size="4" null="no"/>
+    <field name="media_align" type="string" size="20" null="no"/>
+  </fields>
+  <keys>
+    <key name="media_id">
+      <field>media_id</field>
+    </key>
+    <key name="article_id">
+      <field>article_id</field>
+    </key>
+  </keys>
+</table>

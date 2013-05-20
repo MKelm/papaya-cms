@@ -1,0 +1,1 @@
+"On" to log the running time of an XSLT template on each run, otherwise "Off". When this option is activated, the time needed to generate a page will be logged. For each box linked with the page, the running time is calculated and logged separately (boxes are generated independently from pages).

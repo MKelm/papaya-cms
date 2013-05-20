@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="catalog_subscriptions" prefix="yes">
+<fields>
+<field name="catalog_id" type="integer" size="4"  null="no"/>
+<field name="catalog_subscription_id" type="integer" size="4"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>catalog_id</field><field>catalog_subscription_id</field></primary-key>
+</keys>
+</table>

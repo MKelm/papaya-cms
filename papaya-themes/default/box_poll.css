@@ -1,0 +1,66 @@
+/***********************************/
+/* Poll dialog                     */
+/***********************************/
+form.communityOnePollBox, div.communityOnePollBox {
+  padding-top: 10px;
+  padding: 0;
+  margin-top: 0;
+  background-color: #EEF5CE;
+}
+form.communityOnePollBox form h2 {
+  margin-bottom: 10px;
+}
+form.communityOnePollBox ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+form.communityOnePollBox ul li {
+  padding-left: 0;
+}
+form.communityOnePollBox ul li input.radio {
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+form.communityOnePollBox ul li label {
+  
+}
+form.communityOnePollBox button {
+  margin-top: 10px;
+}
+/***********************************/
+/* Poll results                     */
+/***********************************/
+div.communityOnePollBox ul.communityOnePollAnswersList {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+div.communityOnePollBox ul.communityOnePollAnswersList li {
+  padding-left: 0;
+}
+div.communityOnePollBox ul.communityOnePollAnswersList li span {
+  float: right;
+  display: block;
+  width: 30px;
+  text-align: right;
+}
+div.communityOnePollBox ul.communityOnePollAnswersList li div.bar {
+  height: 5px;
+  line-height: 5px;
+  font-size: 0;
+  border: 1px solid #9FBD18;
+}
+div.communityOnePollBox ul.communityOnePollAnswersList li div.bar div.barResult {
+  background-color: #9FBD18;
+  height: 5px;
+  line-height: 5px;
+  font-size: 0;
+}
+div.communityOnePollBox p.resultCount {
+
+}
+div.communityOnePollBox p.resultCount span {
+  font-weight: bold;
+}

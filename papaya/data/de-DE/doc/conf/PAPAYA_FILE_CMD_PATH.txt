@@ -1,0 +1,1 @@
+Absoluter Pfad zum file-Programm (Standard unter Linux/Unix/BSD/Solaris).

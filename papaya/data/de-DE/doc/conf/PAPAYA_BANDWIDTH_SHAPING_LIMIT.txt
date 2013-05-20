@@ -1,0 +1,1 @@
+Angabe der kleinsten Datengröße in Byte, die pro Sekunde versendet werden soll.

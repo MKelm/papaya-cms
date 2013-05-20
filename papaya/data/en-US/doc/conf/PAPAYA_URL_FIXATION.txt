@@ -1,0 +1,1 @@
+"On" to force normalizes page titles to be used as file names whenever possible, or "Off" when 'index' is acceptable as the name part.

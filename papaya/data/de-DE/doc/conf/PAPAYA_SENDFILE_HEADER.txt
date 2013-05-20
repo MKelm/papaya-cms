@@ -1,0 +1,1 @@
+„on“, wenn Dateien über den Headereintrag mit x-sendfile heruntergeladen werden sollen, andernfalls „off“. Funktioniert nur, wenn das Apache-Modul mod_xsendfile installiert und aktiviert ist oder wenn Sie lighttpd benutzen. Dateien, für die Bandwidth-Shaping benutzt wird, können nicht mit dieser Methode heruntergeladen werden.

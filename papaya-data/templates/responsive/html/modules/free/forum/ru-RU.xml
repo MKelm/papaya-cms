@@ -1,0 +1,28 @@
+<texts>
+  <text ident="FORUM_CAPTION_TITLE">Тема</text>
+  <text ident="FORUM_CAPTION_AUTHOR">Автор</text>
+  <text ident="FORUM_CAPTION_ANSWERS">Ответы</text>
+  <text ident="FORUM_CAPTION_LAST_MODIFIED">Последние изменения</text>
+  <text ident="FORUM_CAPTION_CREATED">Создано</text>
+  <text ident="FORUM_CAPTION_FORUM">Форум</text>
+  <text ident="FORUM_CAPTION_CATEGORY">Категория</text>
+  <text ident="FORUM_CAPTION_CONTENT">Содержание</text>
+  <text ident="FORUM_CAPTION_LAST_ENTRY">Последняя запись</text>
+  <text ident="FORUM_CAPTION_EDIT_DATE">Последний раз изменено</text>
+
+  <text ident="FORUM_CAPTION_AUTHOR_GROUP">Группа</text>
+  <text ident="FORUM_CAPTION_LAST_LOGIN">Последний визит</text>
+  <text ident="FORUM_CAPTION_REGISTRATION">Зарегестрирован</text>
+
+  <text ident="FORUM_CONTENT">содержания нет.</text>
+  <text ident="FORUM_NO_ENTRIES">Записей нет.</text>
+  <text ident="FORUM_THREAD_COUNT">Ветка</text>
+  <text ident="FORUM_ENTRY_COUNT">Записи</text>
+  <text ident="FORUM_CATEGORY_COUNT">Категории</text>
+  <text ident="FORUM_USER_UNVERIFIED">(неподтвержденный)</text>
+  <text ident="SUBSCRIBE">подписаться</text>
+  <text ident="UNSUBSCRIBE">отказаться от подписки</text>
+  <text ident="CITE">цитировать</text>
+  <text ident="REPLY">Ответить</text>
+  <text ident="FORUM_DATE_NEVER">никогда</text>
+</texts>

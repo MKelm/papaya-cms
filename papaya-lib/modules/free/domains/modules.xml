@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <modulegroup>
+  <name>Domains</name>
+  <description>Domain Management for papaya CMS.</description>
+  <modules>
+    <module type="admin" guid="6d1997995056d9bc37652cdb95ddcc78" name="Domains" class="edmodule_domains" file="edmodule_domains.php" glyph="domains.png">Administration module for the Domain package.</module>
+    <module type="connector" guid="8ec0c5995d97c9c3cc9c237ad0dc6c0b" name="Domain Connector" class="connector_domains" file="connector_domains.php">Connector module for the Domain package.</module>
+    <module type="box" guid="6a0c0523acb30ab43611c642f11a0657" name="Domain HTML Box" class="actionbox_domain_html" file="actbox_domain_html.php" outputfilter="no">HTML Box that can load its data from the domain managment.</module>
+    <module type="box" guid="e69b3532deea28a16a3f059b70d1af4c" name="Domain RichText Box" class="actionbox_domain_richtext" file="actbox_domain_richtext.php" outputfilter="no">Richtext Box that can load its data from the domain managment.</module>
+    <module type="box" guid="da0c7cd12817a22ecc208b1be53a961f" name="Domain Tag Teaser Box" class="actionbox_domain_tagteaser" file="actbox_domain_tagteaser.php">Tag teaser box that can load the tag url from the domain managment.</module>
+    <module type="image" guid="e41c0450a3dd62b074d811c2575227f0" name="Domain Image Colorizer" class="image_domain_colored" file="image_domain_colored.php">Dynamic image generator that adds a domain specific background to an image.</module>
+    <module type="image" guid="61755bbbb6bfb46096ab1bb0f24801ea" name="Domain Image Switch" class="image_domain_switch" file="image_domain_switch.php">Dynamic image generator that outputs the image specified in a domain variable.</module>
+  </modules>
+  <tables>
+    <table name="domains"/>
+    <table name="domain_fields"/>
+    <table name="domain_values"/>
+  </tables>
+</modulegroup>

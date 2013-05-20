@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="catalog_trans" prefix="yes">
+<fields>
+<field name="catalog_id" type="integer" size="8"  null="no"/>
+<field name="lng_id" type="integer" size="4"  null="no"/>
+<field name="catalog_title" type="string" size="250"  null="no"/>
+<field name="catalog_glyph" type="string" size="200"  null="no"/>
+<field name="catalog_image" type="string" size="200"  null="no"/>
+<field name="catalog_text" type="string" size="65535"  null="no"/>
+</fields>
+<keys>
+<primary-key>
+<field>catalog_id</field><field>lng_id</field></primary-key>
+</keys>
+</table>

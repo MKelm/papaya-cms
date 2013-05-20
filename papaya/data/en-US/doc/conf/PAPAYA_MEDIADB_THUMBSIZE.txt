@@ -1,0 +1,1 @@
+Value for height and width of thumbnail images displayed in the MediaDB browser. The values are given in pixel.

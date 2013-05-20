@@ -1,0 +1,1 @@
+Maximale Anzahl an Versionen, die für eine Seite vorgehalten werden sollen. Bei einer Überschreitung dieser Zahl wird die älteste Seitenversion ohne Rückmeldung gelöscht.

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="commcal_recur_months" prefix="yes">
+  <fields>
+    <field name="event_id" type="integer" size="4"  null="no"/>
+    <field name="recur_yearly_month" type="integer" size="2"  null="no"/>
+  </fields>
+  <keys></keys>
+</table>

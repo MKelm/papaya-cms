@@ -1,0 +1,1 @@
+"On" to activate the "garbage collector" for entries in the login log, otherwise "Off". The garbage collector deletes all log entries older than <tt>PAPAYA_LOGIN_GC_TIME</tt>. This prevents the database table of the login log to grow too big over time. It is recommended to activate this function in papaya-websites that have many users, especially users from the community.

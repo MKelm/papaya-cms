@@ -1,0 +1,1 @@
+"On", um Protokolleinträge in die papaya-Protokoll-Tabellen zu schreiben, andernfalls "Off". Der Inhalt der Log-Tabellen kann über den Abschnitt <em>Protokoll</em> im papaya-Backend analysiert werden.

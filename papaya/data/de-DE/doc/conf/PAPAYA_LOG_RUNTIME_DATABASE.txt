@@ -1,0 +1,1 @@
+"On", um die Laufzeit der Datenbankabfragen zu protokollieren, andernfalls "Off".

@@ -1,0 +1,1 @@
+Number of failed login attempts within the given time limit. Once this number is reached, a notification email is sent.
