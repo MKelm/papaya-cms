@@ -312,17 +312,13 @@ class MediaImageGallery extends PapayaUiControlInteractive {
         );
         break;
       case 'download': // download image no resized version
-        $destinationImageTag = PapayaUtilStringPapaya::getImageTag(
-          $fileId
-        );
+        $destinationImageTag = PapayaUtilStringPapaya::getImageTag($fileId);
         $destinationImageLink = $this->_module->getWebMediaLink(
           $fileId, 'download', $fileTitle, $this->_folder['files'][$fileId]['mimetype_ext']
         );
         break;
       case 'original': // show original image
-        $destinationImageTag = PapayaUtilStringPapaya::getImageTag(
-          $currentFileId
-        );
+        $destinationImageTag = PapayaUtilStringPapaya::getImageTag($fileId);
         $destinationImageLink = $this->_module->getWebMediaLink(
           $fileId, 'media', $fileTitle, $this->_folder['files'][$fileId]['mimetype_ext']
         );
