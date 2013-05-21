@@ -42,7 +42,7 @@
   <xsl:template name="content-area">
     <xsl:param name="pageContent" select="content/topic"/>
     <xsl:choose>
-      <xsl:when test="$pageContent/@module = 'MediaImageGalleryPage' or $pageContent/@module = 'ACommunitySurferGalleryPage'">
+      <xsl:when test="$pageContent/@module = 'MediaImageGalleryPage'">
         <xsl:call-template name="module-content-image-gallery">
           <xsl:with-param name="pageContent" select="$pageContent"/>
         </xsl:call-template>

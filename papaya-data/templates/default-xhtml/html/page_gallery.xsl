@@ -6,7 +6,7 @@
   exclude-result-prefixes="#default"
 >
 <!--
-  @papaya:modules MediaImageGalleryPage, ACommunitySurferGalleryPage
+  @papaya:modules MediaImageGalleryPage
 -->
 
 <!-- import main layout rules, this will import the default rules, too -->

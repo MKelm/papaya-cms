@@ -20,7 +20,7 @@
         <xsl:with-param name="pageContent" select="$pageContent"/>
       </xsl:call-template>
     </xsl:when>
-    <xsl:when test="$pageContent/@module = 'content_profile' or $pageContent/@module = 'ACommunitySurferEditorPage'">
+    <xsl:when test="$pageContent/@module = 'content_profile'">
       <xsl:call-template name="module-content-community-profile">
         <xsl:with-param name="pageContent" select="$pageContent"/>
       </xsl:call-template>
