@@ -75,6 +75,12 @@ class MediaImageGallery extends PapayaUiControlInteractive {
   protected $_mediaDB = NULL;
 
   /**
+  * Reference object to create urls
+  * @var PapayaUiReference
+  */
+  protected $_reference = NULL;
+
+  /**
    * Initialize properties by module configuration data and data mode (all or teaser)
    */
   public function initialize($module, $data, $dataMode = 'all') {
@@ -87,7 +93,7 @@ class MediaImageGallery extends PapayaUiControlInteractive {
       )
     );
     $offset = (int)$this->parameters()->get('offset', 0); // current page or image offset
-    $details = (int)$this->parameters()->get('details', 0); // parameter for details mode
+    $enlarge = (int)$this->parameters()->get('enlarge', 0); // parameter for enlarge view
     if ($dataMode == 'all') {
       // options
       switch ($data['show_mode']) {
@@ -122,12 +128,12 @@ class MediaImageGallery extends PapayaUiControlInteractive {
         'mode' => $showMode,
         'data_mode' => $dataMode,
         'lightbox' => (int)$data['show_lightbox'],
-        'details' => (int)$details,
+        'enlarge' => (int)$enlarge,
         'display_title' => $data['display_title'] == 'true' ? 1 : 0,
         'display_description' => $data['display_comment'] == 'true' ? 1 : 0
       );
       // properties for image thumbnails
-      if ($this->_options['details'] == 0) {
+      if ($this->_options['enlarge'] == 0) {
         $limit = (!isset($data['maxperpage']) || $data['maxperpage'] <= 1) ? 9 : $data['maxperpage'];
         $this->_folderProperties = array(
           'limit' => $limit,
@@ -147,48 +153,42 @@ class MediaImageGallery extends PapayaUiControlInteractive {
     $this->_folderProperties['sort_type'] = isset($data['order']) ? $data['order'] : 'name';
     $this->_folderProperties['id'] = !empty($data['directory']) ? $data['directory'] : NULL;
     if ($this->_options['data_mode'] == 'all') {
+      $reference = clone $this->reference();
+      if (isset($this->_folderProperties['index_offset'])) {
+        $reference->setParameters(
+          array('index' => $this->_folderProperties['index_offset']), $this->parameterGroup()
+        );
+      }
       // navigation link previous
       if ($this->_folderProperties['offset'] > 0) {
-        if ($this->_options['details'] == 1) {
+        $previousReference = clone $reference;
+        if ($this->_options['enlarge'] == 1) {
           $newOffset = $this->_folderProperties['offset'] - 1;
-          $parameters = array('details' => 1);
+          $previousReference->setParameters(array('enlarge' => 1), $this->parameterGroup());
         } else {
           $newOffset = $this->_folderProperties['offset'] - $this->_folderProperties['limit'];
-          $parameters = array();
         }
-        $parameters['offset'] = $newOffset;
-        if (isset($this->_folderProperties['index_offset'])) {
-          $parameters['index'] = $this->_folderProperties['index_offset'];
-        }
-        $this->_navigationLinks['previous'] = $this->_module->getWebLink(
-          NULL, NULL, NULL, $parameters, $this->parameterGroup()
-        );
+        $previousReference->setParameters(array('offset' => $newOffset), $this->parameterGroup());
+        $this->_navigationLinks['previous'] = $previousReference->getRelative();
       }
       // navigation link index
-      if ($this->_options['details'] == 1) {
-        $this->_navigationLinks['index'] = $this->_module->getWebLink(
-          NULL,
-          NULL,
-          NULL,
-          array('offset' => $this->_folderProperties['index_offset']),
-          $this->parameterGroup()
+      if ($this->_options['enlarge'] == 1) {
+        $indexReference = clone $this->reference();
+        $indexReference->setParameters(
+          array('offset' => $this->_folderProperties['index_offset']), $this->parameterGroup()
         );
+        $this->_navigationLinks['index'] = $indexReference->getRelative();
       }
       // navigation link next
-      if ($this->_options['details'] == 1) {
+      $nextReference = clone $reference;
+      if ($this->_options['enlarge'] == 1) {
         $newOffset = $this->_folderProperties['offset'] + 1;
-        $parameters = array('details' => 1);
+        $nextReference->setParameters(array('enlarge' => 1), $this->parameterGroup());
       } else {
         $newOffset = $this->_folderProperties['offset'] + $this->_folderProperties['limit'];
-        $parameters = array();
       }
-      $parameters['offset'] = $newOffset;
-      if (isset($this->_folderProperties['index_offset'])) {
-        $parameters['index'] = $this->_folderProperties['index_offset'];
-      }
-      $this->_navigationLinks['next'] = $this->_module->getWebLink(
-        NULL, NULL, NULL, $parameters, $this->parameterGroup()
-      );
+      $nextReference->setParameters(array('offset' => $newOffset), $this->parameterGroup());
+      $this->_navigationLinks['next'] = $nextReference->getRelative();
     }
   }
 
@@ -246,7 +246,7 @@ class MediaImageGallery extends PapayaUiControlInteractive {
       }
     }
     if (!empty($this->_folder['files'])) {
-      if ($this->_options['details'] == 1 || $this->_options['data_mode'] == 'teaser') {
+      if ($this->_options['enlarge'] == 1 || $this->_options['data_mode'] == 'teaser') {
         $this->_appendImageTo($parent, reset(array_keys($this->_folder['files'])));
       } else {
         $this->_appendImagesTo($parent);
@@ -338,17 +338,16 @@ class MediaImageGallery extends PapayaUiControlInteractive {
           '',
           $this->_options['resize']
         );
-        $destinationImageLink = $this->_module->getWebLink(
-          NULL,
-          NULL,
-          NULL,
+        $reference = clone $this->reference();
+        $reference->setParameters(
           array(
-            'details' => 1,
-            'offset' => $this->_folderProperties['offset'] + $fileOffset,
-            'index' => $this->_folderProperties['offset']
+            'index' => $this->_folderProperties['offset'],
+            'enlarge' => 1,
+            'offset' => $this->_folderProperties['offset'] + $fileOffset
           ),
           $this->parameterGroup()
         );
+        $destinationImageLink = $reference->getRelative();
         break;
       }
     }
@@ -379,7 +378,7 @@ class MediaImageGallery extends PapayaUiControlInteractive {
         PapayaUtilStringXml::escape($this->_folder['translations'][$fileId]['file_title'])
       );
     }
-    if ($this->_options['details'] == 1 || $this->_options['lightbox'] == 1) {
+    if ($this->_options['enlarge'] == 1) {
       // image comment / description
       if ($this->_options['display_description'] == 1 && !empty($fileDescription)) {
         $description = $image->appendElement('description');
@@ -442,5 +441,21 @@ class MediaImageGallery extends PapayaUiControlInteractive {
         )
       );
     }
+  }
+
+  /**
+  * The basic reference object used to create urls.
+  *
+  * @param PapayaUiReference $reference
+  * @return PapayaUiReference
+  */
+  public function reference(PapayaUiReference $reference = NULL) {
+    if (isset($reference)) {
+      $this->_reference = $reference;
+    } elseif (is_null($this->_reference)) {
+      $this->_reference = new PapayaUiReference();
+      $this->_reference->papaya($this->papaya());
+    }
+    return $this->_reference;
   }
 }
