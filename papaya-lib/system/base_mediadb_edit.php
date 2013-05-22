@@ -653,10 +653,26 @@ class base_mediadb_edit extends base_mediadb {
           $doDelete = TRUE;
         }
         if ($doDelete) {
+          $this->deleteFileDerivations($fileId);
+          $this->deleteFileTrans($fileId);
           $condition = array('file_id' => $fileId);
           return (FALSE !== $this->databaseDeleteRecord($this->tableFiles, $condition));
         }
       }
+    }
+    return FALSE;
+  }
+
+  /**
+   * Delete file translation by id
+   *
+   * @param string $fileId
+   * @return boolean
+   */
+  function deleteFileTrans($fileId) {
+    if (!empty($fileId)) {
+      $condition = array('file_id' => $fileId);
+      return FALSE !== $this->databaseDeleteRecord($this->tableFilesTrans, $condition);
     }
     return FALSE;
   }
@@ -679,6 +695,7 @@ class base_mediadb_edit extends base_mediadb {
       include_once(PAPAYA_INCLUDE_PATH.'system/base_thumbnail.php');
       $thumbnail = new base_thumbnail;
       $thumbnail->deleteThumbs($fileId);
+      $this->deleteFileDerivations($fileId, $versionId);
       return (FALSE !== $this->databaseDeleteRecord($this->tableFilesVersions, $condition));
     }
   }
@@ -695,6 +712,7 @@ class base_mediadb_edit extends base_mediadb {
     if ($fileId != '') {
       $versions = $this->getFileVersions($fileId);
       if (is_array($versions) && count($versions) > 0) {
+        $this->deleteFileDerivations($fileId, array_keys($versions));
         foreach ($versions as $versionId => $version) {
           $fileName = $this->getFileName($fileId, $versionId, TRUE);
           if (!is_file($fileName) || unlink($fileName)) {
@@ -711,6 +729,31 @@ class base_mediadb_edit extends base_mediadb {
       } else {
         // file has got no versions
         return TRUE;
+      }
+    }
+    return FALSE;
+  }
+
+  /**
+   * Delete file derivations by file or file version.
+   *
+   * @param string $fileId
+   * @param integer $versionId
+   * @return boolean
+   */
+  function deleteFileDerivations($fileId, $versionId = NULL) {
+    if (!empty($fileId)) {
+      $condition = array('parent_file_id' => $fileId);
+      if (!empty($versionId)) {
+        $condition['parent_file_version_id'] = $versionId;
+      }
+      $result1 = FALSE !== $this->databaseDeleteRecord($this->tableFilesDerivations, $condition);
+      if (!empty($versionId)) {
+        $condition = array('child_file_id' => $fileId);
+        $result2 = FALSE !== $this->databaseDeleteRecord($this->tableFilesDerivations, $condition);
+        return $result1 && $result2;
+      } else {
+        return $result1;
       }
     }
     return FALSE;
