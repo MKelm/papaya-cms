@@ -748,7 +748,7 @@ class base_mediadb_edit extends base_mediadb {
         $condition['parent_file_version_id'] = $versionId;
       }
       $result1 = FALSE !== $this->databaseDeleteRecord($this->tableFilesDerivations, $condition);
-      if (!empty($versionId)) {
+      if (empty($versionId)) {
         $condition = array('child_file_id' => $fileId);
         $result2 = FALSE !== $this->databaseDeleteRecord($this->tableFilesDerivations, $condition);
         return $result1 && $result2;
