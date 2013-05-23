@@ -2243,48 +2243,55 @@ class surfer_admin extends base_db {
       $searchFields = array('surfer_handle', 'surfer_givenname', 'surfer_surname');
     }
     $whereCondition = '';
-    if (!is_array($pattern)) {
-      $pattern = array($pattern);
-    }
     include_once(PAPAYA_INCLUDE_PATH.'system/base_searchstringparser.php');
     $parser = new searchStringParser();
     if ($patternFirstChar == TRUE) {
       $parser->tokenMinLength = 1;
     }
-    foreach ($pattern as $currentPattern) {
-      if ($filter = $parser->getSQL($currentPattern, $searchFields, PAPAYA_SEARCH_BOOLEAN)) {
-        if ($patternFirstChar == TRUE) {
-          $filter = str_replace("LIKE '%", "LIKE '", $filter);
+    $validFilter = TRUE;
+    if (!empty($pattern)) {
+      if (!is_array($pattern)) {
+        $pattern = array($pattern);
+      }
+      foreach ($pattern as $currentPattern) {
+        if ($filter = $parser->getSQL($currentPattern, $searchFields, PAPAYA_SEARCH_BOOLEAN)) {
+          if ($patternFirstChar == TRUE) {
+            $filter = str_replace("LIKE '%", "LIKE '", $filter);
+          }
+          $whereCondition .= $whereCondition == '' ? " WHERE " : " OR ";
+          $whereCondition .= str_replace('%', '%%', $filter);
+        } else {
+          $validFilter = FALSE;
         }
-        $whereCondition .= $whereCondition == '' ? " WHERE " : " OR ";
-        $whereCondition .= str_replace('%', '%%', $filter);
       }
     }
-    if (is_array($orderBy)) {
-      $orderByField = ", CONCAT(".implode(",", $orderBy).") AS order_by";
-    } else {
-      $orderByField = "";
-    }
-    $sql = "SELECT surfer_id, surfer_handle, surfer_email,
-                   surfer_givenname, surfer_surname$orderByField
-              FROM %s
-              $whereCondition %s";
-    if (in_array($orderBy, array('surfer_handle', 'surfer_email', 'surfer_surname'))) {
-      $sql .= " ORDER BY ".$orderBy." ASC";
-    } elseif (is_array($orderBy)) {
-      $sql .= " ORDER BY order_by ASC";
-    }
-    $blockedClause = empty($whereCondition) ? " WHERE " : " AND ";
-    $blockedClause .= ($includeBlocked === FALSE) ? ' surfer_valid != 4' : '';
-    $sqlParams = array($this->tableSurfer, $blockedClause);
-    if ($res = $this->databaseQueryFmt($sql, $sqlParams, $limit, $offset)) {
-      while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
-        if (isset($row['order_by'])) {
-          unset($row['order_by']);
-        }
-        $result[$row['surfer_id']] = $row;
+    if ($validFilter == TRUE) {
+      if (is_array($orderBy)) {
+        $orderByField = ", CONCAT(".implode(",", $orderBy).") AS order_by";
+      } else {
+        $orderByField = "";
       }
-      $this->surfersAbsCount = $res->absCount();
+      $sql = "SELECT surfer_id, surfer_handle, surfer_email,
+                     surfer_givenname, surfer_surname$orderByField
+                FROM %s
+                $whereCondition %s";
+      if (in_array($orderBy, array('surfer_handle', 'surfer_email', 'surfer_surname'))) {
+        $sql .= " ORDER BY ".$orderBy." ASC";
+      } elseif (is_array($orderBy)) {
+        $sql .= " ORDER BY order_by ASC";
+      }
+      $blockedClause = empty($whereCondition) ? " WHERE " : " AND ";
+      $blockedClause .= ($includeBlocked === FALSE) ? ' surfer_valid != 4' : '';
+      $sqlParams = array($this->tableSurfer, $blockedClause);
+      if ($res = $this->databaseQueryFmt($sql, $sqlParams, $limit, $offset)) {
+        while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
+          if (isset($row['order_by'])) {
+            unset($row['order_by']);
+          }
+          $result[$row['surfer_id']] = $row;
+        }
+        $this->surfersAbsCount = $res->absCount();
+      }
     }
     return $result;
   }
