@@ -161,8 +161,8 @@ class filter_xslt extends base_outputfilter {
         } else {
           $fileData = file_get_contents($this->getTemplatePath().$this->data['xslfile']);
           if (preg_match('(<!--\s*(@papaya.*?)-->)si', $fileData, $match)) {
-            if (preg_match('((?:^|\s)@papaya:modules\s+(.*)(?:$))mi', $match[1], $match)) {
-              $moduleNames = explode(',', $match[1]);
+            if (preg_match('((?:^|\s)@papaya:modules\s+(.*)(?:$))mis', $match[1], $match)) {
+              $moduleNames = explode(',', preg_replace('/^\s+|\n|\r|\s+$/m', '', $match[1]));
               foreach ($moduleNames as $key => $value) {
                 $moduleNames[trim($value)] = TRUE;
                 unset($moduleNames[$key]);
