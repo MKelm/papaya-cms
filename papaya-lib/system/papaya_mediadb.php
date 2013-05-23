@@ -677,7 +677,14 @@ class papaya_mediadb extends base_mediadb_edit {
         }
         break;
       case 'crop_image_window':
-        $this->getImageCropWindow();
+        if ($this->currentFile['mimetype'] == 'image/jpeg') {
+          $this->getImageCropWindow();
+        } else {
+          $this->addMsg(
+            MSG_WARNING,
+            $this->_gt('You can crop image/jpeg files only, please convert the image first.')
+          );
+        }
         break;
       case 'crop_image_rpc':
         header('Content-type: text/xml; charset=utf-8');
@@ -1195,9 +1202,9 @@ class papaya_mediadb extends base_mediadb_edit {
             'actions-edit-copy',
             'Copy file to clipboard'
           );
-          if ($this->currentFile['mimetype_ext'] == 'jpg' ||
-              $this->currentFile['mimetype_ext'] == 'gif' ||
-              $this->currentFile['mimetype_ext'] == 'png') {
+          if ($this->currentFile['mimetype'] == 'image/jpeg' ||
+              $this->currentFile['mimetype'] == 'image/gif' ||
+              $this->currentFile['mimetype'] == 'image/png') {
             $convertParams = array(
               'cmd' => 'convert_image',
               'file_id' => $this->params['file_id'],
@@ -1212,22 +1219,33 @@ class papaya_mediadb extends base_mediadb_edit {
           }
         }
 
-        if (strtolower($this->getFileExtension($this->currentFile['file_name'])) == 'jpg') {
+        if ($this->currentFile['mimetype'] == 'image/jpeg') {
+          $cropLink = sprintf(
+            "javascript:window.open('%s', 'cropwindow',
+             'width=656,height=556,top=100,left=100'); return false;",
+            $this->getLink(
+              array(
+                'cmd' => 'crop_image_window',
+                'file_id' => $this->params['file_id']
+              )
+            )
+          );
+        } elseif ($this->currentFile['mimetype'] == 'image/gif' ||
+                  $this->currentFile['mimetype'] == 'image/png') {
           $cropLink = $this->getLink(
             array(
               'cmd' => 'crop_image_window',
               'file_id' => $this->params['file_id']
             )
           );
+        }
+        if (!empty($cropLink)) {
           $this->menubar->addButton(
             'Crop',
-            sprintf(
-              "javascript:window.open('%s', 'cropwindow',
-               'width=656,height=556,top=100,left=100'); return false;",
-              $cropLink
-            ),
+            $cropLink,
             'actions-edit-crop',
-            'Crop image'
+            'Crop image',
+            isset($this->params['cmd']) && $this->params['cmd'] == 'crop_image_window'
           );
         }
 
