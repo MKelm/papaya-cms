@@ -2258,7 +2258,7 @@ class surfer_admin extends base_db {
           if ($patternFirstChar == TRUE) {
             $filter = str_replace("LIKE '%", "LIKE '", $filter);
           }
-          $whereCondition .= $whereCondition == '' ? " WHERE " : " OR ";
+          $whereCondition .= $whereCondition == '' ? " WHERE " : " AND ";
           $whereCondition .= str_replace('%', '%%', $filter);
         } else {
           $validFilter = FALSE;
