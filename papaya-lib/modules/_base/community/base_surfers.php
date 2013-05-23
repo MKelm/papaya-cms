@@ -2223,42 +2223,68 @@ class surfer_admin extends base_db {
   * Returns an empty array if no surfers match the pattern.
   *
   * @see existID() for behavior on blocked surfers
-  * @access public
-  * @param string $pattern Search pattern
-  * @param boolean $handleOnlyset to TRUE if you only want to search in surfer handles
+  * @param string|array $pattern Search pattern or multiple search patterns
+  * @param array|NULL $searchFields NULL = surfer_handle, surfer_givenname, surfer_surname
   * @param boolean $includeBlocked Seach in blocked surfers too
-  * @param string $orderBy Order search results by a given (NULL = disabled)
+  * @param string|array $orderBy One column or multiple column names (NULL = disabled)
+  * @param integer $limit max results to fetch
+  * @param integer $offset fetch results from offset
+  * @param boolean $patternFirstChar using a pattern to get the first char of result string
   * @return array $result Surfers data (id, handle, email, givenname, surfname)
   */
-  function searchSurfers($pattern, $handleOnly = FALSE,
-                         $includeBlocked = FALSE, $orderBy = 'surfer_handle') {
+  function searchSurfers($pattern, $searchFields = NULL,
+                         $includeBlocked = FALSE, $orderBy = 'surfer_handle',
+                         $limit  = NULL, $offset = NULL, $patternFirstChar = FALSE) {
     $result = array();
-
-    include_once(PAPAYA_INCLUDE_PATH.'system/base_searchstringparser.php');
-    $parser = new searchStringParser();
-    if ($handleOnly) {
+    // backward compatibility for search fields parameter, handle only mode
+    if ($searchFields === TRUE) {
       $searchFields = array('surfer_handle');
-    } else {
+    } elseif ($searchFields === FALSE || $searchFields === NULL) {
       $searchFields = array('surfer_handle', 'surfer_givenname', 'surfer_surname');
     }
-    if ($filter = $parser->getSQL($pattern, $searchFields, PAPAYA_SEARCH_BOOLEAN)) {
-      $sql = "SELECT surfer_id,
-                     surfer_handle,
-                     surfer_email,
-                     surfer_givenname,
-                     surfer_surname
-              FROM %s
-              WHERE ".str_replace('%', '%%', $filter)." %s";
-      if (in_array($orderBy, array('surfer_handle', 'surfer_email', 'surfer_surname'))) {
-        $sql .= " ORDER BY ".$orderBy." ASC";
-      }
-      $blockedClause = ($includeBlocked === FALSE) ? ' AND surfer_valid != 4' : '';
-      $sqlParams = array($this->tableSurfer, $blockedClause);
-      if ($res = $this->databaseQueryFmt($sql, $sqlParams)) {
-        while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
-          $result[$row['surfer_id']] = $row;
+    $whereCondition = '';
+    if (!is_array($pattern)) {
+      $pattern = array($pattern);
+    }
+    include_once(PAPAYA_INCLUDE_PATH.'system/base_searchstringparser.php');
+    $parser = new searchStringParser();
+    if ($patternFirstChar == TRUE) {
+      $parser->tokenMinLength = 1;
+    }
+    foreach ($pattern as $currentPattern) {
+      if ($filter = $parser->getSQL($currentPattern, $searchFields, PAPAYA_SEARCH_BOOLEAN)) {
+        if ($patternFirstChar == TRUE) {
+          $filter = str_replace("LIKE '%", "LIKE '", $filter);
         }
+        $whereCondition .= $whereCondition == '' ? " WHERE " : " OR ";
+        $whereCondition .= str_replace('%', '%%', $filter);
       }
+    }
+    if (is_array($orderBy)) {
+      $orderByField = ", CONCAT(".implode(",", $orderBy).") AS order_by";
+    } else {
+      $orderByField = "";
+    }
+    $sql = "SELECT surfer_id, surfer_handle, surfer_email,
+                   surfer_givenname, surfer_surname$orderByField
+              FROM %s
+              $whereCondition %s";
+    if (in_array($orderBy, array('surfer_handle', 'surfer_email', 'surfer_surname'))) {
+      $sql .= " ORDER BY ".$orderBy." ASC";
+    } elseif (is_array($orderBy)) {
+      $sql .= " ORDER BY order_by ASC";
+    }
+    $blockedClause = empty($whereCondition) ? " WHERE " : " AND ";
+    $blockedClause .= ($includeBlocked === FALSE) ? ' surfer_valid != 4' : '';
+    $sqlParams = array($this->tableSurfer, $blockedClause);
+    if ($res = $this->databaseQueryFmt($sql, $sqlParams, $limit, $offset)) {
+      while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
+        if (isset($row['order_by'])) {
+          unset($row['order_by']);
+        }
+        $result[$row['surfer_id']] = $row;
+      }
+      $this->surfersAbsCount = $res->absCount();
     }
     return $result;
   }

@@ -629,18 +629,21 @@ class connector_surfers extends base_connector {
   *
   * @see existID() for behavior on blocked surfers
   * @see surfer_admin::searchSurfers Detailed description
-  * @access public
-  * @param string $pattern Search pattern
-  * @param boolean $handleOnlyset to TRUE if you only want to search in surfer handles
+  * @param string|array $pattern Search pattern or multiple search patterns
+  * @param array|NULL $searchFields NULL = surfer_handle, surfer_givenname, surfer_surname
   * @param boolean $includeBlocked Seach in blocked surfers too
-  * @param string $orderBy Order search results by a given (NULL = disabled)
+  * @param string|array $orderBy One column or multiple column names (NULL = disabled)
+  * @param integer $limit max results to fetch
+  * @param integer $offset fetch results from offset
+  * @param boolean $patternFirstChar using a pattern to get the first char of result string
   * @return array $result Surfers data (id, handle, email, givenname, surfname)
   */
-  function searchSurfers($pattern, $handleOnly = FALSE,
-                         $includeBlocked = FALSE, $orderBy = 'surfer_handle') {
+  function searchSurfers($pattern, $searchFields = NULL,
+                         $includeBlocked = FALSE, $orderBy = 'surfer_handle',
+                         $limit = NULL, $offset = NULL, $patternFirstChar = FALSE) {
     $this->_initSurferAdmin();
     return $this->surferAdmin->searchSurfers(
-      $pattern, $handleOnly, $includeBlocked, $orderBy
+      $pattern, $searchFields, $includeBlocked, $orderBy, $limit, $offset, $patternFirstChar
     );
   }
 
