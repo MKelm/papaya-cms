@@ -611,10 +611,10 @@ class output_calendar extends base_calendar {
         isset($this->contentModules[$this->date['date_content_guid']])) {
       // sets module to local variable and content from date to xml
       $module = $this->contentModules[$this->date['date_content_guid']];
-      $content = (strpos($this->date['date_data'], '<data>') === 0) ?
+      $content = (strpos($this->date['date_data'], '<data') === 0) ?
         $this->date['date_data'] :
       sprintf(
-        '<data><data-element name="text"><![CDATA[%s]]></data-element></data>',
+        '<data version="2"><data-element name="text"><![CDATA[%s]]></data-element></data>',
         papaya_strings::escapeHTMLChars($this->date['date_data'])
       );
       // uses getModuleEdit to get content formular
