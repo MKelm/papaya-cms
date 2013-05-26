@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Skins-Default
-* @version $Id: css.style.php 38398 2013-04-17 10:10:14Z weinert $
+* @version $Id: css.style.php 38504 2013-05-24 17:32:14Z weinert $
 */
 
 /**
@@ -899,6 +899,7 @@ table.columnGrid td.columnRight {
   width: 100%;
 }
 #workarea table.dialog {
+  float: left;
   margin: 0;
   padding: 0;
   width: 100%;

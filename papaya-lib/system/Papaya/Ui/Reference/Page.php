@@ -14,7 +14,7 @@
 *
 * @package Papaya-Library
 * @subpackage Ui
-* @version $Id: Page.php 37187 2012-07-04 10:38:10Z weinert $
+* @version $Id: Page.php 38503 2013-05-23 18:15:39Z faber $
 */
 
 /**
@@ -38,7 +38,7 @@ class PapayaUiReferencePage extends PapayaUiReference {
     'preview' => FALSE,
     'preview_time' => 0
   );
-  
+
   private $_pageReferences;
 
   /**
@@ -236,11 +236,11 @@ class PapayaUiReferencePage extends PapayaUiReference {
     $this->_pageData['fragment'] = (string)$fragment;
     return $this;
   }
-  
+
   /**
    * Getter/Setter for the page reference factory - an object that load page and domain
    * data for links.
-   * 
+   *
    * @param PapayaUiReferencePageFactory $factory
    * @return PapayaUiReferencePageFactory
    */

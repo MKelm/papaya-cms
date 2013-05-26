@@ -14,7 +14,7 @@
 *
 * @package Papaya-Modules
 * @subpackage Beta-Wiki
-* @version $Id: content_wiki.php 37506 2012-09-05 14:03:16Z kersken $
+* @version $Id: content_wiki.php 38502 2013-05-23 15:30:26Z kersken $
 */
 
 /**
@@ -581,9 +581,9 @@ class content_wiki extends base_content {
         papaya_strings::escapeHTMLChars($fileData['media_description'])
       );
       $result .= sprintf(
-        '<size caption="%s">%d</size>'.LF,
+        '<size caption="%s">%s</size>'.LF,
         papaya_strings::escapeHTMLChars($this->data['caption_file_size']),
-        papaya_strings::escapeHTMLChars($fileInfo['file_size'])
+        PapayaUtilBytes::toString((int)$fileInfo['file_size'])
       );
       $result .= sprintf(
         '<type caption="%s">%s</type>'.LF,
