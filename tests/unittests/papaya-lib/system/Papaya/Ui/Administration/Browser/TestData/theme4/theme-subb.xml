@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<papaya-theme>
+  <name>Theme 4 B</name>
+  <templates directory="theme-4" />
+  <version number="6.7" date="2009-12-31" />
+  <author>Papaya Software GmbH</author>
+  <description>This is the 4th test theme with B.</description>
+  <sub-theme>subb</sub-theme>
+</papaya-theme>

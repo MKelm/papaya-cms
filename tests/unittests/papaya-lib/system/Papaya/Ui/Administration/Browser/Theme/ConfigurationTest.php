@@ -14,14 +14,16 @@ class PapayaUiAdministrationBrowserThemeConfigurationTest extends PapayaTestCase
   */
   public function testGetThemeConfigurationWithAllFields() {
     $expected = array(
-      'name' => 'Theme 1',
-      'templates' => 'theme-1',
-      'version' => '1.0',
-      'date' => '2010-04-07',
-      'author' => 'Papaya Software GmbH',
-      'description' => 'This is the 1st test theme.',
-      'thumbMedium' => 'thumb1_theme1.jpg',
-      'thumbLarge' => 'thumb2_theme1.jpg'
+      '' => array(
+        'name' => 'Theme 1',
+        'templates' => 'theme-1',
+        'version' => '1.0',
+        'date' => '2010-04-07',
+        'author' => 'Papaya Software GmbH',
+        'description' => 'This is the 1st test theme.',
+        'thumbMedium' => 'thumb1_theme1.jpg',
+        'thumbLarge' => 'thumb2_theme1.jpg'
+      )
     );
     $themePath = dirname(__FILE__).'/../TestData/theme1';
     $themeObject = new PapayaUiAdministrationBrowserThemeConfiguration();
@@ -33,14 +35,16 @@ class PapayaUiAdministrationBrowserThemeConfigurationTest extends PapayaTestCase
   */
   public function testGetThemeConfigurationOnlyWithNameAndTemplates() {
     $expected = array(
-      'name' => 'Theme 2',
-      'templates' => 'theme-2',
-      'version' => '',
-      'date' => '',
-      'author' => '',
-      'description' => '',
-      'thumbMedium' => '',
-      'thumbLarge' => ''
+      '' => array(
+        'name' => 'Theme 2',
+        'templates' => 'theme-2',
+        'version' => '',
+        'date' => '',
+        'author' => '',
+        'description' => '',
+        'thumbMedium' => '',
+        'thumbLarge' => ''
+      )
     );
     $themePath = dirname(__FILE__).'/../TestData/theme2';
     $themeObject = new PapayaUiAdministrationBrowserThemeConfiguration();
@@ -52,16 +56,59 @@ class PapayaUiAdministrationBrowserThemeConfigurationTest extends PapayaTestCase
   */
   public function testGetThemeConfigurationWithoutThumbs() {
     $expected = array(
-      'name' => 'Theme 3',
-      'templates' => 'theme-3',
-      'version' => '6.7',
-      'date' => '2009-12-31',
-      'author' => 'Papaya Software GmbH',
-      'description' => 'This is the 3rd test theme.',
-      'thumbMedium' => '',
-      'thumbLarge' => ''
+      '' => array(
+        'name' => 'Theme 3',
+        'templates' => 'theme-3',
+        'version' => '6.7',
+        'date' => '2009-12-31',
+        'author' => 'Papaya Software GmbH',
+        'description' => 'This is the 3rd test theme.',
+        'thumbMedium' => '',
+        'thumbLarge' => ''
+      )
     );
     $themePath = dirname(__FILE__).'/../TestData/theme3';
+    $themeObject = new PapayaUiAdministrationBrowserThemeConfiguration();
+    $this->assertSame($expected, $themeObject->getThemeConfiguration($themePath));
+  }
+
+  /**
+  * @covers PapayaUiAdministrationBrowserThemeConfiguration::getThemeConfiguration
+  */
+  public function testGetThemeConfigurationWithSubThemes() {
+    $expected = array(
+      '' => array(
+        'name' => 'Theme 4',
+        'templates' => 'theme-4',
+        'version' => '6.7',
+        'date' => '2009-12-31',
+        'author' => 'Papaya Software GmbH',
+        'description' => 'This is the 4th test theme.',
+        'thumbMedium' => '',
+        'thumbLarge' => ''
+      ),
+      'suba' => array(
+        'name' => 'Theme 4 A',
+        'templates' => 'theme-4',
+        'version' => '6.7',
+        'date' => '2009-12-31',
+        'author' => 'Papaya Software GmbH',
+        'description' => 'This is the 4th test theme with A.',
+        'thumbMedium' => '',
+        'thumbLarge' => ''
+      ),
+      'subb' => array(
+        'name' => 'Theme 4 B',
+        'templates' => 'theme-4',
+        'version' => '6.7',
+        'date' => '2009-12-31',
+        'author' => 'Papaya Software GmbH',
+        'description' => 'This is the 4th test theme with B.',
+        'thumbMedium' => '',
+        'thumbLarge' => ''
+      )
+    );
+    $themePath = dirname(__FILE__).'/../TestData/theme4';
     $themeObject = new PapayaUiAdministrationBrowserThemeConfiguration();
     $this->assertSame($expected, $themeObject->getThemeConfiguration($themePath));
   }

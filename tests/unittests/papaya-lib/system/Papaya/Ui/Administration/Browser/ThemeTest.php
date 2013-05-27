@@ -450,10 +450,55 @@ class PapayaUiAdministrationBrowserThemeTest extends PapayaTestCase {
   public function callbackGetThemeConfiguration($directory) {
     $themes = array(
       'theme3' => array(
-        'name' => 'Theme 3',
-        'templates' => 'theme3',
-        'thumbMedium' => 'thumb1_theme3.jpg',
-        'thumbLarge' => 'thumb2_theme3.jpg'
+        '' => array(
+          'name' => 'Theme 3',
+          'templates' => 'theme3',
+          'thumbMedium' => 'thumb1_theme3.jpg',
+          'thumbLarge' => 'thumb2_theme3.jpg'
+        )
+      ),
+      'theme2' => array(
+        '' => array(
+          'name' => 'Theme 2',
+          'templates' => 'theme2',
+          'thumbMedium' => 'thumb1_theme2.jpg',
+          'thumbLarge' => 'thumb2_theme2.jpg'
+        )
+      ),
+      'theme1' => array(
+        '' => array(
+          'name' => 'Theme 1',
+          'templates' => 'theme1',
+          'thumbMedium' => '',
+          'thumbLarge' => ''
+        )
+      )
+    );
+    return $themes[basename($directory)];
+  }
+
+  /**
+  * @covers PapayaUiAdministrationBrowserTheme::getThemes
+  */
+  public function testGetThemesWithSubThemes() {
+    $expected = array(
+      'theme1' => array(
+        'name' => 'Theme 1',
+        'templates' => 'theme1',
+        'thumbMedium' => '',
+        'thumbLarge' => ''
+      ),
+      'theme1-subthemea' => array(
+        'name' => 'Theme 1 Subtheme A',
+        'templates' => 'theme1',
+        'thumbMedium' => '',
+        'thumbLarge' => ''
+      ),
+      'theme1-subthemeb' => array(
+        'name' => 'Theme 1 Subtheme B',
+        'templates' => 'theme1',
+        'thumbMedium' => '',
+        'thumbLarge' => ''
       ),
       'theme2' => array(
         'name' => 'Theme 2',
@@ -461,11 +506,76 @@ class PapayaUiAdministrationBrowserThemeTest extends PapayaTestCase {
         'thumbMedium' => 'thumb1_theme2.jpg',
         'thumbLarge' => 'thumb2_theme2.jpg'
       ),
+      'theme3' => array(
+        'name' => 'Theme 3',
+        'templates' => 'theme3',
+        'thumbMedium' => 'thumb1_theme3.jpg',
+        'thumbLarge' => 'thumb2_theme3.jpg'
+      ),
+      'theme3-subthemea' => array(
+        'name' => 'Theme 3 Subtheme A',
+        'templates' => 'theme3',
+        'thumbMedium' => 'thumb1_theme3.jpg',
+        'thumbLarge' => 'thumb2_theme3.jpg'
+      ),
+    );
+    $themeObject = $this->_getThemeObjectFixture();
+    $themeObject->setThemesPath(dirname(__FILE__).'/TestData/');
+    $configurationObject = $this->getMock('PapayaUiAdministrationBrowserThemeConfiguration');
+    $configurationObject
+      ->expects($this->exactly(3))
+      ->method('getThemeConfiguration')
+      ->with($this->isType('string'))
+      ->will(
+        $this->returnCallback(array($this, 'callbackGetThemeConfigurationWithSubThemes'))
+      );
+    $themeObject->setThemeConfigurationObject($configurationObject);
+    $this->assertEquals($expected, $themeObject->getThemes());
+  }
+
+  public function callbackGetThemeConfigurationWithSubThemes($directory) {
+    $themes = array(
+      'theme3' => array(
+        '' => array(
+          'name' => 'Theme 3',
+          'templates' => 'theme3',
+          'thumbMedium' => 'thumb1_theme3.jpg',
+          'thumbLarge' => 'thumb2_theme3.jpg'
+        ),
+        'subthemea' => array(
+          'name' => 'Theme 3 Subtheme A',
+          'templates' => 'theme3',
+          'thumbMedium' => 'thumb1_theme3.jpg',
+          'thumbLarge' => 'thumb2_theme3.jpg'
+        )
+      ),
+      'theme2' => array(
+        '' => array(
+          'name' => 'Theme 2',
+          'templates' => 'theme2',
+          'thumbMedium' => 'thumb1_theme2.jpg',
+          'thumbLarge' => 'thumb2_theme2.jpg'
+        )
+      ),
       'theme1' => array(
-        'name' => 'Theme 1',
-        'templates' => 'theme1',
-        'thumbMedium' => '',
-        'thumbLarge' => ''
+        '' => array(
+          'name' => 'Theme 1',
+          'templates' => 'theme1',
+          'thumbMedium' => '',
+          'thumbLarge' => ''
+        ),
+        'subthemea' => array(
+          'name' => 'Theme 1 Subtheme A',
+          'templates' => 'theme1',
+          'thumbMedium' => '',
+          'thumbLarge' => ''
+        ),
+        'subthemeb' => array(
+          'name' => 'Theme 1 Subtheme B',
+          'templates' => 'theme1',
+          'thumbMedium' => '',
+          'thumbLarge' => ''
+        )
       )
     );
     return $themes[basename($directory)];

@@ -48,6 +48,45 @@ class PapayaThemeHandlerTest extends PapayaTestCase {
   /**
   * @covers PapayaThemeHandler::getUrl
   */
+  public function testGetUrlWithSubThemeName() {
+    $url = $this->getMock('PapayaUrl', array('getHostUrl'));
+    $url
+      ->expects($this->once())
+      ->method('getHostUrl')
+      ->will($this->returnValue('http://test.tld'));
+    $request = $this->getMock('PapayaRequest', array('getParameter', 'getUrl'));
+    $request
+      ->expects($this->once())
+      ->method('getParameter')
+      ->will($this->returnValue(FALSE));
+    $request
+      ->expects($this->once())
+      ->method('getUrl')
+      ->will($this->returnValue($url));
+    $handler = new PapayaThemeHandler();
+    $handler->papaya(
+      $this->getMockApplicationObject(
+        array(
+          'Request' => $request,
+          'Options' => $this->getMockConfigurationObject(
+            array(
+             'PAPAYA_CDN_THEMES' => '',
+             'PAPAYA_PATH_THEMES' => '/themes/',
+             'PAPAYA_LAYOUT_THEME' => 'theme-subtheme'
+            )
+          )
+        )
+      )
+    );
+    $this->assertEquals(
+      'http://test.tld/themes/theme/',
+      $handler->getUrl()
+    );
+  }
+
+  /**
+  * @covers PapayaThemeHandler::getUrl
+  */
   public function testGetUrlWithThemeNameParameter() {
     $url = $this->getMock('PapayaUrl', array('getHostUrl'));
     $url
@@ -77,6 +116,65 @@ class PapayaThemeHandlerTest extends PapayaTestCase {
     $this->assertEquals(
       'http://test.tld/themes/sample/',
       $handler->getUrl('sample')
+    );
+  }
+
+  /**
+  * @covers PapayaThemeHandler::getUrl
+  */
+  public function testGetUrlWithSubThemeNameParameter() {
+    $url = $this->getMock('PapayaUrl', array('getHostUrl'));
+    $url
+      ->expects($this->once())
+      ->method('getHostUrl')
+      ->will($this->returnValue('http://test.tld'));
+    $request = $this->getMock('PapayaRequest', array('getParameter', 'getUrl'));
+    $request
+      ->expects($this->once())
+      ->method('getUrl')
+      ->will($this->returnValue($url));
+    $handler = new PapayaThemeHandler();
+    $handler->papaya(
+      $this->getMockApplicationObject(
+        array(
+          'Request' => $request,
+          'Options' => $this->getMockConfigurationObject(
+            array(
+             'PAPAYA_CDN_THEMES' => '',
+             'PAPAYA_PATH_THEMES' => '/themes/',
+             'PAPAYA_LAYOUT_THEME' => 'theme-subtheme'
+            )
+          )
+        )
+      )
+    );
+    $this->assertEquals(
+      'http://test.tld/themes/theme/',
+      $handler->getUrl('theme-subtheme')
+    );
+  }
+
+  /**
+  * @covers PapayaThemeHandler::getUrl
+  */
+  public function testGetThemeAndSubTheme() {
+    $handler = new PapayaThemeHandler();
+    $handler->papaya(
+      $this->getMockApplicationObject(
+        array(
+          'Options' => $this->getMockConfigurationObject(
+            array(
+             'PAPAYA_CDN_THEMES' => '',
+             'PAPAYA_PATH_THEMES' => '/themes/',
+             'PAPAYA_LAYOUT_THEME' => 'theme-subtheme'
+            )
+          )
+        )
+      )
+    );
+    $this->assertEquals(
+      'theme-subtheme',
+      $handler->getTheme().'-'.$handler->getSubTheme('theme-subtheme')
     );
   }
 
@@ -192,6 +290,31 @@ class PapayaThemeHandlerTest extends PapayaTestCase {
     $this->assertEquals(
       '/document/root/themes/theme/',
       $handler->getLocalThemePath()
+    );
+  }
+
+  /**
+  * @covers PapayaThemeHandler::getLocalThemePath
+  * @backupGlobals enabled
+  */
+  public function testGetLocalThemePathWithSubThemeParameter() {
+    $_SERVER['DOCUMENT_ROOT'] = '/document/root';
+    $handler = new PapayaThemeHandler();
+    $handler->papaya(
+      $this->getMockApplicationObject(
+        array(
+          'Options' => $this->getMockConfigurationObject(
+            array(
+             'PAPAYA_PATH_THEMES' => '/themes/',
+             'PAPAYA_LAYOUT_THEME' => 'theme-subtheme'
+            )
+          )
+        )
+      )
+    );
+    $this->assertEquals(
+      '/document/root/themes/theme/',
+      $handler->getLocalThemePath('theme-subtheme')
     );
   }
 

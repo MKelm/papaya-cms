@@ -63,7 +63,7 @@ class PapayaUiAdministrationBrowserThemeConfiguration {
     $result = array();
     $document = $this->getDOMDocumentObject();
 
-    if ($directory = opendir($themePath)) {
+    if (is_dir($themePath) && $directory = opendir($themePath)) {
       while ($fileName = readdir($directory)) {
         if (is_file($themePath.'/'.$fileName) &&
             preg_match($this->_themeConfigurationFile, $fileName)) {
