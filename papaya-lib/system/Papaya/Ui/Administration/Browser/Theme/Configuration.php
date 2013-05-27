@@ -35,7 +35,7 @@ class PapayaUiAdministrationBrowserThemeConfiguration {
   * XML configuration file of theme.
   * @var string
   */
-  private $_themeConfigurationFile = 'theme.xml';
+  private $_themeConfigurationFile = '~theme(-.+)?\.xml~i';
 
   /***************************************************************************/
   /** Methods                                                                */
@@ -62,32 +62,52 @@ class PapayaUiAdministrationBrowserThemeConfiguration {
   public function getThemeConfiguration($themePath) {
     $result = array();
     $document = $this->getDOMDocumentObject();
-    $xmlFile = $themePath . '/' . $this->_themeConfigurationFile;
-    if ($this->loadXml($xmlFile)) {
-      $xpath = new DOMXPath($document);
-      $result['name'] = $xpath->evaluate('string(//papaya-theme/name)', $document);
-      $result['templates'] = $xpath->evaluate(
-        'string(//papaya-theme/templates/@directory)',
-        $document
-      );
-      $result['version'] = $xpath->evaluate(
-        'string(//papaya-theme/version/@number)',
-        $document
-      );
-      $result['date'] = $xpath->evaluate(
-        'string(//papaya-theme/version/@date)',
-        $document
-      );
-      $result['author'] = $xpath->evaluate('string(//papaya-theme/author)', $document);
-      $result['description'] = $xpath->evaluate('string(//papaya-theme/description)', $document);
-      $result['thumbMedium'] = $xpath->evaluate(
-        "string(//papaya-theme/thumbs/thumb[@size = 'medium']/@src)",
-        $document
-      );
-      $result['thumbLarge'] = $xpath->evaluate(
-        "string(//papaya-theme/thumbs/thumb[@size = 'large']/@src)",
-        $document
-      );
+
+    if ($directory = opendir($themePath)) {
+      while ($fileName = readdir($directory)) {
+        if (is_file($themePath.'/'.$fileName) &&
+            preg_match($this->_themeConfigurationFile, $fileName)) {
+          $xmlFile = $themePath . '/' . $fileName;
+          if ($this->loadXml($xmlFile)) {
+            $xpath = new DOMXPath($document);
+            $config['name'] = $xpath->evaluate('string(//papaya-theme/name)', $document);
+            $config['templates'] = $xpath->evaluate(
+              'string(//papaya-theme/templates/@directory)',
+              $document
+            );
+            $config['version'] = $xpath->evaluate(
+              'string(//papaya-theme/version/@number)',
+              $document
+            );
+            $config['date'] = $xpath->evaluate(
+              'string(//papaya-theme/version/@date)',
+              $document
+            );
+            $config['author'] = $xpath->evaluate('string(//papaya-theme/author)', $document);
+            $config['description'] = $xpath->evaluate('string(//papaya-theme/description)', $document);
+            $config['thumbMedium'] = $xpath->evaluate(
+              "string(//papaya-theme/thumbs/thumb[@size = 'medium']/@src)",
+              $document
+            );
+            $config['thumbLarge'] = $xpath->evaluate(
+              "string(//papaya-theme/thumbs/thumb[@size = 'large']/@src)",
+              $document
+            );
+            $subTheme = $xpath->evaluate(
+              'string(//papaya-theme/sub-theme)',
+              $document
+            );
+            if (empty($subTheme)) {
+              $subTheme = '';
+            }
+            $result[$subTheme] = $config;
+          }
+        }
+      }
+      closedir($directory);
+    }
+    if (count($result) > 0) {
+      ksort($result);
     }
     return $result;
   }

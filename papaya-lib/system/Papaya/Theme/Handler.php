@@ -26,6 +26,11 @@
 class PapayaThemeHandler extends PapayaObject {
 
   /**
+   * Name of sub theme.
+   */
+  protected $_subThemeName = NULL;
+
+  /**
   * Get url for theme files, is $themeName is empty the current theme is used.
   *
   * @param string $themeName
@@ -51,10 +56,15 @@ class PapayaThemeHandler extends PapayaObject {
       );
     }
     if (empty($themeName)) {
-      return $baseUrl.$this->getTheme().'/';
+      $themeName = $this->getTheme();
     } else {
-      return $baseUrl.$themeName.'/';
+      $themeNameParts = explode('-', $themeName);
+      if (count($themeNameParts) == 2) {
+        $themeName = $themeNameParts[0];
+        $this->_subThemeName = $themeNameParts[1];
+      }
     }
+    return $baseUrl.$themeName.'/';
   }
 
   /**
@@ -125,7 +135,21 @@ class PapayaThemeHandler extends PapayaObject {
         ->options
         ->getOption('PAPAYA_LAYOUT_THEME');
     }
+    $themeNameParts = explode('-', $theme);
+    if (count($themeNameParts) == 2) {
+      $theme = $themeNameParts[0];
+      $this->_subThemeName = $themeNameParts[1];
+    }
     return $theme;
+  }
+
+  /**
+  * Get the currently active sub theme name
+  *
+  * @return string
+  */
+  public function getSubTheme() {
+    return $this->_subThemeName;
   }
 
   /**

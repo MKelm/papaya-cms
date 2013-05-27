@@ -1534,6 +1534,7 @@ class papaya_page extends base_object {
       }
       $themeHandler = new PapayaThemeHandler();
       $this->layout->setParam('PAGE_THEME', $themeHandler->getTheme());
+      $this->layout->setParam('PAGE_SUB_THEME', $themeHandler->getSubTheme());
       $this->layout->setParam('PAGE_THEME_SET', $themeHandler->getThemeSet());
       $this->layout->setParam('PAGE_THEME_PATH', $themeHandler->getUrl());
       $this->layout->setParam('PAGE_THEME_PATH_LOCAL', $themeHandler->getLocalThemePath());

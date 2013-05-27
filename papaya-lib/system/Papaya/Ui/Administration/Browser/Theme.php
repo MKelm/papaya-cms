@@ -353,10 +353,16 @@ class PapayaUiAdministrationBrowserTheme extends PapayaUiAdministrationBrowser {
       while ($directoryName = readdir($directory)) {
         if (is_dir($themesPath.$directoryName) && substr($directoryName, 0, 1) != '.') {
           $currentConfiguration = $configuration->getThemeConfiguration(
-            $themesPath . $directoryName
+            $themesPath.$directoryName
           );
           if (!empty($currentConfiguration)) {
-            $result[$directoryName] = $currentConfiguration;
+            foreach ($currentConfiguration as $subTheme => $values) {
+              if (empty($subTheme)) {
+                $result[$directoryName] = $values;
+              } else {
+                $result[$directoryName.'-'.$subTheme] = $values;
+              }
+            }
           }
         }
       }
