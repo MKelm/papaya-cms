@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Core
-* @version $Id: base_urlmounter.php 37755 2012-11-30 12:03:46Z weinert $
+* @version $Id: base_urlmounter.php 38509 2013-05-29 15:30:38Z weinert $
 */
 
 
@@ -96,7 +96,7 @@ class base_urlmounter extends base_db {
   function load($paths) {
     $this->_aliases = array();
     $filter = str_replace('%', '%%', $this->databaseGetSQLCondition('a.path', $paths));
-    $sql = "SELECT a.path, a.topic_id,
+    $sql = "SELECT a.path, a.path_pattern, a.topic_id,
                    a.url_domain, a.url_params, a.url_redirectmode, a.target_url,
                    l.lng_ident, f.viewmode_ext,
                    tt.topic_title, tt.meta_title, tt.meta_keywords, tt.meta_descr,
@@ -297,22 +297,42 @@ class base_urlmounter extends base_db {
     $paths[] = $path;
     $paths = array_reverse($paths);
     $this->load($paths);
+    $result = FALSE;
     if (is_array($this->_aliases) && count($this->_aliases) > 0) {
       $hostName = (empty($_SERVER['HTTP_HOST']) ? '' : $_SERVER['HTTP_HOST']);
       foreach ($paths as $aliasPath) {
         if (isset($this->_aliases[$hostName.$aliasPath])) {
           $this->pathAlias = $aliasPath;
-          return $this->_aliases[$hostName.$aliasPath];
+          $result = $this->_aliases[$hostName.$aliasPath];
+          break;
         } elseif (isset($this->_aliases['*'.$aliasPath])) {
           $this->pathAlias = $aliasPath;
-          return $this->_aliases['*'.$aliasPath];
+          $result = $this->_aliases['*'.$aliasPath];
+          break;
         } elseif (isset($this->_aliases[$aliasPath])) {
           $this->pathAlias = $aliasPath;
-          return $this->_aliases[$aliasPath];
+          $result = $this->_aliases[$aliasPath];
+          break;
+        }
+      }
+      if ($result && substr($result['path'], -2) == '/*') {
+        $result['path_data'] = array();
+        $data = explode('/', substr($path, strlen($result['path']) - 2));
+        if ($patterns = explode('/', $result['path_pattern'])) {
+          foreach ($patterns as $index => $pattern) {
+            if (preg_match('(^\\{[^/}]+\\}$)', $pattern) &&
+                isset($data[$index])) {
+              $result['path_data'][$pattern] = $data[$index];
+            }
+          }
+          $keys = array_keys($result['path_data']);
+          $values = array_values($result['path_data']);
+          $result['url_params'] = str_replace($keys, $values, $result['url_params']);
+          $result['target_url'] = str_replace($keys, $values, $result['target_url']);
         }
       }
     }
-    return FALSE;
+    return $result;
   }
 
   /**

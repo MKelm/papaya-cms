@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Core
-* @version $Id: base_topic.php 38488 2013-05-14 10:03:48Z weinert $
+* @version $Id: base_topic.php 38507 2013-05-27 12:39:00Z weinert $
 */
 
 /**
@@ -333,6 +333,9 @@ class base_topic extends base_db {
         return $result;
       } else {
         include_once(PAPAYA_INCLUDE_PATH.'system/papaya_parser.php');
+        if ($this->moduleObj instanceOf PapayaPluginConfigurable) {
+          $this->moduleObj->configuration()->merge($parseParams);
+        }
         if (!$pageContent) {
           $teaser = FALSE;
           if ($this->moduleObj instanceOf PapayaPluginQuoteable) {

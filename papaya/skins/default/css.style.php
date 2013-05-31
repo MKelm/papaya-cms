@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Skins-Default
-* @version $Id: css.style.php 38504 2013-05-24 17:32:14Z weinert $
+* @version $Id: css.style.php 38505 2013-05-27 09:40:30Z weinert $
 */
 
 /**
@@ -620,6 +620,18 @@ table.columnGrid td.columnRight {
   border-right-color: <?php echo PAPAYA_BORDERCOLOR_DOWN; ?>;
   border-top: none;
   width: 100%;
+}
+#workarea div.panel div.panelBody > table,
+#workarea div.panel div.panelBody > form {
+  float: left;
+}
+#workarea div.panel div.panelBody:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 #workarea div.panel div.panelBody div.menuBar ul li.button a.caption {
   margin: 2px;

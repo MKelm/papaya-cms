@@ -14,7 +14,7 @@
 *
 * @package Papaya-Library
 * @subpackage Modules-Standard
-* @version $Id: Article.php 38489 2013-05-15 10:46:34Z weinert $
+* @version $Id: Article.php 38507 2013-05-27 12:39:00Z weinert $
 */
 
 /*
@@ -27,12 +27,15 @@ class PapayaModuleStandardArticle
   extends
     PapayaObject
   implements
+    PapayaPluginConfigurable,
     PapayaPluginAppendable,
     PapayaPluginQuoteable,
     PapayaPluginEditable,
     PapayaPluginCacheable {
 
   private $_content = NULL;
+  private $_configuration = NULL;
+
   private $_editor = NULL;
   private $_cacheDefiniton = NULL;
 
@@ -51,7 +54,7 @@ class PapayaModuleStandardArticle
   public function appendTo(PapayaXmlElement $parent) {
     $filters = $this->filters();
     $filters->prepare(
-      $this->content()->get('text', '')
+      $this->content()->get('text', ''), $this->configuration()
     );
     $parent->appendElement('title', array(), $this->content()->get('title', ''));
     $parent->appendElement('teaser')->appendXml($this->content()->get('teaser', ''));
@@ -85,6 +88,22 @@ class PapayaModuleStandardArticle
       $this->_content->callbacks()->onCreateEditor = array($this, 'createEditor');
     }
     return $this->_content;
+  }
+
+  /**
+   * The configuration is an {@see ArrayObject} containing options that can affect the
+   * execution of other methods (like appendTo()).
+   *
+   * @see PapayaPluginConfigurable::configuration()
+   * @param PapayaObjectParameters $configuration
+   */
+  public function configuration(PapayaObjectParameters $configuration = NULL) {
+    if (isset($configuration)) {
+      $this->_configuration = $configuration;
+    } elseif (NULL == $this->_configuration) {
+      $this->_configuration = new PapayaObjectParameters();
+    }
+    return $this->_configuration;
   }
 
   /**

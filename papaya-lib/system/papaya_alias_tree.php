@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Administration
-* @version $Id: papaya_alias_tree.php 37745 2012-11-29 15:45:30Z weinert $
+* @version $Id: papaya_alias_tree.php 38509 2013-05-29 15:30:38Z weinert $
 */
 
 
@@ -238,7 +238,7 @@ class papaya_alias_tree extends base_db {
   function load() {
     unset($this->aliases);
     unset($this->links);
-    $sql = "SELECT a.id, a.path, a.topic_id as alias_topic_id,
+    $sql = "SELECT a.id, a.path, a.path_pattern, a.topic_id as alias_topic_id,
                    a.url_domain, a.url_redirectmode, a.target_url,
                    t.topic_id, t.topic_modified, tt.topic_title,
                    tp.topic_modified as topic_published,
@@ -278,7 +278,7 @@ class papaya_alias_tree extends base_db {
   function loadAlias($aliasId) {
     unset($this->alias);
     $sql = "SELECT id, lng_id, viewmode_id,
-                   topic_id, path,
+                   topic_id, path, path_pattern,
                    url_domain, url_params, url_redirectmode,
                    target_url,
                    module_guid, module_params
@@ -554,6 +554,7 @@ class papaya_alias_tree extends base_db {
   function saveAlias($values) {
     $data = array(
       'path' => $this->checkPathSlashes($values['path']),
+      'path_pattern' => $this->checkPathSlashes($values['path_pattern']),
       'topic_id' => empty($values['topic_id']) ? 0 : (int)$values['topic_id'],
       'lng_id' => empty($values['lng_id']) ? 0 : (int)$values['lng_id'],
       'viewmode_id' => empty($values['viewmode_id']) ? 0 : (int)$values['viewmode_id'],
@@ -582,6 +583,7 @@ class papaya_alias_tree extends base_db {
   function createAlias() {
     $values = array(
       'path' => $this->checkPathSlashes($this->params['path']),
+      'path_pattern' => $this->checkPathSlashes($this->params['path_pattern']),
       'topic_id' => $this->params['topic_id'],
       'lng_id' => $this->params['lng_id'],
       'viewmode_id' => $this->params['viewmode_id'],
@@ -673,7 +675,11 @@ class papaya_alias_tree extends base_db {
           200, '', ''),
         'path' => array(
           'Alias', '(^((?:[a-zA-Z0-9.()[\]/ ,_-]+(?:/\\*?)?)|(?:/?\\*))$)u', TRUE, 'input',
-          40, '', '/path/'
+          40, 'End with * to define a dynamic part', '/path/'
+        ),
+        'path_pattern' => array(
+          'Pattern', '(^[{}a-zA-Z0-9.()[\]/ ,_-]+$)u', TRUE, 'input',
+          40, 'Applied to the dynamic part of the alias', '/{name}/'
         ),
         'url_redirectmode' => array('Mode', 'isNum', TRUE, 'combo',
           $redirectModes, '', ''),
@@ -688,7 +694,7 @@ class papaya_alias_tree extends base_db {
           'Ouput filter', 'isNum', TRUE, 'function', 'callbackViewModeList'
         );
         $fields['url_params'] = array('Params', 'isNoHTML', FALSE, 'input',
-          100, '', '');
+          1000, 'Use {name} to insert values from the dynamic part of the path', '');
       } elseif ($data['url_redirectmode'] == 2) {
         $fields['module_guid'] = array ('Module', 'isGuid', TRUE, 'function',
            'callbackModuleList');

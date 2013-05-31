@@ -3,6 +3,7 @@
   <fields>
     <field name="id" type="integer" size="8" null="no" autoinc="yes"/>
     <field name="path" type="string" size="255" null="no"/>
+    <field name="path_pattern" type="string" size="255" null="no"/>
     <field name="topic_id" type="integer" size="8" null="no"/>
     <field name="lng_id" type="integer" size="4" null="no"/>
     <field name="viewmode_id" type="integer" size="4" null="no"/>

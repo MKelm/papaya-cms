@@ -24,6 +24,6 @@
 * Project revision
 * @var string
 */
-define('PAPAYA_WEBSITE_REVISION', 'r38504+mk');
+define('PAPAYA_WEBSITE_REVISION', 'r38509+mk');
 
 ?>

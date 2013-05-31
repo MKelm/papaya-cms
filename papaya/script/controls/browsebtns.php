@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Scripts-Controls
-* @version $Id: browsebtns.php 32433 2009-10-12 15:05:00Z feder $
+* @version $Id: browsebtns.php 38508 2013-05-28 12:15:12Z faber $
 */
 
 /**

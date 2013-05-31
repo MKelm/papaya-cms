@@ -26,6 +26,7 @@ class PapayaPluginFilterContentGroup
   }
 
   public function prepare($content, $options = array()) {
+    $this->_options = $options;
     foreach ($this as $filter) {
       if ($filter instanceOf PapayaPluginFilterContent) {
         $filter->prepare($content);
