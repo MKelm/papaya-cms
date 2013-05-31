@@ -2229,12 +2229,14 @@ class surfer_admin extends base_db {
   * @param string|array $orderBy One column or multiple column names (NULL = disabled)
   * @param integer $limit max results to fetch
   * @param integer $offset fetch results from offset
-  * @param boolean $patternFirstChar using a pattern to get the first char of result string
+  * @param boolean $patternFirstChar using a pattern to get the first char of result
+  * @param array $surferIds filter results by a list of surfer ids
   * @return array $result Surfers data (id, handle, email, givenname, surfname)
   */
   function searchSurfers($pattern, $searchFields = NULL,
                          $includeBlocked = FALSE, $orderBy = 'surfer_handle',
-                         $limit  = NULL, $offset = NULL, $patternFirstChar = FALSE) {
+                         $limit  = NULL, $offset = NULL, $patternFirstChar = FALSE,
+                         $surferIds = NULL) {
     $result = array();
     // backward compatibility for search fields parameter, handle only mode
     if ($searchFields === TRUE) {
@@ -2264,6 +2266,10 @@ class surfer_admin extends base_db {
           $validFilter = FALSE;
         }
       }
+    }
+    if (!empty($surferIds) && is_array($surferIds)) {
+      $whereCondition .= $whereCondition == '' ? " WHERE " : " AND ";
+      $whereCondition .= sprintf(" surfer_id IN ('%s') ", implode("','", $surferIds));
     }
     if ($validFilter == TRUE) {
       if (is_array($orderBy)) {

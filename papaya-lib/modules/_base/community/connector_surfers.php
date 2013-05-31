@@ -636,14 +636,17 @@ class connector_surfers extends base_connector {
   * @param integer $limit max results to fetch
   * @param integer $offset fetch results from offset
   * @param boolean $patternFirstChar using a pattern to get the first char of result string
+  * @param array $surferIds filter results by a list of surfer ids
   * @return array $result Surfers data (id, handle, email, givenname, surfname)
   */
   function searchSurfers($pattern, $searchFields = NULL,
                          $includeBlocked = FALSE, $orderBy = 'surfer_handle',
-                         $limit = NULL, $offset = NULL, $patternFirstChar = FALSE) {
+                         $limit = NULL, $offset = NULL, $patternFirstChar = FALSE,
+                         $surferIds = NULL) {
     $this->_initSurferAdmin();
     return $this->surferAdmin->searchSurfers(
-      $pattern, $searchFields, $includeBlocked, $orderBy, $limit, $offset, $patternFirstChar
+      $pattern, $searchFields, $includeBlocked, $orderBy, $limit, $offset, $patternFirstChar,
+      $surferIds
     );
   }
 
