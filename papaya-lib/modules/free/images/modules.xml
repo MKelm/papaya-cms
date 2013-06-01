@@ -8,7 +8,8 @@
     <module type="image" guid="b041b47247c81b817a3f40620e96b457" name="Image Buttons" class="image_buttons" file="image_buttons.php">Generate a button with a text on an image.</module>
     <module type="image" guid="3b44894b6672335217334aa3db23104a" name="Dynamic Image Buttons" class="dyn_image_buttons" file="dyn_image_buttons.php">Generate a button with a text on images.</module>
     <module type="image" guid="e821359d50c00a33d67558242687027e" name="Image Colorizer" class="image_colored" file="image_colored.php">Colorize images.</module>
-    <module type="image" guid="0718af49240b461d9984ffe046521557" name="Image Reflection" class="ImagesImageReflection" file="Image/Reflection.php">Image Refelection</module>
+    <module type="image" guid="0718af49240b461d9984ffe046521557" name="Image Reflection" class="ImagesImageReflection" file="Image/Reflection.php">An image with a reflection effect or a reflection effect only.</module>
+    <module type="image" guid="3523604250c4400cabb939f4d7869cb7" name="Rotated Masked Image" class="ImagesRotatedMaskedImage" file="Rotated/Masked/Image.php">An image with a rotation and mask.</module>
   </modules>
   <tables>
   </tables>
