@@ -48,7 +48,8 @@ class ImagesImageReflection extends base_dynamicimage {
     'reflection_height' => array('Reflection Height', 'isNum', FALSE, 'input', 50, '', 100),
     'divider_line_height' => array('Devider Line Height', 'isNum', FALSE, 'input', 50, '', 1),
     'starting_transparency' => array('Starting Transparency', 'isNum', FALSE, 'input', 50, '', 30),
-    'background_color' => array('Background Color', 'isHTMLColor', FALSE, 'color', 7, '', '#FFFFFF')
+    'background_color' => array('Background Color', 'isHTMLColor', FALSE, 'color', 7, '', '#FFFFFF'),
+    'include_image' => array('Include Image', 'isNum', FALSE, 'yesno', NULL, NULL, 0)
   );
   /**
   * generate the image
@@ -75,8 +76,10 @@ class ImagesImageReflection extends base_dynamicimage {
         $baseThumbnail = new base_thumbnail();
         $baseThumbnail->getThumbnail(
           $this->attributes['image_guid'], NULL, $thumbnailSize, $thumbnailSize,
-          $this->attributes['thumbnail_resize_mode']
+          $this->attributes['thumbnail_resize_mode'],
+          array('bgcolor' => $this->attributes['background_color'])
         );
+
         $image = &$controller->loadImage(
           PAPAYA_PATH_DATA.'media/thumbs/'.$baseThumbnail->lastThumbFileName
         );
@@ -88,6 +91,7 @@ class ImagesImageReflection extends base_dynamicimage {
       $width = imagesx($image);
       $height = imagesy($image);
       if ($width > 0 && $height > 0) {
+        $sourceImage = $image;
 
         $reflectionHeight = $this->attributes['reflection_height'];
         $dividerLineSize = $this->attributes['divider_line_height'];
@@ -104,19 +108,21 @@ class ImagesImageReflection extends base_dynamicimage {
         imagefilledrectangle($backgroundLine, 0, 0, $width, 1, $backgroundColor);
 
         // flip image
-        $tempImage = imagecreatetruecolor($width, $reflectionHeight);
-        $rotationColor = imagecolorallocate($image, 255, 255, 255);
-        $image = imagerotate($image, 180, $rotationColor);
-        imagecopyresampled($tempImage, $image, 0, 0, 0, 0, $width, $height, $width, $height);
-        $image = $tempImage;
-        $tempImage = imagecreatetruecolor($width, $reflectionHeight);
-        for ($x = 0; $x < $width; $x++) {
-          imagecopy($tempImage, $image, $x, 0, $width - $x - 1, 0, 1, $reflectionHeight);
+        $tempImage = imagecreatetruecolor($width, $height);
+        imagealphablending($tempImage, FALSE);
+        imagesavealpha($tempImage, TRUE);
+        for ($y = 0; $y < $height; $y++) {
+          imagecopy($tempImage, $image, 0, $y, 0, $height - $y - 1, $width, 1);
         }
         $image = $tempImage;
 
-        imagealphablending( $image, false );
-        imagesavealpha( $image, true );
+        $tempImage = imagecreatetruecolor($width, $reflectionHeight);
+        imagealphablending($tempImage, FALSE);
+        imagesavealpha($tempImage, TRUE);
+        for ($y = 0; $y < $reflectionHeight; $y++) {
+          imagecopy($tempImage, $image, 0, $y, 0, $y, $width, 1);
+        }
+        $image = $tempImage;
 
         // add transparency effect
         $increaseTransparency = 100 / $reflectionHeight;
@@ -131,6 +137,16 @@ class ImagesImageReflection extends base_dynamicimage {
         $dividerLine = imagecreatetruecolor($width, $dividerLineSize);
         imagecopyresized($dividerLine, $backgroundLine, 0, 0, 0, 0, $width, $dividerLineSize, $width, 1);
         imagecopymerge($image, $dividerLine, 0, 0, 0, 0, $width, $dividerLineSize, 100);
+
+        // include source image if needed
+        if ($this->attributes['include_image'] > 0) {
+          $tempImage = imagecreatetruecolor($width, $height + $reflectionHeight);
+          imagealphablending($tempImage, FALSE);
+          imagesavealpha($tempImage, TRUE);
+          imagecopy($tempImage, $sourceImage, 0, 0, 0, 0, $width, $height);
+          imagecopy($tempImage, $image, 0, $height, 0, 0, $width, $reflectionHeight);
+          $image = $tempImage;
+        }
         return $image;
       }
     }
