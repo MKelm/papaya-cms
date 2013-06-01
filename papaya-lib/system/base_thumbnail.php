@@ -111,6 +111,12 @@ class base_thumbnail extends base_object {
   var $lastThumbSize = array(0,0);
 
   /**
+   * save last thumbnail file name in buffer
+   * @var string
+   */
+  var $lastThumbFileName = NULL;
+
+  /**
   * store the memoty limit if it is changed, restore it in desctructor
   *
   * @var NULL|string
@@ -400,6 +406,7 @@ class base_thumbnail extends base_object {
                         $filter, $params = NULL) {
     $result = $this->getThumbFilePath($fileName).
       $this->getThumbFileId($fileName, $versionId, $width, $height, $imageType, $filter, $params);
+    $this->lastThumbFileName = $result;
     return $result;
   }
 
@@ -839,9 +846,9 @@ class base_thumbnail extends base_object {
             ' Needed: %s bytes Available: %s bytes.'.
             ' Increase blocked by Suhoshin in function "%s".',
             $srcFileName,
-            $orgWidth, 
+            $orgWidth,
             $orgHeight,
-            $thumbWidth, 
+            $thumbWidth,
             $thumbHeight,
             number_format($memoryNeeded, 0, '.', ','),
             number_format($suhosinMemoryLimit, 0, '.', ','),
@@ -948,9 +955,9 @@ class base_thumbnail extends base_object {
           'Can not scale "%s" from %dx%d to %dx%d. Not enough memory available.'.
           ' Needed: %s bytes Available: %s bytes. Increase blocked in function "%s".',
           $srcFileName,
-          $orgWidth, 
+          $orgWidth,
           $orgHeight,
-          $thumbWidth, 
+          $thumbWidth,
           $thumbHeight,
           number_format($memoryNeeded, 0, '.', ','),
           number_format($memoryLimit, 0, '.', ','),
