@@ -2,10 +2,6 @@
 /**
 * Generate a rotated and masked image
 *
-* Known issue: The transparency mode does not support soft edges in the reflection image,
-* because the set colored pixel function does not support alpha channel information greater than 0
-* correctly.
-*
 * @copyright 2013 by Martin Kelm
 * @link http://mkelm.github.io/papaya-cms
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, version 2
