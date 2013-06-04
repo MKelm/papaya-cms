@@ -55,6 +55,12 @@ class PapayaUiPagingSteps extends PapayaUiControl {
   protected $_currentStepSize = 0;
 
   /**
+   * Get relative Urls
+   * @var boolean
+   */
+  protected $_relativeUrls = TRUE;
+
+  /**
   * The xml names allow to define the element and attribute names of the generated xml
   *
   * @var array
@@ -73,6 +79,7 @@ class PapayaUiPagingSteps extends PapayaUiControl {
   */
   protected $_declaredProperties = array(
     'reference' => array('reference', 'reference'),
+    'relativeUrls' => array('_relativeUrls', '_relativeUrls'),
     'parameterName' => array('_parameterName', '_parameterName'),
     'currentStepSize' => array('_currentStepSize', '_currentStepSize'),
     'stepSizes' => array('getStepSizes', 'setStepSizes'),
@@ -86,7 +93,6 @@ class PapayaUiPagingSteps extends PapayaUiControl {
   * @param string $parameterName
   * @param string|integer $currentStepSize
   * @param Traversable|array $stepSizes
-  * @param integer $mode
   */
   public function __construct($parameterName, $currentStepSize, $stepSizes) {
     $this->_parameterName = $parameterName;
@@ -109,7 +115,8 @@ class PapayaUiPagingSteps extends PapayaUiControl {
       $stepSizeNode = $list->appendElement(
         $this->_xmlNames['item'],
         array(
-          $this->_xmlNames['attr-href'] => $reference->getRelative()
+          $this->_xmlNames['attr-href'] =>
+            $this->_relativeUrls ? $reference->getRelative() : $reference->get(),
         ),
         (string)$stepSize
       );

@@ -84,6 +84,12 @@ class PapayaUiPagingCount extends PapayaUiControl {
   protected $_currentPage = NULL;
 
   /**
+   * Get relative Urls
+   * @var boolean
+   */
+  public $_relativeUrls = NULL;
+
+  /**
   * The minimum page value. This is caluclated using the button limit.
   * It changes with the current page.
   *
@@ -134,6 +140,7 @@ class PapayaUiPagingCount extends PapayaUiControl {
   */
   protected $_declaredProperties = array(
     'reference' => array('reference', 'reference'),
+    'relativeUrls' => array('_relativeUrls', '_relativeUrls'),
     'parameterName' => array('_parameterName', '_parameterName'),
     'currentPage' => array('getCurrentPage', 'setCurrentPage'),
     'lastPage' => array('getLastPage'),
@@ -248,7 +255,8 @@ class PapayaUiPagingCount extends PapayaUiControl {
     $item = $parent->appendElement(
       $this->_xmlNames['item'],
       array(
-        $this->_xmlNames['attr-href'] => $reference->getRelative(),
+        $this->_xmlNames['attr-href'] =>
+          $this->_relativeUrls == TRUE ? $reference->getRelative() : $reference->get(),
         $this->_xmlNames['attr-page'] => $page
       )
     );
