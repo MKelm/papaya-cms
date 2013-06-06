@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Frontend
-* @version $Id: papaya_page.php 38496 2013-05-17 10:32:04Z weinert $
+* @version $Id: papaya_page.php 38511 2013-06-01 15:22:33Z weinert $
 */
 
 /**
@@ -501,6 +501,10 @@ class papaya_page extends base_object {
             $options->get('PAPAYA_PAGE_ERROR_PATH', 0)
           );
         }
+        exit;
+      } elseif (0 === strpos($requestURI, $options['PAPAYA_PATH_PUBLICFILES'])) {
+        $options->defineConstants();
+        $this->getMediaThumbFile(substr($requestURI, strrpos($requestURI, '/') + 1));
         exit;
       } else {
         $themeWrapperUrl = new PapayaThemeWrapperUrl();
@@ -1845,8 +1849,11 @@ class papaya_page extends base_object {
   *
   * @access public
   */
-  function getMediaThumbFile() {
-    if (!empty($this->requestData['media_id'])) {
+  function getMediaThumbFile($mediaId = NULL) {
+    if (empty($mediaId)) {
+      $mediaId = empty($this->requestData['media_id']) ? NULL : $this->requestData['media_id'];
+    }
+    if (!empty($mediaId)) {
       $mediaFilePattern = '~^
         (
          (
@@ -1860,7 +1867,7 @@ class papaya_page extends base_object {
         )
         (\.[\w\d]+)? # extension
         $~x';
-      if (preg_match($mediaFilePattern, $this->requestData['media_id'], $matches)) {
+      if (preg_match($mediaFilePattern, $mediaId, $matches)) {
         // is thumbnail
         if ($file = $this->checkMediaPerm($matches[2])) {
           $path = '';
@@ -1906,7 +1913,7 @@ class papaya_page extends base_object {
             $this->getError(404, 'Thumbnail not found', PAPAYA_PAGE_ERROR_MEDIA_THUMBNAIL);
           }
         }
-      } elseif ($file = $this->checkMediaPerm($this->requestData['media_id'])) {
+      } elseif ($file = $this->checkMediaPerm($mediaId)) {
         $this->logRequest();
         $this->outputFile($file['FILENAME'], $file);
       } else {

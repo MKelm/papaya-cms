@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Core
-* @version $Id: base_topic.php 38507 2013-05-27 12:39:00Z weinert $
+* @version $Id: base_topic.php 38515 2013-06-06 12:12:59Z weinert $
 */
 
 /**
@@ -314,7 +314,7 @@ class base_topic extends base_db {
   * @access public
   * @return string
   */
-  function parseContent($pageContent = TRUE, $parseParams = NULL, $topicTag = TRUE) {
+  function parseContent($pageContent = TRUE, $parseParams = array(), $topicTag = TRUE) {
     $result = FALSE;
     include_once(PAPAYA_INCLUDE_PATH.'system/base_pluginloader.php');
     $this->moduleObj = &base_pluginloader::getPluginInstance(
@@ -333,7 +333,7 @@ class base_topic extends base_db {
         return $result;
       } else {
         include_once(PAPAYA_INCLUDE_PATH.'system/papaya_parser.php');
-        if ($this->moduleObj instanceOf PapayaPluginConfigurable) {
+        if ($this->moduleObj instanceOf PapayaPluginConfigurable && !empty($parseParams)) {
           $this->moduleObj->configuration()->merge($parseParams);
         }
         if (!$pageContent) {

@@ -47,7 +47,7 @@ class PapayaSessionShareTest extends PapayaTestCase {
     $values
       ->expects($this->once())
       ->method('offsetExists')
-      ->with($this->equalTo(array($share, 'session_property')))
+      ->with(array('PapayaSessionShare_TestProxy', 'session_property'))
       ->will($this->returnValue(TRUE));
     $share->setSessionValues($values);
     $this->assertTrue(isset($share->sessionProperty));
@@ -64,7 +64,7 @@ class PapayaSessionShareTest extends PapayaTestCase {
     $values
       ->expects($this->once())
       ->method('offsetExists')
-      ->with($this->equalTo(array($share, 'session_property')))
+      ->with(array('PapayaSessionShare_TestProxy', 'session_property'))
       ->will($this->returnValue(FALSE));
     $share->setSessionValues($values);
     $this->assertFalse(isset($share->sessionProperty));
@@ -81,7 +81,7 @@ class PapayaSessionShareTest extends PapayaTestCase {
     $values
       ->expects($this->once())
       ->method('offsetGet')
-      ->with($this->equalTo(array($share, 'session_property')))
+      ->with(array('PapayaSessionShare_TestProxy', 'session_property'))
       ->will($this->returnValue('success'));
     $share->setSessionValues($values);
     $this->assertEquals('success', $share->sessionProperty);
@@ -98,7 +98,7 @@ class PapayaSessionShareTest extends PapayaTestCase {
     $values
       ->expects($this->once())
       ->method('offsetSet')
-      ->with($this->equalTo(array($share, 'session_property')), $this->equalTo('someValue'));
+      ->with(array('PapayaSessionShare_TestProxy', 'session_property'), 'someValue');
     $share->setSessionValues($values);
     $share->sessionProperty = 'someValue';
   }
@@ -114,7 +114,7 @@ class PapayaSessionShareTest extends PapayaTestCase {
     $values
       ->expects($this->once())
       ->method('offsetUnset')
-      ->with($this->equalTo(array($share, 'session_property')));
+      ->with(array('PapayaSessionShare_TestProxy', 'session_property'));
     $share->setSessionValues($values);
     unset($share->sessionProperty);
   }
@@ -130,7 +130,7 @@ class PapayaSessionShareTest extends PapayaTestCase {
     $values
       ->expects($this->once())
       ->method('offsetSet')
-      ->with($this->equalTo(array($share, 'session_property')), $this->equalTo('someValue'));
+      ->with(array('PapayaSessionShare_TestProxy', 'session_property'), 'someValue');
     $share->setSessionValues($values);
     $share->setSessionProperty('someValue');
   }
@@ -146,7 +146,7 @@ class PapayaSessionShareTest extends PapayaTestCase {
     $values
       ->expects($this->once())
       ->method('offsetGet')
-      ->with($this->equalTo(array($share, 'session_property')))
+      ->with(array('PapayaSessionShare_TestProxy', 'session_property'))
       ->will($this->returnValue('success'));
     $share->setSessionValues($values);
     $this->assertEquals('success', $share->getSessionProperty());

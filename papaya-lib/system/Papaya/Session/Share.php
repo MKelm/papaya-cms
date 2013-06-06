@@ -20,7 +20,7 @@
 *
 * @package Papaya
 * @subpackage Session
-* @version $Id: Share.php 36477 2011-12-03 13:25:26Z weinert $
+* @version $Id: Share.php 38510 2013-05-31 11:23:28Z weinert $
 */
 
 /**
@@ -95,7 +95,7 @@ abstract class PapayaSessionShare extends PapayaObject {
   public function __isset($name) {
     $name = $this->preparePropertyName($name);
     $values = $this->getSessionValues();
-    return isset($values[array($this, $name)]);
+    return isset($values[array($this->getGroupName(), $name)]);
   }
 
   /**
@@ -107,7 +107,7 @@ abstract class PapayaSessionShare extends PapayaObject {
   public function __get($name) {
     $name = $this->preparePropertyName($name);
     $values = $this->getSessionValues();
-    return $values[array($this, $name)];
+    return $values[array($this->getGroupName(), $name)];
   }
 
   /**
@@ -119,7 +119,7 @@ abstract class PapayaSessionShare extends PapayaObject {
   public function __set($name, $value) {
     $name = $this->preparePropertyName($name);
     $values = $this->getSessionValues();
-    $values[array($this, $name)] = $value;
+    $values[array($this->getGroupName(), $name)] = $value;
   }
 
   /**
@@ -131,7 +131,7 @@ abstract class PapayaSessionShare extends PapayaObject {
   public function __unset($name) {
     $name = $this->preparePropertyName($name);
     $values = $this->getSessionValues();
-    unset($values[array($this, $name)]);
+    unset($values[array($this->getGroupName(), $name)]);
   }
 
   /**
@@ -186,5 +186,15 @@ abstract class PapayaSessionShare extends PapayaObject {
         $name
       )
     );
+  }
+
+  /**
+   * Allow child classes to override the group name for the session values. By default this
+   * ist the current class name of the object.
+   *
+   * @return string
+   */
+  protected function getGroupName() {
+    return get_class($this);
   }
 }

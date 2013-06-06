@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Core
-* @version $Id: base_tags.php 38399 2013-04-17 10:54:10Z hallerbach $
+* @version $Id: base_tags.php 38512 2013-06-04 11:39:56Z hallerbach $
 */
 
 /**
@@ -1210,6 +1210,7 @@ class base_tags extends base_db {
   * @return array $result list of tag ids that match the given criteria
   */
   function getTagIdsByTitle($tagTitle, $categoryId = NULL, $lngId = NULL) {
+    $result = array();
     if ($lngId != NULL) {
       $lngCondition = ' AND '.str_replace(
         '%', '%%', $this->databaseGetSQLCondition('tt.lng_id', $lngId)
@@ -1230,7 +1231,7 @@ class base_tags extends base_db {
              WHERE tt.tag_title = '%s'
                    $lngCondition
                    $categoryCondition";
-    $params = array($this->tableTag, $this->tableTagTrans);
+    $params = array($this->tableTagTrans, $this->tableTag, $tagTitle);
     if ($res = $this->databaseQueryFmt($sql, $params)) {
       while ($tagId = $res->fetchField()) {
         $result[$tagId] = $tagId;

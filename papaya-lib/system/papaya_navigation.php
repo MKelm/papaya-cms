@@ -14,7 +14,7 @@
 *
 * @package Papaya
 * @subpackage Administration
-* @version $Id: papaya_navigation.php 38360 2013-04-04 10:47:15Z weinert $
+* @version $Id: papaya_navigation.php 38513 2013-06-06 09:05:23Z weinert $
 */
 
 /**
@@ -193,7 +193,7 @@ class papaya_navigation extends base_object {
   var $menuGroups = array(
     'general' => 'General',
     'pages' => 'Pages',
-    'additional' => 'Additional',
+    'additional' => 'Additional Content',
     'modules' => 'Applications',
     'administration' => 'Administration'
   );
@@ -252,7 +252,7 @@ class papaya_navigation extends base_object {
     $currentUrl = $this->papaya()->request->getUrl()->getPathUrl();
     foreach ($this->menuGroups as $groupId => $groupTitle) {
       if (isset($this->menu[$groupId])) {
-        $group = new PapayaUiToolbarGroup($groupTitle);
+        $group = new PapayaUiToolbarGroup(new PapayaUiStringTranslated($groupTitle));
         foreach ($this->menu[$groupId] as  $buttonId => $buttonData) {
           if (empty($buttonData[3]) || ($this->authUser->hasPerm($buttonData[3]))) {
             $button = new PapayaUiToolbarButton();
