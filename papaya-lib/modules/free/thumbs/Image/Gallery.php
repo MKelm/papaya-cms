@@ -364,7 +364,9 @@ class MediaImageGallery extends PapayaUiControlInteractive {
         'destination',
         array('href' => PapayaUtilStringXml::escapeAttribute($destinationImageLink))
       );
-      $destination->appendXml($destinationImageTag);
+      if ($this->_options['lightbox'] == 1) {
+        $destination->appendXml($destinationImageTag);
+      }
     }
     // image title
     if ($this->_options['display_title'] == 1 && !empty($fileTitle)) {
