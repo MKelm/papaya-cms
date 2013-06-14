@@ -431,7 +431,8 @@ class papaya_topic_tree extends base_topic_tree {
         $current = &$this->copyTopics[$topic['topic_id']];
         $oldId = $topic['topic_id'];
         $current['prev'] = $target['topic_id'];
-        $current['prev_path'] = $target['prev_path'].';'.$target['prev'].';';
+        $current['prev_path'] = $target['prev_path'].$target['prev'].';';
+        var_dump($current['prev_path']);
         unset($current['topic_id']);
         if ($newId = $this->databaseInsertRecord(
               $this->tableTopics, 'topic_id', $current)) {
