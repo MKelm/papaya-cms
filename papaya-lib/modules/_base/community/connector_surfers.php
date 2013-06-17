@@ -1187,7 +1187,7 @@ class connector_surfers extends base_connector {
     );
     $dataValues = $withDataValues == TRUE ? ', s.surferdata_values' : '';
     $sql = "SELECT s.surferdata_id, s.surferdata_name,
-                   s.surferdata_needsapproval,
+                   s.surferdata_needsapproval, s.surferdata_type,
                    sc.surfercontactdata_property,
                    sc.surfercontactdata_surferid,
                    sc.surfercontactdata_value$dataValues
@@ -1204,13 +1204,18 @@ class connector_surfers extends base_connector {
         if (!$fieldValues) {
           $fieldValues = array();
         }
+        if ($row['surferdata_type'] == 'checkgroup') {
+          $dataValue = unserialize($row['surfercontactdata_value']);
+        } else {
+          $dataValue = $row['surfercontactdata_value'];
+        }
         if ($withDataValues) {
           $fieldValues[$row['surferdata_name']] = array(
-            'value' => $row['surfercontactdata_value'],
+            'value' => $dataValue,
             'values' => new SimpleXMLElement('<root>'.$row['surferdata_values'].'</root>')
           );
         } else {
-          $fieldValues[$row['surferdata_name']] = $row['surfercontactdata_value'];
+          $fieldValues[$row['surferdata_name']] = $dataValue;
         }
       }
     }
@@ -1232,7 +1237,7 @@ class connector_surfers extends base_connector {
     );
 
     $sql = "SELECT s.surferdata_id, s.surferdata_name,
-                   s.surferdata_needsapproval,
+                   s.surferdata_needsapproval, s.surferdata_type,
                    sc.surfercontactdata_property,
                    sc.surfercontactdata_surferid,
                    sc.surfercontactdata_value,
@@ -1255,13 +1260,18 @@ class connector_surfers extends base_connector {
         if (!$fieldValues) {
           $fieldValues = array();
         }
+        if ($row['surferdata_type'] == 'checkgroup') {
+          $dataValue = unserialize($row['surfercontactdata_value']);
+        } else {
+          $dataValue = $row['surfercontactdata_value'];
+        }
         if ($withDataValues) {
           $fieldValues[$row['surferdata_name']] = array(
-            'value' => $row['surfercontactdata_value'],
+            'value' => $dataValue,
             'values' => new SimpleXMLElement('<root>'.$row['surferdata_values'].'</root>')
           );
         } else {
-          $fieldValues[$row['surferdata_name']] = $row['surfercontactdata_value'];
+          $fieldValues[$row['surferdata_name']] = $dataValue;
         }
       }
     }
