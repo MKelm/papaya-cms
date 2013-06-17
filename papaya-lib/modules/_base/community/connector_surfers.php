@@ -1020,16 +1020,16 @@ class connector_surfers extends base_connector {
   *
   * Retrieve a list of all valid dynamic profile category ids.
   *
-  * @access public
+  * @param string $orderBy 'id' or 'order'
   * @return mixed array $classes Category classes or empty
   */
-  function getProfileDataClasses() {
+  function getProfileDataClasses($orderBy = 'id') {
     $classes = NULL;
     $this->_initSurferAdmin();
     $sql = "SELECT surferdataclass_id
               FROM %s
-          ORDER BY surferdataclass_id ASC";
-    $sqlData = array($this->surferAdmin->tableDataClasses);
+          ORDER BY surferdataclass_%s ASC";
+    $sqlData = array($this->surferAdmin->tableDataClasses, $orderBy);
     if ($res = $this->surferAdmin->databaseQueryFmt($sql, $sqlData)) {
       while ($class = $res->fetchField()) {
         if (!$classes) {
