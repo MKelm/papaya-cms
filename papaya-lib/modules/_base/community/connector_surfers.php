@@ -1158,10 +1158,11 @@ class connector_surfers extends base_connector {
   * @access public
   * @param string $surferId Unique 32-char surfer id
   * @param mixed string, array, or NULL $fields One or more profile data field names
+  * @param boolean $withFieldValues get properties / multiple values of fields
   * @return array $fieldValues Field values or empty
   * @deprecated ?
   */
-  function getProfileData($profileSurferId, $fields = NULL) {
+  function getProfileData($profileSurferId, $fields = NULL, $withDataValues = FALSE) {
     $this->_initSurferAdmin();
     // First check out whether we've got a valid surfer
     include_once(PAPAYA_INCLUDE_PATH.'system/base_surfer.php');
@@ -1184,11 +1185,12 @@ class connector_surfers extends base_connector {
       '%%',
       $this->surferAdmin->databaseGetSQLCondition($filter)
     );
+    $dataValues = $withDataValues == TRUE ? ', s.surferdata_values' : '';
     $sql = "SELECT s.surferdata_id, s.surferdata_name,
                    s.surferdata_needsapproval,
                    sc.surfercontactdata_property,
                    sc.surfercontactdata_surferid,
-                   sc.surfercontactdata_value
+                   sc.surfercontactdata_value$dataValues
               FROM %s AS s, %s AS sc
              WHERE s.surferdata_available = 1
                AND s.surferdata_id = sc.surfercontactdata_property
@@ -1202,7 +1204,14 @@ class connector_surfers extends base_connector {
         if (!$fieldValues) {
           $fieldValues = array();
         }
-        $fieldValues[$row['surferdata_name']] = $row['surfercontactdata_value'];
+        if ($withDataValues) {
+          $fieldValues[$row['surferdata_name']] = array(
+            'value' => $row['surfercontactdata_value'],
+            'values' => new SimpleXMLElement('<root>'.$row['surferdata_values'].'</root>')
+          );
+        } else {
+          $fieldValues[$row['surferdata_name']] = $row['surfercontactdata_value'];
+        }
       }
     }
     // Return this as the end result if there's no valid surfer
@@ -1230,7 +1239,7 @@ class connector_surfers extends base_connector {
                    sp.surfercontactpublic_surferid,
                    sp.surfercontactpublic_partner,
                    sp.surfercontactpublic_data,
-                   sp.surfercontactpublic_public
+                   sp.surfercontactpublic_public$dataValues
               FROM %s AS s, %s AS sc, %s AS sp
              WHERE $filterStr
                AND s.surferdata_needsapproval=1
@@ -1246,7 +1255,14 @@ class connector_surfers extends base_connector {
         if (!$fieldValues) {
           $fieldValues = array();
         }
-        $fieldValues[$row['surferdata_name']] = $row['surfercontactdata_value'];
+        if ($withDataValues) {
+          $fieldValues[$row['surferdata_name']] = array(
+            'value' => $row['surfercontactdata_value'],
+            'values' => new SimpleXMLElement('<root>'.$row['surferdata_values'].'</root>')
+          );
+        } else {
+          $fieldValues[$row['surferdata_name']] = $row['surfercontactdata_value'];
+        }
       }
     }
     return $fieldValues;
