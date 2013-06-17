@@ -1748,7 +1748,8 @@ class content_profile extends base_content {
                    ct.surferdataclasstitle_lang
               FROM %s AS c LEFT OUTER JOIN %s AS ct
                 ON c.surferdataclass_id = ct.surferdataclasstitle_classid
-             WHERE ct.surferdataclasstitle_lang = %d";
+             WHERE ct.surferdataclasstitle_lang = %d
+             ORDER BY c.surferdataclass_order ASC";
     $sqlParams = array(
       $this->baseSurfers->tableDataClasses,
       $this->baseSurfers->tableDataClassTitles,
