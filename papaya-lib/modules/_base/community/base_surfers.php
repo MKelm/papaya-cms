@@ -3271,6 +3271,9 @@ class surfer_admin extends base_db {
       if (NULL === $value) {
         $value = '';
       }
+      if (is_array($value)) {
+        $value = serialize($value);
+      }
       if (isset($fieldIds[$field]) && $fieldIds[$field]['relId'] != NULL) {
         // It exists, so it needs to be replaced
         $this->databaseUpdateRecord(
