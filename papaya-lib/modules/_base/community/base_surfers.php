@@ -3584,12 +3584,14 @@ class surfer_admin extends base_db {
     if ($getClasses = TRUE) {
       $fieldSurferDataClassTitle = ", ct.surferdataclasstitle_name";
       $joinSurferDataClassTitles = sprintf(
+        "JOIN %s AS c ON (c.surferdataclass_id = d.surferdata_class) ".
         "JOIN %s AS ct ON (ct.surferdataclasstitle_classid = d.surferdata_class ".
         "AND ct.surferdataclasstitle_lang = %d)",
+        $this->tableDataClasses,
         $this->tableDataClassTitles,
         $lng
       );
-      $orderBySurferDataClassTitle = "ct.surferdataclasstitle_name, ";
+      $orderBySurferDataClassTitle = "c.surferdataclass_order, ct.surferdataclasstitle_name, ";
     } else {
       $fieldSurferDataClassTitle = '';
       $joinSurferDataClassTitles = '';
