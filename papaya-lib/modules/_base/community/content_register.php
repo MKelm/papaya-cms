@@ -1951,14 +1951,6 @@ class content_register extends base_content {
       $this->outputDialog->msgs = &$this->msgs;
       if ($loadParams) {
         $this->outputDialog->loadParams();
-        if (isset($dynFields)) {
-          // remove empty string in textareas to avoid input errors, for xhtml output
-          foreach ($dynFields as $key => $field) {
-            if (!is_numeric($key) && $field[3] == 'textarea' && isset($this->outputDialog->params[$key])) {
-              $this->outputDialog->params[$key] = trim($this->outputDialog->params[$key]);
-            }
-          }
-        }
       }
     }
   }

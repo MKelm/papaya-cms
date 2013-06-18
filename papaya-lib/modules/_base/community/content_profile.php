@@ -956,14 +956,6 @@ class content_profile extends base_content {
     $this->profileForm->addButton('reset', $this->data['caption_reset'], 'reset');
     $this->profileForm->uploadFiles = TRUE;
     $this->profileForm->dialogHideButtons = FALSE;
-    if (isset($dynFields)) {
-      // remove empty string in textareas to avoid input errors, for xhtml output
-      foreach ($dynFields as $key => $field) {
-        if (!is_numeric($key) && $field[3] == 'textarea' && isset($this->profileForm->params[$key])) {
-          $this->profileForm->params[$key] = trim($this->profileForm->params[$key]);
-        }
-      }
-    }
   }
 
   /**
