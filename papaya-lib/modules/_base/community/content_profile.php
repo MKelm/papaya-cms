@@ -1089,7 +1089,8 @@ class content_profile extends base_content {
         }
       }
       if (!empty($dynFields)) {
-        $result = $result & $this->baseSurfers->setDynamicData($this->surferObj->surferId, $dynFields);
+        $result2 = $this->baseSurfers->setDynamicData($this->surferObj->surferId, $dynFields);
+        $result = $result && $result2 == count($dynFields);
       }
     }
     return $result;
