@@ -1185,7 +1185,7 @@ class connector_surfers extends base_connector {
       '%%',
       $this->surferAdmin->databaseGetSQLCondition($filter)
     );
-    $dataValues = $withDataValues == TRUE ? ', s.surferdata_values' : '';
+    $dataValues = $dataValuesLngId > 0 ? ', s.surferdata_values' : '';
     $sql = "SELECT s.surferdata_id, s.surferdata_name,
                    s.surferdata_needsapproval, s.surferdata_type,
                    sc.surfercontactdata_property,
@@ -1213,74 +1213,78 @@ class connector_surfers extends base_connector {
           $fieldValues[$row['surferdata_name']] = array(
             'value' => $dataValue,
             'values' => in_array($row['surferdata_type'], array('checkgroup', 'radio', 'combo')) ?
-              $this->surferAdmin->parseFormValueXML(
-                $row['surferdata_values'], $dataValuesLngId, FALSE, FALSE
-              ) : $row['surferdata_values']
+              array($row['surferdata_values']) : $row['surferdata_values']
           );
         } else {
           $fieldValues[$row['surferdata_name']] = $dataValue;
         }
       }
     }
-    // Return this as the end result if there's no valid surfer
-    if (!$surferId) {
-      return $fieldValues;
-    }
-    // If we're still here, retrieve the more complex fields with individual approval
+    // retrieve the more complex fields with individual approval, if there is a valid surfer
+    if (!empty($surferId)) {
+      // add filters (more)
+      $filter2 = array(
+        'sp.surfercontactpublic_surferid' => $profileSurferId,
+        'sp.surfercontactpublic_partner' => $surferId
+      );
+      $filterStr2 = str_replace(
+        '%',
+        '%%',
+        $this->surferAdmin->databaseGetSQLCondition($filter2)
+      );
 
-    // add filters (more)
-    $filter2 = array(
-      'sp.surfercontactpublic_surferid' => $profileSurferId,
-      'sp.surfercontactpublic_partner' => $surferId
-    );
-    $filterStr2 = str_replace(
-      '%',
-      '%%',
-      $this->surferAdmin->databaseGetSQLCondition($filter2)
-    );
-
-    $sql = "SELECT s.surferdata_id, s.surferdata_name,
-                   s.surferdata_needsapproval, s.surferdata_type,
-                   sc.surfercontactdata_property,
-                   sc.surfercontactdata_surferid,
-                   sc.surfercontactdata_value,
-                   sp.surfercontactpublic_surferid,
-                   sp.surfercontactpublic_partner,
-                   sp.surfercontactpublic_data,
-                   sp.surfercontactpublic_public$dataValues
-              FROM %s AS s, %s AS sc, %s AS sp
-             WHERE $filterStr
-               AND s.surferdata_needsapproval=1
-               AND s.surferdata_id=sc.surfercontactdata_property
-               AND $filterStr2
-               AND sp.surfercontactpublic_data = s.surferdata_id
-               AND sp.surfercontactpublic_public = 1";
-    $sqlData = array($this->surferAdmin->tableData,
-                     $this->surferAdmin->tableContactData,
-                     $this->surferAdmin->tableContactPublic);
-    if ($res = $this->surferAdmin->databaseQueryFmt($sql, $sqlData)) {
-      while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
-        if (!$fieldValues) {
-          $fieldValues = array();
-        }
-        if ($row['surferdata_type'] == 'checkgroup') {
-          $dataValue = unserialize($row['surfercontactdata_value']);
-        } else {
-          $dataValue = $row['surfercontactdata_value'];
-        }
-        if ($dataValuesLngId > 0) {
-          $fieldValues[$row['surferdata_name']] = array(
-            'value' => $dataValue,
-            'values' => in_array($row['surferdata_type'], array('checkgroup', 'radio', 'combo')) ?
-              $this->surferAdmin->parseFormValueXML(
-                $row['surferdata_values'], $dataValuesLngId, FALSE, FALSE
-              ) : $row['surferdata_values']
-          );
-        } else {
-          $fieldValues[$row['surferdata_name']] = $dataValue;
+      $sql = "SELECT s.surferdata_id, s.surferdata_name,
+                     s.surferdata_needsapproval, s.surferdata_type,
+                     sc.surfercontactdata_property,
+                     sc.surfercontactdata_surferid,
+                     sc.surfercontactdata_value,
+                     sp.surfercontactpublic_surferid,
+                     sp.surfercontactpublic_partner,
+                     sp.surfercontactpublic_data,
+                     sp.surfercontactpublic_public$dataValues
+                FROM %s AS s, %s AS sc, %s AS sp
+               WHERE $filterStr
+                 AND s.surferdata_needsapproval=1
+                 AND s.surferdata_id=sc.surfercontactdata_property
+                 AND $filterStr2
+                 AND sp.surfercontactpublic_data = s.surferdata_id
+                 AND sp.surfercontactpublic_public = 1";
+      $sqlData = array($this->surferAdmin->tableData,
+                       $this->surferAdmin->tableContactData,
+                       $this->surferAdmin->tableContactPublic);
+      if ($res = $this->surferAdmin->databaseQueryFmt($sql, $sqlData)) {
+        while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
+          if (!$fieldValues) {
+            $fieldValues = array();
+          }
+          if ($row['surferdata_type'] == 'checkgroup') {
+            $dataValue = unserialize($row['surfercontactdata_value']);
+          } else {
+            $dataValue = $row['surfercontactdata_value'];
+          }
+          if ($dataValuesLngId > 0) {
+            $fieldValues[$row['surferdata_name']] = array(
+              'value' => $dataValue,
+              'values' => in_array($row['surferdata_type'], array('checkgroup', 'radio', 'combo')) ?
+                array($row['surferdata_values']) : $row['surferdata_values']
+            );
+          } else {
+            $fieldValues[$row['surferdata_name']] = $dataValue;
+          }
         }
       }
     }
+
+    if (!empty($fieldValues) && $dataValuesLngId > 0) {
+      foreach ($fieldValues as $name => $value) {
+        if (is_array($value['values'])) {
+          $fieldValues[$name]['values'] = $this->surferAdmin->parseFormValueXML(
+            $value['values'][0], $dataValuesLngId, FALSE, FALSE
+          );
+        }
+      }
+    }
+
     return $fieldValues;
   }
 
