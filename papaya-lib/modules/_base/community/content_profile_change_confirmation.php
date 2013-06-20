@@ -241,14 +241,19 @@ class content_profile_change_confirmation extends base_content {
       }
     } elseif (!$this->data['password_required']) {
       if (defined('PAPAYA_PAGEID_ERROR_403') &&
+          PAPAYA_PAGEID_ERROR_403 > 0 &&
           isset($GLOBALS['PAPAYA_PAGE'])) {
         $GLOBALS['PAPAYA_PAGE']->doRedirect(
           302,
           $this->getAbsoluteUrl($this->getWebLink(PAPAYA_PAGEID_ERROR_403)),
           'Invalid token'
         );
+      } else {
+        $result .= $this->getMessageXml(
+          $this->data['error_message_notoken'],
+          $this->data['error_link_notoken']
+        );
       }
-      //What to do if no 403 is defined?
     }
     return $result;
   }
