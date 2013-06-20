@@ -3467,9 +3467,10 @@ class surfer_admin extends base_db {
   * @param string $xml XML input
   * @param integer $lng Language id
   * @param boolean $complete Get node names as keys?
+  * @param boolean $nameForEmptyCaption use the value name as caption if no caption exists
   * @return array $values Result values or nodes and values
   */
-  function parseFormValueXML($xmlString, $lng = 0, $complete = FALSE) {
+  function parseFormValueXML($xmlString, $lng = 0, $complete = FALSE, $nameForEmptyCaption = TRUE) {
     $values = array();
     // Get the appropriate language name
     if ($lng > 0) {
@@ -3527,8 +3528,8 @@ class surfer_admin extends base_db {
         }
       }
       if (isset($name)) {
-        if (!isset($caption)) {
-          $caption = $name;
+        if ($valueForEmptyCaption == TRUE) {
+          $caption = (!isset($caption)) ? $name : '';
         }
         $values[$name] = $caption;
       }
@@ -3653,12 +3654,7 @@ class surfer_admin extends base_db {
       }
       // Get values according to field type
       if (in_array($field['surferdata_type'], array('combo', 'radio', 'checkgroup'))) {
-        $values = $this->parseFormValueXML($field['surferdata_values'], $lng);
-        foreach ($values as $val => $caption) {
-          if ($val == $caption) {
-            $values[$val] = '';
-          }
-        }
+        $values = $this->parseFormValueXML($field['surferdata_values'], $lng, FALSE, FALSE);
       } else {
         $values = $field['surferdata_values'];
       }

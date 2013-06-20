@@ -2954,7 +2954,9 @@ class surfer_admin_edit extends surfer_admin {
       if (trim($fieldValues) != '') {
         $values = $this->parseFormValueXML(
           $fieldValues,
-          $this->lngSelect->currentLanguageId
+          $this->lngSelect->currentLanguageId,
+          FALSE,
+          FALSE
         );
       }
       $listView = sprintf(
@@ -3006,7 +3008,7 @@ class surfer_admin_edit extends surfer_admin {
           );
           $listView .= sprintf(
             '<subitem>%s</subitem>'.LF,
-            ($caption == $val) ?
+            ($caption == '') ?
               $this->_gt('None') :
               papaya_strings::escapeHTMLChars($caption)
           );
