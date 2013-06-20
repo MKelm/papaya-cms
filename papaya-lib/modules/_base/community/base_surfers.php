@@ -3425,11 +3425,7 @@ class surfer_admin extends base_db {
     if (empty($valueData)) {
       return FALSE;
     }
-    foreach ($valueData as $val => $captions) {
-      if (!is_array($captions)) {
-        return FALSE;
-      }
-    }
+    // Does not check captions to allow default values without a caption
     // Array seems to be okay, build the XML tree
     $xml = '<options>';
     foreach ($valueData as $val => $captions) {
@@ -3658,6 +3654,11 @@ class surfer_admin extends base_db {
       // Get values according to field type
       if (in_array($field['surferdata_type'], array('combo', 'radio', 'checkgroup'))) {
         $values = $this->parseFormValueXML($field['surferdata_values'], $lng);
+        foreach ($values as $val => $caption) {
+          if ($val == $caption) {
+            $values[$val] = '';
+          }
+        }
       } else {
         $values = $field['surferdata_values'];
       }

@@ -3006,7 +3006,9 @@ class surfer_admin_edit extends surfer_admin {
           );
           $listView .= sprintf(
             '<subitem>%s</subitem>'.LF,
-            papaya_strings::escapeHTMLChars($caption)
+            ($caption == $val) ?
+              $this->_gt('None') :
+              papaya_strings::escapeHTMLChars($caption)
           );
           $moveUpLink = $this->getLink(
             array(
