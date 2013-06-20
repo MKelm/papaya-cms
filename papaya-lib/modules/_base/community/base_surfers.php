@@ -3528,7 +3528,7 @@ class surfer_admin extends base_db {
         }
       }
       if (isset($name)) {
-        if ($valueForEmptyCaption == TRUE) {
+        if ($nameForEmptyCaption == TRUE) {
           $caption = (!isset($caption)) ? $name : '';
         }
         $values[$name] = $caption;
