@@ -1162,7 +1162,7 @@ class connector_surfers extends base_connector {
   * @return array $fieldValues Field values or empty
   * @deprecated ?
   */
-  function getProfileData($profileSurferId, $fields = NULL, $withDataValues = FALSE) {
+  function getProfileData($profileSurferId, $fields = NULL, $dataValuesLngId = NULL) {
     $this->_initSurferAdmin();
     // First check out whether we've got a valid surfer
     include_once(PAPAYA_INCLUDE_PATH.'system/base_surfer.php');
@@ -1209,10 +1209,13 @@ class connector_surfers extends base_connector {
         } else {
           $dataValue = $row['surfercontactdata_value'];
         }
-        if ($withDataValues) {
+        if ($dataValuesLngId > 0) {
           $fieldValues[$row['surferdata_name']] = array(
             'value' => $dataValue,
-            'values' => new SimpleXMLElement('<root>'.$row['surferdata_values'].'</root>')
+            'values' => in_array($row['surferdata_type'], array('checkgroup', 'radio', 'combo')) ?
+              $this->surferAdmin->parseFormValueXML(
+                $row['surferdata_values'], $dataValuesLngId, FALSE, FALSE
+              ) : $row['surferdata_values']
           );
         } else {
           $fieldValues[$row['surferdata_name']] = $dataValue;
@@ -1265,10 +1268,13 @@ class connector_surfers extends base_connector {
         } else {
           $dataValue = $row['surfercontactdata_value'];
         }
-        if ($withDataValues) {
+        if ($dataValuesLngId > 0) {
           $fieldValues[$row['surferdata_name']] = array(
             'value' => $dataValue,
-            'values' => new SimpleXMLElement('<root>'.$row['surferdata_values'].'</root>')
+            'values' => in_array($row['surferdata_type'], array('checkgroup', 'radio', 'combo')) ?
+              $this->surferAdmin->parseFormValueXML(
+                $row['surferdata_values'], $dataValuesLngId, FALSE, FALSE
+              ) : $row['surferdata_values']
           );
         } else {
           $fieldValues[$row['surferdata_name']] = $dataValue;
