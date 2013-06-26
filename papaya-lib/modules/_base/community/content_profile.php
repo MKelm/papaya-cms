@@ -734,7 +734,7 @@ class content_profile extends base_content {
           'simplerichtext',
           7,
           '',
-          'Enter the old password if you want to change your email.'
+          'Enter the old password if you want to change your password.'
         ),
         'descr_need_old_password' => array(
           'Change password',
